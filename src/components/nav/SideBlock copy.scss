@@ -1,0 +1,97 @@
+@use "sass:map";
+@import '../../assets/css/base.scss';
+
+.side-panel {
+  background-color: map.get($light, "bg_side-panel");
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100vh;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 0px 7px;
+
+  & > figure {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 330px;
+      border-bottom: 2px solid map.get($light, "separator");;
+
+      & > img {
+          width: 200px;
+          margin-left: auto;
+          margin-right: auto;
+          border-radius: 50%;
+          border: 5px solid map.get($light, "border");
+          min-height: 190px;
+      }
+  }
+
+  & > nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      
+      & > ul {
+          list-style-type:none;
+          font-size: 1rem;
+          line-height: 3rem;
+          width: 100%;
+          margin-bottom: 100px;
+          letter-spacing: 0.25rem;
+
+          & > li {
+              width: 100%;
+              text-align: center;
+              margin-bottom: 2px;
+
+              & > a {
+                  width: 100%;
+                  display: block;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  color: $black;
+                  position: relative;
+                  
+
+                  &::before {
+                      content: "";
+                      height: 100%;
+                      width: 0%;
+                      position: absolute;
+                      left: 0;
+                      top: 0;
+                      background-color: map.get($light, "nav_hover");
+                      z-index: -1;
+                      transition: $transition_base;
+                  }
+              }
+
+              &:not(.selected) a:hover {
+                  color: map.get($light, "text_blue");
+
+                  &::before {
+                      width: 100%;
+                      transition: $transition_base;;
+                  }
+              }
+
+              &.selected {
+                  background-color: map.get($light, "nav_selected");
+
+                  & > a {
+                      color: $white;
+                  }
+              }
+          }
+      }
+  }
+  
+}

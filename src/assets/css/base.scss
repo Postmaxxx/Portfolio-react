@@ -1,0 +1,19 @@
+@use "sass:map";
+@import "./variables.scss";
+@import "./fonts.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: $transition_base;
+}
+
+body {
+    font-family: "Roboto-Regular", sans-serif;
+    background-color: map.get($light, "bg");
+    width: 100%;
+    position: relative;
+    color: $black;
+}
+
