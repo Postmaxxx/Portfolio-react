@@ -1,5 +1,5 @@
 import './themeSwitcher.scss';
-import { React, Component } from 'react';
+import { React, Component, useState } from 'react';
 import { connect } from 'react-redux'
 import * as actions from '../../assets/redux/actions'
 
@@ -40,35 +40,39 @@ class ThemeSwitcher extends Component {
 
 */
 
-function ThemeSwitcher({ store, setStore }) {
+function ThemeSwitcher({ state }) {
+    console.log('state Switcher', state );
+
+    //const [temp, setTemp] = useState('aaa')
 
     const changeTheme = () => {
-        if (store.theme === 'light') {
-            setStore(actions.setTheme('dark'))
-            console.log('to dark', store.theme );
+
+        //setTemp(temp + 'B')
+
+        if (state.store.theme === 'light') {
+            state.setStore.setTheme('dark')
+            console.log('to dark', state.store.theme );
         } else {
-            setStore(actions.setTheme('light'))
-            console.log('to light', store.theme );
+            state.setStore.setTheme('light')
+            console.log('to light', state.store.theme );
         }
         
     }
 
-    setInterval(() => {console.log('New store', store)}, 1000)
+    //setInterval(() => {console.log('New store', store)}, 1000)
    
     return (
         <div className='theme-switcher__container' onClick={() => changeTheme()}>
             <input type="checkbox" 
                 id='theme-checkbox'
-                checked={store.theme === 'dark' ? true : false}
+                //checked={store.theme === 'dark' ? true : false}
             />
-            <p>1{store.theme}1</p>
+            <p>{state.store.theme}</p>
         </div>
     )
 }
 
-
-
-
+/*
 const mapStateToProps = (store) => ({store: store})
 
 
@@ -78,6 +82,9 @@ const mapDispatchToProps = (dispatch) => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(ThemeSwitcher);
+*/
+export default ThemeSwitcher;
+
 
 
 

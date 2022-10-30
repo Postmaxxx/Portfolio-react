@@ -6,14 +6,20 @@ import Homepage from './pages/home/Home'
 import Aboutpage from './pages/about/About'
 import Page404 from './pages/page404/page404'
 import ThemeSwitcher from './components/theme_switcher/ThemeSwitcher';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import * as actions from './assets/redux/actions'
 
 
+function App(state) {
+    console.log('App state', state);
 
-function App() {
+    //setTimeout(() => store.setStore({type: 'setTheme', payload: 'dark'}), 2000)
+
     return (
         <>
+            <ThemeSwitcher state={state}/>
             <SidePanel />
-            <ThemeSwitcher />
             <Routes>
                 <Route index element={<Homepage />} />
                 <Route path="home" element={<Homepage />} />
@@ -25,5 +31,12 @@ function App() {
 }
 
 
+const mapStateToProps = (store) => ({store: store})
 
-export default App;
+
+const mapDispatchToProps = (dispatch) => ({
+    setStore: bindActionCreators(actions, dispatch),
+
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

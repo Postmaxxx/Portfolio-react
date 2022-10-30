@@ -4,10 +4,11 @@ import { connect } from 'react-redux'
 import * as actions from '../../assets/redux/actions'
 
 function Homepage({ store, setStore }) {
-
+    console.log('store Home', store );
+/*
     useEffect((e) => {
         console.log('home', store );
-    }, [])
+    }, [])*/
 
     return (
         <div className="page_home">
