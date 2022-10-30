@@ -14,7 +14,8 @@
     padding: 0px 7px;
     border-right: 2px solid map.get($light, "border");
 
-    @include respond-to(sm) {
+    @include respond-to(lg) {
+        width: 250px;
     }
 
   & > figure {

@@ -1,11 +1,11 @@
 import React from 'react';
-import './SideBlock.scss';
+import './sidePanel.scss';
 import myPhoto from '../../assets/img/photo-1.jpg'
 import { Link, NavLink } from "react-router-dom";
 
 
 
-const Nav = () => {
+const SidePanel = () => {
     return (
         <div className="side-panel">
             <figure>
@@ -40,4 +40,4 @@ const Nav = () => {
     );
 }
 
-export default Nav;
+export default SidePanel;

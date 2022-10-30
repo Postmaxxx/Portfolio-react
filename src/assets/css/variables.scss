@@ -26,7 +26,9 @@ $light: (
     "border": #CBCED8,
     "nav_hover": #B7CFE9,
     "nav_selected": #037FFF,
+    "text_grey": #313131,
 );
+
 
 @mixin  respond-to($width) {
     @if $width == xs { 

@@ -1,26 +1,19 @@
 import { React } from 'react'
-import {
-    createBrowserRouter,
-    RouterProvider,
-    BrowserRouter,
-    Router,
-    MemoryRouter,
-    Routes,
-    Route,
-    Link,
-    Navigate
-} from "react-router-dom";
-import SideBlock from "./components/nav/SideBlock";
+import { Routes, Route } from "react-router-dom";
+import SidePanel from "./components/side_panel/SidePanel";
 import { Switch, Redirect } from 'react'
 import Homepage from './pages/home/Home'
 import Aboutpage from './pages/about/About'
 import Page404 from './pages/page404/page404'
+import ThemeSwitcher from './components/theme_switcher/ThemeSwitcher';
+
 
 
 function App() {
     return (
         <>
-            <SideBlock />
+            <SidePanel />
+            <ThemeSwitcher />
             <Routes>
                 <Route index element={<Homepage />} />
                 <Route path="home" element={<Homepage />} />

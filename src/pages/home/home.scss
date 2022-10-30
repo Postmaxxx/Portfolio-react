@@ -1,5 +1,32 @@
+@use "sass:map";
+@import '../../assets/css/base.scss';
+
 .page_home {
-  border: 2px solid black;
-  height: 100vh;
-  left: 80%;
+    border: 2px solid black;
+    height: 100vh;
+    margin-left: 300px;
+    background-color: map.get($light, "bg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-to(lg) {
+        margin-left: 250px;
+    }
+
+
+    & > h1 {
+        font-size: 50px;
+    }
+
+    & > p {
+        margin-top: 30px;
+        font-size: 20px;
+        max-width: 70%;
+        text-align: center;
+        line-height: 1.6em;
+        color: map.get($light, "text_grey");
+    }
+
 }
