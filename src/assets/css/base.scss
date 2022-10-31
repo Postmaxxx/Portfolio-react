@@ -15,10 +15,24 @@ body {
     width: 100%;
     position: relative;
     color: $black;
+
+    &.dark {
+        background-color: map.get($dark, "bg");
+        color: $white;
+    }
 }
 
 
 em {
-    color: map.get($light, "text_blue");
+    color: map.get($light, "text_em");
     font-style: normal;
+}
+
+
+body.dark {
+    em {
+        color: map.get($dark, "text_em");
+        font-style: normal;
+    }
+    
 }

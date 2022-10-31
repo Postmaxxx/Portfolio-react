@@ -7,6 +7,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 theme: action.payload
             }
+        case "setTemp":
+            return {
+                ...state,
+                temp: action.payload
+            }
         default:
             return {
                 ...state   

@@ -3,3 +3,9 @@ export const setTheme = (theme) => ({
     payload: theme
 })
 
+
+export const setTemp = (temp) => ({
+    type: 'setTemp',
+    payload: temp
+})
+

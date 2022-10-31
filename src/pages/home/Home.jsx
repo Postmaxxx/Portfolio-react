@@ -2,14 +2,9 @@ import './home.scss'
 import React, { useEffect } from "react";
 import { connect } from 'react-redux'
 import * as actions from '../../assets/redux/actions'
+import ThemeSwitcher from '../../components/theme_switcher/ThemeSwitcher';
 
-function Homepage({ store, setStore }) {
-    console.log('store Home', store );
-/*
-    useEffect((e) => {
-        console.log('home', store );
-    }, [])*/
-
+const Homepage = ( props ) => {
     return (
         <div className="page_home">
             <h1>Hi, I am <em>Max Postnikov</em></h1>
@@ -19,13 +14,4 @@ function Homepage({ store, setStore }) {
 }
 
 
-const mapStateToProps = (store) => ({
-    store: store,
-})
-
-const mapDispatchToProps = (dispatch) => ({
-    setStore: action => dispatch(action)
-})
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
+export default Homepage;

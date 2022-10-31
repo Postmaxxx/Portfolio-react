@@ -6,8 +6,10 @@ import { bindActionCreators } from 'redux';
 
 const ThemeSwitcher = props => {
 
-    function changeTheme () {
+    const body = document.getElementsByTagName("BODY")[0];
+    props.store.theme === 'dark' ? body.classList.add('dark') : body.classList.remove('dark')
 
+    function changeTheme () {
         if (props.store.theme === 'light') {
             props.setStore.setTheme('dark')
             console.log('to dark', props  );
@@ -18,15 +20,15 @@ const ThemeSwitcher = props => {
     }
 
 
-        return (
-            <div className='theme-switcher__container' onClick={() => changeTheme()}>
-                <input type="checkbox" 
-                    id='theme-checkbox'
-                    checked={props.store.theme === 'dark' ? true : false}
-                />
-                <p>{props.store.theme}</p>
-            </div>
-        )
+    return (
+        <div className='theme-switcher__container' onClick={() => changeTheme()}>
+            <input type="checkbox" 
+                id='theme-checkbox'
+                checked={props.store.theme === 'dark' ? true : false}
+            />
+            <p>{props.store.theme}</p>
+        </div>
+    )
    
 }
 

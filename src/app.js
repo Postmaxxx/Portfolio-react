@@ -11,7 +11,8 @@ import * as actions from './assets/redux/actions'
 import { bindActionCreators } from 'redux';
 
 
-const App = () => {
+const App = (props) => {
+    console.log('App store', props);
     return (
         <>
             <ThemeSwitcher />
@@ -28,7 +29,7 @@ const App = () => {
 }
 
 
-const mapStateToProps = (state) => ({store: state})
+const mapStateToProps = (store) => ({store: store})
 
 
 const mapDispatchToProps = (dispatch) => ({

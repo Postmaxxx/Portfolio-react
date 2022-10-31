@@ -60,7 +60,7 @@
                   display: block;
                   text-decoration: none;
                   text-transform: uppercase;
-                  color: $black;
+                  color: map.get($light, "text_soft");
                   position: relative;
                   
 
@@ -78,7 +78,7 @@
 
                   
                   &:not(.selected):hover {
-                      color: map.get($light, "text_blue");
+                      color: map.get($light, "text_em");
     
                       &::before {
                           width: 100%;
@@ -98,4 +98,52 @@
       }
   }
   
+}
+
+
+
+
+
+
+body.dark {
+    .side-panel {
+        background-color: map.get($dark, "bg_side-panel");
+        border-right: 2px solid map.get($dark, "border");
+    
+      & > figure {
+          border-bottom: 2px solid map.get($dark, "separator");;
+    
+          & > img {
+              border: 6px solid map.get($dark, "border");
+          }
+      }
+    
+      & > nav {
+          
+          & > ul {
+    
+              & > li {
+    
+                  & > a {
+                    color: map.get($dark, "text_soft");
+    
+                      &::before {
+                          background-color: map.get($dark, "nav_hover");
+                      }
+                      
+                      &:not(.selected):hover {
+                          color: map.get($dark, "text_em");
+                      }
+    
+                      &.selected {
+                          background-color: map.get($dark, "nav_selected");
+                          color: $white;
+                      }
+                  }
+              }
+          }
+      }
+      
+    }
+    
 }
