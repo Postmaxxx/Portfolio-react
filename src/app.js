@@ -1,4 +1,4 @@
-import { React } from 'react'
+import  React, { Component } from 'react'
 import { Routes, Route } from "react-router-dom";
 import SidePanel from "./components/side_panel/SidePanel";
 import { Switch, Redirect } from 'react'
@@ -7,18 +7,14 @@ import Aboutpage from './pages/about/About'
 import Page404 from './pages/page404/page404'
 import ThemeSwitcher from './components/theme_switcher/ThemeSwitcher';
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux';
 import * as actions from './assets/redux/actions'
+import { bindActionCreators } from 'redux';
 
 
-function App(state) {
-    console.log('App state', state);
-
-    //setTimeout(() => store.setStore({type: 'setTheme', payload: 'dark'}), 2000)
-
+const App = () => {
     return (
         <>
-            <ThemeSwitcher state={state}/>
+            <ThemeSwitcher />
             <SidePanel />
             <Routes>
                 <Route index element={<Homepage />} />
@@ -28,15 +24,18 @@ function App(state) {
             </Routes>
         </>
     )
+
 }
 
 
-const mapStateToProps = (store) => ({store: store})
+const mapStateToProps = (state) => ({store: state})
 
 
 const mapDispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),
-
 })
 
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+

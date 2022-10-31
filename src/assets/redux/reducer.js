@@ -1,12 +1,16 @@
-import initialStore from './initialStore';
+import initialState from './initialState';
 
-const reducer = (store = initialStore, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "setTheme":
-            store.theme = action.payload
-            return store;
+            return {
+                ...state,
+                theme: action.payload
+            }
         default:
-            return store;
+            return {
+                ...state   
+            }
     }
   };
 

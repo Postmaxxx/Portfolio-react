@@ -1,90 +1,42 @@
 import './themeSwitcher.scss';
-import { React, Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import * as actions from '../../assets/redux/actions'
+import { bindActionCreators } from 'redux';
 
-/*
-class ThemeSwitcher extends Component {
-    constructor(props) {
-        super(props);
-    }
+const ThemeSwitcher = props => {
 
+    function changeTheme () {
 
-    changeTheme = () => {
-        if (this.props.store.theme === 'light') {
-            this.props.setStore(actions.setTheme('dark'))
-            console.log('to dark', this.props.store.theme );
+        if (props.store.theme === 'light') {
+            props.setStore.setTheme('dark')
+            console.log('to dark', props  );
         } else {
-            this.props.setStore(actions.setTheme('light'))
-            console.log('to light', this.props.store.theme );
+            props.setStore.setTheme('light')
+            console.log('to light', props);
         }
-        
     }
 
-    componentDidMount() {
-        console.log('props',  this.props);
-    }
 
-    render() {
-        return(
-            <div className='theme-switcher__container' onClick={() => this.changeTheme()}>
+        return (
+            <div className='theme-switcher__container' onClick={() => changeTheme()}>
                 <input type="checkbox" 
                     id='theme-checkbox'
-                    checked={this.props.store.theme === 'dark' ? true : false}
+                    checked={props.store.theme === 'dark' ? true : false}
                 />
-                <p>{this.props.store.theme}</p>
+                <p>{props.store.theme}</p>
             </div>
         )
-    }
-}
-
-*/
-
-function ThemeSwitcher({ state }) {
-    console.log('state Switcher', state );
-
-    //const [temp, setTemp] = useState('aaa')
-
-    const changeTheme = () => {
-
-        //setTemp(temp + 'B')
-
-        if (state.store.theme === 'light') {
-            state.setStore.setTheme('dark')
-            console.log('to dark', state.store.theme );
-        } else {
-            state.setStore.setTheme('light')
-            console.log('to light', state.store.theme );
-        }
-        
-    }
-
-    //setInterval(() => {console.log('New store', store)}, 1000)
    
-    return (
-        <div className='theme-switcher__container' onClick={() => changeTheme()}>
-            <input type="checkbox" 
-                id='theme-checkbox'
-                //checked={store.theme === 'dark' ? true : false}
-            />
-            <p>{state.store.theme}</p>
-        </div>
-    )
 }
 
-/*
+
 const mapStateToProps = (store) => ({store: store})
 
 
 const mapDispatchToProps = (dispatch) => ({
-    setStore: action => dispatch(action)
+    setStore: bindActionCreators(actions, dispatch),
 })
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(ThemeSwitcher);
-*/
-export default ThemeSwitcher;
-
-
-
-
