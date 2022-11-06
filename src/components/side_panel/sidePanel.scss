@@ -13,6 +13,7 @@
     height: 100vh;
     padding: 0px 7px;
     border-right: 2px solid map.get($light, "border");
+    z-index: 1000;
 
     @include respond-to(xl) {
         width: $sidePanelWidthSmall;
@@ -24,103 +25,173 @@
 
     &.nav_opened {
         transform: translateX(0);
+
+        & > nav > ul {
+            line-height: 3;
+        }
     }
 
-  & > figure {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      height: 330px;
-      border-bottom: 2px solid map.get($light, "separator");;
-
-      & > img {
-          width: 200px;
-          aspect-ratio: 1;
-          margin-left: auto;
-          margin-right: auto;
-          border-radius: 50%;
-          border: 6px solid map.get($light, "border");
-          min-height: 190px;
-      }
-  }
-
-  & > nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      width: 100%;
-      
-      & > ul {
-          list-style-type:none;
-          font-size: 1rem;
-          line-height: 2.4rem;
-          width: 100%;
-          margin-bottom: 100px;
-          letter-spacing: 0.15rem;
-
-          & > li {
-              width: 100%;
-              text-align: center;
-              margin-bottom: 2px;
-
-              & > a {
-                  width: 100%;
-                  display: block;
-                  text-decoration: none;
-                  text-transform: uppercase;
-                  color: map.get($light, "text_soft");
-                  position: relative;
-                  
-
-                  &::before {
-                      content: "";
-                      height: 100%;
-                      width: 0%;
-                      position: absolute;
-                      left: 0;
-                      top: 0;
-                      background-color: map.get($light, "nav_hover");
-                      z-index: -1;
-                      transition: $transition_base;
-                  }
-
-                  
-                  &:not(.selected):hover {
-                      color: map.get($light, "text_em");
-    
-                      &::before {
-                          width: 100%;
-                          transition: $transition_base;;
-                      }
-                  }
-
-
-                  &.selected {
-                      background-color: map.get($light, "nav_selected");
-                      color: $white;
-                  }
-              }
-
-
-          }
-      }
-  }
-
-  & > .hamburger {
-    height: 50px;
-    width: 50px;
-    background-color: #666;
-    position: absolute;
-    top: 40px;
-    right: -50px;
-    display: none;
-    cursor: pointer;
-
-    @include respond-to(lg) {
+    & > figure {
+        width: 100%;
         display: flex;
+        align-items: center;
+        height: 330px;
+        border-bottom: 2px solid map.get($light, "separator");;
+
+        & > img {
+            width: 200px;
+            aspect-ratio: 1;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 50%;
+            border: 6px solid map.get($light, "border");
+            min-height: 190px;
+        }
     }
-  }
+
+    & > nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        
+        & > ul {
+            list-style-type:none;
+            font-size: 15px;
+            line-height: 2.4rem;
+            width: 100%;
+            margin-bottom: 100px;
+            letter-spacing: 0.15rem;
+
+            & > li {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 2px;
+
+                & > a {
+                    width: 100%;
+                    display: block;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: map.get($light, "text_soft");
+                    position: relative;
+                    
+
+                    &::before {
+                        content: "";
+                        height: 100%;
+                        width: 0%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background-color: map.get($light, "nav_hover");
+                        z-index: -1;
+                        transition: $transition_base;
+                    }
+
+                    
+                    &:not(.selected):hover {
+                        color: map.get($light, "text_em");
+        
+                        &::before {
+                            width: 100%;
+                            transition: $transition_base;;
+                        }
+                    }
+
+
+                    &.selected {
+                        background-color: map.get($light, "nav_selected");
+                        color: $white;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    & > .hamburger {
+        height: 50px;
+        width: 50px;
+        background-color: map.get($light, "bg_side-panel");
+        border: 1px solid map.get($light, "border");
+        position: absolute;
+        top: 40px;
+        right: -50px;
+        display: none;
+        cursor: pointer;
+        //position: relative;
+
+        @include respond-to(lg) {
+            display: flex;
+        }
+
+        & div {
+            position: absolute;
+            background-color: map.get($light, "text_soft");
+            position: absolute;
+            width: 16px;
+            height: 3px;
+        }
+
+        div:nth-of-type(1) {
+            top: 15px;
+            left: 24px;
+        }
+    
+        div:nth-of-type(2) {
+            top: 15px;
+            right: 24px;
+        }
+    
+        div:nth-of-type(3) {
+            top: 25px;
+            left: 8px;
+            width: 32px;
+        }
+    
+        div:nth-of-type(4) {
+            top: 35px;
+            left: 24px;
+        }
+    
+        div:nth-of-type(5) {
+            top: 35px;
+            right: 24px;
+        }
+
+        &.nav_opened {
+            
+            div:nth-of-type(1) {
+                transform-origin: 100% 0;
+                transform: translate(-7px,0px) rotate(-45deg);
+            }
+    
+            div:nth-of-type(2) {
+                transform-origin: 0 0;
+                transform:  translate(7px,0px) rotate(45deg);
+            }
+        
+            div:nth-of-type(3) {
+                opacity: 0;
+            }
+    
+            div:nth-of-type(4) {
+                transform-origin: 100% 100%;
+                transform: translate(-6px,0px) rotate(45deg);
+            }  
+        
+            div:nth-of-type(5) {
+                transform-origin: 0 100%;
+                transform: translate(6px,0px) rotate(-45deg);
+            }
+        }
+    
+
+
+    }
 
   
 }
@@ -169,6 +240,14 @@ body.dark {
           }
       }
       
+      & > .hamburger {
+          background-color: map.get($dark, "bg_side-panel");
+          border: 1px solid map.get($dark, "border");
+  
+          & div {
+              background-color: map.get($dark, "text_soft");
+          }
+      }
     }
     
 }

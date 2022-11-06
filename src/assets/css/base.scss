@@ -33,7 +33,7 @@ em {
 .page-container {
     margin-left: $sidePanelWidthFull;
     background-color: map.get($light, "bg");
-    padding: 120px 12px;
+    padding: 120px 50px;
     min-height: 100vh;
 
     @include respond-to(xl) {
@@ -42,15 +42,33 @@ em {
 
     @include respond-to(lg) {
         margin-left: 0;
-        padding-left: 50px;
-        padding-right: 50px;
+        //padding-left: 50px;
+        //padding-right: 50px;
+    }
+
+    @include respond-to(md) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    @include respond-to(sm) {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    @include respond-to(xs) {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     &.nav_opened {
-        margin-left: $sidePanelWidthFull;
     
-        @include respond-to(xl) {
+        @include respond-to(lg) {
             margin-left: $sidePanelWidthSmall;
+        } 
+
+        @include respond-to(md) {
+           margin-left: 0;
         }  
     }
 
@@ -58,10 +76,10 @@ em {
         margin-left: auto;
         margin-right: auto;
         max-width: 1300px;
-/*
-        @include respond-to(lg) {
-            max-width: 1000px;
-        }*/
+
+        @include respond-to(md) {
+            max-width: 800px;
+        }
     }
 
 
@@ -76,14 +94,38 @@ em {
         position: relative;
         text-transform: uppercase;
         margin-bottom: 100px;
+
+        @include respond-to(md) {
+            font-size: 38px;
+        }
+
+        @include respond-to(sm) {
+            font-size: 34px;
+        }
     
         & > em {
             position: absolute;
-            font-size: 72px;
+            font-size: 96px;
             font-weight: 800;
             top: 35px;
             left: 5px;
             color: map.get($light, "text_shadow");
+
+            @include respond-to(xl) {
+                font-size: 72px;
+            }
+
+            @include respond-to(md) {
+                font-size: 64px;
+            }
+
+            @include respond-to(sm) {
+                font-size: 60px;
+            }
+
+            @include respond-to(xs) {
+                font-size: 50px;
+            }
         }
 
         &::before {

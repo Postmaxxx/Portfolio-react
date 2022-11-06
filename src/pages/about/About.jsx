@@ -1,16 +1,17 @@
 import React from "react";
 import './about.scss'
 import photo1 from '../../assets/img/photo-1.jpg';
+import photo2 from '../../assets/img/photo-2.jpg';
 
 export default function Aboutpage() {
     return (
-        <div className="page-container nav_opened">
+        <div className="page-container">
             <div className="page_about">
                 <section className='about_me'> 
                     <h2>About me<em>About me</em></h2>
                     <div className="about__container">
                         <div className="img-container">
-                            <img src={photo1} alt="My photo" />
+                            <img src={photo2} alt="My photo" />
                         </div>
                         <div className="descr">
                             <h3>I am <em>Postnikov Max</em></h3>
