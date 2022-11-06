@@ -10,13 +10,7 @@ const ThemeSwitcher = props => {
     props.store.theme === 'dark' ? body.classList.add('dark') : body.classList.remove('dark')
 
     function changeTheme () {
-        if (props.store.theme === 'light') {
-            props.setStore.setTheme('dark')
-            console.log('to dark', props  );
-        } else {
-            props.setStore.setTheme('light')
-            console.log('to light', props);
-        }
+        props.store.theme === 'light' ? props.setStore.setTheme('dark') : props.setStore.setTheme('light')
     }
 
 

@@ -9,13 +9,21 @@
     align-items: center;
     top: 0;
     left: 0;
-    width: 300px;
+    width: $sidePanelWidthFull;
     height: 100vh;
     padding: 0px 7px;
     border-right: 2px solid map.get($light, "border");
 
+    @include respond-to(xl) {
+        width: $sidePanelWidthSmall;
+    }
+
     @include respond-to(lg) {
-        width: 250px;
+        transform: translateX(-$sidePanelWidthSmall);
+    }
+
+    &.nav_opened {
+        transform: translateX(0);
     }
 
   & > figure {
@@ -27,6 +35,7 @@
 
       & > img {
           width: 200px;
+          aspect-ratio: 1;
           margin-left: auto;
           margin-right: auto;
           border-radius: 50%;
@@ -97,6 +106,22 @@
           }
       }
   }
+
+  & > .hamburger {
+    height: 50px;
+    width: 50px;
+    background-color: #666;
+    position: absolute;
+    top: 40px;
+    right: -50px;
+    display: none;
+    cursor: pointer;
+
+    @include respond-to(lg) {
+        display: flex;
+    }
+  }
+
   
 }
 

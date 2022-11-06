@@ -4,9 +4,9 @@ import photo1 from '../../assets/img/photo-1.jpg';
 
 export default function Aboutpage() {
     return (
-        <div className="page_about">
-            <div className="page-container">
-                <section class='about_me'>
+        <div className="page-container nav_opened">
+            <div className="page_about">
+                <section className='about_me'> 
                     <h2>About me<em>About me</em></h2>
                     <div className="about__container">
                         <div className="img-container">

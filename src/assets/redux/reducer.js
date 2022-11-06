@@ -2,15 +2,20 @@ import initialState from './initialState';
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case "setTheme":
+        case "SET_THEME":
             return {
                 ...state,
                 theme: action.payload
             }
-        case "setTemp":
+        case "SET_NAV_OPEN":
             return {
                 ...state,
-                temp: action.payload
+                nav_ham: 'nav_opened'
+            }
+        case "SET_NAV_CLOSE":
+            return {
+                ...state,
+                nav_ham: ''
             }
         default:
             return {

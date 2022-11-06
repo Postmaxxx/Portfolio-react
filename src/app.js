@@ -11,8 +11,8 @@ import * as actions from './assets/redux/actions'
 import { bindActionCreators } from 'redux';
 
 
-const App = (props) => {
-    console.log('App store', props);
+const App = () => {
+    //console.log('App store', props);
     return (
         <>
             <ThemeSwitcher />

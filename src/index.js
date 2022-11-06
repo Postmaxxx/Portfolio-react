@@ -8,8 +8,7 @@ import { Provider } from 'react-redux'
 import App from './app'
 
 let store = createStore(reducer);
-console.log("1", store);
-const themeUnsubscribe = store.subscribe(() => console.log('Changed'))
+//const themeUnsubscribe = store.subscribe(() => console.log('Changed'))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,11 +1,12 @@
 export const setTheme = (theme) => ({
-    type: 'setTheme',
+    type: 'SET_THEME',
     payload: theme
 })
 
-
-export const setTemp = (temp) => ({
-    type: 'setTemp',
-    payload: temp
+export const setNavOpen = () => ({
+    type: 'SET_NAV_OPEN',
 })
 
+export const setNavClose = () => ({
+    type: 'SET_NAV_CLOSE',
+})
