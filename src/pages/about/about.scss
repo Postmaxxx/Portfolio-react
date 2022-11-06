@@ -1,0 +1,125 @@
+@use "sass:map";
+@import '../../assets/css/base.scss';
+
+.page_about {
+
+    & .about__container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    
+        & .img-container {
+            width: 100%;
+            padding: 0 10px;
+            border: 1px solid red;
+            max-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+
+            & > img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+
+
+        & > .descr {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0 10px;
+
+
+            & h3 {
+                font-size: 32px;
+                margin-bottom: 10px;
+                color: map.get($light, "text_hard");
+            }
+
+            & p {
+                font-size: 18px;
+                color: map.get($light, "text_soft");
+                line-height: 170%;
+            }
+
+            & ul {
+                padding-left: 0;
+                list-style-type: none;
+                margin-top: 30px;
+
+                & li {
+                    font-size: 18px;
+                    line-height: 190%;
+                    color: rgba(map.get($light, "text_soft"), 0.7);
+                    font-weight: 100;
+
+                    & b {
+                        min-width: 150px;
+                        display: inline-block;
+                        position: relative;
+                        color: rgba(map.get($light, "text_soft"), 1);
+
+                        &::after {
+                            position: absolute;
+                            right: 10px;
+                            content: ">";
+                        }
+                    }
+                }
+            }
+
+            & > a {
+                width: 200px;
+                height: 50px;
+                margin-top: 50px;
+                background-color: map.get($light, "nav_selected");
+                color: $white;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 5px;
+                    background-color: $white;
+                    transition: $transition_base;
+                }
+/*
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 4px;
+                    background-color: $white;
+                    transition: $transition_base;
+                }
+*/
+                &:hover::before {
+                    width: 100%;
+                    transition: $transition_base;
+                }
+/*
+                &:hover::after {
+                    width: 0%;
+                    transition: $transition_base;
+                }*/
+            }
+        }
+    }
+
+
+
+
+}

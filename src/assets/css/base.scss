@@ -29,10 +29,120 @@ em {
 }
 
 
+.page-container {
+    margin-left: 300px;
+    background-color: map.get($light, "bg");
+    padding: 120px 12px;
+    min-height: 100vh;
+    max-width: 1300px;
+
+    @include respond-to(lg) {
+        margin-left: 250px;
+    }
+
+
+    h1 {
+        font-size: 50px;
+    }
+    
+    
+    h2 {
+        font-size: 42px;
+        color: map.get($light, "text_hard");
+        position: relative;
+        text-transform: uppercase;
+        margin-bottom: 100px;
+    
+        & > em {
+            position: absolute;
+            font-size: 72px;
+            font-weight: 800;
+            top: 35px;
+            left: 5px;
+            color: map.get($light, "text_shadow");
+        }
+
+        &::before {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            content: "";
+            height: 5px;
+            width: 100px;
+            border-radius: 3px;
+            background-color: rgba(map.get($light, "nav_selected"), 0.2);
+        }
+
+        &::after {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            content: "";
+            height: 5px;
+            width: 40px;
+            border-radius: 3px;
+            background-color: map.get($light, "nav_selected");
+        }
+    }
+    
+    
+    p {
+        color: map.get($light, "text_soft");
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body.dark {
     em {
         color: map.get($dark, "text_em");
         font-style: normal;
+    }
+
+    .page-container {
+        border: 2px solid black;
+        background-color: map.get($dark, "bg");
+   
+        h2 {
+            color: map.get($dark, "text_hard");
+        
+            & > em {
+                color: map.get($dark, "text_shadow");
+            }
+        }
+
+
+        p {
+            color: map.get($dark, "text_soft");
+        }
+
     }
     
 }
