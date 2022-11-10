@@ -3,147 +3,267 @@
 
 .page_about {
 
-    & .about__container {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
+    & .about_me {
 
-        @include respond-to(md) {
-            flex-direction: column;
-        }
-
+        & .about__container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
     
-        & .img-container {
-            width: 50%;
-            max-height: 550px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            //overflow: hidden;
-
             @include respond-to(md) {
-                width: 100%;
+                flex-direction: column;
             }
-            
-
-            & > img {
-                width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-
-               /* @include respond-to(md) {
+    
+        
+            & .img-container {
+                width: 50%;
+                position: relative;
+                //border: 1px solid red;
+                align-self: center;
+                min-width: 540px;
+                //box-sizing: border-box;
+    
+    
+                &::before, &::after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    bottom: 4px;
+                    height: 25px;
+                    width: 25px;
+                    background-color: rgba(map.get($light, "nav_selected"), 0.3);
+                }
+    
+                &::after {
+                    left: auto;
+                    bottom: auto;
+                    right: 0;
+                    top: 0;
+                }
+    
+                @include respond-to(md) {
                     width: 100%;
-                    max-width: 100%;
-                    max-height: 700px;
-                    //object-fit: contain;
-
-                }*/
+                    min-width: auto;
+                    margin-bottom: 30px;
+    
+                }
+                
+    
+                & > img {
+                    width: 100%;
+                    //max-height: 100%;
+                    //object-fit: cover;
+    
+    
+    
+                   /* @include respond-to(md) {
+                        width: 100%;
+                        max-width: 100%;
+                        max-height: 700px;
+                        //object-fit: contain;
+    
+                    }*/
+                }
             }
-        }
+    
+    
+            & .descr {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding-left: 30px;
+                padding-right: 10px;
+    
+                @include respond-to(md) {
+                    width: 100%;
+                    padding-left: 0px;
+                }
+    
+    
+                & h3 {
+                    font-size: 32px;
+                    margin-bottom: 10px;
+                    color: map.get($light, "text_hard");
 
-
-        & .descr {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            padding-left: 20px;
-            padding-right: 10px;
-
-            @include respond-to(md) {
-                width: 100%;
-            }
-
-
-            & h3 {
-                font-size: 32px;
-                margin-bottom: 10px;
-                color: map.get($light, "text_hard");
-            }
-
-            & p {
-                font-size: 18px;
-                color: map.get($light, "text_soft");
-                line-height: 170%;
-            }
-
-            & ul {
-                padding-left: 0;
-                list-style-type: none;
-                margin-top: 30px;
-
-                & li {
+                    @include respond-to(md) {
+                        align-self: center;
+                    }
+                }
+    
+                & p {
                     font-size: 18px;
-                    line-height: 190%;
-                    color: rgba(map.get($light, "text_soft"), 0.7);
-                    font-weight: 100;
-
-                    & b {
-                        min-width: 150px;
-                        display: inline-block;
-                        position: relative;
-                        color: rgba(map.get($light, "text_soft"), 1);
-
-                        &::after {
-                            position: absolute;
-                            right: 10px;
-                            content: ":"; //→
+                    color: map.get($light, "text_soft");
+                    line-height: 170%;
+                }
+    
+                & ul {
+                    padding-left: 0;
+                    list-style-type: none;
+                    margin-top: 30px;
+    
+                    & li {
+                        font-size: 18px;
+                        line-height: 190%;
+                        color: rgba(map.get($light, "text_soft"), 0.7);
+                        font-weight: 100;
+    
+                        & b {
+                            min-width: 150px;
+                            display: inline-block;
+                            position: relative;
+                            color: rgba(map.get($light, "text_soft"), 1);
+    
+                            &::after {
+                                position: absolute;
+                                right: 10px;
+                                content: ":"; //→
+                            }
                         }
                     }
                 }
+    
+                & > a {
+                    width: 200px;
+                    height: 50px;
+                    margin-top: 50px;
+                    background-color: map.get($light, "nav_selected");
+                    color: $white;
+                    text-transform: uppercase;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    position: relative;
+    
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 3px;
+                        background-color: $white;
+                        transition: $transition_base;
+                    }
+    /*
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 4px;
+                        background-color: $white;
+                        transition: $transition_base;
+                    }
+    */
+                    &:hover::before {
+                        width: 100%;
+                        transition: $transition_base;
+                    }
+    /*
+                    &:hover::after {
+                        width: 0%;
+                        transition: $transition_base;
+                    }*/
+                }
+            }
+        }
+    }
+
+    & .services {
+        margin-top: 120px;
+
+        @include respond-to(md) {
+            margin-top: 100px;
+        }
+
+        @include respond-to(sm) {
+            margin-top: 80px;
+        }
+
+
+        & .services__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+
+            @include respond-to(sm) {
+                flex-direction: column;
             }
 
-            & > a {
-                width: 200px;
-                height: 50px;
-                margin-top: 50px;
-                background-color: map.get($light, "nav_selected");
-                color: $white;
-                text-transform: uppercase;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-                position: relative;
+            & > .service {
+                width: 31%;
+                background-color: map.get($light, "bg_side-panel");
+                border: 1px solid map.get($light, "border");
+                border-top: 5px solid map.get($light, "border");
+                padding: 20px;
+                margin-bottom: 30px;
 
-                &:before {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 0%;
-                    height: 3px;
-                    background-color: $white;
-                    transition: $transition_base;
+                @include respond-to(md) {
+                    width: 48%;
                 }
-/*
-                &:after {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    right: 0;
+
+                @include respond-to(sm) {
                     width: 100%;
-                    height: 4px;
-                    background-color: $white;
-                    transition: $transition_base;
                 }
-*/
-                &:hover::before {
-                    width: 100%;
-                    transition: $transition_base;
+
+                &:hover {
+                    border-top: 5px solid map.get($light, "nav_selected");
                 }
-/*
-                &:hover::after {
-                    width: 0%;
-                    transition: $transition_base;
-                }*/
+
+                & > img {
+                    width: 40px;
+                }
+
+                & > h4 {
+                    margin-top: 20px;
+                }
+
+                & .line {
+                    width: 60px;
+                    height: 2px;
+                    margin-top: 20px;
+                    background-color: map.get($light, "separator");;
+                }
+
+                & > p {
+                    margin-top: 20px;
+                }
             }
         }
     }
 
 
+    & .reviews { 
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 body.dark {
@@ -155,6 +275,7 @@ body.dark {
     
                 & h3 {
                     color: map.get($dark, "text_hard");
+                    
                 }
     
                 & p {
@@ -174,6 +295,26 @@ body.dark {
     
                 & > a {
                     background-color: map.get($dark, "nav_selected");
+                }
+            }
+        }
+
+        & .services {
+    
+            & .services__container {
+    
+                & > .service {
+                    background-color: map.get($dark, "bg_side-panel");
+                    border: 1px solid map.get($dark, "border");
+                    border-top: 5px solid map.get($dark, "border");
+    
+                    &:hover {
+                        border-top: 5px solid map.get($dark, "nav_selected");
+                    }
+    
+                    & .line {
+                        background-color: map.get($dark, "separator");;
+                    }
                 }
             }
         }

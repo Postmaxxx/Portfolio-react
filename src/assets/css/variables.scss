@@ -8,9 +8,10 @@ $black: #000;
 $white: #FFF;
 
 $transition_base: 0.4s ease-out;
+$transition_theme : 1s linear;
 
-$page-padding_top: 120px;
-$page-padding_bottom: 120px;
+$page-padding_top: 0px;
+$page-padding_bottom: 0px;
 $sidePanelWidthFull: 300px;
 $sidePanelWidthSmall: 250px;
 
@@ -40,6 +41,9 @@ $light: (
     "text_soft": #313131,
     "text_hard": #151515,
     "text_shadow": rgba(215,220,230,.44),
+
+    "scroll-track": #383838,
+    "scroll-thumb": #6B6B6B,//#6B6B6B,
 );
 
 

@@ -14,6 +14,7 @@
     padding: 0px 7px;
     border-right: 2px solid map.get($light, "border");
     z-index: 1000;
+    transition: $transition_theme;
 
     @include respond-to(xl) {
         width: $sidePanelWidthSmall;
@@ -37,6 +38,7 @@
         align-items: center;
         height: 330px;
         border-bottom: 2px solid map.get($light, "separator");;
+        transition: $transition_theme;
 
         & > img {
             width: 200px;
@@ -46,6 +48,7 @@
             border-radius: 50%;
             border: 6px solid map.get($light, "border");
             min-height: 190px;
+            transition: $transition_theme;
         }
     }
 
@@ -93,14 +96,13 @@
                     
                     &:not(.selected):hover {
                         color: map.get($light, "text_em");
-        
+                        
                         &::before {
                             width: 100%;
                             transition: $transition_base;;
                         }
                     }
-
-
+                    
                     &.selected {
                         background-color: map.get($light, "nav_selected");
                         color: $white;
@@ -118,11 +120,12 @@
         background-color: map.get($light, "bg_side-panel");
         border: 1px solid map.get($light, "border");
         position: absolute;
-        top: 40px;
+        top: 30px;
         right: -50px;
         display: none;
         cursor: pointer;
         //position: relative;
+        transition: $transition_theme;
 
         @include respond-to(lg) {
             display: flex;
@@ -134,6 +137,7 @@
             position: absolute;
             width: 16px;
             height: 3px;
+            transition: $transition_theme;
         }
 
         div:nth-of-type(1) {
@@ -202,15 +206,19 @@
 
 
 body.dark {
+
     .side-panel {
         background-color: map.get($dark, "bg_side-panel");
         border-right: 2px solid map.get($dark, "border");
+        transition: $transition_theme;
     
       & > figure {
           border-bottom: 2px solid map.get($dark, "separator");;
-    
+          transition: $transition_theme;
+
           & > img {
               border: 6px solid map.get($dark, "border");
+              transition: $transition_theme;
           }
       }
     
@@ -222,7 +230,6 @@ body.dark {
     
                   & > a {
                     color: map.get($dark, "text_soft");
-    
                       &::before {
                           background-color: map.get($dark, "nav_hover");
                       }
@@ -243,9 +250,11 @@ body.dark {
       & > .hamburger {
           background-color: map.get($dark, "bg_side-panel");
           border: 1px solid map.get($dark, "border");
+          transition: $transition_theme;
   
           & div {
               background-color: map.get($dark, "text_soft");
+              transition: $transition_theme;
           }
       }
     }
