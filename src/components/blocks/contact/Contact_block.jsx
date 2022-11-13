@@ -6,7 +6,7 @@ const ContactBlock = (props) => {
     return (
     <div className="contact-block">
         <div className="img-container">
-            <img src={props.image} alt="" className="contact__img" />
+            {props.image}
         </div>
         <div className="contact-info">
             <span>{props.header}</span>
