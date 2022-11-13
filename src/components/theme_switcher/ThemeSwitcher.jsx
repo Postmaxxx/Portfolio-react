@@ -19,13 +19,14 @@ const ThemeSwitcher = props => {
     console.log('', props);
 
     useEffect(() => {
+        console.log('document', document.querySelector('.theme-switcher').offsetHeight);
         createThemeSwitcher({
             _themeSwitcher: '.theme-switcher', 
             star: star, 
             cloud: cloud, 
-            width: 70, 
-            height: 40, 
-            circleSize: 14, 
+            width: document.querySelector('.theme-switcher').offsetWidth, 
+            height: document.querySelector('.theme-switcher').offsetHeight, 
+            circleSize: Math.round(document.querySelector('.theme-switcher').offsetHeight / 3), 
             duration: 2000, 
             theme: 'day', 
             numberOfStars: 30,

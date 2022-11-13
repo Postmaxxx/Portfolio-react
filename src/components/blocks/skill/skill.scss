@@ -1,0 +1,82 @@
+@use "sass:map";
+@import '../../../assets/css/base.scss';
+
+
+
+.resume__skill {
+    width: 48%;
+    margin-top: 40px;
+
+    @include respond-to(md) {
+        width: 100%;
+    }
+
+    & h5 {
+        font-size: 18px;
+        color: map.get($light, "text_hard");
+        transition: $transition_theme;
+
+        @include respond-to(sm) {
+            font-size: 16px;
+        }
+    }
+
+    & > .skill__graph {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & > span {
+            font-size: 18px;
+            color: map.get($light, "text_soft");
+            margin-right: 20px;
+            transition: $transition_theme;
+
+            @include respond-to(sm) {
+                font-size: 15px;
+            }
+        }
+
+        & > div {
+            width: 100%;
+            height: 5px;
+            border-radius: 3px;
+            background-color: map.get($light, "border");
+            transition: $transition_theme;
+
+            & > div {                
+                height: 100%;
+                border-radius: 3px 0px 0px 3px;
+                background-color: map.get($light, "nav_selected");
+                transition: $transition_theme;
+            }
+        }
+    }
+
+}
+
+
+body.dark {
+    & .resume__skill {
+        & h5 {
+            color: map.get($dark, "text_hard");
+        }
+    
+        & > .skill__graph {
+            & > span {
+                color: map.get($dark, "text_soft");
+            }
+    
+            & > div {
+                background-color: map.get($dark, "border");
+    
+                & > div {
+                    background-color: map.get($dark, "nav_selected");
+                }
+            }
+        }
+    
+    }
+}

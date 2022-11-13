@@ -3,6 +3,7 @@ import initialState from './initialState';
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "SET_THEME":
+            localStorage.setItem('theme', action.payload)
             return {
                 ...state,
                 theme: action.payload
@@ -16,6 +17,38 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 nav_ham: ''
+            }
+        case "SET_CONTACT_NAME":
+            return {
+                ...state,
+                contact: {
+                    ...state.contact,
+                    name : action.payload
+                }
+            }
+        case "SET_CONTACT_EMAIL":
+            return {
+                ...state,
+                contact: {
+                    ...state.contact,
+                    email : action.payload
+                }
+            }
+        case "SET_CONTACT_SUBJECT":
+            return {
+                ...state,
+                contact: {
+                    ...state.contact,
+                    subject : action.payload
+                }
+            }
+        case "SET_CONTACT_MESSAGE":
+            return {
+                ...state,
+                contact: {
+                    ...state.contact,
+                    message : action.payload
+                }
             }
         default:
             return {

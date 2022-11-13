@@ -1,0 +1,108 @@
+@use "sass:map";
+@import '../../../assets/css/base.scss';
+
+
+
+
+.contact-block {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: map.get($light, "bg_side-panel");
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    min-height  : 150px;
+
+    @include respond-to(md) {
+        flex-direction: column;
+    }
+
+    & > .img-container {
+        height: 70px;
+        aspect-ratio: 1;
+        border: 1px solid map.get($light, "border");
+        transition: border-color $transition_theme;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 30px;
+
+
+        @include respond-to(sm) {
+            align-self: flex-start;
+        }
+
+        & > img {
+            width: 50%;
+        }
+    }
+
+    & > .contact-info {
+
+        & > span {
+            font-size: 18px;
+            color: map.get($light, "text_hard");
+            transition: color $transition_theme;
+            margin-bottom: 10px;
+            display: block;
+
+            @include respond-to(md) {
+                margin-top: 20px;
+            }
+        }
+
+        & > a {
+            font-size: 18px;
+            color: map.get($light, "text_soft");
+            transition: $transition_base;
+            text-decoration: none;
+            display: block;
+            line-height: 150%;
+            transition: color $transition_theme;
+
+            @include respond-to(sm) {
+                //font-size: 16px;
+            }
+
+            @include respond-to(xs) {
+                font-size: 15px;
+            }
+
+            &:hover {
+                color: map.get($light, "nav_selected");
+                transition: $transition_base;
+            }
+        }
+    }
+
+}
+
+
+body.dark {
+    .contact-block {
+        background-color: map.get($dark, "bg_side-panel");
+    
+        & > .img-container {
+            border: 1px solid map.get($dark, "border");
+            transition: border-color $transition_theme;
+        }
+    
+        & > .contact-info {
+            
+            & > span {
+                color: map.get($dark, "text_hard");
+                transition: color $transition_theme;
+            }
+            & > a {
+                color: map.get($dark, "text_soft");
+                transition: color $transition_theme;
+    
+                &:hover {
+                    color: map.get($dark, "nav_selected");
+                }
+            }
+        }
+    
+    }
+    
+}

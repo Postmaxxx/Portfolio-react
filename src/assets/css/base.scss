@@ -54,7 +54,7 @@ em {
     padding: 0px 30px;
     margin-right: 5px;
     min-height: 100vh;
-    transition: $transition_theme;
+    transition: background-color $transition_theme, margin $transition_base;
     //height: 100vh;
     //overflow-y: scroll;
     
@@ -122,7 +122,7 @@ em {
     }
 
     &.nav_opened {
-    
+
         @include respond-to(lg) {
             margin-left: $sidePanelWidthSmall;
         } 
@@ -173,7 +173,7 @@ em {
         margin-bottom: 70px;
         line-height: 200%;
         letter-spacing: 0.15rem;
-        transition: $transition_theme;
+        transition: color $transition_theme;
 
         @include respond-to(md) {
             font-size: 38px;
@@ -194,7 +194,7 @@ em {
             left: 5px;
             color: map.get($light, "text_shadow");
             white-space: no-wrap;
-            transition: $transition_theme;
+            transition: color $transition_theme;
 
             @include respond-to(xl) {
                 font-size: 72px;
@@ -237,14 +237,14 @@ em {
     }
 
     & h3 {
-        transition: $transition_theme;
+        transition: color $transition_theme;
     }
     
 
     & h4 {
         color: map.get($light, "text_hard");
         font-size: 22px;
-        transition: $transition_theme;
+        transition: color $transition_theme;
 
         @include respond-to(sm) {
             font-size: 20px;
@@ -260,7 +260,7 @@ em {
         color: map.get($light, "text_soft");
         font-size: 20px;
         line-height: 170%;
-        transition: $transition_theme;
+        transition: color $transition_theme;
 
 
         @include respond-to(lg) {
@@ -278,7 +278,62 @@ em {
     }
 
     & b { 
-        transition: $transition_theme;
+        transition: color $transition_theme;
+    }
+
+    & span {
+        transition: color $transition_theme;
+    }
+
+
+
+    & .link_button {
+        width: 200px;
+        height: 50px;
+        //margin-top: 50px;
+        background-color: map.get($light, "nav_selected");
+        color: $white;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        position: relative;
+        border: none;
+        font-size: 16px;
+        letter-spacing: .1rem;
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background-color: $white;
+            transition: $transition_base;
+        }
+/*
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background-color: $white;
+            transition: $transition_base;
+        }
+*/
+        &:hover::before {
+            width: 100%;
+            transition: $transition_base;
+        }
+/*
+        &:hover::after {
+            width: 0%;
+            transition: $transition_base;
+        }*/
     }
     
 
@@ -323,7 +378,7 @@ body.dark {
 
     .page-container {
         background-color: map.get($dark, "bg");
-        transition: $transition_theme;
+        transition: background-color $transition_theme, margin $transition_base;
 
         & div {
             transition: background-color $transition_theme;
@@ -331,21 +386,21 @@ body.dark {
 
         h2 {
             color: map.get($dark, "text_hard");
-            transition: $transition_theme;
+            transition: color $transition_theme;
 
             & > em {
                 color: map.get($dark, "text_shadow");
-                transition: $transition_theme;
+                transition: color $transition_theme;
             }
         }
 
         & h3 {
-            transition: $transition_theme;
+            transition: color $transition_theme;
         }
 
         & h4 {
             color: map.get($dark, "text_hard");
-            transition: $transition_theme;
+            transition: color $transition_theme;
         }
 
         & ul li {
@@ -354,11 +409,20 @@ body.dark {
 
         p {
             color: map.get($dark, "text_soft");
-            transition: $transition_theme;
+            transition: color $transition_theme;
         }
 
         & b { 
-            transition: $transition_theme;
+            transition: color $transition_theme;
+        }
+
+        & span {
+            transition: color $transition_theme;
+        }
+    
+
+        & > .link_button {
+            background-color: map.get($dark, "nav_selected");
         }
     
 

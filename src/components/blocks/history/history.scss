@@ -1,0 +1,142 @@
+@use "sass:map";
+@import '../../../assets/css/base.scss';
+
+.history__block {
+    display: flex;
+    margin-top: 40px;
+
+    @include respond-to(sm) {
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+    & > div:first-of-type {
+
+        font-size: 18px;
+        color: map.get($light, "text_soft");
+        width: 25%;
+        min-width: 200px;
+        transition: color $transition_theme;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        margin-left: 25px;
+
+        @include respond-to(sm) {
+            min-width: 170px;
+            font-size: 16px;
+            margin-left: 0px;
+        }
+
+        @include respond-to(xs) {
+            min-width: 90px;
+            font-size: 14px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            border: 3px solid map.get($light, "border");
+            width: 10px;
+            height: 10px;
+            background-color: map.get($light, "bg");
+            border-radius: 50%;
+            left: -34px;
+            top: 3px;
+            transition: border $transition_theme, background-color $transition_theme; 
+            
+            @include respond-to(sm) {
+                left: -29px;
+            }
+
+        }
+    }
+
+    & .history__description {
+        
+
+        & > h4 {
+            color: map.get($light, "text_em");
+            font-size: 23px;
+
+            @include respond-to(sm) {
+                font-size: 20px;
+                margin-top: 17px;
+            }
+    
+            @include respond-to(xs) {
+                font-size: 18px;
+            }
+    
+        }
+
+        & > span {
+            display: block;
+            font-size: 18px;
+            margin-top: 12px;
+            color: map.get($light, "text_hard");
+
+            @include respond-to(sm) {
+                font-size: 16px;
+                margin-top: 8px;
+            }
+    
+            @include respond-to(xs) {
+                font-size: 14px;
+            }
+    
+        }
+
+        & > p {
+            font-size: 18px;
+            margin-top: 15px;
+            color: map.get($light, "text_soft");
+
+            @include respond-to(sm) {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+    
+            @include respond-to(xs) {
+                font-size: 14px;
+            }
+    
+        }
+    }
+
+}
+
+
+body.dark {
+    & .history__block {
+    
+        & > div:first-of-type {
+            color: map.get($dark, "text_soft");
+            transition: color $transition_theme;
+
+            &::before {
+                border: 3px solid map.get($dark, "border");
+                background-color: map.get($dark, "bg");
+                transition: border $transition_theme, background-color $transition_theme;
+            }
+        }
+    
+        & .history__description {
+            
+    
+            & > h4 {
+                color: map.get($dark, "text_em");
+            }
+    
+            & > span {
+                color: map.get($dark, "text_hard");
+            }
+    
+            & > p {
+                color: map.get($dark, "text_soft");
+            }
+        }
+    
+    }
+}

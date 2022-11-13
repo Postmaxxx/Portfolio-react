@@ -10,6 +10,7 @@ import App from './app'
 let store = createStore(reducer);
 //const themeUnsubscribe = store.subscribe(() => console.log('Changed'))
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>

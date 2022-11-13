@@ -35,7 +35,6 @@ class SidePanel extends React.Component {
             this._container?.classList?.remove('nav_opened');
             this._sidePanel.classList.remove('nav_opened');
             this._hamburgerIcon.classList.remove('nav_opened');
-
         }
     }
 
@@ -69,9 +68,29 @@ class SidePanel extends React.Component {
                                 about
                             </NavLink>
                         </li>
-                        <li><NavLink to="/test" data-nav>resume</NavLink></li>
-                        <li><NavLink to="#" data-nav>portfolio</NavLink></li>
-                        <li><NavLink to="#" data-nav>contact</NavLink></li>
+                        <li>
+                            <NavLink 
+                                className={ ({ isActive }) => {
+                                        return isActive ? 'selected' : ''
+                                    }}
+                                    onClick={() => {this.props.setStore.setNavClose()}}
+                                    to="/resume">
+                                resume
+                            </NavLink>
+                        </li>
+
+
+                        <li><NavLink to="#" data-nav>portfolios</NavLink></li>
+                        <li>
+                            <NavLink 
+                                className={ ({ isActive }) => {
+                                        return isActive ? 'selected' : ''
+                                    }}
+                                    onClick={() => {this.props.setStore.setNavClose()}}
+                                    to="/contact">
+                                contact
+                            </NavLink>
+                        </li>
                     </ul>
                 </nav>
                 <div className="hamburger" onClick={() => this.changeNav()}>
