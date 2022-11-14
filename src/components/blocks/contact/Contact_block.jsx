@@ -10,7 +10,7 @@ const ContactBlock = (props) => {
         </div>
         <div className="contact-info">
             <span>{props.header}</span>
-            {props.links.map((link, index) => <a href={link.link} key={index}>{link.text}</a>)}
+            {props.links?.map((link, index) => <a href={link.link} key={index} target={link.new ? "_blank" : null}>{link.text}</a>)}
         </div>
     </div>
 
