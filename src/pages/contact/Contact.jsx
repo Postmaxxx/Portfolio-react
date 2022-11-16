@@ -6,7 +6,6 @@ import ContactBlock from "../../components/blocks/contact/Contact_block";
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import imgPhone from '../../assets/img/svg/phone.svg';
 
 const Contact = (props) => {
 

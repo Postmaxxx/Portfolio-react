@@ -3,7 +3,7 @@ import initialState from './initialState';
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "SET_THEME":
-            localStorage.setItem('theme', action.payload)
+            //localStorage.setItem('theme', action.payload)
             return {
                 ...state,
                 theme: action.payload

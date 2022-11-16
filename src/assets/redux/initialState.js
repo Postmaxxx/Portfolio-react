@@ -1,5 +1,5 @@
 const initialState = {
-    theme: localStorage.getItem('theme') || 'light',
+    theme: 'light',
     nav_ham: '',
 
     contact: {

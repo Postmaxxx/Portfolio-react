@@ -1,5 +1,5 @@
 import './themeSwitcher.scss';
-import React, { Component, useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
@@ -9,17 +9,14 @@ import star from '../../assets/img/svg/theme_nigth__star.svg'
 
 const ThemeSwitcher = props => {
 
-    const body = document.getElementsByTagName("BODY")[0];
-    props.store.theme === 'dark' ? body.classList.add('dark') : body.classList.remove('dark')
-
-    function changeTheme () {
-        props.store.theme === 'light' ? props.setStore.setTheme('dark') : props.setStore.setTheme('light')
+    const changeTheme = () => {
+        setInterval(() => {
+            props.setStore.setTheme(document.getElementsByTagName("BODY")[0].classList.contains('dark') ? 'dark' : 'light');
+        }, 100) //just to have enough time to update localStorage
     }
 
-    console.log('', props);
-
     useEffect(() => {
-        console.log('document', document.querySelector('.theme-switcher').offsetHeight);
+        props.setStore.setTheme(localStorage.getItem('theme') || 'light');
         createThemeSwitcher({
             _themeSwitcher: '.theme-switcher', 
             star: star, 
@@ -28,21 +25,21 @@ const ThemeSwitcher = props => {
             height: document.querySelector('.theme-switcher').offsetHeight, 
             circleSize: Math.round(document.querySelector('.theme-switcher').offsetHeight / 3), 
             duration: 2000, 
-            theme: 'day', 
+            theme: localStorage.getItem('theme') || 'light', 
             numberOfStars: 30,
+            nodeForTheme: document.getElementsByTagName("BODY")[0], //node for adding class 'dark' / 'light'
+            saveState: 'theme',
             /*
             starsBlinkingDuration: starsBlinkingDuration, 
             clouds: clouds, 
             starsBlinkingAnimation: starsBlinkingAnimation,
             */
         });
-    
     },[])
-
 
     return (
         <div className='theme-switcher__container' >
-            <div className="theme-switcher"  onClick={() => changeTheme()}></div>
+            <div className="theme-switcher" onClick={() => changeTheme()}></div>
         </div>
     )
    

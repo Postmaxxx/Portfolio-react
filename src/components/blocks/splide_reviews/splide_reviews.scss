@@ -1,0 +1,132 @@
+@use "sass:map";
+@import '../../../assets/css/base.scss';
+
+.reviews__container {
+
+    & * {
+        transition: all 0s;
+    }
+
+    & .splide__track {
+        & .splide__list {
+
+            & .splide__slide-container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                //cursor:e-resize;
+        
+                & .review__slide {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    padding: 20px;
+                    background: map.get($light, "bg_side-panel");
+                    border-left: 5px solid map.get($light, "border");
+                    position: relative;
+                    overflow: visible;
+                    margin-bottom: 50px;
+                    flex-grow: 3;
+                    transition: border $transition_base, background-color $transition_theme;
+    
+                    &:hover {
+                        border-left: 5px solid map.get($light, "nav_selected");
+                        transition: border $transition_base;
+                    }
+            
+                    &::after {
+                        box-sizing: border-box;
+                        content: "";
+                        position: absolute;
+                        height: 40px;
+                        width: 40px;
+                        border-style: solid;
+                        border-width: 20px;
+                        border-color: map.get($light, "bg_side-panel") transparent transparent map.get($light, "bg_side-panel");
+                        transition: border $transition_theme;
+                        bottom: -40px;
+                    }
+                }
+    
+                & > span {
+                    display: block;
+                    color: map.get($light, "text_soft");
+                    font-size: 16px;
+                    line-height: 170%;
+                    transition: color $transition_theme;
+            
+                    @include respond-to(lg) {
+                        font-size: 16px;
+                    }
+            
+                    @include respond-to(md) {
+                        font-size: 16px;
+                    }
+            
+                    @include respond-to(sm) {
+                        font-size: 14px;
+                    }
+
+                    @include respond-to(sm) {
+                        font-size: 12px;
+                    }
+    
+                }
+    
+                & span:first-of-type {
+                    font-size: 20px;
+    
+                    @include respond-to(lg) {
+                        font-size: 18px;
+                    }
+            
+                    @include respond-to(md) {
+                        font-size: 16px;
+                    }
+            
+                    @include respond-to(sm) {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+        }
+    }
+
+}
+
+
+body.dark {
+    .reviews__container {
+    
+        & .splide__track {
+            & .splide__list {
+    
+                & .splide__slide-container {
+            
+                    & .review__slide {
+                        background: map.get($dark, "bg_side-panel");
+                        border-left: 5px solid map.get($dark, "border");
+                        transition: border $transition_base, background-color $transition_theme;
+
+        
+                        &:hover {
+                            border-left: 5px solid map.get($dark, "nav_selected");
+                            transition: border $transition_base;
+                        }
+                
+                        &::after {
+                            border-color: map.get($dark, "bg_side-panel") transparent transparent map.get($dark, "bg_side-panel");
+                            transition: border $transition_theme;
+                        }
+                    }
+        
+                    & > span {
+                        color: map.get($dark, "text_soft");
+                        transition: color $transition_theme;
+                    }
+                }
+            }
+        }
+    }
+}

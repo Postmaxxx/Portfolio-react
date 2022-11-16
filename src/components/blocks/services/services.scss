@@ -1,0 +1,206 @@
+@use "sass:map";
+@import '../../../assets/css/base.scss';
+
+
+
+.services__container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include respond-to(sm) {
+        flex-direction: column;
+    }
+
+    & > .service {
+        width: 31%;
+        background-color: map.get($light, "bg_side-panel");
+        border: 1px solid map.get($light, "border");
+        border-top: 5px solid map.get($light, "border");
+        transition: border $transition_base, background-color $transition_theme;
+        padding: 20px;
+        margin-bottom: 30px;
+
+        @include respond-to(md) {
+            width: 48%;
+        }
+
+        @include respond-to(sm) {
+            width: 100%;
+        }
+
+        &:hover {
+            border-top: 5px solid map.get($light, "nav_selected");
+            transition: border $transition_base;
+        }
+
+
+        & > svg {
+            width: 80px;
+
+            &.logo-design {
+                width: 100px;
+                height: 80px;
+
+                .design-1 {
+                    fill:map.get($light, "text_soft");
+                }
+                .design-1,.design-2,.design-3,.design-4,.design-5 {
+                    fill-rule:evenodd;
+                }
+                .design-2 {
+                    fill:#ccc;
+                }
+                .design-3 { 
+                    fill:#83b3d7;
+                }
+                .design-4 { 
+                    fill:#3a91be;
+                } 
+                .design-5 { 
+                    fill:#e99688;
+                }
+
+                @include respond-to(xs) {
+                    width: 80px;
+                    height: 60px;
+                }
+            }
+
+            &.logo-frontend {
+
+                .frontend-1 {
+                    fill: #e99688;
+                }
+                .frontend-2 {
+                    fill:map.get($light, "text_soft");
+                }
+                .frontend-3 { 
+                    fill:#3a91be;
+                }
+            }
+
+
+            &.logo-components {
+
+                .components-1 {
+                    fill: map.get($light, "text_soft");
+                }
+                .components-2 {
+                    fill:#3a91be;
+                }
+                .components-3 { 
+                    fill:#3a91be;
+                }
+                .components-4 { 
+                    fill:#e99688;
+                }
+                .components-5 { 
+                    fill:#3a91be;
+                }
+            }
+
+            @include respond-to(xs) {
+                width: 60px;
+            }
+            
+        }
+
+        & > h4 {
+            margin-top: 20px;
+        }
+
+        & .line {
+            width: 60px;
+            height: 2px;
+            margin-top: 20px;
+            background-color: map.get($light, "separator");;
+        }
+
+        & > p {
+            margin-top: 20px;
+        }
+    }
+}
+
+
+
+
+body.dark {
+    .page_about {
+        & .services {
+            & .services__container {
+                & > .service {
+                    background-color: map.get($dark, "bg_side-panel");
+                    border: 1px solid map.get($dark, "border");
+                    border-top: 5px solid map.get($dark, "border");
+                    transition: border $transition_base, background-color $transition_theme;
+
+                    &:hover {
+                        border-top: 5px solid map.get($dark, "nav_selected");
+                        transition: border $transition_base;
+                    }
+
+                    & > svg {
+                        &.logo-design {
+    
+                            .design-1 {
+                                fill:map.get($dark, "text_soft");
+                            }
+                            .design-2 {
+                                fill:#ccc;
+                            }
+                            .design-3 { 
+                                fill:#83b3d7;
+                            }
+                            .design-4 { 
+                                fill:#3a91be;
+                            } 
+                            .design-5 { 
+                                fill:#e99688;
+                            }
+                        }
+    
+                        &.logo-frontend {
+                            .frontend-1 {
+                                fill: #e99688;
+                            }
+                            .frontend-2 {
+                                fill:map.get($dark, "text_soft");
+                            }
+                            .frontend-3 { 
+                                fill:#3a91be;
+                            }
+                        }
+    
+                        &.logo-components {
+    
+                            .components-1 {
+                                fill: map.get($dark, "text_soft");
+                            }
+                            .components-2 {
+                                fill:#3a91be;
+                            }
+                            .components-3 { 
+                                fill:#3a91be;
+                            }
+                            .components-4 { 
+                                fill:#e99688;
+                            }
+                            .components-5 { 
+                                fill:#3a91be;
+                            }
+                        }
+                    }
+
+    
+                    & .line {
+                        background-color: map.get($dark, "separator");;
+                    }
+                }
+            }
+        }
+    }
+}

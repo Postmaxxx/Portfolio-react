@@ -3,8 +3,10 @@ const theme_state__default = {
     height: 40,
     circleSize: 14,
     duration: 2000,
-    theme: 'day',
+    theme: 'light',
     numberOfStars: 30,
+    nodeForTheme: document.getElementsByTagName("BODY")[0],
+    saveState: false,
     starsBlinkingDuration: [0.9, 1.2, 1.4, 1.6, 1.8, 2.1], //default durations
     starsBlinkingAnimation: `
         0% { opacity: .2 }
@@ -53,6 +55,8 @@ let theme_state = {
     clouds: theme_state__default.clouds,
     starsBlinkingAnimation: theme_state__default.starsBlinkingAnimation,
     isChanging: false,
+    nodeForTheme: theme_state__default.nodeForTheme,
+    saveState: theme_state__default.saveState,
 }
  
 
@@ -69,18 +73,22 @@ const classSwitcher = (classRemove, classAdd, delay) => { //class +/- for _conte
   
 const changeTheme = () => { //main switcher
     if (theme_state.isChanging) { return };
+    theme_state.saveState && localStorage.setItem(theme_state.saveState, theme_state.theme);
     theme_state.isChanging = true;
-    if (theme_state.theme === "night") {
-        classSwitcher('', 'theme_day_1', 0)
-        .then(() => classSwitcher('theme_day_1', 'theme_day_2', theme_state.duration / 4))
-        .then(() => {classSwitcher('theme_day_2', 'theme_day', 30); theme_state.isChanging = false;})
-        theme_state.theme = 'day';
+    if (theme_state.theme === "light") {
+        console.log('In light');
+        theme_state.nodeForTheme.classList.remove('dark')
+        classSwitcher('', 'theme_light_1', 0)
+        .then(() => classSwitcher('theme_light_1', 'theme_light_2', theme_state.duration / 4))
+        .then(() => {classSwitcher('theme_light_2', 'theme_light', 30); theme_state.isChanging = false;})
     } else {
-        classSwitcher('theme_day', 'theme_day_back_1', 0)
-        .then(() => classSwitcher('theme_day_back_1', 'theme_day_back_2', theme_state.duration / 4))
-        .then(() => {classSwitcher('theme_day_back_2', '', 30); theme_state.isChanging = false;})
-        theme_state.theme = 'night';
+        console.log('In dark');
+        theme_state.nodeForTheme.classList.add('dark')
+        classSwitcher('theme_light', 'theme_light_back_1', 0)
+        .then(() => classSwitcher('theme_light_back_1', 'theme_light_back_2', theme_state.duration / 4))
+        .then(() => {classSwitcher('theme_light_back_2', '', 30); theme_state.isChanging = false;})
     }
+    
 }
 
 
@@ -109,91 +117,91 @@ const createThemeSwitcherStyles = () => {
         }`)
 
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher > div.day {
+        .theme-switcher > .content-switcher > div.light {
             background-color: rgb(100 181 245);
             clip-path: circle(${theme_state.circleSize}px at ${circlePosition}px 50%);
             transition: ${theme_state.duration/4}ms cubic-bezier(0,1,0,1);
         }`)
 
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher > div.night {
+        .theme-switcher > .content-switcher > div.dark {
             transition: ${theme_state.duration/4}ms cubic-bezier(0,1,0,1);
             background-color: #002E6E;
         }`)
 
 
-    //theme day_1
+    //theme light_1
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher.theme_day_1 .day {
+        .theme-switcher > .content-switcher.theme_light_1 .light {
             transition: ${theme_state.duration/4}ms cubic-bezier(1,0,1,0);
             clip-path: circle(${theme_state.width*10}px at ${circlePosition - theme_state.width * 10 + theme_state.circleSize}px 50%);
         }`)
        
 
-    //theme day_2
+    //theme light_2
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher.theme_day_2 .day {
+        .theme-switcher > .content-switcher.theme_light_2 .light {
             transition: ${theme_state.duration/4}ms cubic-bezier(1,0,1,0);
             clip-path: circle(${theme_state.width*10}px at ${circlePosition - theme_state.width * 10 + theme_state.circleSize}px 50%);
         }`)
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher.theme_day_2 .night {
+        .theme-switcher > .content-switcher.theme_light_2 .dark {
             transition: ${theme_state.duration/4}ms cubic-bezier(1,0,1,0);
             clip-path: circle(${theme_state.width*10}px at ${circlePosition + theme_state.width * 10 + theme_state.circleSize}px 50%);
         }`)
 
     
-    //theme day
+    //theme light
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher.theme_day .day {
+        .theme-switcher > .content-switcher.theme_light .light {
             transition: ${theme_state.duration/4}ms cubic-bezier(0,1,0,1);
             z-index: 900;
             clip-path: circle(${theme_state.width*10}px at ${theme_state.circleSize - theme_state.width * 9}px 50%);
         }`)
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher.theme_day .night {
+        .theme-switcher > .content-switcher.theme_light .dark {
             transition: ${theme_state.duration/4}ms cubic-bezier(0,1,0,1);
             z-index: 1000;
             clip-path: circle(${theme_state.circleSize}px at ${circlePosition + theme_state.circleSize * 2}px 50%);
         }`)
 
 
-    //theme day_back_1
+    //theme light_back_1
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher.theme_day_back_1 .day {
+        .theme-switcher > .content-switcher.theme_light_back_1 .light {
             transition: 0ms;
             z-index: 900;
             clip-path: circle(${theme_state.width*10}px at ${theme_state.circleSize - theme_state.width * 9}px 50%);
 
         }`)
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher.theme_day_back_1 .night {
+        .theme-switcher > .content-switcher.theme_light_back_1 .dark {
             transition: ${theme_state.duration/4}ms cubic-bezier(1,0,1,0);
             z-index: 1000;
             clip-path: circle(${theme_state.width * 10}px at ${circlePosition + theme_state.circleSize + theme_state.width * 10}px 50%);
         }`)
 
 
-    //theme day_back_2
+    //theme light_back_2
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher.theme_day_back_2 .day {
+        .theme-switcher > .content-switcher.theme_light_back_2 .light {
             transition: 0ms;
             z-index: 1000;
             clip-path: circle(${theme_state.width*10}px at ${circlePosition - theme_state.width * 10 + theme_state.circleSize}px 50%);
         }`)
         
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher.theme_day_back_2 .night {
+        .theme-switcher > .content-switcher.theme_light_back_2 .dark {
             transition: 0ms;
             z-index: 900;
             clip-path: circle(${theme_state.width * 10}px at ${circlePosition + theme_state.circleSize + theme_state.width * 10}px 50%);
         }`)
 
 
-    // themes_night__star blinks
+    // themes_dark__star blinks
     theme_state.starsBlinkingDuration.forEach((duration, index) => {
         styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher .night .theme_night__star-${index} {
+        .theme-switcher > .content-switcher .dark .theme_dark__star-${index} {
             animation: star-blink ${duration}s linear infinite;
         }`)
     })
@@ -208,7 +216,7 @@ const createThemeSwitcherStyles = () => {
         
     // Clouds base
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher .day > div {
+        .theme-switcher > .content-switcher .light > div {
             display: inline-block;
             height: auto;
             position: absolute;
@@ -218,14 +226,14 @@ const createThemeSwitcherStyles = () => {
     // all lines of clouds (line, cloud, animation)
     theme_state.clouds.forEach((cloud, index) => {
         styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher .day .clouds-${index} {
+        .theme-switcher > .content-switcher .light .clouds-${index} {
             width: ${(cloud.width * 6 + cloud.gap * 5)}px;
             top: ${cloud.top}%;
             animation: theme-clouds-${index}  linear infinite;
             animation-duration: ${cloud.speed}s;
         }`)
     styleThemeSwitcher.insertRule(`
-        .theme-switcher > .content-switcher .day .clouds-${index} .cloud {
+        .theme-switcher > .content-switcher .light .clouds-${index} .cloud {
             width: ${cloud.width}px;
             margin-right: ${cloud.gap}px;
             opacity: ${cloud.opacity};
@@ -241,9 +249,9 @@ const createThemeSwitcherStyles = () => {
 
 const createThemeSwitcherHtml = (currentTheme) => {
     document.querySelector('.theme-switcher').innerHTML = `
-        <div class="content-switcher ${currentTheme !== 'night' ? 'theme_day' : ''}">
-            <div class="night"></div>
-            <div class="day"></div>
+        <div class="content-switcher ${currentTheme !== 'dark' ? 'theme_light' : ''}">
+            <div class="dark"></div>
+            <div class="light"></div>
         </div>`;
     theme_state._contentSwitcher = theme_state._themeSwitcher.querySelector(".content-switcher");
 }
@@ -264,8 +272,8 @@ const createStars = () => {
             }
         })
         .forEach((star) => {
-            theme_state._themeSwitcher.querySelector('.content-switcher .night').innerHTML += `
-                <img class="theme_night__star-${star.blinkDuration}" src="${theme_state.star}" style="position: absolute; left: ${star.x}px; top: ${star.y}px; width: ${star.size}px; aspect-ratio: 1">
+            theme_state._themeSwitcher.querySelector('.content-switcher .dark').innerHTML += `
+                <img class="theme_dark__star-${star.blinkDuration}" src="${theme_state.star}" style="position: absolute; left: ${star.x}px; top: ${star.y}px; width: ${star.size}px; aspect-ratio: 1">
             `;
         })
 }
@@ -274,7 +282,7 @@ const createStars = () => {
 const createClouds = () => {
     const numberOfClouds = new Array(Math.ceil(theme_state.width / (theme_state.clouds[theme_state.clouds.length - 1].width + theme_state.clouds[theme_state.clouds.length - 1].gap) + 2)).fill(''); //number of clouds in a cloud-raw, depends on the cloud size and gap between clouds + some reserve
     theme_state.clouds.forEach((cloud, index) => {
-        theme_state._themeSwitcher.querySelector('.content-switcher .day').innerHTML += `
+        theme_state._themeSwitcher.querySelector('.content-switcher .light').innerHTML += `
         <div class="clouds-${index}">
             ${numberOfClouds.map(() => {
                 return `<img class="cloud" src="${theme_state.cloud}" >`
@@ -289,6 +297,7 @@ export const createThemeSwitcher = (props) => {
     theme_state._themeSwitcher = document.querySelector(props._themeSwitcher);
     theme_state.star = props.star;
     theme_state.cloud = props.cloud;
+    theme_state.nodeForTheme = props.nodeForTheme ? props.nodeForTheme : theme_state__default.nodeForTheme;
     theme_state.width = props.width ? props.width : theme_state__default.width;
     theme_state.height = props.height ? props.height : theme_state__default.height;
     theme_state.circleSize = props.circleSize ? props.circleSize : theme_state__default.circleSize;
@@ -298,7 +307,7 @@ export const createThemeSwitcher = (props) => {
     theme_state.starsBlinkingDuration = props.starsBlinkingDuration ? props.starsBlinkingDuration : theme_state__default.starsBlinkingDuration;
     theme_state.clouds = props.clouds ? props.clouds : theme_state__default.clouds;
     theme_state.starsBlinkingAnimation = props.starsBlinkingAnimation ? props.starsBlinkingAnimation : theme_state__default.starsBlinkingAnimation;
-
+    theme_state.saveState = props.saveState ? props.saveState : theme_state__default.saveState;
     new Promise((res, rej) => {
         createThemeSwitcherHtml();
         createThemeSwitcherStyles();
@@ -306,5 +315,14 @@ export const createThemeSwitcher = (props) => {
         createClouds();
         res()
     })
-    .then(theme_state._themeSwitcher.addEventListener('click', () => changeTheme()))
+    .then(() => {
+        if (theme_state.theme !== 'light') {changeTheme()}
+
+        theme_state._themeSwitcher.addEventListener('click', () => {
+            theme_state.theme = theme_state.theme === 'light' ? 'dark' : 'light';
+            changeTheme()
+        })
+    }
+    )
+    
 }
