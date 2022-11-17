@@ -1,6 +1,10 @@
 const initialState = {
     theme: 'light',
     nav_ham: '',
+    modalImage: {
+        img: '',
+        status: false,
+    },
 
     contact: {
         name: '',
@@ -8,7 +12,6 @@ const initialState = {
         subject: '',
         message: ''
     },
-   
     
 }
 

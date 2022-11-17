@@ -28,7 +28,9 @@ $dark: (
     "text_soft": #A4ACC4,
     "text_hard": #FFF,
     "text_shadow": rgba(25,29,43,.44),
-
+    "scroll-track": #383838,
+    "scroll-thumb": #6B6B6B,//#6B6B6B,
+    "modal_bg": rgba(80,80,80, .5),
 );
 
 $light: (
@@ -43,9 +45,9 @@ $light: (
     "text_soft": #313131,
     "text_hard": #151515,
     "text_shadow": rgba(215,220,230,.44),
-
     "scroll-track": #383838,
     "scroll-thumb": #6B6B6B,//#6B6B6B,
+    "modal_bg": rgba(80,80,80, .5),
 );
 
 

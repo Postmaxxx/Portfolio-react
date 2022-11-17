@@ -10,11 +10,13 @@ import ThemeSwitcher from './components/theme_switcher/ThemeSwitcher';
 import { connect } from 'react-redux';
 import * as actions from './assets/redux/actions';
 import { bindActionCreators } from 'redux';
+import ModalWindow from './components/modal/Modal';
 
 const App = (props) => {
 
     return (
         <>
+            <ModalWindow />
             <ThemeSwitcher />
             <SidePanel />
             <Routes>

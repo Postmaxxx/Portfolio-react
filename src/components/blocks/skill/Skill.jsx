@@ -11,8 +11,8 @@ function Skill ({skill}) {
 
     useEffect(() => {
         const percentIncreasingInterval = setInterval(() => {
-            setCurrentPercent((prevPercent) => prevPercent + (1 - prevPercent / skill.percent) * siteData.skillFillSpeed)
-        }, 10)
+                setCurrentPercent((prevPercent) => ( prevPercent < (skill.percent-.2) ? prevPercent + .1 + (1 - prevPercent / skill.percent) * siteData.skillFillSpeed : skill.percent));
+            }, 10)
         return () => clearInterval(percentIncreasingInterval);
     }, [])
 
@@ -23,7 +23,7 @@ function Skill ({skill}) {
             <div className="skill__graph">
                 <span>{Math.round(currentPercent)}%</span>
                 <div>
-                    <div className="skill__percent-line" style={{width: `${Math.round(currentPercent)}%`}}></div>
+                    <div className="skill__percent-line" style={{width: `${currentPercent.toFixed(2)}%`}}></div>
                 </div>
             </div>
         </div>
@@ -32,3 +32,5 @@ function Skill ({skill}) {
 
 
 export default Skill;
+//<div className="skill__percent-line" style={{width: `${Math.round(currentPercent)}%`}}></div>
+//

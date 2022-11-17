@@ -50,6 +50,22 @@ const reducer = (state = initialState, action) => {
                     message : action.payload
                 }
             }
+        case "SET_MODAL_IMAGE_STATUS":
+                return {
+                    ...state,
+                    modalImage: {
+                        ...state.modalImage,
+                        status : action.payload
+                    }
+                }
+        case "SET_MODAL_IMAGE_URL":
+                return {
+                    ...state,
+                    modalImage: {
+                        ...state.modalImage,
+                        url : action.payload
+                    }
+                }
         default:
             return {
                 ...state   

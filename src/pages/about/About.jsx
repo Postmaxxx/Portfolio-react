@@ -4,8 +4,11 @@ import webDesign from '../../assets/img/svg/web-design.svg';
 import SpliderReviews from "../../components/blocks/splide_reviews/Splide_reviews";
 import Services from "../../components/blocks/services/Services";
 import About from "../../components/blocks/about/About";
+import * as actions from '../../assets/redux/actions'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux'
 
-export default function Aboutpage() {
+function Aboutpage() {
     return (
         <div className="page-container">
             <div className="page_about">
@@ -29,3 +32,14 @@ export default function Aboutpage() {
         </div>
     )
 }
+
+
+const mapStateToProps = (store) => ({store: store})
+
+
+const mapDispatchToProps = (dispatch) => ({
+    setStore: bindActionCreators(actions, dispatch),
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Aboutpage);

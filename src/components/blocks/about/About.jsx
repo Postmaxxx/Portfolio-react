@@ -2,12 +2,24 @@ import React from "react";
 import photo2 from '../../../assets/img/photo-2.jpg';
 import './about.scss';
 import resumeDoc from '../../../assets/docs/resume.pdf';
+import modalWindow from '../../modal/Modal';
+import * as actions from '../../../assets/redux/actions'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux'
 
-const About = () => {
+
+const About = (props) => {
+
+    const openModal = () => {
+        //console.log('p', props.setStore );
+        props.setStore.setModalImageStatus(true);
+        console.log('props', props);
+    }
+
     return(
         <div className="about__container">
             <div className="img-container">
-                <img src={photo2} alt="My photo" />
+                <img src={photo2} alt="My photo" onClick={() => openModal()}/>
             </div>
             <div className="descr">
                 <h3>I am <em>Postnikov Max</em></h3>
@@ -30,4 +42,12 @@ const About = () => {
 
 
 
-export default About;
+const mapStateToProps = (store) => ({store: store})
+
+
+const mapDispatchToProps = (dispatch) => ({
+    setStore: bindActionCreators(actions, dispatch),
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(About);

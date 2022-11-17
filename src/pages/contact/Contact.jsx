@@ -6,8 +6,30 @@ import ContactBlock from "../../components/blocks/contact/Contact_block";
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
+import axios from "axios";
+
 
 const Contact = (props) => {
+
+    const sender = () => {
+
+        const options = {
+          method: 'POST',
+          url: 'https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send',
+          headers: {
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': '8227d94581msh4ca7445e90b53eep1e6440jsn181dcf3feb20',
+            'X-RapidAPI-Host': 'rapidprod-sendgrid-v1.p.rapidapi.com'
+          },
+          data: '{"personalizations":[{"to":[{"email":"john@example.com"}],"subject":"Hello, World!"}],"from":{"email":"from_address@example.com"},"content":[{"type":"text/plain","value":"Hello, World!"}]}'
+        };
+        
+        axios.request(options).then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }
 
     return (
         <div className="page-container">
@@ -53,7 +75,7 @@ const Contact = (props) => {
                                 type='text'
                                 name='message'
                                 />
-                            <button href="" className="link_button">Send message</button>                     
+                            <button href="" className="link_button" onClick={() => sender()}>Send message</button>      
                         </div>
                         <div className="my-info">
                             <ContactBlock 

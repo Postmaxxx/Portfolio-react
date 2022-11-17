@@ -1,0 +1,28 @@
+@use "sass:map";
+@import '../../assets/css/base.scss';
+
+
+
+.modal__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: map.get($dark, "text_shadow");
+    z-index: 5000;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    & .modal {
+        height: 80%;
+        top: 10%;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid red;
+    }
+
+}
+

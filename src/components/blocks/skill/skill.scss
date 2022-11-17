@@ -46,12 +46,12 @@
             background-color: map.get($light, "border");
             transition: $transition_theme;
 
-            & > div {   
+            & > div {
+                width: 0;
                 height: 100%;
                 border-radius: 3px 0px 0px 3px;
                 background-color: map.get($light, "nav_selected");
-                transition: $transition_theme;
-                transition: color 0s;             
+                transition: background-color 0s;
             }
         }
     }
