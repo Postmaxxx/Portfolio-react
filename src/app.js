@@ -20,6 +20,7 @@ const App = (props) => {
             <Routes>
                 <Route index element={<Homepage />} />
                 <Route path="/home" element={<Homepage />} />
+                <Route path="/" element={<Homepage />} />
                 <Route path="/index" element={<Homepage />} />
                 <Route path="/about" element={<Aboutpage />} />
                 <Route path="/resume" element={<Resume />} />

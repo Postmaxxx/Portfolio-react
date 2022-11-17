@@ -1,6 +1,7 @@
 import React from "react";
 import photo2 from '../../../assets/img/photo-2.jpg';
-import './about.scss'
+import './about.scss';
+import resumeDoc from '../../../assets/docs/resume.pdf';
 
 const About = () => {
     return(
@@ -21,7 +22,7 @@ const About = () => {
                     <li><b>Adress</b>Alanya, Turkey</li>
                     <li><b>Freelance</b>Available</li>
                 </ul>
-                <a className="link_button" href="#">Download cv</a>
+                <a className="link_button" href={resumeDoc} target="_blank">Download cv</a>
             </div>
         </div>
     )

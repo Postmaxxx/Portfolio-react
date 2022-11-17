@@ -6,6 +6,7 @@ import Skill from '../../components/blocks/skill/Skill';
 import History from '../../components/blocks/history/History';
 import imgCase from '../../assets/img/svg/case.svg';
 import siteData from '../../assets/js/site_data';
+import resumeDoc from '../../assets/docs/resume.pdf';
 import './resume.scss';
 
 
@@ -56,6 +57,7 @@ const Resume = () => {
                         </div>
                     </div>
                 </section>
+                <a className="link_button" href={resumeDoc} target="_blank">Download cv</a>
             </div>
         </div>
 

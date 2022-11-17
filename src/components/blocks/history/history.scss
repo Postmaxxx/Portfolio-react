@@ -105,6 +105,12 @@
         }
     }
 
+    &:hover {
+        & > div:first-of-type::before {
+            background-color: map.get($light, "nav_selected");
+        }
+    }
+
 }
 
 
@@ -135,6 +141,12 @@ body.dark {
     
             & > p {
                 color: map.get($dark, "text_soft");
+            }
+        }
+
+        &:hover {
+            & > div:first-of-type::before {
+                background-color: map.get($dark, "nav_selected");
             }
         }
     

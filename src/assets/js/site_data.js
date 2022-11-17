@@ -1,16 +1,17 @@
 const siteData = {
+    skillFillSpeed: 3,//ms
     skills: [
         {
             name: 'HTML5',
-            percent: 90
+            percent: 95
         },
         {
             name: 'CSS3',
-            percent: 85
+            percent: 90
         },
         {
             name: 'JavaScript',
-            percent: 85
+            percent: 90
         },
         {
             name: 'React',
@@ -18,18 +19,34 @@ const siteData = {
         },
         {
             name: 'Bootstrap5',
-            percent: 60
+            percent: 70
         },
         {
-            name: 'BEM',
+            name: 'Webpack',
+            percent: 80
+        },
+        {
+            name: 'GIT',
+            percent: 85
+        },
+        {
+            name: 'Docker',
+            percent: 70
+        },
+        {
+            name: 'Tailwind',
+            percent: 90
+        },
+        {
+            name: 'Gulp',
             percent: 95
         },
     ],
     workExperience: [
         {
-            date: '2018 - Present',
+            date: '2021 - Present',
             header: 'Frontend Web Developer',
-            subHeader: 'WiseUp Studio',
+            subHeader: 'WiseUpStudio',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
         },
         {
@@ -47,8 +64,14 @@ const siteData = {
     ],
     education: [
         {
+            date: '2022',
+            header: 'AWS',
+            subHeader: 'AWS Cloud Practitioner',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
+        },
+        {
             date: '2018',
-            header: 'Skill Factory Education Platform',
+            header: 'SkillFactory Education Platform',
             subHeader: 'Frontend Developer',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
         },
