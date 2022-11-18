@@ -8,12 +8,8 @@
     box-sizing: border-box;
     transition: $transition_base;
 }
-/*
-#root {
-    position: absolute;
-    top: 0;
-}
-*/
+
+
 body {
     font-family: "Roboto-Regular", sans-serif;
     background-color: map.get($light, "bg");
@@ -22,7 +18,7 @@ body {
     //top: 0 !important;
     color: $black;
     //overflow: hidden;
-    height: 100vh;
+    min-height: 100vh;
     transition: $transition_theme;
     //border: 2px solid red;
 

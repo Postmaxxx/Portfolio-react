@@ -1,10 +1,7 @@
 const initialState = {
     theme: 'light',
     nav_ham: '',
-    modalImage: {
-        img: '',
-        status: false,
-    },
+    modal: false,
 
     contact: {
         name: '',

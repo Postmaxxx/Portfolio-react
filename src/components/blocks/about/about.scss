@@ -20,7 +20,7 @@
         align-self: center;
         min-width: 540px;
         //box-sizing: border-box;
-
+        overflow: hidden;
 
         &::before, &::after {
             position: absolute;
@@ -49,6 +49,14 @@
 
         & > img {
             width: 100%;
+            cursor: pointer;
+            transition: all $transition_base;
+
+            &:hover {
+                transform: translateX(-2%);
+                width: 104%; //164
+                transition: all $transition_base;
+            }
             //max-height: 100%;
             //object-fit: cover;
 

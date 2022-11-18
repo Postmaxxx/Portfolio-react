@@ -6,15 +6,15 @@ import modalWindow from '../../modal/Modal';
 import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-
+import siteData from '../../../assets/js/site_data';
 
 const About = (props) => {
 
     const openModal = () => {
-        //console.log('p', props.setStore );
-        props.setStore.setModalImageStatus(true);
-        console.log('props', props);
+        props.setStore.setModal(true);
     }
+
+    console.log('!', props.store.modal );
 
     return(
         <div className="about__container">
@@ -27,12 +27,11 @@ const About = (props) => {
                     perfect design. I also make website more & more interactive with 
                     web animations.</p>
                 <ul>
-                    <li><b>Full Name</b>Max Postnikov</li>
-                    <li><b>Age</b>39</li>
-                    <li><b>Nationality</b>Russian</li>
-                    <li><b>Languages</b>Russian, English</li>
-                    <li><b>Adress</b>Alanya, Turkey</li>
-                    <li><b>Freelance</b>Available</li>
+                    {siteData.me.map((item, index) => {
+                        return (
+                            <li key={index}><b>{item.descr}</b>{item.value}</li>
+                        )
+                    })}
                 </ul>
                 <a className="link_button" href={resumeDoc} target="_blank">Download cv</a>
             </div>

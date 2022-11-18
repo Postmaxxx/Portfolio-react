@@ -1,5 +1,33 @@
 const siteData = {
     skillFillSpeed: 3,//ms
+    me: [
+        {
+            descr: 'Full Name',
+            value: 'Max Postnikov'
+        },
+        {
+            descr: 'Age',
+            value: new Date().getFullYear() - 1983,
+        },
+        {
+            descr: 'Nationality',
+            value: 'Russian'
+        },
+
+        {
+            descr: 'Languages',
+            value: 'English, Russian'
+        },
+
+        {
+            descr: 'Adress',
+            value: 'Alanya, Turkey'
+        },
+        {
+            descr: 'Freelance',
+            value: 'Available'
+        },
+    ],
     skills: [
         {
             name: 'HTML5',
@@ -80,6 +108,58 @@ const siteData = {
             header: 'Baikal State University of Economics And Law',
             subHeader: 'IT in Economics',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
+        },
+    ],
+    gallery: [
+        {   
+            projectName: '',
+            projectDescr: '',
+            images: [
+                {
+                    url: "../img/photo-2.jpg",
+                    name: "Me-2",
+                    descr: "",
+                    link: "google.com",
+                },
+                {
+                    url: "../img/photo-1.jpg",
+                    name: "Me-1",
+                    descr: "",
+                    link: "google.com",
+                },
+                {
+                    url: "../img/photo-side.jpg",
+                    name: "Me-side",
+                    descr: "",
+                    link: "google.com",
+                },
+
+            ],
+        },
+        {   
+            projectName: 'Plenco',
+            projectDescr: 'Plenko bla-bla-bla ',
+            images: [
+                {
+                    url: "../img/mock-1.jpg",
+                    name: "Mock-1-name",
+                    descr: "Mock-1-descr",
+                    link: "google.com",
+                },
+                {
+                    url: "../img/mock-2.jpg",
+                    name: "Mock-2-name",
+                    descr: "Mock-2-descr",
+                    link: "google.com",
+                },
+                {
+                    url: "../img/mock-3.jpg",
+                    name: "Mock-3-name",
+                    descr: "Mock-3-descr",
+                    link: "google.com",
+                },
+
+            ],
         },
     ]
 }

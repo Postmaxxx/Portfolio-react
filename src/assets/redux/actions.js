@@ -33,13 +33,7 @@ export const setContactMessage = (text) => ({
 })
 
 
-export const setModalImageStatus = (status) => ({
-    type: 'SET_MODAL_IMAGE_STATUS',
+export const setModal = (status) => ({
+    type: 'SET_MODAL',
     payload: status
-})
-
-
-export const setModalImageUrl = (url) => ({
-    type: 'SET_MODAL_IMAGE_STATUS',
-    payload: url
 })
