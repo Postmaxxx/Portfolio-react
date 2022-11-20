@@ -2,7 +2,7 @@ import React from "react";
 import photo2 from '../../../assets/img/photo-2.jpg';
 import './about.scss';
 import resumeDoc from '../../../assets/docs/resume.pdf';
-import modalWindow from '../../modal/Modal';
+import modalWindow from '../../modal_splide/ModalSplide';
 import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
@@ -10,16 +10,19 @@ import siteData from '../../../assets/js/site_data';
 
 const About = (props) => {
 
-    const openModal = () => {
-        props.setStore.setModal(true);
+    const ShowGallery = () => {
+        props.setStore.setCurrentGallery(siteData.galleryMe);      
+        //setTimeout(() => {
+            props.setStore.setModal(true);
+
+        //}, 1000)
     }
 
-    console.log('!', props.store.modal );
 
     return(
         <div className="about__container">
             <div className="img-container">
-                <img src={photo2} alt="My photo" onClick={() => openModal()}/>
+                <img src={photo2} alt="My photo" onClick={() => ShowGallery()}/>
             </div>
             <div className="descr">
                 <h3>I am <em>Postnikov Max</em></h3>

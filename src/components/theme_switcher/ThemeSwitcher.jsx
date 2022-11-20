@@ -9,8 +9,10 @@ import star from '../../assets/img/svg/theme_nigth__star.svg'
 
 const ThemeSwitcher = props => {
 
+    //console.log('props!!!!', props );
+
     const changeTheme = () => {
-        setInterval(() => {
+        setTimeout(() => {
             props.setStore.setTheme(document.getElementsByTagName("BODY")[0].classList.contains('dark') ? 'dark' : 'light');
         }, 100) //just to have enough time to update localStorage
     }
@@ -29,17 +31,12 @@ const ThemeSwitcher = props => {
             numberOfStars: 30,
             nodeForTheme: document.getElementsByTagName("BODY")[0], //node for adding class 'dark' / 'light'
             saveState: 'theme',
-            /*
-            starsBlinkingDuration: starsBlinkingDuration, 
-            clouds: clouds, 
-            starsBlinkingAnimation: starsBlinkingAnimation,
-            */
         });
     },[])
 
     return (
         <div className='theme-switcher__container' >
-            <div className="theme-switcher" onClick={() => changeTheme()}></div>
+            <div className="theme-switcher" onClick={changeTheme}></div>
         </div>
     )
    

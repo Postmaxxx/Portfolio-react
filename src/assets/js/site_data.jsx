@@ -1,3 +1,14 @@
+import React from "react";
+import imgMock1 from '../img/mock-1.jpg'
+import imgMock2 from '../img/mock-1.jpg'
+import imgMock3 from '../img/mock-1.jpg'
+import imgMock4 from '../img/mock-1.jpg'
+
+import imgMe1 from '../img/photo-1.jpg'
+import imgMe2 from '../img/photo-2.jpg'
+import imgMe3 from '../img/photo-side.jpg'
+
+
 const siteData = {
     skillFillSpeed: 3,//ms
     me: [
@@ -110,7 +121,31 @@ const siteData = {
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
         },
     ],
-    gallery: [
+    galleryMe: {
+            projectName: '',
+            projectDescr: '',
+            images: [
+                {
+                    url: imgMe1,
+                    name: "Me-2",
+                    descr: "",
+                    link: "",
+                },
+                {
+                    url: imgMe2,
+                    name: "Me-1",
+                    descr: "",
+                    link: "",
+                },
+                {
+                    url: imgMe3,
+                    name: "Me-side",
+                    descr: "",
+                    link: "",
+                },
+            ],
+        },
+    galleryProjects: [
         {   
             projectName: '',
             projectDescr: '',

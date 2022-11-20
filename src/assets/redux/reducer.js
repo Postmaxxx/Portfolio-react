@@ -55,6 +55,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 modal: action.payload
             }
+        case "SET_CURRENT_GALLERY":
+            return {
+                ...state,
+                currentGallery: action.payload,
+            }
 
         default:
             return {

@@ -10,13 +10,13 @@ import ThemeSwitcher from './components/theme_switcher/ThemeSwitcher';
 import { connect } from 'react-redux';
 import * as actions from './assets/redux/actions';
 import { bindActionCreators } from 'redux';
-import ModalWindow from './components/modal/Modal';
+import ModalSplide from './components/modal_splide/ModalSplide.jsx';
+
 
 const App = (props) => {
-
     return (
         <>
-            <ModalWindow />
+            <ModalSplide />
             <ThemeSwitcher />
             <SidePanel />
             <Routes>
@@ -33,6 +33,7 @@ const App = (props) => {
     )
 
 }
+//{props.store.currentGallery.images.length !== 0 ? <ModalSplide /> : null}
 
 
 const mapStateToProps = (store) => ({store: store})

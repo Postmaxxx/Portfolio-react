@@ -1,0 +1,101 @@
+@use "sass:map";
+@import '../../assets/css/base.scss';
+
+
+
+.modal__background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5000;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    visibility: hidden;
+    transition: $transition_base;
+
+
+    & .modal {
+        width: 70%;
+        //height: auto;
+        top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+        transition: $transition_gallery;
+        overflow: hidden;
+        aspect-ratio: 1.4;
+        pointer-events: none;
+        transform: scale(0);
+
+
+        & * {
+            transition: all 0s;
+        }
+
+        & .splide {
+            height: 100%;
+
+            &__arrows {
+                border: 1px solid red;
+                width: 100%;
+
+                & > button {
+                    background-color: transparent;
+                }
+            }
+
+            &__track {
+                height: 100%;
+
+                & li {
+                    height: 100%;
+
+                    & .splide__slide-container {
+                        height: 100%;
+                        width: 100%;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        
+                        & > img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                }
+            }
+
+            &__pagination {
+                z-index: 5200;
+            }
+        }
+
+
+    }
+
+
+
+
+
+    &.show {
+        visibility: visible;
+        background-color: map.get($light, "modal_bg");
+        transition: $transition_base;
+
+        & .modal {
+            pointer-events: all;
+            opacity: 1;
+            transition: $transition_gallery;
+            transform: scale(1);
+        }
+
+    }
+}
+

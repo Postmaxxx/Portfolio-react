@@ -192,15 +192,17 @@ em {
             position: absolute;
             font-size: 96px;
             font-weight: 800;
-            line-height: 150%;
-            top: 40px;
-            left: 5px;
+            //line-height: 150%;
+            top: 55px;
+            left: 0px;
             color: map.get($light, "text_shadow");
             white-space: no-wrap;
             transition: color $transition_theme;
+            user-select: none;
 
             @include respond-to(xl) {
-                font-size: 72px;
+                top: 45px;
+                font-size: 68px;
             }
 
             @include respond-to(md) {
@@ -208,10 +210,12 @@ em {
             }
 
             @include respond-to(sm) {
+                top: 40px;
                 font-size: 60px;
             }
 
             @include respond-to(xs) {
+                top: 35px;
                 font-size: 50px;
             }
         }

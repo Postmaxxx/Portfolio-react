@@ -36,6 +36,7 @@ class SidePanel extends React.Component {
             this._sidePanel.classList.remove('nav_opened');
             this._hamburgerIcon.classList.remove('nav_opened');
         }
+        //console.log('side-panel updated', );
     }
 
 

@@ -2,7 +2,9 @@ import React from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import './splide_reviews.scss'
-
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux'
+import * as actions from '../../../assets/redux/actions'
 
 const SliderReviews = (props) => {
 
@@ -33,45 +35,31 @@ const SliderReviews = (props) => {
                 pauseOnHover: true,
                 rewind: false,
                 } }>
-                <SplideSlide>
-                    <div className="splide__slide-container">
-                        <div className="review__slide">
-                            <p>1 Lorem ipsum dolor sit amet  </p>
-                        </div>
-                        <span>Mike Tyson</span>
-                        <span>Client</span>
-                    </div>
-                </SplideSlide>
-                <SplideSlide>
-                    <div className="splide__slide-container">
-                        <div className="review__slide">
-                            <p>2  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore saeppsum dolor  porro assumenda reprehenderit in laudantium laboriosam ducimus iure laborum cupiditate consectetur? </p>
-                        </div>
-                        <span>Mike Tyson</span>
-                        <span>Client</span>
-                    </div>
-                </SplideSlide>
-                <SplideSlide>
-                    <div className="splide__slide-container">
-                        <div className="review__slide">
-                            <p>3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quos.dfsg dg  fdg dfsg   </p>
-                        </div>
-                        <span>Mike Tyson</span>
-                        <span>Client</span>
-                    </div>
-                </SplideSlide>
-                <SplideSlide>
-                    <div className="splide__slide-container">
-                        <div className="review__slide">
-                            <p>4 Lorem ipsum dolor sit amet consectetur adipisiciet aperiam? Pe itaque explicabo molestiae. Tenetur sapiente eum quis maiores aspernatur ratione minima?  </p>
-                        </div>
-                        <span>Mike Tyson</span>
-                        <span>Client</span>
-                    </div>
-                </SplideSlide>
+                    {props.store.reviews.map((review, index) => {
+                        return (
+                            <SplideSlide key={index}>
+                            <div className="splide__slide-container">
+                                <div className="review__slide">
+                                    <p>{review.text}</p>
+                                </div>
+                                <span>{review.name}</span>
+                                <span>{review.add}</span>
+                            </div>
+                        </SplideSlide>
+                        )
+                    })}
             </Splide>
         </div>
     )
 }
 
-export default SliderReviews;
+
+const mapStateToProps = (store) => ({store: store})
+
+
+const mapDispatchToProps = (dispatch) => ({
+    setStore: bindActionCreators(actions, dispatch),
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SliderReviews);

@@ -7,17 +7,22 @@ import History from '../../components/blocks/history/History';
 import siteData from '../../assets/js/site_data';
 import resumeDoc from '../../assets/docs/resume.pdf';
 import './resume.scss';
-
-
-
+//import newmodal from '../../components/modal/newmodal.jsx';
+/*
+const onClick1 = () => {
+    const myModal = newmodal();
+    myModal.open()
+}
+*/
 
 const Resume = () => {
+
     return(
         <div className="page-container">
             <div className="page_resume">
                 <section className='skills'> 
-                    <h2>My skills<em>My skills</em></h2>
-                    <div className="skills__container">
+                    <h2 /*onClick={() => {onClick1()}}*/>My skills<em>My skills</em></h2>
+                    <div className="skills__container"> 
                         {siteData.skills.map((skill, index) => {
                             return(
                                 <Skill key={index} skill={skill}/>
