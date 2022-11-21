@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: $transition_base;
+    //transition: $transition_base;
 }
 
 
@@ -19,7 +19,7 @@ body {
     color: $black;
     //overflow: hidden;
     min-height: 100vh;
-    transition: $transition_theme;
+    //transition: $transition_theme;
     //border: 2px solid red;
 
     &::-webkit-scrollbar {
