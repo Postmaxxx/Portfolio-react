@@ -36,7 +36,6 @@ class SidePanel extends React.Component {
             this._sidePanel.classList.remove('nav_opened');
             this._hamburgerIcon.classList.remove('nav_opened');
         }
-        //console.log('side-panel updated', );
     }
 
 
@@ -45,54 +44,28 @@ class SidePanel extends React.Component {
         return (
             <div className="side-panel">
                 <figure>
-                    <img src={sidePhoto} alt="My photo" />
+                    <Link to="/home"> 
+                        <img src={sidePhoto} alt="My photo" />
+                    </Link>
                 </figure>
                 <nav>
                     <ul className="site-navigation">
-                        <li>
-                            <NavLink 
-                                className={ ({ isActive }) => {
-                                    return isActive ? 'selected' : ''
-                                }}
-                                onClick={() => {this.props.setStore.setNavClose()}}
-                                to="/home">
-                                home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink 
-                                className={ ({ isActive }) => {
-                                    return isActive ? 'selected' : ''
-                                }}
-                                onClick={() => {this.props.setStore.setNavClose()}}
-                                to="/about">
-                                about
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink 
-                                className={ ({ isActive }) => {
-                                        return isActive ? 'selected' : ''
-                                    }}
-                                    onClick={() => {this.props.setStore.setNavClose()}}
-                                    to="/resume">
-                                resume
-                            </NavLink>
-                        </li>
+                        {this.props.store.pages.map((page, index) => {
+                            return(
+                                <li key={index}>
+                                    <NavLink 
+                                        className={ ({ isActive }) => {
+                                            return isActive ? 'selected' : ''
+                                        }}
+                                        onClick={() => {this.props.setStore.setNavClose()}}
+                                        to={page.link}>
+                                        {page.text}
+                                    </NavLink>
+                                </li>
+                            )
+                        })}
 
-
-                        <li><NavLink to="#" data-nav>portfolios</NavLink></li>
-                        <li>
-                            <NavLink 
-                                className={ ({ isActive }) => {
-                                        return isActive ? 'selected' : ''
-                                    }}
-                                    onClick={() => {this.props.setStore.setNavClose()}}
-                                    to="/contact">
-                                contact
-                            </NavLink>
-                        </li>
-                    </ul>
+                        </ul>
                 </nav>
                 <div className="hamburger" onClick={() => this.changeNav()}>
                     <div></div>

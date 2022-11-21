@@ -14,6 +14,29 @@ const initialState = {
         projectDescr: '',
         images: [],
     },
+    pages: [
+        {
+            link: '/home',
+            text: 'home'
+        },
+        {
+            link: '/about',
+            text: 'about'
+        },
+        {
+            link: '/resume',
+            text: 'resume'
+        },
+        {
+            link: '/portfolio',
+            text: 'portfolio'
+        },
+        {
+            link: '/contact',
+            text: 'contact'
+        },
+
+    ],
     reviews: [
         {
             text: '1 Lorem ipsum dolor sit amet  ',
