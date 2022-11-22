@@ -90,7 +90,7 @@ export function makeCarousel(params) {
 
 
     //styles injection
-    ribbonImages.style.cssText = `
+    ribbonImages.style.cssText = ` 
         margin: 0;
         padding: 0;
         box-sizing: border-box;
