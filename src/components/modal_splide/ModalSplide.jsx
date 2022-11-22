@@ -32,8 +32,8 @@ const ModalSplide = (props) => {
     
     return (
         <div className="modal__background">
-            <div className="modal">
-                <div>
+            <div className="modal" onClick={closeModal}>
+                <div onClick={closeModal}>
                     <div>
                         <img src={imgMe} alt="Me" />
                     </div>
