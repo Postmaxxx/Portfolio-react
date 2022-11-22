@@ -43,3 +43,8 @@ export const setCurrentGallery = (gallery) => ({
     type: 'SET_CURRENT_GALLERY',
     payload: gallery
 })
+
+export const setSplideMaxExpand = (expand) => ({
+    type: 'SET_SPLIDEMAX_EXPAND',
+    payload: expand
+})

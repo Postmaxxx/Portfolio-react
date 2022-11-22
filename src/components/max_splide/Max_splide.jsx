@@ -1,3 +1,5 @@
+import './max_splide.scss'
+
 export function makeCarousel(params) {
 
     const {destinationData, imagesPaths, imgWidth, imgGap, bgMoveSpeed, timeToBgMove, inertiaStep, inertiaSensivity, imgWrapperWidth, imgWrapperHeight, expandPath, expandIconWidth, expandIconHeignt, nodeForFullsize, transitionTime, closePath } = params;
@@ -150,8 +152,7 @@ export function makeCarousel(params) {
             margin: 0;
             padding: 0;
             position: fixed;
-            top: ${carouselHeight / 2}px;
-            left: ${(100 - imgWrapperWidth) / 2}%;
+            left: 50vw;
             width: 0px;
             z-index: 1000;
             display: flex;
@@ -184,21 +185,23 @@ export function makeCarousel(params) {
         `;
 
         imgDescr.style.cssText = `
+            position: relative;
             top: ${carouselHeight-120}px;
-            width: 0;
-            height: 0;
+            width: 90%;
+            height: auto;
             padding: 25px 40px;
             border-radius: 40px;
-            margin-right: 30px;
+            margin-right: auto;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             margin-left: auto;
             color: white;
-            display: none;
+            display: flex;
+            opacity: 0;
             transition: ${transitionTime}s;
+            top: -100px;
         `;
-            //background-color: #777;
-        //max-width: 300px;
+
 
 
         imgDescrText.style.cssText = `
@@ -206,17 +209,17 @@ export function makeCarousel(params) {
             font-size: 24px;
             pointer-events: auto;
             color: #FFF;
-            transition: ${transitionTime}s;
-        `;
-
+            `;
+            //transition: ${transitionTime}s;
+            
 
         imgDescrLink.style.cssText = `
             pointer-events: auto;
             color: #FFF;
-            transition: ${transitionTime}s;
             font-family: "GTWalsheimMedium";
             font-size: 12px;
-        `;
+            `;
+            //transition: ${transitionTime}s;
 
 
         //carousel.style.opacity = '100%';
@@ -256,7 +259,7 @@ export function makeCarousel(params) {
 
     const changeImgOffset = (currentPos) => { //changing offset for all pictures
         imgContainerList.forEach((el, index) => {
-                let centerDx = currentPos - carouselCenter - (imgWidth + imgGap)*(2-index); //the offset between central position and current position
+                let centerDx = currentPos - carouselCenter - (imgWidth )*(2-index); //the offset between central position and current position
                 let k = 50 + 50/((carouselWidth + imgWidth) / 2) * centerDx;
                 el.style.backgroundPosition = `${k}% center`;
         })
@@ -265,19 +268,16 @@ export function makeCarousel(params) {
 
     const redrawCarousel = (dx) => { //changing the position of ribbonImages
         if (dx + dxRibbon > -(imgWidth + imgGap - (carouselWidth-imgWidth -imgGap)/2)) { //if the offset is more than 1 picture width
-            dxRibbon = dxRibbon - imgWidth - imgGap; 
+            dxRibbon = dxRibbon - imgWidth - 5; 
             changePicsOrder('-');
-
         }
-        if (dx + dxRibbon < -(imgWidth + imgGap)*3 + (carouselWidth-imgWidth -imgGap)/2  ) { //if the offset is more than 1 picture width
-            dxRibbon = dxRibbon + imgWidth + imgGap; 
+        if (dx + dxRibbon < (-(imgWidth + imgGap)*3 + (carouselWidth-imgWidth -imgGap)/2)) { //if the offset is more than 1 picture width
+            dxRibbon = dxRibbon + imgWidth + 5; 
             changePicsOrder('+');
         }
         
         ribbonImages.style.left = `${dx + dxRibbon}px`; //change ribbon position
         changeImgOffset(dx + dxRibbon); //change images offset
-
-
         
     }
 
@@ -286,17 +286,17 @@ export function makeCarousel(params) {
     function expandImage(path, descr, link) {
 
         //imgFullScreenWrapper.style.top = `-15px`;
-        imgFullScreenWrapper.style.top = `-10px`;
+        imgFullScreenWrapper.style.top = `0px`;
         imgFullScreenWrapper.style.zIndex = `9000`;
-
-
-        
         imgFullScreenWrapper.style.width = imgWrapperWidth;
-        imgFullScreenWrapper.style.height = `${carouselHeight + 285}px`;
+        imgFullScreenWrapper.style.height = imgWrapperHeight;
+        imgFullScreenWrapper.style.top = `0`;
+        imgFullScreenWrapper.style.left = `0`;
+        imgFullScreenWrapper.style.border = `3px solid red`;
 
 
-        imgWrapper.style.width = `100%`;
-        imgWrapper.style.maxHeight = `${imgWrapperHeight}px`;
+        imgWrapper.style.width = '100%';
+        imgWrapper.style.maxHeight = '100%';
         imgWrapper.style.overflow = `hidden`;
 
 
@@ -307,16 +307,15 @@ export function makeCarousel(params) {
         imgFullScreenImage.style.height = `auto`;
 
 
-        imgDescr.style.position = `relative`;
-        imgDescr.style.top = `-100px`;
-        imgDescr.style.display = 'flex';
+        //imgDescr.style.position = `relative`;
+        //imgDescr.style.top = `-100px`;
+        //imgDescr.style.display = 'flex';
         imgDescr.style.height = 'auto';
         imgDescr.style.width = '90%';
         imgDescr.style.justifyContent = 'space-between';
-        
         imgDescr.style.marginLeft = 'auto';
         imgDescr.style.marginRight = 'auto';
-
+        imgDescr.style.opacity = '1'
 
 
         imgDescrText.innerHTML = descr;
@@ -360,7 +359,9 @@ export function makeCarousel(params) {
         }
 
         clearInterval(inertiaCounter); //stop the inertia
-        //clearTimeout(bgMoveCoundown); //stop the countdown
+        clearTimeout(bgMoveCoundown); //stop the countdown
+        bgMoveCoundown = undefined;
+        //setTimeoutToMove();
         bgMove = 0;
         move = true;
         mouseEnterPoint = e.offsetX;
@@ -369,7 +370,6 @@ export function makeCarousel(params) {
 
 
     carousel.addEventListener('mousedown', e => mouseDownActions(e))
-
     function mouseMoveActions(e) {
         if (move) {
             dxMouse = e.offsetX - mouseEnterPoint;
@@ -382,12 +382,13 @@ export function makeCarousel(params) {
 
     function setTimeoutToMove() {
         if (!bgMoveCoundown) {
+            //console.log('here', bgMoveCoundown);
             bgMoveCoundown = setTimeout(() => {
                 //console.log("move again");
                 bgMove = bgMoveSpeed;
                 bgMovement(bgMove);
                 clearTimeoutToMove();
-            }, timeToBgMove);
+            }, timeToBgMove*1000);
             //console.log("start cndn ",bgMoveCoundown);
         }
     }
@@ -416,7 +417,7 @@ export function makeCarousel(params) {
                 dxRibbon = dxRibbon - dx/25;
                 redrawCarousel(0);
             }
-        }, 1);
+        }, 10);
     }
 
 
@@ -429,7 +430,7 @@ export function makeCarousel(params) {
                 dxRibbon = dxRibbon - dx/25;
                 redrawCarousel(0);
             }
-        }, 1);
+        }, 10);
     }
 
 

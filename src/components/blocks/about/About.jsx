@@ -7,7 +7,6 @@ import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import siteData from '../../../assets/js/site_data';
-//import MaxSplide 
 
 import Mock1 from '../../../assets/img/1.jpg'
 import Mock2 from '../../../assets/img/2.jpg'
@@ -24,18 +23,21 @@ import { makeCarousel } from '../../../components/max_splide/Max_splide'
 let splideMe = {
     destinationData : 'carousel_me',
     //destinationClass : 'carousel_max',
-    imgWidth : 500,
-    imgGap : 15,
-    bgMoveSpeed : 5, //moving without dragging, defaultSpeed, px/tick
-    timeToBgMove : 5000, //time to start background movement after stop in ms
-    inertiaSensivity : 10, //inetria turns on when moving speed is higher
+    imgWidth : 400,
+    imgGap : 30,
+    bgMoveSpeed : 15, //moving without dragging, defaultSpeed, px/tick
+    timeToBgMove : 1, //time to start background movement after stop in s
+    inertiaSensivity : 50, //inetria turns on when moving speed is higher
     inertiaStep : 0.99, //currentInertiaSpeed = inertiaStep * currentInertiaSpeed every tick
     imagesPaths : [[Mock1, 'First project of our organisation', 'http://twitter.com'],
                     [Mock2, 'Second project', 'http://yahoo.com'],
                     [Mock3, 'Project 3', 'http://mail.com'],
                     [Mock4, 'Project 4', 'http://hotmail.com'],
                     [Mock5, 'Project 4', 'http://hotmail.com'],
-                    [Mock6, 'Project 5', 'http://p2sinc.com']],
+                    [Mock6, 'Project 5', 'http://p2sinc.com'],
+                    [Mock1, 'Project 5', 'http://p2sinc.com'],
+                    [Mock2, 'Project 5', 'http://p2sinc.com'],
+                ],
     imgWrapperWidth: '80%',
     imgWrapperHeight: '80%',
     expandPath : expandIcon,
@@ -43,7 +45,7 @@ let splideMe = {
     nodeForFullsize : 'about__container',
     expandIconWidth: 30,
     expandIconHeignt: 30,
-    transitionTime: .5,
+    transitionTime: 1,
 }
 
 const About = (props) => {
@@ -58,13 +60,16 @@ const About = (props) => {
         makeCarousel(splideMe)
     },[])
 
+    console.log('rerendered', );
+
 
     return(
         <div className="about__container">
             <div className="splide-container">
 
-            <div className="fade-block"></div>
-                <div className="carousel_max" data-carousel='carousel_me'></div>
+                <div className="carousel_max" data-carousel='carousel_me'>
+                    <div className="fade-block"></div>
+                </div>
             </div>
 
             <div className="descr">

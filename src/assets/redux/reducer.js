@@ -60,6 +60,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 currentGallery: action.payload,
             }
+        case "SET_SPLIDEMAX_EXPAND":
+            return {
+                ...state,
+                splideMaxExpand: action.payload,
+            }
 
         default:
             return {

@@ -2,7 +2,7 @@ const initialState = {
     theme: 'light',
     nav_ham: '',
     modal: false,
-
+    splideMaxExpand: false,
     contact: {
         name: '',
         email: '',

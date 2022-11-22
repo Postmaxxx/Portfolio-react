@@ -1,4 +1,22 @@
 @use "sass:map";
-@import '../../../assets/css/base.scss';
+@import '../../assets/css/base.scss';
 
 
+.carousel_max {
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+    margin-left: 0;
+    cursor: grab;
+    display: flex;
+}
+
+
+.carousel_max_grabbed {
+    cursor: grabbing; // !!! Doesn't work as expected
+}
+
+
+.fade-block {
+    border: 3px solid blue;
+}
