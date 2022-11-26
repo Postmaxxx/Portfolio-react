@@ -53,6 +53,7 @@ em {
 
 .page-container {
     margin-left: $sidePanelWidthFull;
+    overflow: hidden;
     background-color: map.get($light, "bg");
     padding: 0px 30px;
     margin-right: 5px;

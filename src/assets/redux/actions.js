@@ -43,3 +43,9 @@ export const setCurrentGallery = (gallery) => ({
     type: 'SET_CURRENT_GALLERY',
     payload: gallery
 })
+
+
+export const setSelectedPortfolio = (number) => ({
+    type: 'SET_SELECTED_PORTFOLIO',
+    payload: number
+})

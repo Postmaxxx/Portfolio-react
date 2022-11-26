@@ -1,0 +1,42 @@
+@use "sass:map";
+@import '../../assets/css/base.scss';
+
+
+.list__container {
+    //height: 150px;
+    width: 150px;
+    border: 1px solid blue;
+    background-color: map.get($light, "bg_side-panel");
+    perspective: 100px;
+    overflow: hidden;
+    /*position: absolute;
+    right: 5%;
+    top: 0px;*/
+
+    & .list3d {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        //left: -50%;
+        transition: .5s !important;
+        transform-style: preserve-3d;
+        //border: 2px solid red;
+    
+        & div {
+            display: inline-block;
+            width: 100%;
+            transition: translate 1s, opacity .5s, color 0.3s !important;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            //background-color: #fff;
+            text-align: center;
+            //height: 25px;
+    
+            &.selected {
+                color: map.get($light, "nav_selected");
+            }
+        }
+    
+    }
+}

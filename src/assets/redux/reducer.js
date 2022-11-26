@@ -60,6 +60,14 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 currentGallery: action.payload,
             }
+        case "SET_SELECTED_PORTFOLIO":
+            return {
+                ...state,
+                portfolios: {
+                    selected: action.payload,
+                    list: [...state.portfolios.list]
+                } 
+            }
 
         default:
             return {

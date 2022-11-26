@@ -11,7 +11,7 @@ import imgMe from '../../assets/img/photo-me.jpg'
 
 const ModalSplide = (props) => {
 
-    console.log('props modal', props );
+    //console.log('props modal', props );
 
     const closeModal = (e) => {
         if (e.target === e.currentTarget) {

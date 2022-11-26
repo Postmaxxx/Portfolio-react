@@ -1,6 +1,7 @@
 import React from "react";
 import './portfolio.scss'
-
+import List3d from '../../components/list3d/List3d'
+import List from '../../components/blocks/list/List'
 
 const Portfolio = () => {
     return(
@@ -8,7 +9,11 @@ const Portfolio = () => {
             <div className="page-container">
                 <div className="page_portfolio">
                     <section className='portfolio'> 
-                        <h1>Hi, I am <em>Max Postnikov</em></h1>
+                        <div className="header_portfolio">
+                            <h2>Portfolios<em>Portfolios</em></h2>
+                            <List3d />
+                        </div>
+                            <List />
                     </section>
                 </div>
             </div>
@@ -16,6 +21,7 @@ const Portfolio = () => {
     )
 }
 
+                            //<List3d />
 
 
 export default Portfolio;

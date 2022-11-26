@@ -12,10 +12,7 @@ const About = (props) => {
 
     const ShowGallery = () => {
         props.setStore.setCurrentGallery(siteData.galleryMe);      
-        //setTimeout(() => {
-            props.setStore.setModal(true);
-
-        //}, 1000)
+        props.setStore.setModal(true);
     }
 
 
