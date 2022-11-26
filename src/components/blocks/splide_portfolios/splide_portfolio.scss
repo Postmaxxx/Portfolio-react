@@ -1,0 +1,44 @@
+@use "sass:map";
+@import '../../../assets/css/base.scss';
+
+
+.splide_portfolio__container {
+
+    & * {
+        transition: none;
+    }
+
+    & .splide {
+        height: 100%;
+        //width: 500px;
+        //height: 500px;
+
+
+        & .splide__track {
+            height: 100%;
+
+            & > ul {
+                
+                &  > li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    & .splide__slide-container {
+                        height: 100%;
+                        
+                        & > img {
+                            cursor: pointer;
+                            height: 100%;
+                            width: 100%;
+                            object-fit: contain;
+                            //display: none;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}

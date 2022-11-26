@@ -2,34 +2,42 @@
 @import '../../../assets/css/base.scss';
 
 
-.list {
-    width: auto;
-    border: 2px solid map.get($light, "border");
-    display: inline-block;
-    background-color: map.get($light, "bg_side-panel");
-    padding: 5px 0px;
-    max-height: 700px;
-    overflow-y: auto;
+.list__container {
 
-    & > ul {
-        list-style-type: none;
+    & .list {
+        width: 100%;
+        //border: 2px solid map.get($light, "border");
+        display: inline-block;
+        //background-color: map.get($light, "bg_side-panel");
+        padding: 5px 0px;
+        overflow-y: auto;
+        //border-right: 2px solid map.get($light, "border");
 
-        & > li {
-            transition: $transition_base !important;
-            font-size: 20px;
-            line-height: 40px;
-            cursor: pointer;
-            padding: 0 10px;
-
-            &:hover {
-                color: red;
-            }
-
-            &.selected {
-                background-color: map.get($light, "nav_hover");
-                color: map.get($light, "nav_selected");;
+        //height: 100%;
+    
+        & > ul {
+            list-style-type: none;
+    
+            & > li {
+                transition: $transition_base !important;
+                font-size: 20px;
+                line-height: 40px;
+                cursor: pointer;
+                padding-left: 10px;
+                padding-right: 30px;
+                white-space: nowrap;
+    
+                &:hover {
+                    color: red;
+                }
+    
+                &.selected {
+                    background-color: map.get($light, "nav_hover");
+                    color: map.get($light, "nav_selected");;
+                }
             }
         }
+    
     }
 
 }

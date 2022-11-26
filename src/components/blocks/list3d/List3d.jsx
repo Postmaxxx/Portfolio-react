@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import './list3d.scss'
-import * as actions from '../../assets/redux/actions'
+import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { useEffect } from "react";
@@ -41,12 +41,12 @@ const List3d = (props) => {
     }
 
     useEffect(() => {
-        const scrollListListener = document.querySelector('.list__container'). addEventListener('wheel', (e) => listScroll(e))
+        const scrollListListener = document.querySelector('.list3d__container'). addEventListener('wheel', (e) => listScroll(e))
     },[])
 
 
     return (
-        <div className="list__container">
+        <div className="list3d__container">
             <div className="list3d" style={{transform: `rotateX(${(-360 / listLength) * rotateStep}deg)`}}>
                 {props.store.portfolios.list.map((portfolio, index) => {
                     let portfolioStyle = {};
@@ -55,7 +55,7 @@ const List3d = (props) => {
                     let opacity = 1 - deltaPos/(listLength / 4);
                     opacity = opacity < 0 ? 0 : opacity;
 
-                    portfolioStyle.transform = `translate(-50%, -50%) rotateX(${index * step}deg) translateZ(${listLength * 4}px)`;
+                    portfolioStyle.transform = `translate(-50%, -50%) rotateX(${index * step}deg) translateZ(${listLength * 5}px)`;
                     portfolioStyle.opacity = opacity;
 
                     return (

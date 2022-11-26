@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import { useEffect } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import imgMe from '../../assets/img/photo-me.jpg'
 
 
 const ModalSplide = (props) => {
@@ -35,7 +34,7 @@ const ModalSplide = (props) => {
             <div className="modal" onClick={closeModal}>
                 <div onClick={closeModal}>
                     <div>
-                        <img src={imgMe} alt="Me" />
+                        <img src={props.store.modalImage} alt={props.store.modalDescr} />
                     </div>
                 </div>
             </div>

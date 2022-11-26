@@ -19,18 +19,19 @@ const initialState = {
     theme: 'light',
     nav_ham: '',
     modal: false,
-
+    modalImage: '',
+    modalDescr: '',
 
 
     portfolios: {
-        selected: 1,
+        selected: 0,
         list: [
             {
                 name: 'Plenco',
                 descr: ' ABC Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
                 images: [
                     {
-                        link: m1,
+                        link: m1,   
                         descr: 'Bla m1'
                     },
                     {
@@ -62,7 +63,11 @@ const initialState = {
                     {
                         link: p1_4,
                         descr: 'Bla p1_4'
-                    }
+                    },
+                    {
+                        link: m2,
+                        descr: 'Bla m2'
+                    },
                 ],
             },
             {

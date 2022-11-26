@@ -1,7 +1,13 @@
 import React from "react";
 import './portfolio.scss'
-import List3d from '../../components/list3d/List3d'
+import List3d from '../../components/blocks/list3d/List3d'
 import List from '../../components/blocks/list/List'
+import SplidePortfolio from "../../components/blocks/splide_portfolios/Splide_portfolio";
+import InfoPortfolio from '../../components/blocks/info_portfolio/Info_portfolio'
+import InfoPortfolioSlide from "../../components/blocks/info_portfolio-slide/Info_portfolio-slide";
+
+
+
 
 const Portfolio = () => {
     return(
@@ -11,17 +17,25 @@ const Portfolio = () => {
                     <section className='portfolio'> 
                         <div className="header_portfolio">
                             <h2>Portfolios<em>Portfolios</em></h2>
-                            <List3d />
                         </div>
+                        <div className="portfolio__content">
                             <List />
+                            <div className="portfolio__splide">
+                                <InfoPortfolio />
+                                <SplidePortfolio />
+                                <InfoPortfolioSlide />
+                            </div>
+                        </div>
                     </section>
                 </div>
             </div>
         </>
     )
 }
+//
 
-                            //<List3d />
+//<List3d />
+//<Info_portfolio />
 
 
 export default Portfolio;

@@ -14,20 +14,22 @@ const List = (props) => {
     }
 
     return(
-        <div className="list">
-            <ul>
-                {props.store.portfolios.list.map((portfolio, index) => {
-                    return (
-                        <li 
-                            key={index} 
-                            className={index == props.store.portfolios.selected ? 'selected' : ''}
-                            onClick={() => selectPortfolio(index)}
-                            >
-                            {portfolio.name}
-                        </li>
-                    )
-                })}
-            </ul>
+        <div className="list__container">
+            <div className="list">
+                <ul>
+                    {props.store.portfolios.list.map((portfolio, index) => {
+                        return (
+                            <li 
+                                key={index} 
+                                className={index == props.store.portfolios.selected ? 'selected' : ''}
+                                onClick={() => selectPortfolio(index)}
+                                >
+                                {portfolio.name}
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
         </div>
     )
 

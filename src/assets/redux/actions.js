@@ -39,6 +39,15 @@ export const setModal = (status) => ({
 })
 
 
+export const setModalImage = (url) => ({
+    type: 'SET_MODAL_IMAGE',
+    payload: url
+})
+
+export const setModalDescr = (text) => ({
+    type: 'SET_MODAL_DESCR',
+    payload: text
+})
 export const setCurrentGallery = (gallery) => ({
     type: 'SET_CURRENT_GALLERY',
     payload: gallery

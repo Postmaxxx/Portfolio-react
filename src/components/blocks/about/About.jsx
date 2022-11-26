@@ -7,11 +7,15 @@ import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import siteData from '../../../assets/js/site_data';
+import imgMe from '../../../assets/img/photo-me.jpg'
 
 const About = (props) => {
 
-    const ShowGallery = () => {
-        props.setStore.setCurrentGallery(siteData.galleryMe);      
+    const ShowModal = () => {
+        props.setStore.setModalImage(imgMe);
+        props.setStore.setModalDescr('Just me :)')
+
+        //props.setStore.setCurrentGallery(siteData.galleryMe);   
         props.setStore.setModal(true);
     }
 
@@ -19,7 +23,7 @@ const About = (props) => {
     return(
         <div className="about__container">
             <div className="img-container">
-                <img src={photo2} alt="My photo" onClick={() => ShowGallery()}/>
+                <img src={photo2} alt="My photo" onClick={() => ShowModal()}/>
             </div>
             <div className="descr">
                 <h3>I am <em>Postnikov Max</em></h3>

@@ -1,11 +1,11 @@
 @use "sass:map";
-@import '../../assets/css/base.scss';
+@import '../../../assets/css/base.scss';
 
 
-.list__container {
+.list3d__container {
     //height: 150px;
-    width: 150px;
-    border: 1px solid blue;
+    width: 250px;
+    border: 1px solid map.get($light, "border");
     background-color: map.get($light, "bg_side-panel");
     perspective: 100px;
     overflow: hidden;
