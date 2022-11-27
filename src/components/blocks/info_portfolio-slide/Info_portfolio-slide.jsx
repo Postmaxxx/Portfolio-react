@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 const InfoPortfolioSlide = (props) => {
     return(
         <div className="info_portfolio-slide__container">
-            dfgdfg
+            <p>{props.store.modalDescr}</p>
         </div>
     )
 }

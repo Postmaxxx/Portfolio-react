@@ -5,31 +5,31 @@ import List from '../../components/blocks/list/List'
 import SplidePortfolio from "../../components/blocks/splide_portfolios/Splide_portfolio";
 import InfoPortfolio from '../../components/blocks/info_portfolio/Info_portfolio'
 import InfoPortfolioSlide from "../../components/blocks/info_portfolio-slide/Info_portfolio-slide";
+import * as actions from '../../assets/redux/actions'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux'
 
 
 
-
-const Portfolio = () => {
+const Portfolio = (props) => {
     return(
-        <>
-            <div className="page-container">
-                <div className="page_portfolio">
-                    <section className='portfolio'> 
-                        <div className="header_portfolio">
-                            <h2>Portfolios<em>Portfolios</em></h2>
+        <div className="page-container">
+            <div className="page_portfolio">
+                <section className='portfolio'> 
+                    <div className="header_portfolio">
+                        <h2>Portfolios<em>Portfolios</em></h2>
+                    </div>
+                    <div className="portfolio__content">
+                        <List />
+                        <div className="portfolio__splide">
+                            <InfoPortfolio />
+                            <SplidePortfolio />
+                            <InfoPortfolioSlide />
                         </div>
-                        <div className="portfolio__content">
-                            <List />
-                            <div className="portfolio__splide">
-                                <InfoPortfolio />
-                                <SplidePortfolio />
-                                <InfoPortfolioSlide />
-                            </div>
-                        </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </div>
-        </>
+        </div>
     )
 }
 //
@@ -38,4 +38,12 @@ const Portfolio = () => {
 //<Info_portfolio />
 
 
-export default Portfolio;
+const mapStateToProps = (store) => ({store: store})
+
+
+const mapDispatchToProps = (dispatch) => ({
+    setStore: bindActionCreators(actions, dispatch),
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);

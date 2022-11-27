@@ -13,6 +13,46 @@
         //width: 500px;
         //height: 500px;
 
+        & .splide__arrows { 
+            //position: absolute;
+            width: 100%;
+            bottom: 50px;
+
+
+
+            & .splide__arrow {
+                background-color: transparent;
+                transition: $transition_base;
+
+                &:disabled {
+                    width: 0;
+                }
+
+                & > svg {
+                    width: 50px;
+                    height: auto;
+                    fill: map.get($light, "text_soft");
+                    transition: $transition_base;
+
+                }
+
+                &:hover {
+                    & svg {
+                        fill: map.get($light, "nav_selected");
+                    }
+                }
+
+                &--prev:hover {
+                    left: .5rem;
+                }
+
+                &--next:hover {
+                    right: .5rem;
+                }
+            }
+
+        }
+
 
         & .splide__track {
             height: 100%;
@@ -32,13 +72,24 @@
                             height: 100%;
                             width: 100%;
                             object-fit: contain;
-                            //display: none;
                         }
                     }
                 }
             }
 
 
+        }
+
+
+        & .splide__pagination {
+
+            & .splide__pagination__page  {
+                background-color: rgba(map.get($light, "text_soft"), .9 );
+
+                &.is-active {
+                    background-color: rgba(map.get($light, "nav_selected"), .95 );
+                }
+            }
         }
     }
 }

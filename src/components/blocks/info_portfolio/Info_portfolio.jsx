@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 const InfoPortfolio = (props) => {
     return(
         <div className="info_portfolio__container">
-            {props.store.portfolios.list[props.store.portfolios.selected].descr}
+            <p>{props.store.portfolios.list[props.store.portfolios.selected].descr}</p>
         </div>
     )
 }

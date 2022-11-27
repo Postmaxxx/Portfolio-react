@@ -46,7 +46,7 @@ const initialState = {
             },
             {
                 name: 'P2S Inc',
-                descr: 'DEF Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                descr: 'DEF Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-blaDEF Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
                 images: [
                     {
                         link: p1_1,

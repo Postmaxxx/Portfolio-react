@@ -7,15 +7,13 @@ import { useEffect } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
+let escListener = undefined;
 
 const ModalSplide = (props) => {
 
-    //console.log('props modal', props );
 
     const closeModal = (e) => {
-        if (e.target === e.currentTarget) {
-            props.setStore.setModal(false);
-        }
+        props.setStore.setModal(false);
     }
     
     const _modal =  document.querySelector(".modal__background");
@@ -26,14 +24,15 @@ const ModalSplide = (props) => {
 
     useEffect(() => {
         console.log('here', );
-        document.querySelector(".modal__background").addEventListener('click', (e) => closeModal(e))
+        document.querySelector(".modal__background").addEventListener('click', (e) => e.target === e.currentTarget && closeModal(e));
+        escListener = document.addEventListener('keydown', (e) => e.key === 'Escape' && closeModal(e));
     },[])
     
     return (
         <div className="modal__background">
             <div className="modal" onClick={closeModal}>
                 <div onClick={closeModal}>
-                    <div>
+                    <div onClick={closeModal}>
                         <img src={props.store.modalImage} alt={props.store.modalDescr} />
                     </div>
                 </div>
