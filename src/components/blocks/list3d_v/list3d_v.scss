@@ -1,0 +1,48 @@
+@use "sass:map";
+@import '../../../assets/css/base.scss';
+
+
+.list3d_v__container {
+    height: 80px;
+    width: 250px;
+    //border: 1px solid map.get($light, "border");
+    //background-color: map.get($light, "bg_side-panel");
+    perspective: 100px;
+    overflow: hidden;
+    /*position: absolute;
+    right: 5%;
+    top: 0px;*/
+
+    & .list3d_v {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        //left: -50%;
+        transition: .5s !important;
+        transform-style: preserve-3d;
+        //border: 2px solid red;
+    
+        & div {
+            display: inline-block;
+            width: 100%;
+            transition: translate 1s, opacity .5s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            //background-color: #fff;
+            text-align: center;
+            //height: 25px;
+            
+
+            & > span {
+                font-size: 20px;
+                transition: color $transition_base;
+            }
+    
+            &.selected {
+                color: map.get($light, "nav_selected");
+            }
+        }
+    
+    }
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import './portfolio.scss'
 import List3d from '../../components/blocks/list3d/List3d'
+import List3d_v from '../../components/blocks/list3d_v/List3d_v'
 import List from '../../components/blocks/list/List'
 import SplidePortfolio from "../../components/blocks/splide_portfolios/Splide_portfolio";
 import InfoPortfolio from '../../components/blocks/info_portfolio/Info_portfolio'
@@ -18,10 +19,14 @@ const Portfolio = (props) => {
                 <section className='portfolio'> 
                     <div className="header_portfolio">
                         <h2>Portfolios<em>Portfolios</em></h2>
-                        <List3d />
+                        <div>
+                            <span>Project:</span>
+                            <List3d />
+                        </div>
                     </div>
                     <div className="portfolio__content">
                         <List />
+                        <List3d_v />
                         <div className="portfolio__splide">
                             <InfoPortfolio />
                             <SplidePortfolio />

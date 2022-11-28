@@ -3,35 +3,46 @@
 
 
 .list3d__container {
-    height: 100px;
-    width: 250px;
+    height: 90px;
+    width: 200px;
     //border: 1px solid map.get($light, "border");
     //background-color: map.get($light, "bg_side-panel");
-    perspective: 100px;
+    //perspective: 50px;
     overflow: hidden;
-    /*position: absolute;
-    right: 5%;
-    top: 0px;*/
+    cursor: ns-resize;
 
     & .list3d {
         height: 100%;
-        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        //height: 100%;
         position: relative;
         //left: -50%;
         transition: .5s !important;
         transform-style: preserve-3d;
         //border: 2px solid red;
+        translate: calc(-50% - 50px); // should be list3d__container.width
+        top: 0%;
+
     
         & div {
             display: inline-block;
             width: 100%;
+            //min-width: 100px;
             transition: translate 1s, opacity .5s, color 0.3s !important;
             position: absolute;
             top: 50%;
             left: 50%;
-            //background-color: #fff;
-            text-align: center;
-            //height: 25px;
+            //background-color: green;
+            //padding-left: 50%;
+
+            & span {
+                //margin-left: 30px;
+                width: 100px;
+                transition: $transition_base;
+                white-space: nowrap;
+                font-size: 26px;
+            }
     
             &.selected {
                 color: map.get($light, "nav_selected");

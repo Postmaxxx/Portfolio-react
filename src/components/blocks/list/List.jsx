@@ -5,13 +5,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { useEffect } from "react";
 
-
 const List = (props) => {
-
 
     const selectPortfolio = (index) => {
         props.setStore.setSelectedPortfolio(index)
     }
+
+
 
     return(
         <div className="list__container">

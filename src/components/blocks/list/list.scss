@@ -22,14 +22,32 @@
                 padding-right: 10px;
                 white-space: nowrap;
                 color: map.get($light, "text_soft");
+
+                @include respond-to(sm) {
+                    //max-width: 50%;
+                    text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
     
                 &:hover {
                     color: map.get($light, "nav_selected");
+
+                    @include respond-to(sm) {
+                        //margin-left: 10px;
+                    }
                 }
     
                 &.selected {
                     background-color: map.get($light, "nav_hover");
-                    color: map.get($light, "nav_selected");;
+                    color: map.get($light, "nav_selected");
+
+                    @include respond-to(sm) {
+                        //max-width: 50%;
+                        //margin-left: 100px;
+                        //margin-right: auto;
+                        //text-align: center;
+                    }
                 }
             }
         }

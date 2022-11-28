@@ -93,7 +93,7 @@ const initialState = {
                 ],
             },
             {
-                name: 'Passports and Visas',
+                name: 'P & V',
                 descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
                 images: [
                     {
