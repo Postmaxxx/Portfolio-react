@@ -24,6 +24,7 @@
                 &:disabled {
                     width: 0;
                 }
+                
 
                 & > svg {
                     width: 50px;
@@ -39,18 +40,18 @@
                     }
                 }
 
-
-                &--prev {
-                    &:hover {
-                        left: 0;
+                &--prev:hover {
+                    & svg {
+                        translate: -10px;
                     }
                 }
 
-                &--next {
-                    &:hover {
-                        right: 0;
+                &--next:hover {
+                    & svg {
+                        translate: 10px;
                     }
                 }
+
 
             }
 

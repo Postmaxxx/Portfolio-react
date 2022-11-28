@@ -29,6 +29,7 @@ const initialState = {
             {
                 name: 'Plenco',
                 descr: ' ABC Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                link: 'https://www.plenco.com',
                 images: [
                     {
                         link: m1,   
@@ -47,6 +48,7 @@ const initialState = {
             {
                 name: 'P2S Inc',
                 descr: 'DEF Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-blaDEF Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                link: 'https://www.p2sinc.com',
                 images: [
                     {
                         link: p1_1,
@@ -73,6 +75,7 @@ const initialState = {
             {
                 name: 'Techlicious',
                 descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                link: 'https://www.techlicious.com',
                 images: [
                     {
                         link: p2_4,
@@ -95,6 +98,7 @@ const initialState = {
             {
                 name: 'P & V',
                 descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                link: 'https://www.google.com',
                 images: [
                     {
                         link: p1_1,
@@ -105,6 +109,7 @@ const initialState = {
             {
                 name: 'Formation',
                 descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                link: 'https://www.google.com',
                 images: [
                     {
                         link: p1_1,
@@ -115,6 +120,7 @@ const initialState = {
             {
                 name: 'Components',
                 descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                link: 'https://www.google.com',
                 images: [
                     {
                         link: p1_1,
@@ -125,6 +131,7 @@ const initialState = {
             {
                 name: 'Landing pages',
                 descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                link: 'https://www.google.com',
                 images: [
                     {
                         link: p1_1,
@@ -135,6 +142,7 @@ const initialState = {
             {
                 name: 'Bike AntiSteal',
                 descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                link: 'https://www.google.com',
                 images: [
                     {
                         link: p1_1,

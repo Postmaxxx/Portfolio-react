@@ -19,7 +19,11 @@
                     font-size: 24px;
                     position: relative;
                     left: 20px;
-                    display: none;
+                    //display: none;
+                    
+                    @include respond-to(sm) {
+                        display: none;
+                    }
                 }
 
                 & .list3d__container {
@@ -41,7 +45,8 @@
             //border: 2px solid map.get($light, "border");
             //height: calc(100vh - 150px - 120px - 10px);
             height: 600px;
-
+            padding-bottom: 50px;
+            
             @include respond-to(sm) {
                 flex-direction: column;
                 height: auto;
@@ -99,7 +104,7 @@
                     margin: 10px 0 10px;
 
                     @include respond-to(sm) {
-                        margin: 0;
+                        //margin: 0;
                     }
                 }
 

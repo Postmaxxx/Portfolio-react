@@ -22,7 +22,6 @@ const SplidePortfolio = (props) => {
 
 
     const slideRefresh = () => {
-        //console.log('next', next , prev);
         let slideIndex = splidePortfolio.current.splide.index > props.store.portfolios.list[selected].images.length ? props.store.portfolios.list[selected].images.length - 1 : splidePortfolio.current.splide.index;
         props.setStore.setModalImage(props.store.portfolios.list[selected].images[slideIndex]?.link)
         props.setStore.setModalDescr(props.store.portfolios.list[selected].images[slideIndex]?.descr)
@@ -44,12 +43,6 @@ const SplidePortfolio = (props) => {
                     lazyLoad: false,
                     updateOnMove: true,
                     perPage: 1,
-                    //gap   : '1rem',
-                    breakpoints: {
-                        768: {
-                            gap   : '2rem',
-                        }, 
-                    },
                     fixedWidth: '100%',
                     perMove: 1,
                     pagination: true,
@@ -60,10 +53,15 @@ const SplidePortfolio = (props) => {
                     wheel: true,
                     wheelSleep: 500,
                     //wheelMinThreshold: 50,
-                    autoplay: false,
-                    //interval: 5000,
-                    //pauseOnHover: true,
+                    autoplay: true,
+                    interval: 5000,
+                    pauseOnHover: true,
                     //rewind: false,
+                    breakpoints: {
+                        768: {
+                            wheel: false,
+                        }, 
+                    },
                 } }>
                     {props.store.portfolios.list[props.store.portfolios.selected].images.map((image, index) => {
                         return (

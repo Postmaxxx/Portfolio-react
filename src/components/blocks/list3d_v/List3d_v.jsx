@@ -61,9 +61,7 @@ const List3d_v = (props) => {
 
                     return (
                         <div key={index} style={portfolioStyle} className={selected == index ? 'selected' : ''}>
-                            <span>
-                                {portfolio.name}
-                            </span>    
+                            <a target="_blank" href={portfolio.link}>{portfolio.name}</a>
                         </div>
                     )
                 })}

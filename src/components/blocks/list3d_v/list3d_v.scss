@@ -34,13 +34,17 @@
             //height: 25px;
             
 
-            & > span {
+            & > a {
                 font-size: 20px;
-                transition: color $transition_base;
+                text-decoration: none;
+                color: map.get($light, "text_soft");
+                transition: color 1s !important;
             }
     
             &.selected {
-                color: map.get($light, "nav_selected");
+                & a {
+                    color: map.get($light, "nav_selected");
+                }
             }
         }
     

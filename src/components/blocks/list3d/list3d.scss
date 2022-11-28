@@ -4,12 +4,12 @@
 
 .list3d__container {
     height: 90px;
-    width: 200px;
+    width: 240px;
     //border: 1px solid map.get($light, "border");
     //background-color: map.get($light, "bg_side-panel");
     //perspective: 50px;
     overflow: hidden;
-    cursor: ns-resize;
+    //cursor: ns-resize;
 
     & .list3d {
         height: 100%;
@@ -29,25 +29,51 @@
             display: inline-block;
             width: 100%;
             //min-width: 100px;
-            transition: translate 1s, opacity .5s, color 0.3s !important;
+            transition: translate 1s, opacity .5s !important;
             position: absolute;
             top: 50%;
             left: 50%;
             //background-color: green;
             //padding-left: 50%;
 
-            & span {
+            & a {
                 //margin-left: 30px;
                 width: 100px;
                 transition: $transition_base;
                 white-space: nowrap;
                 font-size: 26px;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: map.get($light, "text_soft");
+                transition: color 1s !important;
             }
     
             &.selected {
-                color: map.get($light, "nav_selected");
+                & a {
+                    color: map.get($light, "nav_selected");
+                }
             }
         }
     
+    }
+}
+
+
+body.dark {
+    & .list3d__container {
+        & .list3d {
+            & div {
+                & a {
+                    color: map.get($dark, "nav_selected");
+                }
+        
+                &.selected {
+                    & a {
+                        color: map.get($dark, "nav_selected");
+                    }
+                }
+            }
+        
+        }
     }
 }
