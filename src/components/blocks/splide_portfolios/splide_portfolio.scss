@@ -88,7 +88,8 @@
         & .splide__pagination {
 
             & .splide__pagination__page  {
-                background-color: rgba(map.get($light, "text_soft"), .9 );
+                background-color: rgba(map.get($light, "text_soft"), .8);
+                margin: 7px;
 
                 &.is-active {
                     background-color: rgba(map.get($light, "nav_selected"), .95 );

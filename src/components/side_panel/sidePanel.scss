@@ -81,6 +81,7 @@
                     color: map.get($light, "text_soft");
                     transition: color $transition_base;
                     position: relative;
+                    font-weight: 600;
                     
 
                     &::before {

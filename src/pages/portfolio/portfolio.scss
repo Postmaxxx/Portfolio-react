@@ -15,6 +15,30 @@
                 align-items: center;
                 height: 90px;
 
+                & > svg {
+                    width: 30px;
+                    height: 30px;
+                    position: relative;
+                    left: 10px;
+
+                    & .body {
+                        fill: map.get($light, "text_soft");
+                    }
+
+                    & .dot_right {
+                        fill: map.get($light, "pink_light");
+                    }
+
+                    & .link {
+                        fill: map.get($light, "nav_selected");
+                    }
+
+                    @include respond-to(sm) {
+                        display: none;
+                    }
+   
+                }
+/*
                 & > span {
                     font-size: 24px;
                     position: relative;
@@ -25,7 +49,7 @@
                         display: none;
                     }
                 }
-
+*/
                 & .list3d__container {
                     @include respond-to(sm) {
                         display: none;
@@ -92,9 +116,11 @@
                 display: flex;
                 flex-direction: column;
                 margin-left: 40px;
+                margin-top: 20px;
 
                 @include respond-to(sm) {
                     margin-left: 0;
+                    margin-top: 0;
                 }
 
 
@@ -131,6 +157,25 @@
 body.dark {
     & .page_portfolio {
         & .portfolio {
+            & .header_portfolio {
+                & > div {
+                    & > svg {
+      
+                        & .body {
+                            fill: map.get($dark, "text_soft");
+                        }
+        
+                        & .dot_right {
+                            fill: map.get($dark, "pink_light");
+                        }
+        
+                        & .link {
+                            fill: map.get($dark, "nav_selected");
+                        }
+           
+                    }
+                }
+            }
             &__content {
                 & .list__container {
                     border-right: 2px solid map.get($dark, "border");

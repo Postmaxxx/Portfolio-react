@@ -27,9 +27,8 @@ const About = (props) => {
             </div>
             <div className="descr">
                 <h3>I am <em>Postnikov Max</em></h3>
-                <p>I am a frontend web developer. I can provide clean code and pixel 
-                    perfect design. I also make website more & more interactive with 
-                    web animations.</p>
+                <p>Frontend Developer with over 4 year of experience in successfully creating and maintaining web sites and components supported by more than 10 years IT background.</p>
+                <p>I am experience working with clients ranging from homepage owners to well-organized business with up to 10.000 visitors per day.</p>
                 <ul>
                     {siteData.me.map((item, index) => {
                         return (

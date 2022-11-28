@@ -16,8 +16,7 @@ const Services = () => {
                 </svg>
                 <h4>Web Design</h4>
                 <div className="line"></div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Nam reprehenderit sequi porro ipsum repellendus nostrum!</p>
+                <p>Implementing your design or creating new with close attention to every detail. Everything is significant to make a masterpiece.</p>
             </div>
             <div className="service">
                 <svg className="logo-frontend" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 490"><title>frontend</title>
@@ -33,8 +32,7 @@ const Services = () => {
                 </svg>
                 <h4>Frontend</h4>
                 <div className="line"></div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Nam reprehenderit sequi porro ipsum repellendus nostrum!</p>
+                <p>Translating your dreams into web forms. Implementing the most modern technologies for best performance and sustainability.</p>
             </div>
             <div className="service">
                 <svg className="logo-components" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.931 419.931"><title>components</title>
@@ -86,8 +84,7 @@ const Services = () => {
 
                 <h4>Components</h4>
                 <div className="line"></div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Nam reprehenderit sequi porro ipsum repellendus nostrum!</p>
+                <p>Creating any kind of components to make your site unique and catchy. Animation, interactive and usability for outstanding experience.</p>
             </div>
         </div>
 

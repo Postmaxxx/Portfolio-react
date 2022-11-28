@@ -22,6 +22,7 @@
                 padding-right: 10px;
                 white-space: nowrap;
                 color: map.get($light, "text_soft");
+                font-weight: 500;
 
                 @include respond-to(sm) {
                     //max-width: 50%;

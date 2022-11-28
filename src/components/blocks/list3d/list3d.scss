@@ -46,6 +46,7 @@
                 text-decoration: none;
                 color: map.get($light, "text_soft");
                 transition: color 1s !important;
+                font-weight: 600;
             }
     
             &.selected {

@@ -19,6 +19,7 @@
         transition: background-color $transition_theme, color $transition_theme;
         background-color: map.get($light, "bg");
         color: map.get($light, "text_soft");
+        font-size: 16px;
     }
 
     & > input {

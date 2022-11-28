@@ -32,6 +32,8 @@ $dark: (
     "scroll-track": #383838,
     "scroll-thumb": #6B6B6B,//#6B6B6B,
     "modal_bg": rgba(80,80,80, .9),
+    "pink_light": #e99688,
+
 );
 
 $light: (
@@ -49,6 +51,7 @@ $light: (
     "scroll-track": #383838,
     "scroll-thumb": #6B6B6B,//#6B6B6B,
     "modal_bg": rgba(#10121B, .9),
+    "pink_light": #e99688,
 );
 
 
@@ -69,3 +72,4 @@ $light: (
         @media (max-width: $xl) { @content } 
     }
 }
+

@@ -75,6 +75,7 @@
     
                 & span:first-of-type {
                     font-size: 20px;
+                    font-weight: 500;
     
                     @include respond-to(lg) {
                         font-size: 18px;

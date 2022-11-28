@@ -115,8 +115,9 @@
             & li {
                 font-size: 18px;
                 line-height: 190%;
-                color: rgba(map.get($light, "text_soft"), 0.7);
+                color: map.get($light, "text_soft");
                 font-weight: 100;
+                font-weight: 300;
 
                 & b {
                     min-width: 150px;

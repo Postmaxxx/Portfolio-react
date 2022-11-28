@@ -193,24 +193,24 @@ const initialState = {
     ],
     reviews: [
         {
-            text: '1 Lorem ipsum dolor sit amet  ',
-            name: 'Mike Tyson',
-            add: 'Client'
+            text: 'Stick to deadlines, feeling of design concept and ease of communication - Max has everything we need for productive work.',
+            name: 'Oleg Abramov',
+            add: 'WiseUpStudio'
         },
         {
-            text: '2  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore saeppsum dolor  porro assumenda reprehenderit in laudantium laboriosam ducimus iure laborum cupiditate consectetur? ',
-            name: '2 Mike Tyson',
-            add: '2 Client'
+            text: 'One of the most responsible person we had worked in web developement. Meticulous attention to every single detail is the reason for acceptance of the project from the first time.',
+            name: 'Name Family',
+            add: 'Plenco'
         },
         {
             text: '3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quos.dfsg dg  fdg dfsg   ',
-            name: '3 Mike Tyson',
-            add: '3 SMB'
+            name: 'Nina Ptichkina',
+            add: 'Techlicious'
         },
         {
             text: '4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quos.dfsg dg  fdg dfsg   ',
-            name: '4 Mike Tyson',
-            add: '4 SMB'
+            name: 'Designer',
+            add: 'P2S Inc.'
         }, 
     ],
     
