@@ -44,7 +44,7 @@
             border-radius: 50%;
             left: -34px;
             top: 3px;
-            transition: border $transition_theme, background-color $transition_theme; 
+            transition: border $transition_theme, background-color $transition_base; 
             
             @include respond-to(sm) {
                 left: -29px;
@@ -124,7 +124,7 @@ body.dark {
             &::before {
                 border: 3px solid map.get($dark, "border");
                 background-color: map.get($dark, "bg");
-                transition: border $transition_theme, background-color $transition_theme;
+                transition: border $transition_theme, background-color $transition_base;
             }
         }
     

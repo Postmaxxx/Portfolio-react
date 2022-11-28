@@ -13,16 +13,25 @@ class SidePanel extends React.Component {
     constructor(props) {
         super(props)
         this.changeNav = this.changeNav.bind(this);
+        this.clicked = this.clicked.bind(this);
+        this.clickListener = undefined;
     }
 
     changeNav() {
         this.props.store.nav_ham === '' ? this.props.setStore.setNavOpen() : this.props.setStore.setNavClose()
     }
 
+    clicked(e) {
+        if (this.props.store.nav_ham == 'nav_opened' && (e.clientX > 250)) {
+            this.props.setStore.setNavClose();
+        }
+    }
+
     componentDidMount() {
         this._container = document.querySelector('.page-container');
         this._sidePanel = document.querySelector('.side-panel');
         this._hamburgerIcon = document.querySelector('.hamburger');
+        this.clickListener = document.addEventListener('click', (e) => this.clicked(e))
     }
 
 

@@ -18,6 +18,7 @@ const Portfolio = (props) => {
                 <section className='portfolio'> 
                     <div className="header_portfolio">
                         <h2>Portfolios<em>Portfolios</em></h2>
+                        <List3d />
                     </div>
                     <div className="portfolio__content">
                         <List />

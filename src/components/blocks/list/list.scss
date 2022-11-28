@@ -6,14 +6,9 @@
 
     & .list {
         width: 100%;
-        //border: 2px solid map.get($light, "border");
         display: inline-block;
-        //background-color: map.get($light, "bg_side-panel");
         padding: 5px 0px;
         overflow-y: auto;
-        //border-right: 2px solid map.get($light, "border");
-
-        //height: 100%;
     
         & > ul {
             list-style-type: none;
@@ -24,11 +19,12 @@
                 line-height: 40px;
                 cursor: pointer;
                 padding-left: 10px;
-                padding-right: 30px;
+                padding-right: 10px;
                 white-space: nowrap;
+                color: map.get($light, "text_soft");
     
                 &:hover {
-                    color: red;
+                    color: map.get($light, "nav_selected");
                 }
     
                 &.selected {
@@ -38,6 +34,33 @@
             }
         }
     
+    }
+
+}
+
+
+body.dark {
+    & .list__container {
+
+        & .list {
+            & > ul {
+        
+                & > li {
+                    color: map.get($dark, "text_soft");
+
+                    &:hover {
+                        color: map.get($dark, "text_hard");
+                    }
+        
+                    &.selected {
+                        background-color: map.get($dark, "nav_hover");
+                        color: map.get($dark, "text_hard");;
+                    }
+                }
+            }
+        
+        }
+
     }
 
 }

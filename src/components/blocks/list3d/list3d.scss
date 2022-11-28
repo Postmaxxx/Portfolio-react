@@ -3,10 +3,10 @@
 
 
 .list3d__container {
-    //height: 150px;
+    height: 100px;
     width: 250px;
-    border: 1px solid map.get($light, "border");
-    background-color: map.get($light, "bg_side-panel");
+    //border: 1px solid map.get($light, "border");
+    //background-color: map.get($light, "bg_side-panel");
     perspective: 100px;
     overflow: hidden;
     /*position: absolute;

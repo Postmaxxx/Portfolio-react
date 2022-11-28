@@ -37,6 +37,7 @@
                     width: 25px;
                     margin-right: 15px;
                     fill: map.get($light, "text_soft");
+                    transition: $transition_theme;
                 }
     
                 & > h3 {
@@ -60,6 +61,14 @@
                 border-left: 3px solid map.get($light, "border");
                 transition: border $transition_theme;
             }
+        }
+    }
+
+
+    & .link_button {
+        @include respond-to(xs) {
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
@@ -87,7 +96,6 @@ body.dark {
         
                 & .history__content {
                     border-left: 3px solid map.get($dark, "border");
-                    transition: border $transition_theme;
                 }
             }
         }

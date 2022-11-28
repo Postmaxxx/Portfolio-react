@@ -29,7 +29,16 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
-                margin-right: 40px;
+                //margin-right: 20px;
+                padding-right: 40px;
+                //margin-top: 50px;
+                border-right: 2px solid map.get($light, "border");
+                padding-right: 30px;
+                //border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                transition: border $transition_theme;
             }
 
 
@@ -38,24 +47,20 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                //justify-content: space-between;
-                border: 1px solid blue;
+                margin-left: 40px;
 
 
                 & .splide_portfolio__container {
-                    border: 1px solid red;
                     max-height: 80%;
                     width: 100%;
+                    margin: 10px 0 10px;
                 }
 
                 & .info_portfolio-slide__container {
                     width: 100%;
                     height: 20%;
-                    border: 1px solid yellow;
                 }
             }
-
-
 
 
             & .info_portfolio__container {
@@ -64,8 +69,6 @@
             
         }
 
-
-        
     }
 
     
@@ -73,3 +76,15 @@
 }
 
 
+body.dark {
+    & .page_portfolio {
+        & .portfolio {
+            &__content {
+                & .list__container {
+                    border-right: 2px solid map.get($dark, "border");
+                }
+                
+            }
+        }
+    }
+}

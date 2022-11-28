@@ -48,6 +48,7 @@ em {
     color: map.get($light, "text_em");
     font-style: normal;
     transition: $transition_theme;
+    white-space: nowrap;
 }
 
 
@@ -157,6 +158,8 @@ em {
 
     h1 {
         font-size: 52px;
+        color: map.get($light, "text_hard");
+        transition: color $transition_theme;
 
         @include respond-to(md) {
             font-size: 46px;
@@ -398,6 +401,11 @@ body.dark {
 
         & div {
             transition: background-color $transition_theme;
+        }
+
+        & h1 {
+            color: map.get($dark, "text_hard");
+            transition: color $transition_theme;
         }
 
         h2 {

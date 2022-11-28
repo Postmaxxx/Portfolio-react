@@ -55,7 +55,7 @@ const List3d = (props) => {
                     let opacity = 1 - deltaPos/(listLength / 4);
                     opacity = opacity < 0 ? 0 : opacity;
 
-                    portfolioStyle.transform = `translate(-50%, -50%) rotateX(${index * step}deg) translateZ(${listLength * 5}px)`;
+                    portfolioStyle.transform = `translate(-50%, -50%) rotateX(${index * step}deg) translateZ(${listLength * 4}px)`;
                     portfolioStyle.opacity = opacity;
 
                     return (

@@ -4,5 +4,7 @@
 
 
 .info_portfolio-slide__container {
-
+    & > p {
+        text-align: center;
+    }
 }
