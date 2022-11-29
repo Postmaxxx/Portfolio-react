@@ -7,29 +7,56 @@ import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import axios from "axios";
-
+import { checkInput } from '../../assets/js/inputChecker';
 
 const Contact = (props) => {
-
-    const sender = () => {
-
-        const options = {
-          method: 'POST',
-          url: 'https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send',
-          headers: {
-            'content-type': 'application/json',
-            'X-RapidAPI-Key': '8227d94581msh4ca7445e90b53eep1e6440jsn181dcf3feb20',
-            'X-RapidAPI-Host': 'rapidprod-sendgrid-v1.p.rapidapi.com'
-          },
-          data: '{"personalizations":[{"to":[{"email":"john@example.com"}],"subject":"Hello, World!"}],"from":{"email":"from_address@example.com"},"content":[{"type":"text/plain","value":"Hello, World!"}]}'
-        };
-        
-        axios.request(options).then(function (response) {
-            console.log(response.data);
-        }).catch(function (error) {
-            console.error(error);
-        });
+    
+    const checkInputs = (inputs) => {
+        let errorMessage  = '';
+        Array.from(inputs).forEach((input) => {
+            let error = checkInput(input.value, input.dataset.type, input.dataset.min_length,input.dataset.max_length);
+            if (error && input.required) {
+                input.parentNode.classList.add('incorrect')
+                errorMessage = errorMessage + `\n${input.name} ${error} `
+            }
+        })
+        if (errorMessage.length > 0) {
+            alert('Errors detected:' + errorMessage)
+            return false
+        } else {
+            return true;   
+        } 
     }
+
+
+    const sendMessage = () => {
+
+        if (checkInputs(document.querySelectorAll('[data-input="contact"]'))) {
+            console.log('start sending...', );
+            let currentDate = new Date();
+            let apiToken = "5853506207:AAGC04Apc66DTSienliOjh4evMA1CUTs2Wc";
+            let chatId = "@postnikovdev";
+            let text = `Date: ${currentDate.getDate() + '.' + currentDate.getMonth() + '.' + currentDate.getFullYear()}%0ATime: ${currentDate.getHours() + '.' + currentDate.getMinutes() + '.' + currentDate.getSeconds()}%0AName: ${props.store.contact.name}%0AEmail: ${props.store.contact.email}%0ATopic: ${props.store.contact.subject}%0A%0AMessage: ${props.store.contact.message}` ;
+            let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${text}`;
+    
+            axios.get(urlString )
+            .then(function (response) {
+                props.setStore.setContactName('');
+                props.setStore.setContactEmail('');
+                props.setStore.setContactSubject('');
+                props.setStore.setContactMessage('');
+                alert('Your message has been sent.');
+            })
+            .catch(function (error) {
+                alert('Service error, please, try again later. Error: ' + error);
+            })
+            .then(function () {});
+
+        }
+
+    }
+
+
 
     return (
         <div className="page-container">
@@ -41,41 +68,69 @@ const Contact = (props) => {
                         <div className="mail-me">
                             <Input 
                                 id='contact_name'
-                                text='Your name*'
-                                changeValue={ (e) => props.setStore.setContactName(e.target.value) }
+                                text='Your name *'
+                                changeValue={ (e) => {
+                                    props.setStore.setContactName(e.target.value) 
+                                    e.target.parentNode.classList.remove('incorrect')
+                                }}
                                 value={props.store.contact.name}
                                 required={true}
                                 type='text'
+                                checkType='all'
                                 name='name'
+                                data='contact'
+                                minLength={2}
+                                maxLength={15}
                                 />
                             <Input 
-                                id='contact_email*'
-                                text='Your email'
-                                changeValue={ (e) => props.setStore.setContactEmail(e.target.value) }
+                                id='contact_email'
+                                text='Your email *'
+                                changeValue={ (e) => {
+                                    props.setStore.setContactEmail(e.target.value) 
+                                    e.target.parentNode.classList.remove('incorrect')
+                                }}
                                 value={props.store.contact.email}
                                 required={true}
                                 type='email'
+                                checkType='email'
                                 name='email'
+                                data='contact'
+                                minLength={6}
+                                maxLength={50}
                                 />
                             <Input 
                                 id='contact_subject'
                                 text='Your subject'
-                                changeValue={ (e) => props.setStore.setContactSubject(e.target.value) }
+                                changeValue={ (e) => {
+                                    props.setStore.setContactSubject(e.target.value) 
+                                    e.target.parentNode.classList.remove('incorrect')
+                                }}
                                 value={props.store.contact.subject}
                                 required={false}
                                 type='text'
+                                checkType='all'
                                 name='subject'
+                                data='contact'
+                                minLength={6}
+                                maxLength={50}
                                 />
                             <Textarea
                                 id='contact_message'
-                                text='Your message*'
-                                changeValue={ (e) => props.setStore.setContactMessage(e.target.value) }
+                                text='Your message *'
+                                changeValue={ (e) => {
+                                    props.setStore.setContactMessage(e.target.value) 
+                                    e.target.parentNode.classList.remove('incorrect')
+                                } }
                                 value={props.store.contact.message}
                                 required={true}
                                 type='text'
+                                checkType='all'
                                 name='message'
+                                data='contact'
+                                minLength={10}
+                                maxLength={300}
                                 />
-                            <button href="" className="link_button" onClick={() => sender()}>Send message</button>      
+                            <button href="" className="link_button" onClick={() => sendMessage()}>Send message</button>      
                         </div>
                         <div className="my-info">
                             <ContactBlock 
@@ -122,7 +177,7 @@ const Contact = (props) => {
                                         <path d="M47.49,116.85c6.31-4.01,11.98-8.87,16.92-14.29c10.73-11.75,17.97-26.11,20.87-40.2c2.88-13.91,1.52-27.54-4.85-38.06 c-1.81-3.02-4.08-5.78-6.78-8.26c-7.74-7.05-16.6-10.41-25.52-10.5c-9.37-0.07-18.87,3.45-27.27,10.14 c-3.58,2.86-6.53,6.15-8.82,9.78c-5.9,9.28-7.69,20.8-5.74,32.85c1.97,12.23,7.78,25.02,17.04,36.61 c6.44,8.08,14.54,15.58,24.18,21.91L47.49,116.85L47.49,116.85z M46.13,21.16c7.05,0,13.45,2.86,18.06,7.49 c4.63,4.63,7.49,11,7.49,18.06c0,7.05-2.86,13.45-7.49,18.06c-4.63,4.63-11,7.49-18.06,7.49c-7.05,0-13.45-2.86-18.06-7.49 c-4.63-4.63-7.49-11-7.49-18.06c0-7.05,2.86-13.45,7.49-18.06C32.7,24.02,39.07,21.16,46.13,21.16L46.13,21.16z M60.51,32.33 c-3.67-3.67-8.78-5.97-14.38-5.97c-5.63,0-10.71,2.27-14.38,5.97c-3.67,3.67-5.97,8.78-5.97,14.38c0,5.63,2.27,10.71,5.97,14.38 c3.67,3.67,8.78,5.97,14.38,5.97c5.63,0,10.71-2.27,14.38-5.97c3.67-3.67,5.97-8.78,5.97-14.38C66.47,41.08,64.21,36,60.51,32.33 L60.51,32.33z M68.52,106.27c-5.6,6.12-12.09,11.61-19.42,16.06c-0.88,0.66-2.13,0.75-3.13,0.11 c-10.8-6.87-19.85-15.13-26.99-24.09C9.15,86.02,2.94,72.34,0.83,59.16c-2.15-13.36-0.14-26.2,6.51-36.68 c2.63-4.13,5.97-7.89,10.07-11.14C26.78,3.88,37.51-0.07,48.17,0c10.28,0.09,20.42,3.9,29.22,11.93c3.09,2.81,5.67,5.99,7.78,9.48 c7.15,11.77,8.69,26.81,5.56,42.01c-3.11,15.04-10.8,30.33-22.18,42.8L68.52,106.27L68.52,106.27z"/>
                                     </g></svg>
                                 }
-                                header='Adress'
+                                header='Address'
                                 links={[
                                     {
                                         link: 'https://goo.gl/maps/P4ihh8seuMgREbgf9',

@@ -1,14 +1,3 @@
-import React from "react";
-import imgMock1 from '../img/mock-1.jpg'
-import imgMock2 from '../img/mock-1.jpg'
-import imgMock3 from '../img/mock-1.jpg'
-import imgMock4 from '../img/mock-1.jpg'
-
-import imgMe1 from '../img/photo-1.jpg'
-import imgMe2 from '../img/photo-2.jpg'
-import imgMe3 from '../img/photo-side.jpg'
-
-
 const siteData = {
     skillFillSpeed: 3,//ms
     me: [
@@ -18,7 +7,7 @@ const siteData = {
         },
         {
             descr: 'Age',
-            value: new Date().getFullYear() - 1983,
+            value: '39',
         },
         {
             descr: 'Nationality',
@@ -80,25 +69,39 @@ const siteData = {
             name: 'Gulp',
             percent: 95
         },
+        {
+            name: 'BEM',
+            percent: 95
+        },
+        {
+            name: 'Scrum',
+            percent: 80
+        },
     ],
     workExperience: [
         {
-            date: '2021 - Present',
-            header: 'Frontend Web Developer',
+            date: '2020 - Present',
+            header: 'Web Developer',
             subHeader: 'WiseUpStudio',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
+            text: 'Creating sites using design templates, creating specific interactive components, code review, bugs fixing. Applying frameworks (Bootstrap, Tailwind, React) as well as using pure Html+Css+Js. Following best practices using BEM, Git, Webpack and Mobile First application principles.',
         },
         {
-            date: '2019 - 2021',
-            header: 'Frontend Web Developer',
+            date: '2019 - 2020',
+            header: 'Junior Frontend Developer',
             subHeader: 'ServiceCom',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
+            text: 'Creating sites using pixel-perfect design, communication with clients.',
         },
         {
-            date: '2018 - 2019',
-            header: 'Junior Frontend Web Developer',
+            date: '2015 - 2019',
+            header: 'Principal System Engineer',
             subHeader: 'ServiceCom',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
+            text: 'Planning strategy of IT development, configuration of security settings and access permissions for individuals and groups, development and implement the complex virus malware protection strategy; communication with third party System Engineer Groups for creation of optimal solutions for business support.',
+        },
+        {
+            date: '2011 - 2015',
+            header: 'System Engineer',
+            subHeader: 'Ecostroy LTD',
+            text: 'Creatively designed and supported leading edge IT solutions comprising multiple application servers, network equipments, storage architecture, network monitoring and backup/disaster recovery strategies. Additional responsibilities included development of IT strategies, assist upper management in planning/upgrading latest technology trends and maintain positive business relationship with technology vendors and customers.',
         },
     ],
     education: [
@@ -106,97 +109,21 @@ const siteData = {
             date: '2022',
             header: 'AWS',
             subHeader: 'AWS Cloud Practitioner',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
+            text: 'Improving my knowledge by learning cloud technologies',
         },
         {
-            date: '2018',
+            date: '2019',
             header: 'SkillFactory Education Platform',
             subHeader: 'Frontend Developer',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
+            text: 'Finished 9 month intense online courses with final team project. First place in the year team competition.',
         },
         {
             date: '2000 - 2005',
             header: 'Baikal State University of Economics And Law',
             subHeader: 'IT in Economics',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minus dolore consequuntur recusandae aut ut accusamus pariatur ad vero nam!',
+            text: 'Master’s Degree, Major in Computer Information Systems. Represented university in ACM International Collegiate Programming Contest (twice)',
         },
     ],
-    galleryMe: {
-            projectName: '',
-            projectDescr: '',
-            images: [
-                {
-                    url: imgMe1,
-                    name: "Me-2",
-                    descr: "",
-                    link: "",
-                },
-                {
-                    url: imgMe2,
-                    name: "Me-1",
-                    descr: "",
-                    link: "",
-                },
-                {
-                    url: imgMe3,
-                    name: "Me-side",
-                    descr: "",
-                    link: "",
-                },
-            ],
-        },
-    galleryProjects: [
-        {   
-            projectName: '',
-            projectDescr: '',
-            images: [
-                {
-                    url: "../img/photo-2.jpg",
-                    name: "Me-2",
-                    descr: "",
-                    link: "google.com",
-                },
-                {
-                    url: "../img/photo-1.jpg",
-                    name: "Me-1",
-                    descr: "",
-                    link: "google.com",
-                },
-                {
-                    url: "../img/photo-side.jpg",
-                    name: "Me-side",
-                    descr: "",
-                    link: "google.com",
-                },
-
-            ],
-        },
-        {   
-            projectName: 'Plenco',
-            projectDescr: 'Plenko bla-bla-bla ',
-            images: [
-                {
-                    url: "../img/mock-1.jpg",
-                    name: "Mock-1-name",
-                    descr: "Mock-1-descr",
-                    link: "google.com",
-                },
-                {
-                    url: "../img/mock-2.jpg",
-                    name: "Mock-2-name",
-                    descr: "Mock-2-descr",
-                    link: "google.com",
-                },
-                {
-                    url: "../img/mock-3.jpg",
-                    name: "Mock-3-name",
-                    descr: "Mock-3-descr",
-                    link: "google.com",
-                },
-
-            ],
-        },
-    ]
 }
 
 

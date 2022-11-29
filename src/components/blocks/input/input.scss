@@ -10,6 +10,7 @@
     margin-top: 30px;
     position: relative;
 
+
     & > label {
         position: absolute;
         top: -10px;
@@ -31,7 +32,29 @@
         font-size: 24px;
         color: map.get($light, "text_soft");
         transition: color $transition_theme;
+
+        @include respond-to(xs) {
+            font-size: 20px;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            -webkit-text-fill-color: map.get($light, "text_soft");
+            -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+      
     }
+
+    &.incorrect {
+        & label {
+            color: red;
+        }
+    }
+
 }
 
 
@@ -47,9 +70,24 @@ body.dark {
         }
 
         & > input {
+            background-color: transparent !important;
             color: map.get($dark, "text_soft");
             transition: color $transition_theme;
-
+            
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+                -webkit-text-fill-color: map.get($dark, "text_soft");
+                -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+                transition: background-color 5000s ease-in-out 0s;
+            }
+        }
+        
+        &.incorrect {
+            & label {
+                color: red;
+            }
         }
     }
 }

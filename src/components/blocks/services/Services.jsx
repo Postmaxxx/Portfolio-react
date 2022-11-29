@@ -32,7 +32,7 @@ const Services = () => {
                 </svg>
                 <h4>Frontend</h4>
                 <div className="line"></div>
-                <p>Translating your dreams into web forms. Implementing the most modern technologies for best performance and sustainability.</p>
+                <p>Translating your dreams into web forms. Using the most modern technologies for the best performance and sustainability.</p>
             </div>
             <div className="service">
                 <svg className="logo-components" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.931 419.931"><title>components</title>

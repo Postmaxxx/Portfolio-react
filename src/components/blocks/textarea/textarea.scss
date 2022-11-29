@@ -9,7 +9,8 @@
     margin-top: 30px;
     position: relative;
     transition: border-color $transition_theme !important;
-    
+
+
     & > label {
         position: absolute;
         top: -10px;
@@ -32,7 +33,18 @@
         color: map.get($light, "text_soft");
         transition: color $transition_theme;
         resize: vertical;
-        min-height: 240px;
+        min-height: 222px;
+
+        @include respond-to(xs) {
+            font-size: 20px;
+        }
+
+    }
+
+    &.incorrect {
+        & label {
+            color: red;
+        }
     }
 }
 
@@ -51,6 +63,12 @@ body.dark {
         & > textarea {
             color: map.get($dark, "text_soft");
             transition: color $transition_theme;
+        }
+
+        &.incorrect {
+            & label {
+                color: red;
+            }
         }
     }
 }

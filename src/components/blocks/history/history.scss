@@ -21,11 +21,15 @@
         flex-direction: row;
         position: relative;
         margin-left: 25px;
+        font-weight: 700;
+        max-width: 230px;
 
         @include respond-to(sm) {
             min-width: 170px;
             font-size: 16px;
             margin-left: 0px;
+            width: auto;
+            max-width: none;
         }
 
         @include respond-to(xs) {
@@ -54,11 +58,17 @@
     }
 
     & .history__description {
+        width: 75%;
+
+        @include respond-to(sm) {
+            width: 100%;
+        }
         
 
         & > h4 {
             color: map.get($light, "text_em");
             font-size: 23px;
+            position: relative;
 
             @include respond-to(sm) {
                 font-size: 20px;
@@ -68,14 +78,26 @@
             @include respond-to(xs) {
                 font-size: 18px;
             }
-    
+/*
+            &::before {
+                position: absolute;
+                left: -40px;
+                top: 15px;
+                content: "";
+                width: 30px;
+                height: 1px;
+                
+                background-color: map.get($light, "border");
+            }
+    */
         }
 
         & > span {
             display: block;
             font-size: 18px;
-            margin-top: 12px;
+            margin-top: 5px;
             color: map.get($light, "text_hard");
+            font-weight: 600;
 
             @include respond-to(sm) {
                 font-size: 16px;

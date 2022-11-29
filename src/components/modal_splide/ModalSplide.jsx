@@ -23,7 +23,6 @@ const ModalSplide = (props) => {
      
 
     useEffect(() => {
-        console.log('here', );
         document.querySelector(".modal__background").addEventListener('click', (e) => e.target === e.currentTarget && closeModal(e));
         escListener = document.addEventListener('keydown', (e) => e.key === 'Escape' && closeModal(e));
     },[])
