@@ -70,7 +70,15 @@
             //height: calc(100vh - 150px - 120px - 10px);
             height: 600px;
             padding-bottom: 50px;
+
+            @include respond-to(lg) {
+                height: 520px;
+            }
             
+            @include respond-to(md) {
+                height: 450px;
+            }
+
             @include respond-to(sm) {
                 flex-direction: column;
                 height: auto;
@@ -116,7 +124,7 @@
                 display: flex;
                 flex-direction: column;
                 margin-left: 40px;
-                margin-top: 20px;
+                margin-top: 0px;
 
                 @include respond-to(sm) {
                     margin-left: 0;
@@ -127,10 +135,10 @@
                 & .splide_portfolio__container {
                     max-height: 80%;
                     width: 100%;
-                    margin: 10px 0 10px;
+                    margin: 20px 0 10px;
 
                     @include respond-to(sm) {
-                        //margin: 0;
+                        height: 400px;
                     }
                 }
 
@@ -143,6 +151,8 @@
 
             & .info_portfolio__container {
                 width: 100%;
+
+
             }
             
         }

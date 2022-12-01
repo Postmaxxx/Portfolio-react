@@ -23,8 +23,9 @@ const SplidePortfolio = (props) => {
 
     const slideRefresh = () => {
         let slideIndex = splidePortfolio.current.splide.index > props.store.portfolios.list[selected].images.length ? props.store.portfolios.list[selected].images.length - 1 : splidePortfolio.current.splide.index;
-        props.setStore.setModalImage(props.store.portfolios.list[selected].images[slideIndex]?.link)
+        props.setStore.setModalImage(props.store.portfolios.list[selected].images[slideIndex]?.image)
         props.setStore.setModalDescr(props.store.portfolios.list[selected].images[slideIndex]?.descr)
+        props.setStore.setModalLink(props.store.portfolios.list[selected].images[slideIndex]?.link)
     }
 
 
@@ -51,9 +52,9 @@ const SplidePortfolio = (props) => {
                     speed: 500,
                     //snap: false,
                     wheel: true,
-                    wheelSleep: 500,
+                    wheelSleep: 300,
                     //wheelMinThreshold: 50,
-                    autoplay: true,
+                    autoplay: false,
                     interval: 5000,
                     pauseOnHover: true,
                     //rewind: false,
@@ -68,7 +69,7 @@ const SplidePortfolio = (props) => {
                             <SplideSlide key={index}>
                                 <div className="splide__slide-container">
                                     <img 
-                                        src={image.link} 
+                                        src={image.image} 
                                         alt={image.descr} 
                                         onClick={() => ShowModal()}
                                         />

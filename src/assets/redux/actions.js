@@ -48,6 +48,14 @@ export const setModalDescr = (text) => ({
     type: 'SET_MODAL_DESCR',
     payload: text
 })
+
+export const setModalLink = (link) => ({
+    type: 'SET_MODAL_LINK',
+    payload: link
+})
+
+
+
 export const setCurrentGallery = (gallery) => ({
     type: 'SET_CURRENT_GALLERY',
     payload: gallery

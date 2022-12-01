@@ -3,7 +3,7 @@ import initialState from './initialState';
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "SET_THEME":
-            //localStorage.setItem('theme', action.payload)
+            //if (action.payload)
             return {
                 ...state,
                 theme: action.payload
@@ -64,6 +64,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 modalDescr: action.payload
+            }
+        case "SET_MODAL_LINK":
+            return {
+                ...state,
+                modalLink: action.payload
             }
         case "SET_CURRENT_GALLERY":
             return {

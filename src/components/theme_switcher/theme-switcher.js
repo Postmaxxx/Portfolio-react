@@ -76,13 +76,13 @@ const changeTheme = () => { //main switcher
     theme_state.saveState && localStorage.setItem(theme_state.saveState, theme_state.theme);
     theme_state.isChanging = true;
     if (theme_state.theme === "light") {
-        console.log('In light');
+        //console.log('In light');
         theme_state.nodeForTheme.classList.remove('dark')
         classSwitcher('', 'theme_light_1', 0)
         .then(() => classSwitcher('theme_light_1', 'theme_light_2', theme_state.duration / 4))
         .then(() => {classSwitcher('theme_light_2', 'theme_light', 30); theme_state.isChanging = false;})
     } else {
-        console.log('In dark');
+        //console.log('In dark');
         theme_state.nodeForTheme.classList.add('dark')
         classSwitcher('theme_light', 'theme_light_back_1', 0)
         .then(() => classSwitcher('theme_light_back_1', 'theme_light_back_2', theme_state.duration / 4))
@@ -316,8 +316,10 @@ export const createThemeSwitcher = (props) => {
         res()
     })
     .then(() => {
-        if (theme_state.theme !== 'light') {changeTheme()}
-
+        if (theme_state.theme == 'dark') {
+            changeTheme()
+            console.log('222here');
+        }
         theme_state._themeSwitcher.addEventListener('click', () => {
             theme_state.theme = theme_state.theme === 'light' ? 'dark' : 'light';
             changeTheme()

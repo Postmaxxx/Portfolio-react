@@ -15,6 +15,12 @@ const ModalSplide = (props) => {
     const closeModal = (e) => {
         props.setStore.setModal(false);
     }
+
+    const checkClose = (e) => {
+        if (e.target.tagName !== 'IMG') {
+            closeModal(e)
+        }
+    }
     
     const _modal =  document.querySelector(".modal__background");
     if (_modal) {
@@ -28,10 +34,10 @@ const ModalSplide = (props) => {
     },[])
     
     return (
-        <div className="modal__background">
-            <div className="modal" onClick={closeModal}>
-                <div onClick={closeModal}>
-                    <div onClick={closeModal}>
+        <div className="modal__background"  onClick={(e) => checkClose(e)}>
+            <div className="modal">
+                <div onClick={(e) => checkClose(e)}>
+                    <div onClick={(e) => checkClose(e)}>
                         <img src={props.store.modalImage} alt={props.store.modalDescr} />
                     </div>
                 </div>

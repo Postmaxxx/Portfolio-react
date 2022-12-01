@@ -42,7 +42,10 @@
         justify-content: center;
         //border: 1px solid red;
         
-    
+        @include respond-to(sm) {
+            height: 100%;
+            margin: 0;
+        }
 
         & > div {
             //width: 100%;
@@ -54,6 +57,9 @@
             align-items: center;
             justify-content: center;
 
+            @include respond-to(sm) {
+                width: 100%;
+            }
 
             & > div {
                 margin-left: auto;

@@ -4,7 +4,7 @@
 
 
 .info_portfolio__container {
-     padding: 10px;
+    //padding: 10px;
 
 
     & p {
@@ -13,6 +13,8 @@
         line-height: 130% !important;
         width: 100%;
         font-weight: 700;
+        white-space: pre-wrap;
+        //font-size: 22px !important;
 
         @include respond-to(sm) {
             font-size: 18px !important;

@@ -1,18 +1,17 @@
 import React from "react";
-import photo2 from '../../../assets/img/photo-2.jpg';
 import './about.scss';
 import resumeDoc from '../../../assets/docs/resume.pdf';
-import modalWindow from '../../modal_splide/ModalSplide';
 import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import siteData from '../../../assets/js/site_data';
-import imgMe from '../../../assets/img/photo-me.jpg'
+import photoNight from '../../../assets/img/me_night.jpg';
+import photoDay from '../../../assets/img/me_day.jpg';
 
 const About = (props) => {
 
     const ShowModal = () => {
-        props.setStore.setModalImage(imgMe);
+        props.setStore.setModalImage(props.store.theme =='dark' ? photoNight : photoDay);
         props.setStore.setModalDescr('Just me :)')
 
         //props.setStore.setCurrentGallery(siteData.galleryMe);   
@@ -23,7 +22,7 @@ const About = (props) => {
     return(
         <div className="about__container">
             <div className="img-container">
-                <img src={photo2} alt="My photo" onClick={() => ShowModal()}/>
+                <img src={props.store.theme =='dark' ? photoNight : photoDay} alt="My photo" onClick={() => ShowModal()}/>
             </div>
             <div className="descr">
                 <h3>I am <em>Postnikov Max</em></h3>

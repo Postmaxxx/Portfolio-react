@@ -12,8 +12,20 @@ import p2_2 from '../img/photo-2.jpg'
 import p2_3 from '../img/photo-me.jpg'
 import p2_4 from '../img/photo-side.jpg'
 
+import plenco_dt from '../img/portfolio/plenco/desktop_xd.jpg'
+import plenco_mob from '../img/portfolio/plenco/mobile_xd.jpg'
+import plenco_1 from '../img/portfolio/plenco/1.jpg'
+import plenco_2 from '../img/portfolio/plenco/2.jpg'
+import plenco_3 from '../img/portfolio/plenco/3.jpg'
+import plenco_4 from '../img/portfolio/plenco/4.jpg'
+import plenco_5 from '../img/portfolio/plenco/5.jpg'
+import plenco_6 from '../img/portfolio/plenco/6.jpg'
+import plenco_7 from '../img/portfolio/plenco/7.jpg'
+import plenco_8 from '../img/portfolio/plenco/8.jpg'
+import plenco_9 from '../img/portfolio/plenco/9.jpg'
+import plenco_10 from '../img/portfolio/plenco/10.jpg'
 
-
+let portfolioPath = 'http://127.0.0.1:8887/';
 
 const initialState = {
     theme: 'light',
@@ -21,28 +33,76 @@ const initialState = {
     modal: false,
     modalImage: '',
     modalDescr: '',
-
+    modalLink: '',
 
     portfolios: {
         selected: 0,
         list: [
             {
                 name: 'Plenco',
-                descr: ' ABC Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                descr: 'Created frontend for Plenco company based on Bootstrap 5 using provided design in AdobeXD. More than 81 pages, accordions, dropdown lists, animation, adaptive design, galleries, carousels, preloaders and so on.\n Stack: Gulp, Twig, Bootstrap 5, Tailwind, JS, Scss',
                 link: 'https://www.plenco.com',
                 images: [
                     {
-                        link: m1,   
-                        descr: 'Bla m1'
+                        image: plenco_dt,   
+                        descr: 'Design templates for desktop version',
+                        link: ''
                     },
                     {
-                        link: m2,
-                        descr: 'Bla m2'
+                        image: plenco_mob,
+                        descr: 'Design templates for mobile version',
+                        link: ''
                     },
                     {
-                        link: m3,
-                        descr: 'Bla m3'
-                    }
+                        image: plenco_1,
+                        descr: 'Home page',
+                        link: portfolioPath + 'plenco/home.html'
+                    },
+                    {
+                        image: plenco_2,
+                        descr: 'Dropdown menu for quick application selection',
+                        link: ''
+                    },
+                    {
+                        image: plenco_3,
+                        descr: 'Certificates & latest news',
+                        link: portfolioPath + 'plenco/certifications.html'
+                    },
+                    {
+                        image: plenco_4,
+                        descr: 'Mobile menu',
+                        link: ''
+                    },
+                    {
+                        image: plenco_5,
+                        descr: 'Accordions',
+                        link: portfolioPath + 'plenco/pn-rr-app.html'
+                    },
+                    {
+                        image: plenco_6,
+                        descr: 'Related accordions',
+                        link: portfolioPath + 'plenco/oil-gas.html'
+                    },
+                    {
+                        image: plenco_7,
+                        descr: 'News carousel',
+                        link: portfolioPath + 'plenco/news-blog-detail.html'
+                    },
+                    {
+                        image: plenco_8,
+                        descr: 'News block with tags and categories',
+                        link: portfolioPath + 'plenco/news-blog.html'
+                    },
+                    {
+                        image: plenco_9,
+                        descr: 'Search with filters',
+                        link: ''
+                    },
+                    {
+                        image: plenco_10,
+                        descr: 'Mobile navigation',
+                        link: ''
+                    },
                 ],
             },
             {
@@ -51,23 +111,23 @@ const initialState = {
                 link: 'https://www.p2sinc.com',
                 images: [
                     {
-                        link: p1_1,
+                        image: p1_1,
                         descr: 'Bla p1_1'
                     },
                     {
-                        link: p1_2,
+                        image: p1_2,
                         descr: 'Bla p1_2'
                     },
                     {
-                        link: p1_3,
+                        image: p1_3,
                         descr: 'Bla p1_3'
                     },
                     {
-                        link: p1_4,
+                        image: p1_4,
                         descr: 'Bla p1_4'
                     },
                     {
-                        link: m2,
+                        image: m2,
                         descr: 'Bla m2'
                     },
                 ],
@@ -78,19 +138,19 @@ const initialState = {
                 link: 'https://www.techlicious.com',
                 images: [
                     {
-                        link: p2_4,
+                        image: p2_4,
                         descr: 'Bla p2_1'
                     },
                     {
-                        link: p2_3,
+                        image: p2_3,
                         descr: 'Bla p2_2'
                     },
                     {
-                        link: p2_2,
+                        image: p2_2,
                         descr: 'Bla p2_3'
                     },
                     {
-                        link: p2_1,
+                        image: p2_1,
                         descr: 'Bla p2_4'
                     }
                 ],
@@ -101,7 +161,7 @@ const initialState = {
                 link: 'https://www.google.com',
                 images: [
                     {
-                        link: p1_1,
+                        image: p1_1,
                         descr: 'Bla p2_1'
                     }
                 ],
@@ -112,7 +172,7 @@ const initialState = {
                 link: 'https://www.google.com',
                 images: [
                     {
-                        link: p1_1,
+                        image: p1_1,
                         descr: 'Bla p2_1'
                     }
                 ],
@@ -123,7 +183,7 @@ const initialState = {
                 link: 'https://www.google.com',
                 images: [
                     {
-                        link: p1_1,
+                        image: p1_1,
                         descr: 'Bla p2_1'
                     }
                 ],
@@ -134,7 +194,7 @@ const initialState = {
                 link: 'https://www.google.com',
                 images: [
                     {
-                        link: p1_1,
+                        image: p1_1,
                         descr: 'Bla p2_1'
                     }
                 ],
@@ -145,7 +205,7 @@ const initialState = {
                 link: 'https://www.google.com',
                 images: [
                     {
-                        link: p1_1,
+                        image: p1_1,
                         descr: 'Bla p2_1'
                     }
                 ],
