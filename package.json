@@ -1,5 +1,5 @@
 {
-  "name": "portfolio_react",
+  "name": "portfolio-react",
   "version": "0.1.0",
   "private": true,
   "homepage": "http://Postmaxxx.github.io/Portfolio-react",
@@ -24,7 +24,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-  },
+  }, 
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -38,9 +38,9 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 10 chrome version",
+      "last 10 firefox version",
+      "last 10 safari version"
     ]
   },
   "devDependencies": {
