@@ -13,7 +13,7 @@ let escListener = undefined;
 
 const ModalSplide = (props) => {
 
-    let [,update] = useState()
+    //let [,update] = useState()
 
     const closeModal = (e) => {
         props.setStore.setModal(false);
@@ -40,7 +40,7 @@ const ModalSplide = (props) => {
         _target.innerHTML = preloader();
         _image.onload = () => { 
             _target?.replaceChildren(_image);
-            update()
+            //update()
         }
         _image.src = props.store.modalImage;
         _image.alt = props.store.modalDescr;
