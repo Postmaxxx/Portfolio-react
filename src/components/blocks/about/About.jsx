@@ -5,8 +5,11 @@ import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import siteData from '../../../assets/js/site_data';
-import photoNight from '../../../assets/img/me_night.jpg';
-import photoDay from '../../../assets/img/me_day.jpg';
+import photoNight from '../../../assets/img/me_day.jpg';
+import photoDay from '../../../assets/img/me_night.jpg';
+
+
+
 
 const About = (props) => {
 
@@ -22,6 +25,7 @@ const About = (props) => {
     return(
         <div className="about__container">
             <div className="img-container">
+
                 <img src={props.store.theme =='dark' ? photoNight : photoDay} alt="My photo" onClick={() => ShowModal()}/>
             </div>
             <div className="descr">
@@ -52,3 +56,17 @@ const mapDispatchToProps = (dispatch) => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);
+
+/*
+                    {props.store.theme =='dark' ? 
+                        (props.store.imagesMe.night.sources.map((source) => {
+                            return (
+                                <source media={"(max-width:" + source.width + "px)"} srcSet={source.image} />
+                            )
+                        })) 
+                        : 
+                        photoDay
+                    }
+
+
+                    */

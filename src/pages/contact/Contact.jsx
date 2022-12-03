@@ -36,7 +36,7 @@ const Contact = (props) => {
             let currentDate = new Date();
             let apiToken = "5853506207:AAGC04Apc66DTSienliOjh4evMA1CUTs2Wc";
             let chatId = "@postnikovdev";
-            let text = `Date: ${currentDate.getDate() + '.' + currentDate.getMonth() + '.' + currentDate.getFullYear()}%0ATime: ${currentDate.getHours() + '.' + currentDate.getMinutes() + '.' + currentDate.getSeconds()}%0AName: ${props.store.contact.name}%0AEmail: ${props.store.contact.email}%0ATopic: ${props.store.contact.subject}%0A%0AMessage: ${props.store.contact.message}` ;
+            let text = `Date: ${currentDate.getDate() + '.' + (currentDate.getMonth()+1) + '.' + currentDate.getFullYear()}%0ATime: ${currentDate.getHours() + '.' + currentDate.getMinutes() + '.' + currentDate.getSeconds()}%0AName: ${props.store.contact.name}%0AEmail: ${props.store.contact.email}%0ATopic: ${props.store.contact.subject}%0A%0AMessage: ${props.store.contact.message}` ;
             let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${text}`;
     
             axios.get(urlString )

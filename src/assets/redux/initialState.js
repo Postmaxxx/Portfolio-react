@@ -1,3 +1,13 @@
+/*import photoNight from '../../../assets/img/me_night.jpg';
+import photoNight750 from '../../../assets/img/me_night_750.jpg';
+import photoNight500 from '../../../assets/img/me_night_500.jpg';
+import photoNight350 from '../../../assets/img/me_night_350.jpg';
+import photoDay from '../../../assets/img/me_day.jpg';
+import photoDay750 from '../../../assets/img/me_day_750.jpg';
+import photoDay500 from '../../../assets/img/me_day_500.jpg';
+import photoDay350 from '../../../assets/img/me_day_350.jpg';
+*/
+
 import m1 from '../img/mock-1.jpg'
 import m2 from '../img/mock-2.jpg'
 import m3 from '../img/mock-3.jpg'
@@ -34,6 +44,44 @@ const initialState = {
     modalImage: '',
     modalDescr: '',
     modalLink: '',
+   /* imagesMe: {
+        day: {
+            sources: [
+                {
+                    image: photoDay750,
+                    width: 750
+                },
+                {
+                    image: photoDay500,
+                    width: 500
+                },
+                {
+                    image: photoDay350,
+                    width: 350
+                },
+            ],
+            image: photoDay
+        },
+        night: {
+            sources: [
+                {
+                    image: photoNight750,
+                    width: 750
+                },
+                {
+                    image: photoNight500,
+                    width: 500
+                },
+                {
+                    image: photoNight350,
+                    width: 350
+                },
+            ],
+            image: photoNight
+        },
+
+
+    },*/
 
     portfolios: {
         selected: 0,
