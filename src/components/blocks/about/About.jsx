@@ -7,8 +7,8 @@ import { connect } from 'react-redux'
 import siteData from '../../../assets/js/site_data';
 import { useEffect } from "react";
 import { setImage } from '../../../assets/js/setImage'
-import Preloader from "../../preloader/Preloader";
-
+import Preloader from "../../preloader/Preloader.jsx";
+import '../../preloader/preloader.scss'
 
 const About = (props) => {
 
@@ -23,17 +23,13 @@ const About = (props) => {
         let time = props.store.theme === 'dark' ? 'night' : 'day';
         let addListener = (obj) => obj.addEventListener('click', () => showModal(props.store.imagesMe[time].images.slice(-1)[0].image, props.store.imagesMe[time].descr))
         setImage('#imageMe', props.store.imagesMe[time].images, (obj) => addListener(obj))
-        
-        /*
-        setImage('#imageMe', props.store.imagesMe[time].images)
-            .addEventListener('click', () => showModal(props.store.imagesMe[time].images.slice(-1)[0].image, props.store.imagesMe[time].descr))
-        */
     }, [props.store.theme])
 
     
     return(
         <div className="about__container">
-            <div className="img-container" id="imageMe"></div>
+            <div className="img-container" id="imageMe">
+            </div>
             <div className="descr">
                 <h3>I am <em>Postnikov Max</em></h3>
                 <p>Frontend Developer with over 4 year of experience in successfully creating and maintaining web sites and components supported by more than 10 years IT background.</p>

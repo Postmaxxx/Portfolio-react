@@ -8,8 +8,6 @@ import { connect } from 'react-redux'
 import SpliderReviews from "../../components/blocks/splide_reviews/Splide_reviews";
 import Services from "../../components/blocks/services/Services";
 import About from "../../components/blocks/about/About";
-import Preloader from '../../components/preloader/Preloader';
-const LazyAbout = React.lazy(() => import('../../components/blocks/about/About'));
 
 function Aboutpage() {
     return (
@@ -17,9 +15,7 @@ function Aboutpage() {
             <div className="page_about">
                 <section className='about_me'> 
                     <h2>About me<em>About me</em></h2>
-                    <Suspense fallback={<Preloader />}>
-                        <LazyAbout />
-                    </Suspense>
+                    <About />
                 </section>
 
                 <section className='services'> 

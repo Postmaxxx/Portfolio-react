@@ -3,14 +3,11 @@ import './preloader.scss'
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
+import preloader from '../preloader/preloader.js'
 
-const Preloader = (props) => {
-    return (
-        <div className='preloader__container'>
-            <div className="preloader"></div>
-            <p className='preloader__text'></p>
-        </div>
-    )
+
+const Preloader = (props) => { 
+    return <div dangerouslySetInnerHTML={{__html: preloader()}}></div> 
 }
 
 const mapStateToProps = (store) => ({store: store})

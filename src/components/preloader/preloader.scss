@@ -5,18 +5,20 @@
 .preloader__container {
     height: 100%;
     width: 100%;
-    background-color: map.get($light, "bg");
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
 	flex-direction: column;
 	position: relative;
 	margin: 0;
+    //border: 2px solid red;
 
 
     & .preloader {
         border-radius: 50%;
         width: 10%;
+        min-width: 50px;
         aspect-ratio: 1;
         margin: 60px auto;
         position: relative;
@@ -26,7 +28,7 @@
         border-left: 10px solid rgba(96, 155, 202, 0.7);
         animation: preloader-rotate 1s infinite linear;
         //cubic-bezier(0.67, 0.3, 0.21, 0.72);
-    }
+    }   
 
 
     & .preloader__text {
@@ -46,9 +48,3 @@
 
 
 
-
-body.dark {
-    .preloader__container {
-        background-color: map.get($dark, "bg");;
-    }
-}

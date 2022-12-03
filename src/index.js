@@ -5,7 +5,7 @@ import { BrowserRouter, HashRouter } from "react-router-dom";
 import { createStore } from 'redux';
 import reducer from './assets/redux/reducer';
 import { Provider } from 'react-redux'
-import Preloader from './components/preloader/Preloader'
+import Preloader from './components/preloader/Preloader.jsx'
 const LazyApp = React.lazy(() => import('./app'));
 
 let store = createStore(reducer);

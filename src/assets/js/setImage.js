@@ -1,10 +1,10 @@
 import React from "react";
-import Preloader from "../../components/preloader/Preloader";
+import preloader from '../../components/preloader/preloader.js'
 
 export const setImage = (id, images = [], callback) => {
     let _target = document.querySelector(id); //container for image
     let _image = document.createElement("img"); //create new <img>
-    
+    _target.innerHTML = preloader();
 
     _image.onload = () => { //add only this image to container
         _target?.replaceChildren(_image);

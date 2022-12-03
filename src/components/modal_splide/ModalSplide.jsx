@@ -6,11 +6,14 @@ import { connect } from 'react-redux'
 import { useEffect } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import preloader from '../preloader/preloader.js'
+import { useState } from "react";
 
 let escListener = undefined;
 
 const ModalSplide = (props) => {
 
+    let [,update] = useState()
 
     const closeModal = (e) => {
         props.setStore.setModal(false);
@@ -31,14 +34,24 @@ const ModalSplide = (props) => {
     useEffect(() => {
         document.querySelector(".modal__background").addEventListener('click', (e) => e.target === e.currentTarget && closeModal(e));
         escListener = document.addEventListener('keydown', (e) => e.key === 'Escape' && closeModal(e));
-    },[])
+        
+        let _target = document.querySelector('.modal').childNodes[0].childNodes[0];
+        let _image = document.createElement("img");
+        _target.innerHTML = preloader();
+        _image.onload = () => { 
+            _target?.replaceChildren(_image);
+            update()
+        }
+        _image.src = props.store.modalImage;
+        _image.alt = props.store.modalDescr;
+    },[props.store.modalImage])
     
     return (
         <div className="modal__background"  onClick={(e) => checkClose(e)}>
             <div className="modal">
                 <div onClick={(e) => checkClose(e)}>
                     <div onClick={(e) => checkClose(e)}>
-                        <img src={props.store.modalImage} alt={props.store.modalDescr} />
+                        <img src="" alt="" />
                     </div>
                 </div>
             </div>
@@ -54,6 +67,26 @@ const ModalSplide = (props) => {
         ) 
 
 }
+
+//<img onLoad={() => console.log('888', )} src={props.store.modalImage} alt={props.store.modalDescr} />
+/*
+
+    let _target = document.querySelector(id); //container for image
+    let _image = document.createElement("img"); //create new <img>
+    _target.innerHTML = preloader();
+
+    _image.onload = () => { //add only this image to container
+        _target?.replaceChildren(_image);
+        callback(_target?.querySelector('img')) //return <img> after completely loaded. For preloader
+        return
+    }
+   
+    _image.src = images.find((image) => {
+        return image.width >= _target?.offsetWidth //find first image with 'width' more than 'container width'
+    })?.image;
+
+
+*/
 /*
                 <Splide options={ {
                     lazyLoad: true,
