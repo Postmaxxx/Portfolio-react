@@ -3,7 +3,6 @@ import initialState from './initialState';
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "SET_THEME":
-            //if (action.payload)
             return {
                 ...state,
                 theme: action.payload
@@ -82,6 +81,11 @@ const reducer = (state = initialState, action) => {
                     selected: action.payload,
                     list: [...state.portfolios.list]
                 } 
+            }
+        case "SET_IMG_LOADED":
+            return {
+                ...state,
+                imgLoaded: action.payload,
             }
 
         default:

@@ -1,12 +1,12 @@
-/*import photoNight from '../../../assets/img/me_night.jpg';
-import photoNight750 from '../../../assets/img/me_night_750.jpg';
-import photoNight500 from '../../../assets/img/me_night_500.jpg';
-import photoNight350 from '../../../assets/img/me_night_350.jpg';
-import photoDay from '../../../assets/img/me_day.jpg';
-import photoDay750 from '../../../assets/img/me_day_750.jpg';
-import photoDay500 from '../../../assets/img/me_day_500.jpg';
-import photoDay350 from '../../../assets/img/me_day_350.jpg';
-*/
+import photoNight from '../img/me_night.jpg';
+import photoNight750 from '../img/me_night_750.jpg';
+import photoNight500 from '../img/me_night_500.jpg';
+import photoNight350 from '../img/me_night_350.jpg';
+import photoDay from '../img/me_day.jpg';
+import photoDay750 from '../img/me_day_750.jpg';
+import photoDay500 from '../img/me_day_500.jpg';
+import photoDay350 from '../img/me_day_350.jpg';
+
 
 import m1 from '../img/mock-1.jpg'
 import m2 from '../img/mock-2.jpg'
@@ -44,6 +44,69 @@ const initialState = {
     modalImage: '',
     modalDescr: '',
     modalLink: '',
+    imgLoaded: false,
+    imagesMe: {
+        day: {
+            descr: 'Just me in the daytime',
+            images: [
+                {
+                    width: 350,
+                    image: photoDay350,
+                },
+                {
+                    width: 500,
+                    image: photoDay500,
+                },
+                {
+                    width: 750,
+                    image: photoDay750,
+                },
+                {
+                    width: 10000,
+                    image: photoDay,
+                },
+            ],
+        },
+        night: {
+            descr: 'Just me at night',
+            images: [
+                {
+                    width: 350,
+                    image: photoNight350,
+                },
+                {
+                    width: 500,
+                    image: photoNight500,
+                },
+                {
+                    width: 750,
+                    image: photoNight750,
+                },
+                {
+                    width: 10000,
+                    image: photoNight,
+                },
+            ],
+        },
+
+    },
+
+    /*
+
+            day: {
+            full: photoDay,
+            big: photoDay750,
+            medium: photoDay500,
+            small: photoDay350
+        },
+        night: {
+            full: photoNight,
+            big: photoNight750,
+            medium: photoNight500,
+            small: photoNight350
+        },
+
+        */
    /* imagesMe: {
         day: {
             sources: [

@@ -318,7 +318,7 @@ export const createThemeSwitcher = (props) => {
     .then(() => {
         if (theme_state.theme == 'dark') {
             changeTheme()
-            console.log('222here');
+           // console.log('222here');
         }
         theme_state._themeSwitcher.addEventListener('click', () => {
             theme_state.theme = theme_state.theme === 'light' ? 'dark' : 'light';

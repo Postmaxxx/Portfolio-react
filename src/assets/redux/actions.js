@@ -66,3 +66,9 @@ export const setSelectedPortfolio = (number) => ({
     type: 'SET_SELECTED_PORTFOLIO',
     payload: number
 })
+
+
+export const setImgLoaded = (isLoaded) => ({
+    type: 'SET_IMG_LOADED',
+    payload: isLoaded
+})
