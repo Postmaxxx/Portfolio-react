@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { setImage } from '../../../assets/js/setImage'
 import Preloader from "../../preloader/Preloader.jsx";
 import '../../preloader/preloader.scss'
+import store from '../../../assets/redux/store'
 
 const About = (props) => {
 
@@ -20,9 +21,9 @@ const About = (props) => {
 
     
     useEffect(() => {
-        let time = props.store.theme === 'dark' ? 'night' : 'day';
+        let time = store.getState().theme === 'dark' ? 'night' : 'day';
         let addListener = (obj) => obj.addEventListener('click', () => showModal(props.store.imagesMe[time].images.slice(-1)[0].image, props.store.imagesMe[time].descr))
-        setImage('#imageMe', props.store.imagesMe[time].images, (obj) => addListener(obj))
+            setImage('#imageMe', store.getState().imagesMe[time].images, (obj) => addListener(obj))
     }, [props.store.theme])
 
     
