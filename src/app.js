@@ -11,6 +11,7 @@ import ThemeSwitcher from './components/theme_switcher/ThemeSwitcher';
 import { connect } from 'react-redux';
 import * as actions from './assets/redux/actions';
 import { bindActionCreators } from 'redux';
+import Preloader from './components/preloader/Preloader.jsx';
 //import ModalSplide from './components/modal_splide/ModalSplide.jsx';
 
 const LazyModalSplide = React.lazy(() => import('./components/modal_splide/ModalSplide.jsx'));
@@ -27,19 +28,25 @@ const LazyPage404 = React.lazy(() => import('./pages/page404/page404'));
 const App = (props) => {
     return (
         <>
-            <LazyModalSplide />
-            <LazyThemeSwitcher />
-            <LazySidePanel />
+            <Suspense fallback={<Preloader />}>
+                <LazyModalSplide />
+            </Suspense>
+            <Suspense fallback={<Preloader />}>
+                <LazyThemeSwitcher />
+            </Suspense>
+            <Suspense fallback={<Preloader />}>
+                <LazySidePanel />
+            </Suspense>
             <Routes>
-                <Route index element={<LazyHomepage />} />
-                <Route path="/home" element={<LazyHomepage />} />
-                <Route path="/" element={<LazyHomepage />} />
-                <Route path="/index" element={<LazyHomepage />} />
-                <Route path="/about" element={<LazyAboutpage />} />
-                <Route path="/resume" element={<LazyResume />} />
-                <Route path="/portfolio" element={<LazyPortfolio />} />
-                <Route path="/contact" element={<LazyContact />} />
-                <Route path="*" element={<LazyPage404 />} />
+                <Route index element={<Suspense fallback={<Preloader />}><LazyHomepage /></Suspense>} />
+                <Route path="/home" element={<Suspense fallback={<Preloader />}><LazyHomepage /></Suspense>} />
+                <Route path="/" element={<Suspense fallback={<Preloader />}><LazyHomepage /></Suspense>} />
+                <Route path="/index" element={<Suspense fallback={<Preloader />}><LazyHomepage /></Suspense>} />
+                <Route path="/about" element={<Suspense fallback={<Preloader />}><LazyAboutpage /></Suspense>} />
+                <Route path="/resume" element={<Suspense fallback={<Preloader />}><LazyResume /></Suspense>} />
+                <Route path="/portfolio" element={<Suspense fallback={<Preloader />}><LazyPortfolio /></Suspense>} />
+                <Route path="/contact" element={<Suspense fallback={<Preloader />}><LazyContact /></Suspense>} />
+                <Route path="*" element={<Suspense fallback={<Preloader />}><LazyPage404 /></Suspense>} />
             </Routes>
         </>
     )

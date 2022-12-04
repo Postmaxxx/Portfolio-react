@@ -32,5 +32,3 @@ function Skill ({skill}) {
 
 
 export default Skill;
-//<div className="skill__percent-line" style={{width: `${Math.round(currentPercent)}%`}}></div>
-//

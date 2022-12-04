@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 
 
 
-
 const InfoPortfolio = (props) => {
     return(
         <div className="info_portfolio__container">

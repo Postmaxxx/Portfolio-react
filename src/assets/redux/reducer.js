@@ -78,16 +78,26 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 portfolios: {
+                    ...state.portfolios,
                     selected: action.payload,
-                    list: [...state.portfolios.list]
+                    //list: [...state.portfolios.list]
                 } 
             }
-        case "SET_IMG_LOADED":
+        /*case "SET_IMG_LOADED":
+            console.log("!!!");
             return {
                 ...state,
                 imgLoaded: action.payload,
-            }
-
+            }*/
+        /*case "SET_SLIDE_INDEX":
+            return {
+                ...state,
+                portfolios: {
+                    ...state.portfolios,
+                    slideIndex: action.payload,
+                    //list: [...state.portfolios.list]
+                } 
+            }*/
         default:
             return {
                 ...state   

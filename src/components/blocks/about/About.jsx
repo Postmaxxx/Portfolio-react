@@ -22,9 +22,9 @@ const About = (props) => {
     
     useEffect(() => {
         let time = store.getState().theme === 'dark' ? 'night' : 'day';
-        let addListener = (obj) => obj.addEventListener('click', () => showModal(props.store.imagesMe[time].images.slice(-1)[0].image, props.store.imagesMe[time].descr))
+        let addListener = (obj) => obj.addEventListener('click', () => showModal(store.getState().imagesMe[time].images.slice(-1)[0].image, store.getState().imagesMe[time].descr))
             setImage('#imageMe', store.getState().imagesMe[time].images, (obj) => addListener(obj))
-    }, [props.store.theme])
+    }, [store.getState().theme])
 
     
     return(

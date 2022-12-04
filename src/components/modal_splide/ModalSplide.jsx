@@ -8,12 +8,12 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import preloader from '../preloader/preloader.js'
 import { useState } from "react";
+import store from '../../assets/redux/store'
+
 
 let escListener = undefined;
 
 const ModalSplide = (props) => {
-
-    //let [,update] = useState()
 
     const closeModal = (e) => {
         props.setStore.setModal(false);
@@ -27,7 +27,7 @@ const ModalSplide = (props) => {
     
     const _modal =  document.querySelector(".modal__background");
     if (_modal) {
-        props.store.modal ? _modal.classList.add('show') : _modal.classList.remove('show')
+        store.getState().modal ? _modal.classList.add('show') : _modal.classList.remove('show')
     }
      
 
@@ -40,11 +40,10 @@ const ModalSplide = (props) => {
         _target.innerHTML = preloader();
         _image.onload = () => { 
             _target?.replaceChildren(_image);
-            //update()
         }
-        _image.src = props.store.modalImage;
-        _image.alt = props.store.modalDescr;
-    },[props.store.modalImage])
+        _image.src = store.getState().modalImage;
+        _image.alt = store.getState().modalDescr;
+    },[store.getState().modalImage])
     
     return (
         <div className="modal__background"  onClick={(e) => checkClose(e)}>

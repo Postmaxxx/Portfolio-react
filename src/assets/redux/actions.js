@@ -72,3 +72,9 @@ export const setImgLoaded = (isLoaded) => ({
     type: 'SET_IMG_LOADED',
     payload: isLoaded
 })
+/*
+export const setSlideIndex = (index) => ({
+    type: 'SET_SLIDE_INDEX',
+    payload: index
+})
+*/

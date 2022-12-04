@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import './portfolio.scss'
 import List3d from '../../components/blocks/list3d/List3d'
 import List3d_v from '../../components/blocks/list3d_v/List3d_v'
@@ -9,7 +9,8 @@ import InfoPortfolioSlide from "../../components/blocks/info_portfolio-slide/Inf
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-
+import Preloader from "../../components/preloader/Preloader.jsx";
+const LazySplidePortfolio = React.lazy(() => import('../../components/blocks/splide_portfolios/Splide_portfolio'));
 
 
 const Portfolio = (props) => {
@@ -38,7 +39,9 @@ const Portfolio = (props) => {
                         <List3d_v />
                         <div className="portfolio__splide">
                             <InfoPortfolio />
-                            <SplidePortfolio />
+                            <Suspense fallback={<Preloader />}>
+                                <LazySplidePortfolio />
+                            </Suspense>
                             <InfoPortfolioSlide />
                         </div>
                     </div>

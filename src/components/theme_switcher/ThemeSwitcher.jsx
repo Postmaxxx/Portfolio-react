@@ -12,9 +12,9 @@ const ThemeSwitcher = props => {
     //console.log('props!!!!', props );
 
     const changeTheme = () => {
-        setTimeout(() => {
+        //setTimeout(() => {
             props.setStore.setTheme(document.getElementsByTagName("BODY")[0].classList.contains('dark') ? 'dark' : 'light');
-        }, 100) //just to have enough time to update localStorage
+        //}, 100) //just to have enough time to update localStorage
     }
 
     useEffect(() => {
