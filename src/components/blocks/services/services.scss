@@ -1,8 +1,6 @@
 @use "sass:map";
 @import '../../../assets/css/base.scss';
 
-
-
 .services__container {
     display: flex;
     align-items: stretch;
@@ -35,7 +33,6 @@
             border-top: 5px solid map.get($light, "nav_selected");
             transition: border $transition_base;
         }
-
 
         & > svg {
             width: 80px;
@@ -81,7 +78,6 @@
                     fill:#3a91be;
                 }
             }
-
 
             &.logo-components {
 
@@ -194,7 +190,6 @@ body.dark {
                             }
                         }
                     }
-
     
                     & .line {
                         background-color: map.get($dark, "separator");;

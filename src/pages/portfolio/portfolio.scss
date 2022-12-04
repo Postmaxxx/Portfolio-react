@@ -36,28 +36,14 @@
                     @include respond-to(sm) {
                         display: none;
                     }
-   
                 }
-/*
-                & > span {
-                    font-size: 24px;
-                    position: relative;
-                    left: 20px;
-                    //display: none;
-                    
-                    @include respond-to(sm) {
-                        display: none;
-                    }
-                }
-*/
+
                 & .list3d__container {
                     @include respond-to(sm) {
                         display: none;
                     }
                 }
-
             }
-
         }
 
         &__content {
@@ -66,8 +52,6 @@
             flex-direction: row;
             align-items: stretch;
             justify-content: space-between;
-            //border: 2px solid map.get($light, "border");
-            //height: calc(100vh - 150px - 120px - 10px);
             height: 600px;
             padding-bottom: 50px;
 
@@ -85,16 +69,12 @@
             }
 
             & .list__container {
-                //background-color: map.get($light, "bg_side-panel");
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
-                //margin-right: 20px;
                 padding-right: 40px;
-                //margin-top: 50px;
                 border-right: 2px solid map.get($light, "border");
                 padding-right: 30px;
-                //border-radius: 10px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -117,7 +97,6 @@
                 }
             }
 
-
             & .portfolio__splide {
                 height: 100%;
                 width: 100%;
@@ -130,7 +109,6 @@
                     margin-left: 0;
                     margin-top: 0;
                 }
-
 
                 & .splide_portfolio__container {
                     max-height: 80%;
@@ -151,16 +129,9 @@
 
             & .info_portfolio__container {
                 width: 100%;
-
-
             }
-            
         }
-
     }
-
-    
-
 }
 
 
@@ -190,7 +161,6 @@ body.dark {
                 & .list__container {
                     border-right: 2px solid map.get($dark, "border");
                 }
-                
             }
         }
     }

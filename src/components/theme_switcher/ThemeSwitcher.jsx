@@ -1,4 +1,3 @@
-import './themeSwitcher.scss';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import * as actions from '../../assets/redux/actions'
@@ -6,10 +5,9 @@ import { bindActionCreators } from 'redux';
 import { createThemeSwitcher } from './theme-switcher.js'
 import cloud from '../../assets/img/svg/theme_day__cloud.svg'
 import star from '../../assets/img/svg/theme_nigth__star.svg'
+import './themeSwitcher.scss';
 
 const ThemeSwitcher = props => {
-
-    //console.log('props!!!!', props );
 
     const changeTheme = () => {
         //setTimeout(() => {
@@ -45,10 +43,8 @@ const ThemeSwitcher = props => {
 
 const mapStateToProps = (store) => ({store: store})
 
-
 const mapDispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),
 })
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(ThemeSwitcher);

@@ -1,9 +1,9 @@
-import React, { useCallback, useState } from "react";
-import './list3d.scss'
+import React from "react";
 import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { useEffect } from "react";
+import './list3d.scss'
 
 let selected = 0;
 let rotateStep = 0;
@@ -17,16 +17,12 @@ const List3d = (props) => {
     selected = props.store.portfolios.selected;
     listLength = props.store.portfolios.list.length;
 
-    const [, updateState] = useState(0);
-    //const forceUpdate = useCallback(() => updateState({}), []);
-
     if (stepsToMove != 0) {
         if (Math.abs(stepsToMove) > listLength / 2) {
             stepsToMove = stepsToMove - Math.sign(stepsToMove)*listLength;
         }
         rotateStep = rotateStep + stepsToMove;  
     }
-
 
     const listScroll = (e) => {
         if (!timeoutScroll) {
@@ -41,7 +37,7 @@ const List3d = (props) => {
     }
 
     useEffect(() => {
-        const scrollListListener = document.querySelector('.list3d__container'). addEventListener('wheel', (e) => listScroll(e))
+        document.querySelector('.list3d__container'). addEventListener('wheel', (e) => listScroll(e))
     },[])
 
 
@@ -54,10 +50,9 @@ const List3d = (props) => {
                     let deltaPos = Math.min(Math.abs(selected - index), listLength - Math.abs(index - selected));
                     let opacity = 1 - deltaPos/(listLength / 6);
                     opacity = opacity < 0 ? 0 : opacity;
-
                     portfolioStyle.transform = `translate(-50%, -50%) rotateZ(${index * step}deg) translateX(${listLength * 15}px)`;
                     portfolioStyle.opacity = opacity;
-
+                    
                     return (
                         <div key={index} style={portfolioStyle} className={selected == index ? 'selected' : ''}>
                             <a target="_blank" href={portfolio.link}>{portfolio.name}</a>
@@ -70,16 +65,11 @@ const List3d = (props) => {
 }
 
 
-
-
-
 const mapStateToProps = (store) => ({store: store})
-
 
 const mapDispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),
 })
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(List3d);
 /*

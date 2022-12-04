@@ -1,17 +1,15 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import siteData from '../../../assets/js/site_data'
 import './skill.scss';
 
 
-
-function Skill ({skill}) {
+function Skill ({skill, speed}) {
 
     const [currentPercent, setCurrentPercent] = useState(0)
 
     useEffect(() => {
         const percentIncreasingInterval = setInterval(() => {
-                setCurrentPercent((prevPercent) => ( prevPercent < (skill.percent-.2) ? prevPercent + .1 + (1 - prevPercent / skill.percent) * siteData.skillFillSpeed : skill.percent));
+                setCurrentPercent((prevPercent) => ( prevPercent < (skill.percent-.2) ? prevPercent + .1 + (1 - prevPercent / skill.percent) * speed : skill.percent));
             }, 10)
         return () => clearInterval(percentIncreasingInterval);
     }, [])

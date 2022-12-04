@@ -1,16 +1,10 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
-//import '.';
-import { BrowserRouter, HashRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import store from './assets/redux/store'
-
 import { Provider } from 'react-redux'
 import Preloader from './components/preloader/Preloader.jsx'
 const LazyApp = React.lazy(() => import('./app'));
-
-
-//const themeUnsubscribe = store.subscribe(() => console.log('Changed'))
-
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,6 +17,3 @@ root.render(
         </Provider>
     </HashRouter>
 );
-
-
-

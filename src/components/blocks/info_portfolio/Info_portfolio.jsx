@@ -1,10 +1,8 @@
 import React from "react";
-import './info_portfolio.scss'
 import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-
-
+import './info_portfolio.scss'
 
 const InfoPortfolio = (props) => {
     return(
@@ -14,17 +12,10 @@ const InfoPortfolio = (props) => {
     )
 }
 
-
-
-
-
-
 const mapStateToProps = (store) => ({store: store})
-
 
 const mapDispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),
 })
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(InfoPortfolio);

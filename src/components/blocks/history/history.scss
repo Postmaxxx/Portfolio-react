@@ -11,7 +11,6 @@
     }
 
     & > div:first-of-type {
-
         font-size: 18px;
         color: map.get($light, "text_soft");
         width: 25%;
@@ -63,7 +62,6 @@
         @include respond-to(sm) {
             width: 100%;
         }
-        
 
         & > h4 {
             color: map.get($light, "text_em");
@@ -78,18 +76,6 @@
             @include respond-to(xs) {
                 font-size: 18px;
             }
-/*
-            &::before {
-                position: absolute;
-                left: -40px;
-                top: 15px;
-                content: "";
-                width: 30px;
-                height: 1px;
-                
-                background-color: map.get($light, "border");
-            }
-    */
         }
 
         & > span {
@@ -107,7 +93,6 @@
             @include respond-to(xs) {
                 font-size: 14px;
             }
-    
         }
 
         & > p {
@@ -123,7 +108,6 @@
             @include respond-to(xs) {
                 font-size: 14px;
             }
-    
         }
     }
 
@@ -138,7 +122,6 @@
 
 body.dark {
     & .history__block {
-    
         & > div:first-of-type {
             color: map.get($dark, "text_soft");
             transition: color $transition_theme;
@@ -151,26 +134,20 @@ body.dark {
         }
     
         & .history__description {
-            
-    
             & > h4 {
                 color: map.get($dark, "text_em");
             }
-    
             & > span {
                 color: map.get($dark, "text_hard");
             }
-    
             & > p {
                 color: map.get($dark, "text_soft");
             }
         }
-
         &:hover {
             & > div:first-of-type::before {
                 background-color: map.get($dark, "nav_selected");
             }
         }
-    
     }
 }

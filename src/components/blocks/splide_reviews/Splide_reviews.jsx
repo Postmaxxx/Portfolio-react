@@ -1,10 +1,10 @@
 import React from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
-import './splide_reviews.scss'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import * as actions from '../../../assets/redux/actions'
+import '@splidejs/react-splide/css';
+import './splide_reviews.scss'
 
 const SliderReviews = (props) => {
 
@@ -56,10 +56,8 @@ const SliderReviews = (props) => {
 
 const mapStateToProps = (store) => ({store: store})
 
-
 const mapDispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),
 })
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(SliderReviews);

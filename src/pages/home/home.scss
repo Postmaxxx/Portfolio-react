@@ -52,7 +52,6 @@
             &:hover {
                 border-color: map.get($light, "nav_selected");
             }
-            
 
             & > svg {
                 transition: all $transition_base;
@@ -65,39 +64,28 @@
                     transition: all $transition_base;
                 }
             }
-
         }
     }
-
 }
 
 
 body.dark {
     & .page_home {
         & > .socials {
-    
             & a {
                 border-color: map.get($dark, "text_soft");
-                
                 &:hover {
                     border-color: map.get($dark, "nav_selected");
                 }
-    
                 & > svg {
                     transition: all $transition_base;
                     fill: map.get($dark, "text_soft");
-                    
                     &:hover {
                         fill: map.get($dark, "nav_selected");
                         transition: all $transition_base;
                     }
                 }
-    
             }
         }
-    
     }
-    
-    
-    
 }

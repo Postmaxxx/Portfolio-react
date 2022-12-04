@@ -4,35 +4,26 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Skill from '../../components/blocks/skill/Skill';
 import History from '../../components/blocks/history/History';
-import siteData from '../../assets/js/site_data';
 import resumeDoc from '../../assets/docs/resume.pdf';
 import './resume.scss';
-//import newmodal from '../../components/modal/newmodal.jsx';
-/*
-const onClick1 = () => {
-    const myModal = newmodal();
-    myModal.open()
-}
-*/
 
-const Resume = () => {
 
+const Resume = (props) => {
     return(
         <div className="page-container">
             <div className="page_resume">
                 <section className='skills'> 
-                    <h2 /*onClick={() => {onClick1()}}*/>My skills<em>My skills</em></h2>
+                    <h2>My skills<em>My skills</em></h2>
                     <div className="skills__container"> 
-                        {siteData.skills.map((skill, index) => {
+                        {props.store.skills.map((skill, index) => {
                             return(
-                                <Skill key={index} skill={skill}/>
+                                <Skill key={index} skill={skill} speed={props.store.skillFillSpeed}/>
                             )
                         })}
                     </div>
                 </section>
                 <section className='history'> 
                     <h2>Resume<em>Resume</em></h2>
-                    
                     <div className='history__section'>
                         <div className="history__header">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -45,14 +36,13 @@ const Resume = () => {
                             <h3>Work experience</h3>
                         </div>
                         <div className="history__content">
-                            {siteData.workExperience.map((historyBlock, index) => {
+                            {props.store.workExperience.map((historyBlock, index) => {
                                 return(
                                     <History key={index} historyBlock={historyBlock}/>
                                 )
                             })}
                         </div>
                     </div>
-
                     <div className='history__section'>
                         <div className="history__header">
                         <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" style={{transform: 'scale(1.5)'}}>
@@ -61,7 +51,7 @@ const Resume = () => {
                             <h3>Education</h3>
                         </div>
                         <div className="history__content">
-                            {siteData.education.map((historyBlock, index) => {
+                            {props.store.education.map((historyBlock, index) => {
                                 return(
                                     <History key={index} historyBlock={historyBlock}/>
                                 )
@@ -72,9 +62,14 @@ const Resume = () => {
                 <a className="link_button" href={resumeDoc} target="_blank">Download cv</a>
             </div>
         </div>
-
     )
 }
 
 
-export default Resume;
+const mapStateToProps = (store) => ({store: store})
+
+const mapDispatchToProps = (dispatch) => ({
+    setStore: bindActionCreators(actions, dispatch),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Resume);

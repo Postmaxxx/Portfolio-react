@@ -95,7 +95,6 @@
                         z-index: -1;
                         transition: $transition_base;
                     }
-
                     
                     &:not(.selected):hover {
                         color: map.get($light, "nav_selected");
@@ -111,8 +110,6 @@
                         color: $white;
                     }
                 }
-
-
             }
         }
     }
@@ -127,7 +124,6 @@
         right: -50px;
         display: none;
         cursor: pointer;
-        //position: relative;
         transition: background-color $transition_theme, border-color $transition_theme, top $transition_base;
 
         @include respond-to(lg) {
@@ -137,7 +133,6 @@
         @include respond-to(xs) {
             top: 10px;
         }
-
 
         & div {
             position: absolute;
@@ -199,7 +194,6 @@
                 transform: translate(6px,0px) rotate(-45deg);
             }
         }
-    
 
         &:hover {
             & div {
@@ -207,31 +201,20 @@
             }
         }
 
-
         &.nav_opened {
             @include respond-to(xs) {
                 top: 60px;
             }
         }
-
     }
-
-  
 }
 
 
-
-
-
-
 body.dark {
-
     & .side-panel {
         background-color: map.get($dark, "bg_side-panel");
         border-right: 2px solid map.get($dark, "border");
         transition: background-color $transition_theme, border $transition_theme, transform $transition_base;
-
-
     
       & > figure {
           border-bottom: 2px solid map.get($dark, "separator");;
@@ -244,21 +227,16 @@ body.dark {
       }
     
       & > nav {
-          
           & > ul {
-    
               & > li {
-    
                   & > a {
                     color: map.get($dark, "text_soft");
                       &::before {
                           background-color: map.get($dark, "nav_hover");
                       }
-                      
                       &:not(.selected):hover {
                           color: map.get($dark, "text_em");
                       }
-    
                       &.selected {
                           background-color: map.get($dark, "nav_selected");
                           color: $white;
@@ -267,17 +245,14 @@ body.dark {
               }
           }
       }
-      
       & > .hamburger {
           background-color: map.get($dark, "bg_side-panel");
           border: 1px solid map.get($dark, "border");
           transition: background-color $transition_theme, border-color $transition_theme, top $transition_base;
-  
           & div {
               background-color: map.get($dark, "text_soft");
               transition: background-color $transition_base, transform $transition_base;
           }
       }
     }
-    
 }

@@ -1,20 +1,8 @@
-import  React, { Component, useEffect, Suspense } from 'react';
+import  React, { Suspense } from 'react';
 import { Routes, Route } from "react-router-dom";
-import SidePanel from "./components/side_panel/SidePanel";
-import Homepage from './pages/home/Home';
-import Aboutpage from './pages/about/About';
-import Contact from './pages/contact/Contact';
-import Resume from './pages/resume/Resume';
-import Portfolio from './pages/portfolio/Portfolio'
-import Page404 from './pages/page404/page404'
-import ThemeSwitcher from './components/theme_switcher/ThemeSwitcher';
-import { connect } from 'react-redux';
-import * as actions from './assets/redux/actions';
-import { bindActionCreators } from 'redux';
 import Preloader from './components/preloader/Preloader.jsx';
-//import ModalSplide from './components/modal_splide/ModalSplide.jsx';
 
-const LazyModalSplide = React.lazy(() => import('./components/modal_splide/ModalSplide.jsx'));
+const LazyModalImage = React.lazy(() => import('./components/modal_splide/ModalImage.jsx'));
 const LazyThemeSwitcher = React.lazy(() => import('./components/theme_switcher/ThemeSwitcher'));
 const LazySidePanel = React.lazy(() => import('./components/side_panel/SidePanel'));
 const LazyHomepage = React.lazy(() => import('./pages/home/Home'));
@@ -23,13 +11,13 @@ const LazyResume = React.lazy(() => import('./pages/resume/Resume'));
 const LazyPortfolio = React.lazy(() => import('./pages/portfolio/Portfolio'));
 const LazyContact = React.lazy(() => import('./pages/contact/Contact'));
 const LazyPage404 = React.lazy(() => import('./pages/page404/page404'));
-//const Lazy = React.lazy(() => import(''));
 
-const App = (props) => {
+
+const App = () => {
     return (
         <>
             <Suspense fallback={<Preloader />}>
-                <LazyModalSplide />
+                <LazyModalImage />
             </Suspense>
             <Suspense fallback={<Preloader />}>
                 <LazyThemeSwitcher />
@@ -50,18 +38,6 @@ const App = (props) => {
             </Routes>
         </>
     )
-
 }
 
-
-const mapStateToProps = (store) => ({store: store})
-
-
-const mapDispatchToProps = (dispatch) => ({
-    setStore: bindActionCreators(actions, dispatch),
-})
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-
+export default App;

@@ -1,4 +1,3 @@
-import React from "react";
 import preloader from '../../components/preloader/preloader.js'
 
 export const setImage = (id, images = [], callback) => {

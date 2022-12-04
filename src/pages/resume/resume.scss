@@ -7,7 +7,6 @@
     & > .skills {
         width: 100%;
 
-
         & > .skills__container {
             width: 100%;
             display: flex;
@@ -18,12 +17,8 @@
             @include respond-to(md) {
                 flex-direction: column;
             }
-
-
         }
-
     }
-
 
     & > .history {
 
@@ -63,7 +58,6 @@
             }
         }
     }
-
 
     & .link_button {
         @include respond-to(xs) {

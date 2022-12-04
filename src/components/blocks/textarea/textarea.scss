@@ -1,8 +1,6 @@
 @use "sass:map";
 @import '../../../assets/css/base.scss';
 
-
-
 .textarea__container {
     width: 100%;
     border: 1px solid map.get($light, "border_light");
@@ -38,7 +36,6 @@
         @include respond-to(xs) {
             font-size: 20px;
         }
-
     }
 
     &.incorrect {

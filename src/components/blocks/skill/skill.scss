@@ -1,8 +1,6 @@
 @use "sass:map";
 @import '../../../assets/css/base.scss';
 
-
-
 .resume__skill {
     width: 48%;
     margin-top: 40px;
@@ -55,7 +53,6 @@
             }
         }
     }
-
 }
 
 
@@ -78,6 +75,5 @@ body.dark {
                 }
             }
         }
-    
     }
 }

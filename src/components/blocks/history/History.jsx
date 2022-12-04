@@ -7,7 +7,6 @@ const History = ({historyBlock}) => {
             <div>
                 <span>{historyBlock.date}</span>
             </div>
-
             <div className="history__description">
                 <h4>{historyBlock.header}</h4>
                 <span>{historyBlock.subHeader}</span>
@@ -16,6 +15,5 @@ const History = ({historyBlock}) => {
         </div>
     )
 }
-
 
 export default History;

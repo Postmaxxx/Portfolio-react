@@ -1,9 +1,7 @@
 import React from "react";
 import './input.scss'
 
-
 const Input = (props) => {
-    //console.log('props', props);
     return (
         <div className="input__container">
             <label htmlFor={props.id}>{props.text}</label>
@@ -19,10 +17,8 @@ const Input = (props) => {
                 data-max_length={props.maxLength}
                 data-type={props.checkType}
             />
-            
         </div>
     )
 }
-
 
 export default Input;

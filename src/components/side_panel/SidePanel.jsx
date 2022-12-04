@@ -1,15 +1,11 @@
-import React, {useContext, useEffect} from 'react';
+import React from 'react';
 import './sidePanel.scss';
-import sidePhoto from '../../assets/img/photo-side.jpg'
 import { Link, NavLink } from "react-router-dom";
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 
-
-
 class SidePanel extends React.Component {
-
     constructor(props) {
         super(props)
         this.changeNav = this.changeNav.bind(this);
@@ -22,7 +18,7 @@ class SidePanel extends React.Component {
     }
 
     clicked(e) {
-        if (this.props.store.nav_ham == 'nav_opened' && (e.clientX > 250)) {
+        if (this.props.store.nav_ham === 'nav_opened' && (e.clientX > 250)) {
             this.props.setStore.setNavClose();
         }
     }
@@ -33,7 +29,6 @@ class SidePanel extends React.Component {
         this._hamburgerIcon = document.querySelector('.hamburger');
         this.clickListener = document.addEventListener('click', (e) => this.clicked(e))
     }
-
 
     componentDidUpdate() {
         if (this.props.store.nav_ham === 'nav_opened') {
@@ -47,14 +42,12 @@ class SidePanel extends React.Component {
         }
     }
 
-
-
     render() {
         return (
             <div className="side-panel">
                 <figure>
                     <Link to="/home"> 
-                        <img src={sidePhoto} alt="My photo" />
+                        <img src={this.props.store.imagesMe.side} alt="My photo" />
                     </Link>
                 </figure>
                 <nav>
@@ -73,8 +66,7 @@ class SidePanel extends React.Component {
                                 </li>
                             )
                         })}
-
-                        </ul>
+                    </ul>
                 </nav>
                 <div className="hamburger" onClick={() => this.changeNav()}>
                     <div></div>
@@ -84,18 +76,15 @@ class SidePanel extends React.Component {
                     <div></div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
 
 const mapStateToProps = (store) => ({store: store})
 
-
 const mapDispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),
 })
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(SidePanel);
-

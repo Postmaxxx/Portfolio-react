@@ -1,9 +1,9 @@
-import React, { useCallback, useState } from "react";
-import './list3d_v.scss'
+import React from "react";
 import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { useEffect } from "react";
+import './list3d_v.scss'
 
 let selected = 0;
 let rotateStep = 0;
@@ -17,16 +17,12 @@ const List3d_v = (props) => {
     selected = props.store.portfolios.selected;
     listLength = props.store.portfolios.list.length;
 
-    const [, updateState] = useState(0);
-    //const forceUpdate = useCallback(() => updateState({}), []);
-
     if (stepsToMove != 0) {
         if (Math.abs(stepsToMove) > listLength / 2) {
             stepsToMove = stepsToMove - Math.sign(stepsToMove)*listLength;
         }
         rotateStep = rotateStep + stepsToMove;  
     }
-
 
     const listScroll = (e) => {
         e.preventDefault();
@@ -42,7 +38,7 @@ const List3d_v = (props) => {
     }
 
     useEffect(() => {
-        const scrollListListener = document.querySelector('.list3d_v__container'). addEventListener('wheel', (e) => listScroll(e))
+        document.querySelector('.list3d_v__container'). addEventListener('wheel', (e) => listScroll(e))
     },[])
 
 
@@ -55,7 +51,6 @@ const List3d_v = (props) => {
                     let deltaPos = Math.min(Math.abs(selected - index), listLength - Math.abs(index - selected));
                     let opacity = 1 - deltaPos/(listLength / 4);
                     opacity = opacity < 0 ? 0 : opacity;
-
                     portfolioStyle.transform = `translate(-50%, -50%) rotateX(${-index * step}deg) translateZ(${listLength * 6}px)`;
                     portfolioStyle.opacity = opacity;
 
@@ -71,16 +66,11 @@ const List3d_v = (props) => {
 }
 
 
-
-
-
 const mapStateToProps = (store) => ({store: store})
-
 
 const mapDispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),
 })
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(List3d_v);
 /*

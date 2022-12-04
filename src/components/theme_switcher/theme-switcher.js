@@ -38,8 +38,6 @@ const theme_state__default = {
 }
 
 
-
-
 let theme_state = {
     _themeSwitcher: '',
     _contentSwitcher: '',
@@ -88,7 +86,6 @@ const changeTheme = () => { //main switcher
         .then(() => classSwitcher('theme_light_back_1', 'theme_light_back_2', theme_state.duration / 4))
         .then(() => {classSwitcher('theme_light_back_2', '', 30); theme_state.isChanging = false;})
     }
-    
 }
 
 
@@ -257,7 +254,6 @@ const createThemeSwitcherHtml = (currentTheme) => {
 }
 
 
-
 const createStars = () => {
     new Array(theme_state.numberOfStars)
         .fill('')
@@ -287,8 +283,7 @@ const createClouds = () => {
             ${numberOfClouds.map(() => {
                 return `<img class="cloud" src="${theme_state.cloud}" >`
             }).join('')}
-        </div>
-        `
+        </div>`
     })
 }
 
@@ -318,13 +313,10 @@ export const createThemeSwitcher = (props) => {
     .then(() => {
         if (theme_state.theme == 'dark') {
             changeTheme()
-           // console.log('222here');
         }
         theme_state._themeSwitcher.addEventListener('click', () => {
             theme_state.theme = theme_state.theme === 'light' ? 'dark' : 'light';
             changeTheme()
         })
-    }
-    )
-    
+    })
 }

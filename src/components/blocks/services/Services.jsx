@@ -79,21 +79,13 @@ const Services = () => {
                             c1.792,0,3.527-0.383,5.169-1.141l63.082-29.336c4.307-2.009,7.088-6.371,7.088-11.114v-0.877
                             C315.094,200.735,312.311,196.371,308.001,194.366z"/>
                     </g>
-
                 </svg>
-
                 <h4>Components</h4>
                 <div className="line"></div>
                 <p>Creating any kind of components to make your site unique and catchy. Animation, interactive and usability for outstanding experience.</p>
             </div>
         </div>
-
     )
 }
 
-
 export default Services;
-
-
-
-

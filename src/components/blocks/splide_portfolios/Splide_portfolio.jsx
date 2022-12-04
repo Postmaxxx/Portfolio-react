@@ -1,16 +1,10 @@
-import React from "react";
-import './splide_portfolio.scss'
+import React, { useRef, useEffect} from "react";
 import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { useRef } from "react";
-import { useEffect } from "react";
 import { setImagePortfolio } from '../../../assets/js/setImagePortfolio'
-/*
-images: big 1075*440
-        small 550*400
-*/
+import './splide_portfolio.scss'
 
 let selected = 0;
 
@@ -24,18 +18,12 @@ const SplidePortfolio = (props) => {
         props.setStore.setModal(true);
     }
 
-
     const newModalImg = () => {
         let slideIndex = splidePortfolio.current.splide.index > props.store.portfolios.list[selected].images.length ? props.store.portfolios.list[selected].images.length - 1 : splidePortfolio.current.splide.index;
         props.setStore.setModalImage(props.store.portfolios.list[selected].images[slideIndex]?.images.slice(-1)[0].image)
         props.setStore.setModalDescr(props.store.portfolios.list[selected].images[slideIndex]?.images.slice(-1)[0].descr)
         props.setStore.setModalLink(props.store.portfolios.list[selected].images[slideIndex]?.images.slice(-1)[0].link)
     }
-
-
-
-
-
 
 
     useEffect(() => {

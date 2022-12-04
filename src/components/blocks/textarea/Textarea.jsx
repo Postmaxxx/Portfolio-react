@@ -3,7 +3,6 @@ import './textarea.scss'
 
 
 const Textarea = (props) => {
-    //console.log('props', props);
     return (
         <div className="textarea__container">
             <label htmlFor={props.id}>{props.text}</label>
@@ -22,6 +21,5 @@ const Textarea = (props) => {
         </div>
     )
 }
-
 
 export default Textarea;

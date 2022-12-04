@@ -1,10 +1,7 @@
 @use "sass:map";
 @import '../../../assets/css/base.scss';
 
-
-
 .info_portfolio-slide__container {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,8 +10,6 @@
         text-align: center;
         white-space: pre-wrap;
         font-size: 16px !important;
-
-        
     }
     & > a {
         text-decoration: none;

@@ -1,3 +1,6 @@
+import sidePhoto from '../img/me_side.jpg'
+import resumeDoc from '../docs/resume.pdf';
+
 import photoNight from '../img/me_night.jpg';
 import photoNight750 from '../img/me_night_750.jpg';
 import photoNight500 from '../img/me_night_500.jpg';
@@ -48,24 +51,6 @@ import plenco_mobile_xd_small from '../img/portfolio/plenco/mobile_xd_small.jpg'
 
 
 
-
-
-
-import m1 from '../img/mock-1.jpg'
-import m2 from '../img/mock-2.jpg'
-import m3 from '../img/mock-3.jpg'
-
-import p1_1 from '../img/photo-1.jpg'
-import p1_2 from '../img/photo-2.jpg'
-import p1_3 from '../img/photo-me.jpg'
-import p1_4 from '../img/photo-side.jpg'
-
-import p2_1 from '../img/photo-1.jpg'
-import p2_2 from '../img/photo-2.jpg'
-import p2_3 from '../img/photo-me.jpg'
-import p2_4 from '../img/photo-side.jpg'
-
-
 let portfolioPath = 'http://127.0.0.1:8887/';
 
 const initialState = {
@@ -76,7 +61,134 @@ const initialState = {
     modalDescr: '',
     modalLink: '',
     imgLoaded: false,
+    skillFillSpeed: 3,//ms
+    resumeDoc: resumeDoc,
+    me: [
+        {
+            descr: 'Full Name',
+            value: 'Max Postnikov'
+        },
+        {
+            descr: 'Age',
+            value: '39',
+        },
+        {
+            descr: 'Nationality',
+            value: 'Russian'
+        },
+
+        {
+            descr: 'Languages',
+            value: 'English, Russian'
+        },
+
+        {
+            descr: 'Adress',
+            value: 'Alanya, Turkey'
+        },
+        {
+            descr: 'Freelance',
+            value: 'Available'
+        },
+    ],
+    skills: [
+        {
+            name: 'HTML5',
+            percent: 95
+        },
+        {
+            name: 'CSS3',
+            percent: 90
+        },
+        {
+            name: 'JavaScript',
+            percent: 90
+        },
+        {
+            name: 'React',
+            percent: 75
+        },
+        {
+            name: 'Bootstrap5',
+            percent: 70
+        },
+        {
+            name: 'Webpack',
+            percent: 80
+        },
+        {
+            name: 'GIT',
+            percent: 85
+        },
+        {
+            name: 'Docker',
+            percent: 70
+        },
+        {
+            name: 'Tailwind',
+            percent: 90
+        },
+        {
+            name: 'Gulp',
+            percent: 95
+        },
+        {
+            name: 'BEM',
+            percent: 95
+        },
+        {
+            name: 'Scrum',
+            percent: 80
+        },
+    ],
+    workExperience: [
+        {
+            date: '2020 - Present',
+            header: 'Web Developer',
+            subHeader: 'WiseUpStudio',
+            text: 'Creating sites using design templates, creating specific interactive components, code review, bugs fixing. Applying frameworks (Bootstrap, Tailwind, React) as well as using pure Html+Css+Js. Following best practices using BEM, Git, Webpack and Mobile First application principles.',
+        },
+        {
+            date: '2019 - 2020',
+            header: 'Junior Frontend Developer',
+            subHeader: 'ServiceCom',
+            text: 'Creating sites using pixel-perfect design, communication with clients.',
+        },
+        {
+            date: '2015 - 2019',
+            header: 'Principal System Engineer',
+            subHeader: 'ServiceCom',
+            text: 'Planning strategy of IT development, configuration of security settings and access permissions for individuals and groups, development and implement the complex virus malware protection strategy; communication with third party System Engineer Groups for creation of optimal solutions for business support.',
+        },
+        {
+            date: '2011 - 2015',
+            header: 'System Engineer',
+            subHeader: 'Ecostroy LTD',
+            text: 'Creatively designed and supported leading edge IT solutions comprising multiple application servers, network equipments, storage architecture, network monitoring and backup/disaster recovery strategies. Additional responsibilities included development of IT strategies, assist upper management in planning/upgrading latest technology trends and maintain positive business relationship with technology vendors and customers.',
+        },
+    ],
+    education: [
+        {
+            date: '2022',
+            header: 'AWS',
+            subHeader: 'AWS Cloud Practitioner',
+            text: 'Improving my knowledge by learning cloud technologies',
+        },
+        {
+            date: '2019',
+            header: 'SkillFactory Education Platform',
+            subHeader: 'Frontend Developer',
+            text: 'Finished 9 month intense online courses with final team project. First place in the year team competition.',
+        },
+        {
+            date: '2000 - 2005',
+            header: 'Baikal State University of Economics And Law',
+            subHeader: 'IT in Economics',
+            text: 'Master’s Degree, Major in Computer Information Systems. Represented university in ACM International Collegiate Programming Contest (twice)',
+        },
+    ],
     imagesMe: {
+        side: sidePhoto,
         day: {
             descr: 'Just me in the daytime',
             images: [
@@ -675,22 +787,28 @@ const initialState = {
                 link: 'https://www.techlicious.com',
                 images: [
                     {
-                        image: p2_4,
-                        descr: 'Bla p2_1'
+                        //mock
+                        descr: 'Accordions',
+                        link: portfolioPath + 'plenco/pn-rr-app.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: plenco_5_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: plenco_5_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: plenco_5,
+                            },
+                        ],
                     },
-                    {
-                        image: p2_3,
-                        descr: 'Bla p2_2'
-                    },
-                    {
-                        image: p2_2,
-                        descr: 'Bla p2_3'
-                    },
-                    {
-                        image: p2_1,
-                        descr: 'Bla p2_4'
-                    }
-                ],
+                ]
             },
             {
                 name: 'P & V',
@@ -698,10 +816,28 @@ const initialState = {
                 link: 'https://www.google.com',
                 images: [
                     {
-                        image: p1_1,
-                        descr: 'Bla p2_1'
-                    }
-                ],
+                        //mock
+                        descr: 'Accordions',
+                        link: portfolioPath + 'plenco/pn-rr-app.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: plenco_5_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: plenco_5_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: plenco_5,
+                            },
+                        ],
+                    },
+                ]
             },
             {
                 name: 'Formation',
@@ -709,10 +845,28 @@ const initialState = {
                 link: 'https://www.google.com',
                 images: [
                     {
-                        image: p1_1,
-                        descr: 'Bla p2_1'
-                    }
-                ],
+                        //mock
+                        descr: 'Accordions',
+                        link: portfolioPath + 'plenco/pn-rr-app.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: plenco_5_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: plenco_5_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: plenco_5,
+                            },
+                        ],
+                    },
+                ]
             },
             {
                 name: 'Components',
@@ -720,10 +874,28 @@ const initialState = {
                 link: 'https://www.google.com',
                 images: [
                     {
-                        image: p1_1,
-                        descr: 'Bla p2_1'
-                    }
-                ],
+                        //mock
+                        descr: 'Accordions',
+                        link: portfolioPath + 'plenco/pn-rr-app.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: plenco_5_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: plenco_5_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: plenco_5,
+                            },
+                        ],
+                    },
+                ]
             },
             {
                 name: 'Landing pages',
@@ -731,10 +903,28 @@ const initialState = {
                 link: 'https://www.google.com',
                 images: [
                     {
-                        image: p1_1,
-                        descr: 'Bla p2_1'
-                    }
-                ],
+                        //mock
+                        descr: 'Accordions',
+                        link: portfolioPath + 'plenco/pn-rr-app.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: plenco_5_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: plenco_5_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: plenco_5,
+                            },
+                        ],
+                    },
+                ]
             },
             {
                 name: 'Bike AntiSteal',
@@ -742,29 +932,42 @@ const initialState = {
                 link: 'https://www.google.com',
                 images: [
                     {
-                        image: p1_1,
-                        descr: 'Bla p2_1'
-                    }
-                ],
+                        //mock
+                        descr: 'Accordions',
+                        link: portfolioPath + 'plenco/pn-rr-app.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: plenco_5_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: plenco_5_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: plenco_5,
+                            },
+                        ],
+                    },
+                ]
             },
         ],
-
-
-
-
     },
-
     contact: {
         name: '',
         email: '',
         subject: '',
         message: ''
     },
-    currentGallery: {
+    /*currentGallery: {
         projectName: '',
         projectDescr: '',
         images: [],
-    },
+    },*/
     pages: [
         {
             link: '/home',
