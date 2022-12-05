@@ -16,6 +16,23 @@ $page-padding_bottom: 0px;
 $sidePanelWidthFull: 300px;
 $sidePanelWidthSmall: 250px;
 
+$light: (
+    "bg": #F1F1F1,
+    "bg_side-panel": #E4E4E4,
+    "text_em": #037FFF,
+    "separator": #CBCED8,
+    "border": #CBCED8,
+    "border_light": #CBCED8,
+    "nav_hover": rgba(3,127,255,.2),
+    "nav_selected": #037FFF,
+    "text_soft": #313131,
+    "text_hard": #151515,
+    "text_shadow": rgba(215,220,230,.44),
+    "scroll-track": #383838,
+    "scroll-thumb": #6B6B6B,//#6B6B6B,
+    "modal_bg": rgba(#10121B, .9),
+    "pink_light": #e99688,
+);
 
 $dark: (
     "bg": #10121B,
@@ -36,23 +53,7 @@ $dark: (
 
 );
 
-$light: (
-    "bg": #F1F1F1,
-    "bg_side-panel": #E4E4E4,
-    "text_em": #037FFF,
-    "separator": #CBCED8,
-    "border": #CBCED8,
-    "border_light": #CBCED8,
-    "nav_hover": rgba(3,127,255,.2),
-    "nav_selected": #037FFF,
-    "text_soft": #313131,
-    "text_hard": #151515,
-    "text_shadow": rgba(215,220,230,.44),
-    "scroll-track": #383838,
-    "scroll-thumb": #6B6B6B,//#6B6B6B,
-    "modal_bg": rgba(#10121B, .9),
-    "pink_light": #e99688,
-);
+
 
 
 @mixin  respond-to($width) {
