@@ -48,7 +48,7 @@ const Contact = (props) => {
                 alert('Your message has been sent.');
             })
             .catch(function (error) {
-                alert('Service error, please, try again later. Error: ' + error);
+                alert('Service unavailable. Please, try again later. Error: ' + error);
             })
             .then(function () {});
         }

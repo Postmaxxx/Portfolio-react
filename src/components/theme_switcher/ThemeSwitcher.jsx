@@ -10,9 +10,7 @@ import './themeSwitcher.scss';
 const ThemeSwitcher = props => {
 
     const changeTheme = () => {
-        //setTimeout(() => {
-            props.setStore.setTheme(document.getElementsByTagName("BODY")[0].classList.contains('dark') ? 'dark' : 'light');
-        //}, 100) //just to have enough time to update localStorage
+        props.setStore.setTheme(document.getElementsByTagName("BODY")[0].classList.contains('dark') ? 'dark' : 'light');
     }
 
     useEffect(() => {
@@ -37,7 +35,6 @@ const ThemeSwitcher = props => {
             <div className="theme-switcher" onClick={changeTheme}></div>
         </div>
     )
-   
 }
 
 

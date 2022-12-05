@@ -59,7 +59,7 @@ class SidePanel extends React.Component {
                                         className={ ({ isActive }) => {
                                             return isActive ? 'selected' : ''
                                         }}
-                                        onClick={() => {this.props.setStore.setNavClose()}}
+                                        onClick={this.props.setStore.setNavClose}
                                         to={page.link}>
                                         {page.text}
                                     </NavLink>
@@ -68,7 +68,7 @@ class SidePanel extends React.Component {
                         })}
                     </ul>
                 </nav>
-                <div className="hamburger" onClick={() => this.changeNav()}>
+                <div className="hamburger" onClick={this.changeNav}>
                     <div></div>
                     <div></div>
                     <div></div>
