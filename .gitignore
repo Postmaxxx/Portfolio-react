@@ -4,3 +4,4 @@ node_modules
 .pnp.js
 /coverage
 /build
+.env

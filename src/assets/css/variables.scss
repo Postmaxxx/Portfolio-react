@@ -16,23 +16,60 @@ $page-padding_bottom: 0px;
 $sidePanelWidthFull: 300px;
 $sidePanelWidthSmall: 250px;
 
-$light: (
-    "bg": #F1F1F1,
-    "bg_side-panel": #E4E4E4,
-    "text_em": #037FFF,
-    "separator": #CBCED8,
-    "border": #CBCED8,
-    "border_light": #CBCED8,
-    "nav_hover": rgba(3,127,255,.2),
-    "nav_selected": #037FFF,
-    "text_soft": #313131,
-    "text_hard": #151515,
-    "text_shadow": rgba(215,220,230,.44),
-    "scroll-track": #383838,
-    "scroll-thumb": #6B6B6B,//#6B6B6B,
-    "modal_bg": rgba(#10121B, .9),
-    "pink_light": #e99688,
-);
+
+$c_bg: var(--c_bg);
+$c_bg_side-panel: var(--c_bg_side-panel);
+$c_text_em: var(--c_text_em);
+$c_separator: var(--c_separator);
+$c_border: var(--c_border);
+$c_border_light: var(--c_border_light);
+$c_nav_hover: var(--c_nav_hover);
+$c_nav_selected: var(--c_nav_selected);
+$c_text_soft: var(--c_text_soft);
+$c_text_hard: var(--c_text_hard);
+$c_text_shadow: var(--c_text_shadow);
+$c_scroll-track: var(--c_scroll-track);
+$c_scroll-thumb: var(--c_scroll-thumb);
+$c_modal_bg: var(--c_modal_bg);
+$c_pink_light: var(--c_pink_light);
+
+
+body {
+    --c_bg: #F1F1F1;
+    --c_bg_side-panel: #E4E4E4;
+    --c_text_em: #037FFF;
+    --c_separator: #CBCED8;
+    --c_border: #CBCED8;
+    --c_border_light: #CBCED8;
+    --c_nav_hover: rgba(3,127,255,.2);
+    --c_nav_selected: #037FFF;
+    --c_text_soft: #313131;
+    --c_text_hard: #151515;
+    --c_text_shadow: rgba(215,220,230,.44);
+    --c_scroll-track: #383838;
+    --c_scroll-thumb: #6B6B6B;
+    --c_modal_bg: rgba(#10121B, .9);
+    --c_pink_light: #e99688;
+}
+
+body.dark {
+    --c_bg: #10121B;
+    --c_bg_side-panel: #191D2B;
+    --c_text_em: #037FFF;
+    --c_separator: #2E344E;
+    --c_border: #2E344E;
+    --c_border_light: #2E344E;
+    --c_nav_hover: rgba(3,127,255,.2);
+    --c_nav_selected: #037FFF;
+    --c_text_soft: #A4ACC4;
+    --c_text_hard: #FFF;
+    --c_text_shadow: rgba(25,29,43,.44);
+    --c_scroll-track: #383838;
+    --c_scroll-thumb: #6B6B6B;
+    --c_modal_bg: rgba(80,80,80, .9);
+    --c_pink_light: #e99688;
+}
+
 
 $dark: (
     "bg": #10121B,
@@ -53,6 +90,23 @@ $dark: (
 
 );
 
+$light: (
+    "bg": #F1F1F1,
+    "bg_side-panel": #E4E4E4,
+    "text_em": #037FFF,
+    "separator": #CBCED8,
+    "border": #CBCED8,
+    "border_light": #CBCED8,
+    "nav_hover": rgba(3,127,255,.2),
+    "nav_selected": #037FFF,
+    "text_soft": #313131,
+    "text_hard": #151515,
+    "text_shadow": rgba(215,220,230,.44),
+    "scroll-track": #383838,
+    "scroll-thumb": #6B6B6B,//#6B6B6B,
+    "modal_bg": rgba(#10121B, .9),
+    "pink_light": #e99688,
+);
 
 
 

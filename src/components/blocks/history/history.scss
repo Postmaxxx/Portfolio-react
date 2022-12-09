@@ -78,7 +78,11 @@
             }
         }
 
-        & > span {
+        & a {
+            text-decoration: none;
+        }
+
+        & span {
             display: block;
             font-size: 18px;
             margin-top: 5px;
@@ -137,7 +141,7 @@ body.dark {
             & > h4 {
                 color: map.get($dark, "text_em");
             }
-            & > span {
+            & span {
                 color: map.get($dark, "text_hard");
             }
             & > p {

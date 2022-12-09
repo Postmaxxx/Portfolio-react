@@ -9,7 +9,11 @@ const History = ({historyBlock}) => {
             </div>
             <div className="history__description">
                 <h4>{historyBlock.header}</h4>
-                <span>{historyBlock.subHeader}</span>
+                {historyBlock.link ? 
+                    <a href={historyBlock.link} target='_blank'><span>{historyBlock.subHeader}</span></a>
+                :
+                    <span>{historyBlock.subHeader}</span>
+                }
                 <p>{historyBlock.text}</p>
             </div>
         </div>

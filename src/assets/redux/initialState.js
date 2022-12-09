@@ -147,24 +147,28 @@ const initialState = {
             header: 'Web Developer',
             subHeader: 'WiseUpStudio',
             text: 'Creating sites using design templates, creating specific interactive components, code review, bugs fixing. Applying frameworks (Bootstrap, Tailwind, React) as well as using pure Html+Css+Js. Following best practices using BEM, Git, Webpack and Mobile First application principles.',
+            link: 'https://www.wiseupstudio.com/',
         },
         {
             date: '2019 - 2020',
             header: 'Junior Frontend Developer',
             subHeader: 'ServiceCom',
             text: 'Creating sites using pixel-perfect design, communication with clients.',
+            link: 'http://servicecom38.ru/',
         },
         {
             date: '2015 - 2019',
             header: 'Principal System Engineer',
             subHeader: 'ServiceCom',
             text: 'Planning strategy of IT development, configuration of security settings and access permissions for individuals and groups, development and implement the complex virus malware protection strategy; communication with third party System Engineer Groups for creation of optimal solutions for business support.',
+            link: 'http://servicecom38.ru/',
         },
         {
             date: '2011 - 2015',
             header: 'System Engineer',
             subHeader: 'Ecostroy LTD',
             text: 'Creatively designed and supported leading edge IT solutions comprising multiple application servers, network equipments, storage architecture, network monitoring and backup/disaster recovery strategies. Additional responsibilities included development of IT strategies, assist upper management in planning/upgrading latest technology trends and maintain positive business relationship with technology vendors and customers.',
+            link: 'https://uroven-sk.ru/',
         },
     ],
     education: [
@@ -173,18 +177,21 @@ const initialState = {
             header: 'AWS',
             subHeader: 'AWS Cloud Practitioner',
             text: 'Improving my knowledge by learning cloud technologies',
+            link: 'https://aws.amazon.com/',
         },
         {
             date: '2019',
             header: 'SkillFactory Education Platform',
             subHeader: 'Frontend Developer',
             text: 'Finished 9 month intense online courses with final team project. First place in the year team competition.',
+            link: 'https://skillfactory.ru'
         },
         {
             date: '2000 - 2005',
             header: 'Baikal State University of Economics And Law',
             subHeader: 'IT in Economics',
             text: 'Master’s Degree, Major in Computer Information Systems. Represented university in ACM International Collegiate Programming Contest (twice)',
+            link: 'http://bgu.ru/eng/',
         },
     ],
     imagesMe: {
@@ -963,11 +970,6 @@ const initialState = {
         subject: '',
         message: ''
     },
-    /*currentGallery: {
-        projectName: '',
-        projectDescr: '',
-        images: [],
-    },*/
     pages: [
         {
             link: '/home',
@@ -1013,6 +1015,34 @@ const initialState = {
             add: 'P2S Inc.'
         }, 
     ],
+    contacts: {
+        phone: [
+            {
+                link: 'tel:+905073423990',
+                text: '+90 507 342 39 90',
+                newWindow: false
+            },
+        ],
+        email: [
+            {
+                link: 'mailto:max@postnikov.dev',
+                text: 'max@postnikov.dev',
+                newWindow: false
+            },
+            {
+                link: 'mailto:maksim.postnikov.it@gmail.com',
+                text: 'maksim.postnikov.it@gmail.com',
+                nenewWindoww: false
+            },
+        ],
+        address: [
+            {
+                link: 'https://goo.gl/maps/BoFoy6a1CLfooT768',
+                text: 'Mahmutlar, Alanya/Antalya, Turkey',
+                newWindow: true
+            },
+        ],
+    }
     
 }
 
