@@ -1,3 +1,4 @@
+@use "sass:map";
 @import '../../assets/css/variables.scss';
 
 .page-404 {
@@ -11,8 +12,22 @@
     justify-content: center;
     flex-direction: column;
 
+    & h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    & span {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 5px;
+
+        @include respond-to(sm) {
+            font-size: 16px;
+        }
+    }
+
     & a {
-        //text-decoration: none;
-        color: $black;
+        color: map.get($light, "text_em");
     }
 }

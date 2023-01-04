@@ -50,6 +50,42 @@ import plenco_mobile_xd_small from '../img/portfolio/plenco/mobile_xd_small.jpg'
 
 
 
+import formation_1 from '../img/portfolio/formation/1.jpg'
+import formation_1_big from '../img/portfolio/formation/1_big.jpg'
+import formation_1_small from '../img/portfolio/formation/1_small.jpg'
+import formation_2 from '../img/portfolio/formation/2.jpg'
+import formation_2_big from '../img/portfolio/formation/2_big.jpg'
+import formation_2_small from '../img/portfolio/formation/2_small.jpg'
+import formation_3 from '../img/portfolio/formation/3.jpg'
+import formation_3_big from '../img/portfolio/formation/3_big.jpg'
+import formation_3_small from '../img/portfolio/formation/3_small.jpg'
+import formation_4 from '../img/portfolio/formation/4.jpg'
+import formation_4_big from '../img/portfolio/formation/4_big.jpg'
+import formation_4_small from '../img/portfolio/formation/4_small.jpg'
+import formation_5 from '../img/portfolio/formation/5.jpg'
+import formation_5_big from '../img/portfolio/formation/5_big.jpg'
+import formation_5_small from '../img/portfolio/formation/5_small.jpg'
+import formation_6 from '../img/portfolio/formation/6.jpg'
+import formation_6_big from '../img/portfolio/formation/6_big.jpg'
+import formation_6_small from '../img/portfolio/formation/6_small.jpg'
+import formation_7 from '../img/portfolio/formation/7.jpg'
+import formation_7_big from '../img/portfolio/formation/7_big.jpg'
+import formation_7_small from '../img/portfolio/formation/7_small.jpg'
+import formation_8 from '../img/portfolio/formation/8.jpg'
+import formation_8_big from '../img/portfolio/formation/8_big.jpg'
+import formation_8_small from '../img/portfolio/formation/8_small.jpg'
+import formation_9 from '../img/portfolio/formation/9.jpg'
+import formation_9_big from '../img/portfolio/formation/9_big.jpg'
+import formation_9_small from '../img/portfolio/formation/9_small.jpg'
+import formation_10 from '../img/portfolio/formation/10.jpg'
+import formation_10_big from '../img/portfolio/formation/10_big.jpg'
+import formation_10_small from '../img/portfolio/formation/10_small.jpg'
+import formation_11 from '../img/portfolio/formation/11.jpg'
+import formation_11_big from '../img/portfolio/formation/11_big.jpg'
+import formation_11_small from '../img/portfolio/formation/11_small.jpg'
+import formation_12 from '../img/portfolio/formation/12.jpg'
+import formation_12_big from '../img/portfolio/formation/12_big.jpg'
+import formation_12_small from '../img/portfolio/formation/12_small.jpg'
 
 let portfolioPath = 'http://127.0.0.1:8887/';
 
@@ -109,8 +145,8 @@ const initialState = {
             percent: 75
         },
         {
-            name: 'Bootstrap5',
-            percent: 70
+            name: 'Gulp',
+            percent: 95
         },
         {
             name: 'Webpack',
@@ -129,8 +165,8 @@ const initialState = {
             percent: 90
         },
         {
-            name: 'Gulp',
-            percent: 95
+            name: 'Bootstrap5',
+            percent: 70
         },
         {
             name: 'BEM',
@@ -172,6 +208,13 @@ const initialState = {
         },
     ],
     education: [
+        {
+            date: '2023',
+            header: 'SCRUM',
+            subHeader: 'Scrum Professional scrum master (PSM-II)',
+            text: 'Verified ability use Scrum in developement',
+            link: 'https://www.scrum.org/assessments/professional-scrum-master-ii-certification',
+        },
         {
             date: '2022',
             header: 'AWS',
@@ -243,7 +286,6 @@ const initialState = {
 
     portfolios: {
         selected: 0,
-        //slideIndex: 0,
         list: [
             {
                 name: 'Plenco',
@@ -251,7 +293,6 @@ const initialState = {
                 link: 'https://www.plenco.com',
                 images: [
                     {
-                        //image: plenco_dt,   
                         descr: 'Design templates for desktop version',
                         link: '',
                         images: [
@@ -273,7 +314,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_mob,
                         descr: 'Design templates for mobile version',
                         link: '',
                         images: [
@@ -295,7 +335,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_1,
                         descr: 'Home page',
                         link: portfolioPath + 'plenco/home.html',
                         images: [
@@ -317,7 +356,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_2,
                         descr: 'Dropdown menu for quick application selection',
                         link: '',
                         images: [
@@ -339,7 +377,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_3,
                         descr: 'Certificates & latest news',
                         link: portfolioPath + 'plenco/certifications.html',
                         images: [
@@ -361,7 +398,6 @@ const initialState = {
                         ]
                     },
                     {
-                       // image: plenco_4,
                         descr: 'Mobile menu',
                         link: '',
                         images: [
@@ -383,7 +419,6 @@ const initialState = {
                         ]
                     },
                     {
-                       // image: plenco_5,
                         descr: 'Accordions',
                         link: portfolioPath + 'plenco/pn-rr-app.html',
                         images: [
@@ -405,7 +440,6 @@ const initialState = {
                         ]
                     },
                     {
-                      //  image: plenco_6,
                         descr: 'Related accordions',
                         link: portfolioPath + 'plenco/oil-gas.html',
                         images: [
@@ -427,7 +461,6 @@ const initialState = {
                         ]
                     },
                     {
-                       // image: plenco_7,
                         descr: 'News carousel',
                         link: portfolioPath + 'plenco/news-blog-detail.html',
                         images: [
@@ -449,7 +482,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_8,
                         descr: 'News block with tags and categories',
                         link: portfolioPath + 'plenco/news-blog.html',
                         images: [
@@ -471,7 +503,6 @@ const initialState = {
                         ]
                     },
                     {
-                       // image: plenco_9,
                         descr: 'Search with filters',
                         link: '',
                         images: [
@@ -493,7 +524,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_10,
                         descr: 'Mobile navigation',
                         link: '',
                         images: [
@@ -522,7 +552,6 @@ const initialState = {
                 link: 'https://www.p2sinc.com',
                 images: [
                     {
-                        // image: plenco_5,
                          descr: 'Accordions',
                          link: portfolioPath + 'plenco/pn-rr-app.html',
                          images: [
@@ -545,7 +574,6 @@ const initialState = {
                      },
                     
                     {
-                        //image: plenco_1,
                         descr: 'Home page',
                         link: portfolioPath + 'plenco/home.html',
                         images: [
@@ -567,7 +595,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_2,
                         descr: 'Dropdown menu for quick application selection',
                         link: '',
                         images: [
@@ -589,7 +616,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_3,
                         descr: 'Certificates & latest news',
                         link: portfolioPath + 'plenco/certifications.html',
                         images: [
@@ -611,7 +637,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_dt,   
                         descr: 'Design templates for desktop version',
                         link: '',
                         images: [
@@ -633,7 +658,6 @@ const initialState = {
                         ]
                     },
                     {
-                       // image: plenco_4,
                         descr: 'Mobile menu',
                         link: '',
                         images: [
@@ -655,7 +679,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_mob,
                         descr: 'Design templates for mobile version',
                         link: '',
                         images: [
@@ -677,7 +700,6 @@ const initialState = {
                         ]
                     },
                     {
-                      //  image: plenco_6,
                         descr: 'Related accordions',
                         link: portfolioPath + 'plenco/oil-gas.html',
                         images: [
@@ -699,7 +721,6 @@ const initialState = {
                         ]
                     },
                     {
-                       // image: plenco_7,
                         descr: 'News carousel',
                         link: portfolioPath + 'plenco/news-blog-detail.html',
                         images: [
@@ -721,7 +742,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_8,
                         descr: 'News block with tags and categories',
                         link: portfolioPath + 'plenco/news-blog.html',
                         images: [
@@ -743,7 +763,6 @@ const initialState = {
                         ]
                     },
                     {
-                       // image: plenco_9,
                         descr: 'Search with filters',
                         link: '',
                         images: [
@@ -765,7 +784,6 @@ const initialState = {
                         ]
                     },
                     {
-                        //image: plenco_10,
                         descr: 'Mobile navigation',
                         link: '',
                         images: [
@@ -848,28 +866,258 @@ const initialState = {
             },
             {
                 name: 'Formation',
-                descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
-                link: 'https://www.google.com',
+                descr: 'New site template for Plenco company. Created using Figma drafts. \n Stack: Gulp, Twig, JS, Scss',
+                link: 'https://www.formation.ai',
                 images: [
                     {
-                        //mock
-                        descr: 'Accordions',
-                        link: portfolioPath + 'plenco/pn-rr-app.html',
+                        descr: 'Navigation for mobile devices.',
+                        link: portfolioPath + 'formation.ai/web/frontend/index.html',
                         images: [
                             {
                                 width: 550,
                                 height: 400,
-                                image: plenco_5_small,
+                                image: formation_1_small,
                             },
                             {
                                 width: 1075,
                                 height: 440,
-                                image: plenco_5_big,
+                                image: formation_1_big,
                             },
                             {
                                 width: 10000,
                                 height: 10000,
-                                image: plenco_5,
+                                image: formation_1,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Blog page.',
+                        link: portfolioPath + 'formation.ai/web/frontend/blog.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_2_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_2_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_2,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Grocery page. Owl carousel for better design.',
+                        link: portfolioPath + 'formation.ai/web/frontend/grocery.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_3_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_3_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_3,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Join page. Owl carousel for better design.',
+                        link: portfolioPath + 'formation.ai/web/frontend/join.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_4_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_4_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_4,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Resource overview page. Animated navigation and multi-select filters.',
+                        link: portfolioPath + 'formation.ai/web/frontend/resources_overview.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_5_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_5_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_5,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Resource contnet page with categories and search.',
+                        link: portfolioPath + 'formation.ai/web/frontend/resources_content.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_6_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_6_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_6,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Resource overview page for mobile devices. Animated navigation and multi-select filters.',
+                        link: portfolioPath + 'formation.ai/web/frontend/resources_overview.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_7_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_7_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_7,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Resource theme page with categories and search.',
+                        link: portfolioPath + 'formation.ai/web/frontend/resources_theme.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_8_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_8_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_8,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Solution page.',
+                        link: portfolioPath + 'formation.ai/web/frontend/solution.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_9_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_9_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_9,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Retail page for mobile devices.',
+                        link: portfolioPath + 'formation.ai/web/frontend/retail.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_10_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_10_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_10,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Navigation for desktop.',
+                        link: portfolioPath + 'formation.ai/web/frontend/solutions.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_11_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_11_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_11,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Creative design.',
+                        link: portfolioPath + 'formation.ai/web/frontend/LP.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_12_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_12_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_12,
                             },
                         ],
                     },
