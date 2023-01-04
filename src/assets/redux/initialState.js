@@ -40,7 +40,6 @@ import plenco_9_small from '../img/portfolio/plenco/9_small.jpg'
 import plenco_10 from '../img/portfolio/plenco/10.jpg'
 import plenco_10_big from '../img/portfolio/plenco/10_big.jpg'
 import plenco_10_small from '../img/portfolio/plenco/10_small.jpg'
-
 import plenco_desktop_xd from '../img/portfolio/plenco/desktop_xd.jpg'
 import plenco_desktop_xd_big from '../img/portfolio/plenco/desktop_xd_big.jpg'
 import plenco_desktop_xd_small from '../img/portfolio/plenco/desktop_xd_small.jpg'
@@ -48,7 +47,18 @@ import plenco_mobile_xd from '../img/portfolio/plenco/mobile_xd.jpg'
 import plenco_mobile_xd_big from '../img/portfolio/plenco/mobile_xd_big.jpg'
 import plenco_mobile_xd_small from '../img/portfolio/plenco/mobile_xd_small.jpg'
 
-
+import p2s_1 from '../img/portfolio/p2s/1.jpg'
+import p2s_1_big from '../img/portfolio/p2s/1_big.jpg'
+import p2s_1_small from '../img/portfolio/p2s/1_small.jpg'
+import p2s_2 from '../img/portfolio/p2s/2.jpg'
+import p2s_2_big from '../img/portfolio/p2s/2_big.jpg'
+import p2s_2_small from '../img/portfolio/p2s/2_small.jpg'
+import p2s_3 from '../img/portfolio/p2s/3.jpg'
+import p2s_3_big from '../img/portfolio/p2s/3_big.jpg'
+import p2s_3_small from '../img/portfolio/p2s/3_small.jpg'
+import p2s_4 from '../img/portfolio/p2s/4.jpg'
+import p2s_4_big from '../img/portfolio/p2s/4_big.jpg'
+import p2s_4_small from '../img/portfolio/p2s/4_small.jpg'
 
 import formation_1 from '../img/portfolio/formation/1.jpg'
 import formation_1_big from '../img/portfolio/formation/1_big.jpg'
@@ -548,259 +558,90 @@ const initialState = {
             },
             {
                 name: 'P2S Inc',
-                descr: 'DEF Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-blaDEF Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                descr: 'New design for P2S Incorporated. Plethora of specific components, animations,  \n Stack: Gulp, Twig, JS, Scss',
                 link: 'https://www.p2sinc.com',
                 images: [
                     {
-                         descr: 'Accordions',
-                         link: portfolioPath + 'plenco/pn-rr-app.html',
+                         descr: 'Carousel with 3D effect, filters, JSON animations',
+                         link: portfolioPath + 'p2sinc/web/projects.html',
                          images: [
                              {
                                  width: 550,
                                  height: 400,
-                                 image: plenco_5_small,
+                                 image: p2s_1_small,
                              },
                              {
                                  width: 1075,
                                  height: 440,
-                                 image: plenco_5_big,
+                                 image: p2s_1_big,
                              },
                              {
                                  width: 10000,
                                  height: 10000,
-                                 image: plenco_5,
+                                 image: p2s_1,
                              },
                          ]
                      },
-                    
-                    {
-                        descr: 'Home page',
-                        link: portfolioPath + 'plenco/home.html',
+                     {
+                        descr: 'Getting detail about project',
+                        link: portfolioPath + 'p2sinc/web/projects.html',
                         images: [
                             {
                                 width: 550,
                                 height: 400,
-                                image: plenco_1_small,
+                                image: p2s_2_small,
                             },
                             {
                                 width: 1075,
                                 height: 440,
-                                image: plenco_1_big,
+                                image: p2s_2_big,
                             },
                             {
                                 width: 10000,
                                 height: 10000,
-                                image: plenco_1,
+                                image: p2s_2,
                             },
                         ]
                     },
                     {
-                        descr: 'Dropdown menu for quick application selection',
-                        link: '',
+                        descr: 'Gallery of created projects',
+                        link: portfolioPath + 'p2sinc/web/projects.html',
                         images: [
                             {
                                 width: 550,
                                 height: 400,
-                                image: plenco_2_small,
+                                image: p2s_3_small,
                             },
                             {
                                 width: 1075,
                                 height: 440,
-                                image: plenco_2_big,
+                                image: p2s_3_big,
                             },
                             {
                                 width: 10000,
                                 height: 10000,
-                                image: plenco_2,
+                                image: p2s_3,
                             },
                         ]
                     },
                     {
-                        descr: 'Certificates & latest news',
-                        link: portfolioPath + 'plenco/certifications.html',
+                        descr: 'Homepage with news-carousel',
+                        link: portfolioPath + 'p2sinc/web/index.html',
                         images: [
                             {
                                 width: 550,
                                 height: 400,
-                                image: plenco_3_small,
+                                image: p2s_4_small,
                             },
                             {
                                 width: 1075,
                                 height: 440,
-                                image: plenco_3_big,
+                                image: p2s_4_big,
                             },
                             {
                                 width: 10000,
                                 height: 10000,
-                                image: plenco_3,
-                            },
-                        ]
-                    },
-                    {
-                        descr: 'Design templates for desktop version',
-                        link: '',
-                        images: [
-                            {
-                                width: 550,
-                                height: 400,
-                                image:plenco_desktop_xd_small,
-                            },
-                            {
-                                width: 1075,
-                                height: 440,
-                                image: plenco_desktop_xd_big,
-                            },
-                            {
-                                width: 10000,
-                                height: 10000,
-                                image: plenco_desktop_xd,
-                            },
-                        ]
-                    },
-                    {
-                        descr: 'Mobile menu',
-                        link: '',
-                        images: [
-                            {
-                                width: 550,
-                                height: 400,
-                                image: plenco_4_small,
-                            },
-                            {
-                                width: 1075,
-                                height: 440,
-                                image: plenco_4_big,
-                            },
-                            {
-                                width: 10000,
-                                height: 10000,
-                                image: plenco_4,
-                            },
-                        ]
-                    },
-                    {
-                        descr: 'Design templates for mobile version',
-                        link: '',
-                        images: [
-                            {
-                                width: 550,
-                                height: 400,
-                                image: plenco_mobile_xd_small,
-                            },
-                            {
-                                width: 1075,
-                                height: 440,
-                                image: plenco_mobile_xd_big,
-                            },
-                            {
-                                width: 10000,
-                                height: 10000,
-                                image: plenco_mobile_xd,
-                            },
-                        ]
-                    },
-                    {
-                        descr: 'Related accordions',
-                        link: portfolioPath + 'plenco/oil-gas.html',
-                        images: [
-                            {
-                                width: 550,
-                                height: 400,
-                                image: plenco_6_small,
-                            },
-                            {
-                                width: 1075,
-                                height: 440,
-                                image: plenco_6_big,
-                            },
-                            {
-                                width: 10000,
-                                height: 10000,
-                                image: plenco_6,
-                            },
-                        ]
-                    },
-                    {
-                        descr: 'News carousel',
-                        link: portfolioPath + 'plenco/news-blog-detail.html',
-                        images: [
-                            {
-                                width: 550,
-                                height: 400,
-                                image: plenco_7_small,
-                            },
-                            {
-                                width: 1075,
-                                height: 440,
-                                image: plenco_7_big,
-                            },
-                            {
-                                width: 10000,
-                                height: 10000,
-                                image: plenco_7,
-                            },
-                        ]
-                    },
-                    {
-                        descr: 'News block with tags and categories',
-                        link: portfolioPath + 'plenco/news-blog.html',
-                        images: [
-                            {
-                                width: 550,
-                                height: 400,
-                                image: plenco_8_small,
-                            },
-                            {
-                                width: 1075,
-                                height: 440,
-                                image: plenco_8_big,
-                            },
-                            {
-                                width: 10000,
-                                height: 10000,
-                                image: plenco_8,
-                            },
-                        ]
-                    },
-                    {
-                        descr: 'Search with filters',
-                        link: '',
-                        images: [
-                            {
-                                width: 550,
-                                height: 400,
-                                image: plenco_9_small,
-                            },
-                            {
-                                width: 1075,
-                                height: 440,
-                                image: plenco_9_big,
-                            },
-                            {
-                                width: 10000,
-                                height: 10000,
-                                image: plenco_9,
-                            },
-                        ]
-                    },
-                    {
-                        descr: 'Mobile navigation',
-                        link: '',
-                        images: [
-                            {
-                                width: 550,
-                                height: 400,
-                                image: plenco_10_small,
-                            },
-                            {
-                                width: 1075,
-                                height: 440,
-                                image: plenco_10_big,
-                            },
-                            {
-                                width: 10000,
-                                height: 10000,
-                                image: plenco_10,
+                                image: p2s_4,
                             },
                         ]
                     },

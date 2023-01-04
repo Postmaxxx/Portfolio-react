@@ -337,7 +337,7 @@ function expandImage(path, descr, link) {
 
 
 
-function closeImage() {
+function closeImage(e) {
     defaultFullScreenStyles();
     expandImageShown = false;
     setTimeoutToMove();
@@ -478,7 +478,7 @@ function destroy() {
     carousel.removeEventListener('mouseup', e => stopMove(e));
     carousel.removeEventListener('mouseout', e => stopMove(e));
     carousel.removeEventListener('mouseout', e => stopMove(e));
-    imgFullScreenCloser.removeEventListener('click', e => closeImage())
+    imgFullScreenCloser.removeEventListener('click', e => closeImage(e))
     
     clearInterval(bgMoveCounter);
     clearInterval(carouselInertionTimer);
