@@ -60,6 +60,20 @@ import p2s_4 from '../img/portfolio/p2s/4.jpg'
 import p2s_4_big from '../img/portfolio/p2s/4_big.jpg'
 import p2s_4_small from '../img/portfolio/p2s/4_small.jpg'
 
+
+import techlicious_1 from '../img/portfolio/techlicious/1.jpg'
+import techlicious_1_big from '../img/portfolio/techlicious/1_big.jpg'
+import techlicious_1_small from '../img/portfolio/techlicious/1_small.jpg'
+import techlicious_2 from '../img/portfolio/techlicious/2.jpg'
+import techlicious_2_big from '../img/portfolio/techlicious/2_big.jpg'
+import techlicious_2_small from '../img/portfolio/techlicious/2_small.jpg'
+import techlicious_3 from '../img/portfolio/techlicious/3.jpg'
+import techlicious_3_big from '../img/portfolio/techlicious/3_big.jpg'
+import techlicious_3_small from '../img/portfolio/techlicious/3_small.jpg'
+import techlicious_4 from '../img/portfolio/techlicious/4.jpg'
+import techlicious_4_big from '../img/portfolio/techlicious/4_big.jpg'
+import techlicious_4_small from '../img/portfolio/techlicious/4_small.jpg'
+
 import formation_1 from '../img/portfolio/formation/1.jpg'
 import formation_1_big from '../img/portfolio/formation/1_big.jpg'
 import formation_1_small from '../img/portfolio/formation/1_small.jpg'
@@ -96,6 +110,23 @@ import formation_11_small from '../img/portfolio/formation/11_small.jpg'
 import formation_12 from '../img/portfolio/formation/12.jpg'
 import formation_12_big from '../img/portfolio/formation/12_big.jpg'
 import formation_12_small from '../img/portfolio/formation/12_small.jpg'
+
+
+import components_gallery from '../img/portfolio/components/gallery.jpg'
+import components_gallery_big from '../img/portfolio/components/gallery_big.jpg'
+import components_gallery_small from '../img/portfolio/components/gallery_small.jpg'
+import components_pipeline from '../img/portfolio/components/pipeline.jpg'
+import components_pipeline_big from '../img/portfolio/components/pipeline_big.jpg'
+import components_pipeline_small from '../img/portfolio/components/pipeline_small.jpg'
+import components_slider from '../img/portfolio/components/slider.jpg'
+import components_slider_big from '../img/portfolio/components/slider_big.jpg'
+import components_slider_small from '../img/portfolio/components/slider_small.jpg'
+import components_hoverboard from '../img/portfolio/components/hoverboard.jpg'
+import components_hoverboard_big from '../img/portfolio/components/hoverboard_big.jpg'
+import components_hoverboard_small from '../img/portfolio/components/hoverboard_small.jpg'
+import components_shooter from '../img/portfolio/components/shooter.jpg'
+import components_shooter_big from '../img/portfolio/components/shooter_big.jpg'
+import components_shooter_small from '../img/portfolio/components/shooter_small.jpg'
 
 let portfolioPath = 'http://127.0.0.1:8887/';
 
@@ -558,7 +589,7 @@ const initialState = {
             },
             {
                 name: 'P2S Inc',
-                descr: 'New design for P2S Incorporated. Plethora of specific components, animations,  \n Stack: Gulp, Twig, JS, Scss',
+                descr: 'New design templates for P2S Incorporated. Plethora of specific components, animations,  \n Stack: Gulp, Twig, JS, Scss',
                 link: 'https://www.p2sinc.com',
                 images: [
                     {
@@ -649,28 +680,90 @@ const initialState = {
             },
             {
                 name: 'Techlicious',
-                descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                descr: 'Created partials for Techlicious.com as navigation, news-blocks and comparing tables from scratch as well as implementing new design for comments, news-blocks and other.\n Stack: Scss, js, Tailwind, GULP, Twig.',
                 link: 'https://www.techlicious.com',
                 images: [
                     {
-                        //mock
-                        descr: 'Accordions',
-                        link: portfolioPath + 'plenco/pn-rr-app.html',
+                        descr: 'Homepage',
+                        link: 'https://dev.techlicious.com',
                         images: [
                             {
                                 width: 550,
                                 height: 400,
-                                image: plenco_5_small,
+                                image: techlicious_1_small,
                             },
                             {
                                 width: 1075,
                                 height: 440,
-                                image: plenco_5_big,
+                                image: techlicious_1_big,
                             },
                             {
                                 width: 10000,
                                 height: 10000,
-                                image: plenco_5,
+                                image: techlicious_1,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Homepage mobile version',
+                        link: 'https://dev.techlicious.com',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: techlicious_2_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: techlicious_2_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: techlicious_2,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Nav mobile version',
+                        link: 'https://dev.techlicious.com',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: techlicious_3_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: techlicious_3_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: techlicious_3,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'News page',
+                        link: 'https://dev.techlicious.com',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: techlicious_4_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: techlicious_4_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: techlicious_4,
                             },
                         ],
                     },
@@ -678,7 +771,7 @@ const initialState = {
             },
             {
                 name: 'P & V',
-                descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
+                descr: 'Passports and Visas. ',
                 link: 'https://www.google.com',
                 images: [
                     {
@@ -711,29 +804,8 @@ const initialState = {
                 link: 'https://www.formation.ai',
                 images: [
                     {
-                        descr: 'Navigation for mobile devices.',
-                        link: portfolioPath + 'formation.ai/web/frontend/index.html',
-                        images: [
-                            {
-                                width: 550,
-                                height: 400,
-                                image: formation_1_small,
-                            },
-                            {
-                                width: 1075,
-                                height: 440,
-                                image: formation_1_big,
-                            },
-                            {
-                                width: 10000,
-                                height: 10000,
-                                image: formation_1,
-                            },
-                        ],
-                    },
-                    {
                         descr: 'Blog page.',
-                        link: portfolioPath + 'formation.ai/web/frontend/blog.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/blog.html',
                         images: [
                             {
                                 width: 550,
@@ -753,8 +825,29 @@ const initialState = {
                         ],
                     },
                     {
+                        descr: 'Navigation for mobile devices.',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/index.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: formation_1_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: formation_1_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: formation_1,
+                            },
+                        ],
+                    },
+                    {
                         descr: 'Grocery page. Owl carousel for better design.',
-                        link: portfolioPath + 'formation.ai/web/frontend/grocery.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/grocery.html',
                         images: [
                             {
                                 width: 550,
@@ -775,7 +868,7 @@ const initialState = {
                     },
                     {
                         descr: 'Join page. Owl carousel for better design.',
-                        link: portfolioPath + 'formation.ai/web/frontend/join.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/join.html',
                         images: [
                             {
                                 width: 550,
@@ -796,7 +889,7 @@ const initialState = {
                     },
                     {
                         descr: 'Resource overview page. Animated navigation and multi-select filters.',
-                        link: portfolioPath + 'formation.ai/web/frontend/resources_overview.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/resources_overview.html',
                         images: [
                             {
                                 width: 550,
@@ -817,7 +910,7 @@ const initialState = {
                     },
                     {
                         descr: 'Resource contnet page with categories and search.',
-                        link: portfolioPath + 'formation.ai/web/frontend/resources_content.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/resources_content.html',
                         images: [
                             {
                                 width: 550,
@@ -838,7 +931,7 @@ const initialState = {
                     },
                     {
                         descr: 'Resource overview page for mobile devices. Animated navigation and multi-select filters.',
-                        link: portfolioPath + 'formation.ai/web/frontend/resources_overview.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/resources_overview.html',
                         images: [
                             {
                                 width: 550,
@@ -859,7 +952,7 @@ const initialState = {
                     },
                     {
                         descr: 'Resource theme page with categories and search.',
-                        link: portfolioPath + 'formation.ai/web/frontend/resources_theme.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/resources_theme.html',
                         images: [
                             {
                                 width: 550,
@@ -880,7 +973,7 @@ const initialState = {
                     },
                     {
                         descr: 'Solution page.',
-                        link: portfolioPath + 'formation.ai/web/frontend/solution.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/solution.html',
                         images: [
                             {
                                 width: 550,
@@ -901,7 +994,7 @@ const initialState = {
                     },
                     {
                         descr: 'Retail page for mobile devices.',
-                        link: portfolioPath + 'formation.ai/web/frontend/retail.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/retail.html',
                         images: [
                             {
                                 width: 550,
@@ -922,7 +1015,7 @@ const initialState = {
                     },
                     {
                         descr: 'Navigation for desktop.',
-                        link: portfolioPath + 'formation.ai/web/frontend/solutions.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/solutions.html',
                         images: [
                             {
                                 width: 550,
@@ -943,7 +1036,7 @@ const initialState = {
                     },
                     {
                         descr: 'Creative design.',
-                        link: portfolioPath + 'formation.ai/web/frontend/LP.html',
+                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/LP.html',
                         images: [
                             {
                                 width: 550,
@@ -966,28 +1059,110 @@ const initialState = {
             },
             {
                 name: 'Components',
-                descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
-                link: 'https://www.google.com',
+                descr: 'Some compenents created as a challenge with a 1-hour deadline',
                 images: [
                     {
-                        //mock
-                        descr: 'Accordions',
-                        link: portfolioPath + 'plenco/pn-rr-app.html',
+                        descr: 'Photo gallery with animation',
+                        link: portfolioPath + 'components/1_Photo_Gallery/index.html',
                         images: [
                             {
                                 width: 550,
                                 height: 400,
-                                image: plenco_5_small,
+                                image: components_gallery_small,
                             },
                             {
                                 width: 1075,
                                 height: 440,
-                                image: plenco_5_big,
+                                image: components_gallery_big,
                             },
                             {
                                 width: 10000,
                                 height: 10000,
-                                image: plenco_5,
+                                image: components_gallery,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Interface for a pipeline game to connect entrance and exit with a pipeline',
+                        link: portfolioPath + 'components/2_Drag_Pipeline/index.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: components_pipeline_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: components_pipeline_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: components_pipeline,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Just a tiny slider',
+                        link: portfolioPath + 'components/3_Slider_Double/index.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: components_slider_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: components_slider_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: components_slider,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Simple clone of Ricochet game',
+                        link: portfolioPath + 'components/4_Hover_Board/index.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: components_hoverboard_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: components_hoverboard_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: components_hoverboard,
+                            },
+                        ],
+                    },
+                    {
+                        descr: 'Baloons shooter minigame',
+                        link: portfolioPath + 'components/5_Circle_Shooter/index.html',
+                        images: [
+                            {
+                                width: 550,
+                                height: 400,
+                                image: components_shooter_small,
+                            },
+                            {
+                                width: 1075,
+                                height: 440,
+                                image: components_shooter_big,
+                            },
+                            {
+                                width: 10000,
+                                height: 10000,
+                                image: components_shooter,
                             },
                         ],
                     },
