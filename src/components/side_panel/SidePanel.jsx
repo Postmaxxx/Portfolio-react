@@ -1,11 +1,11 @@
-import React from 'react';
+import { Component } from 'react';
 import './sidePanel.scss';
 import { Link, NavLink } from "react-router-dom";
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 
-class SidePanel extends React.Component {
+class SidePanel extends Component {
     constructor(props) {
         super(props)
         this.changeNav = this.changeNav.bind(this);

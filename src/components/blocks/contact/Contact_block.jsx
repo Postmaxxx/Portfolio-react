@@ -1,4 +1,3 @@
-import React from 'react';
 import './contact_block.scss'
 
 const ContactBlock = (props) => {

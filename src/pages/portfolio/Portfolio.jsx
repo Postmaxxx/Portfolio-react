@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import List3d from '../../components/blocks/list3d/List3d'
 import List3d_v from '../../components/blocks/list3d_v/List3d_v'
 import List from '../../components/blocks/list/List'
@@ -6,7 +6,7 @@ import InfoPortfolio from '../../components/blocks/info_portfolio/Info_portfolio
 import InfoPortfolioSlide from "../../components/blocks/info_portfolio-slide/Info_portfolio-slide";
 import Preloader from "../../components/preloader/Preloader.jsx";
 import './portfolio.scss'
-const LazySplidePortfolio = React.lazy(() => import('../../components/blocks/splide_portfolios/Splide_portfolio'));
+const LazySplidePortfolio = lazy(() => import('../../components/blocks/splide_portfolios/Splide_portfolio'));
 
 const Portfolio = () => {
     return(

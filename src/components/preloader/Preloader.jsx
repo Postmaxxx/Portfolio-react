@@ -1,4 +1,3 @@
-import React from "react";
 import preloader from '../preloader/preloader.js'
 import './preloader.scss'
 

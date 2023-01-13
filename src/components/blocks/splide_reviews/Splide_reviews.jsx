@@ -1,4 +1,3 @@
-import React from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'

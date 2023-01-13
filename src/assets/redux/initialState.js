@@ -215,7 +215,7 @@ const initialState = {
         },
         {
             name: 'Scrum',
-            percent: 80
+            percent: 90
         },
     ],
     workExperience: [
@@ -254,7 +254,7 @@ const initialState = {
             header: 'SCRUM',
             subHeader: 'Scrum Professional scrum master (PSM-II)',
             text: 'Verified ability use Scrum in developement',
-            link: 'https://www.scrum.org/assessments/professional-scrum-master-ii-certification',
+            link: 'https://www.credly.com/badges/68577090-b388-4028-a30b-5954540a6d61/linked_in_profile',
         },
         {
             date: '2022',
@@ -1059,7 +1059,7 @@ const initialState = {
             },
             {
                 name: 'Components',
-                descr: 'Some compenents created as a challenge with a 1-hour deadline',
+                descr: 'Some compenents created as a challenge with a 1-hour deadline.\n Stack: Html, css, JS',
                 images: [
                     {
                         descr: 'Photo gallery with animation',
@@ -1168,7 +1168,7 @@ const initialState = {
                     },
                 ]
             },
-            {
+            /*{
                 name: 'Landing pages',
                 descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
                 link: 'https://www.google.com',
@@ -1196,7 +1196,7 @@ const initialState = {
                         ],
                     },
                 ]
-            },
+            },*/
             {
                 name: 'Bike AntiSteal',
                 descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
