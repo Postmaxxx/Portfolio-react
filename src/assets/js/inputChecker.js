@@ -7,16 +7,16 @@ export const checkInput = (text, type, minLength, maxLength) => {
         return `should be at least ${minLength} symbols`
     }
     if (text.length > maxLength) { 
-        return `should be no more ${maxLength} symbols`
+        return `should be no more than ${maxLength} symbols`
     }
     if (type ==='email' && !text.match(emailFormat)) { 
-        return 'email is incorrect'
+        return 'format is incorrect'
     }
     if (type ==='text' && !text.match(textFormat)) { 
-        return 'only letters are allowed'
+        return 'only english letters are allowed'
     }
     if (type ==='textNumbers' && !text.match(textNumbersFormat)) { 
-        return 'only letters and numbers are allowed'
+        return 'only english letters and numbers are allowed'
     }
     if (type ==='numbers' && !text.match(numbersFormat)) { 
         return 'only numbers are allowed'
