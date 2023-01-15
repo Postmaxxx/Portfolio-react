@@ -1,7 +1,6 @@
 import  { Suspense, lazy } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Preloader from './components/preloader/Preloader.jsx';
-
 const LazyModalImage = lazy(() => import('./components/modal_splide/ModalImage.jsx'));
 const LazyThemeSwitcher = lazy(() => import('./components/theme_switcher/ThemeSwitcher'));
 const LazySidePanel = lazy(() => import('./components/side_panel/SidePanel'));
@@ -11,7 +10,6 @@ const LazyResume = lazy(() => import('./pages/resume/Resume'));
 const LazyPortfolio = lazy(() => import('./pages/portfolio/Portfolio'));
 const LazyContact = lazy(() => import('./pages/contact/Contact'));
 const LazyPage404 = lazy(() => import('./pages/page404/page404'));
-
 
 const App = () => {
     return (

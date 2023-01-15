@@ -54,6 +54,25 @@ export const setModalLink = (link) => ({
     payload: link
 })
 
+export const setModalMsgVisible = (visible) => ({
+    type: 'SET_MODALMSG',
+    payload: visible
+})
+
+export const setModalMsgHeader = (text) => ({
+    type: 'SET_MODALMSG_HEADER',
+    payload: text
+})
+
+export const setModalMsgText = (text) => ({
+    type: 'SET_MODALMSG_TEXT',
+    payload: text
+})
+
+export const setModalMsgBtnText = (text) => ({
+    type: 'SET_MODALMSG_BTNTEXT',
+    payload: text
+})
 
 
 export const setCurrentGallery = (gallery) => ({

@@ -7,11 +7,12 @@
     background-color: map.get($light, "bg_side-panel");
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    min-height  : 150px;
+    align-items: center;
+    min-height  : 120px;
 
-    @include respond-to(md) {
+    @include respond-to(xs) {
         flex-direction: column;
+        align-items:flex-start;
     }
 
     & > .img-container {
@@ -24,8 +25,11 @@
         justify-content: center;
         margin-right: 30px;
 
-        @include respond-to(sm) {
-            align-self: flex-start;
+        @include respond-to(xs) {
+            align-self: flex-end;
+            position: absolute;
+            height: 40px;
+            margin-right: 0;
         }
 
         & > svg {
@@ -48,6 +52,7 @@
             @include respond-to(md) {
                 margin-top: 20px;
             }
+
         }
 
         & > a {

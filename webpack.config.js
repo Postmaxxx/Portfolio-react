@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const Dotenv = require('dotenv-webpack');
 const port = process.env.PORT || 3000;
 
 module.exports = {
@@ -22,5 +22,8 @@ module.exports = {
                 "sass-loader",
                 ],
             },
-      }
+      },
+    plugins: [
+        new Dotenv()
+    ]
   };

@@ -48,6 +48,38 @@ em {
 }
 
 
+.link_button {
+    width: 200px;
+    height: 50px;
+    background-color: map.get($light, "nav_selected");
+    color: $white;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    border: none;
+    font-size: 16px;
+    letter-spacing: .1rem;
+
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background-color: $white;
+        transition: $transition_base;
+    }
+
+    &:hover::before {
+        width: 100%;
+        transition: $transition_base;
+    }
+}
+
 .page-container {
     margin-left: $sidePanelWidthFull;
     overflow: hidden;
@@ -262,37 +294,6 @@ em {
     }
 
 
-    & .link_button {
-        width: 200px;
-        height: 50px;
-        background-color: map.get($light, "nav_selected");
-        color: $white;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        position: relative;
-        border: none;
-        font-size: 16px;
-        letter-spacing: .1rem;
-
-        &:before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background-color: $white;
-            transition: $transition_base;
-        }
-
-        &:hover::before {
-            width: 100%;
-            transition: $transition_base;
-        }
-    }
 }
 
 
@@ -318,6 +319,10 @@ body.dark {
         color: map.get($dark, "text_em");
         font-style: normal;
         transition: $transition_theme;
+    }
+
+    .link_button {
+        background-color: map.get($dark, "nav_selected");
     }
 
     .page-container {
@@ -370,9 +375,7 @@ body.dark {
         }
     
 
-        & > .link_button {
-            background-color: map.get($dark, "nav_selected");
-        }
+
     
 
     }

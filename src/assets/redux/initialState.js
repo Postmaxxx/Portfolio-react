@@ -1,4 +1,4 @@
-import sidePhoto from '../img/me_side.jpg'
+import sidePhoto from '../img/me_logo.jpg'
 import resumeDoc from '../docs/resume.pdf';
 
 import photoNight from '../img/me_night.jpg';
@@ -129,6 +129,7 @@ import components_shooter_big from '../img/portfolio/components/shooter_big.jpg'
 import components_shooter_small from '../img/portfolio/components/shooter_small.jpg'
 
 let portfolioPath = 'http://127.0.0.1:8887/';
+let server_formation = 'https://demo.wiseup.dev';
 
 const initialState = {
     theme: 'light',
@@ -138,6 +139,12 @@ const initialState = {
     modalDescr: '',
     modalLink: '',
     imgLoaded: false,
+    modalMsg: {
+        active: false,
+        header: '',
+        text: '',
+        btnText: '',
+    },
     skillFillSpeed: 3,//ms
     resumeDoc: resumeDoc,
     me: [
@@ -805,7 +812,7 @@ const initialState = {
                 images: [
                     {
                         descr: 'Blog page.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/blog.html',
+                        link: server_formation + '/formation.ai/frontend/blog.html',
                         images: [
                             {
                                 width: 550,
@@ -826,7 +833,7 @@ const initialState = {
                     },
                     {
                         descr: 'Navigation for mobile devices.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/index.html',
+                        link: server_formation + '/formation.ai/frontend/index.html',
                         images: [
                             {
                                 width: 550,
@@ -847,7 +854,7 @@ const initialState = {
                     },
                     {
                         descr: 'Grocery page. Owl carousel for better design.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/grocery.html',
+                        link: server_formation + '/formation.ai/frontend/grocery.html',
                         images: [
                             {
                                 width: 550,
@@ -868,7 +875,7 @@ const initialState = {
                     },
                     {
                         descr: 'Join page. Owl carousel for better design.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/join.html',
+                        link: server_formation + '/formation.ai/frontend/join.html',
                         images: [
                             {
                                 width: 550,
@@ -889,7 +896,7 @@ const initialState = {
                     },
                     {
                         descr: 'Resource overview page. Animated navigation and multi-select filters.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/resources_overview.html',
+                        link: server_formation + '/formation.ai/frontend/resources_overview.html',
                         images: [
                             {
                                 width: 550,
@@ -910,7 +917,7 @@ const initialState = {
                     },
                     {
                         descr: 'Resource contnet page with categories and search.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/resources_content.html',
+                        link: server_formation + '/formation.ai/frontend/resources_content.html',
                         images: [
                             {
                                 width: 550,
@@ -931,7 +938,7 @@ const initialState = {
                     },
                     {
                         descr: 'Resource overview page for mobile devices. Animated navigation and multi-select filters.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/resources_overview.html',
+                        link: server_formation + '/formation.ai/frontend/resources_overview.html',
                         images: [
                             {
                                 width: 550,
@@ -952,7 +959,7 @@ const initialState = {
                     },
                     {
                         descr: 'Resource theme page with categories and search.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/resources_theme.html',
+                        link: server_formation + '/formation.ai/frontend/resources_theme.html',
                         images: [
                             {
                                 width: 550,
@@ -973,7 +980,7 @@ const initialState = {
                     },
                     {
                         descr: 'Solution page.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/solution.html',
+                        link: server_formation + '/formation.ai/frontend/solution.html',
                         images: [
                             {
                                 width: 550,
@@ -994,7 +1001,7 @@ const initialState = {
                     },
                     {
                         descr: 'Retail page for mobile devices.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/retail.html',
+                        link: server_formation + '/formation.ai/frontend/retail.html',
                         images: [
                             {
                                 width: 550,
@@ -1015,7 +1022,7 @@ const initialState = {
                     },
                     {
                         descr: 'Navigation for desktop.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/solutions.html',
+                        link: server_formation + '/formation.ai/frontend/solutions.html',
                         images: [
                             {
                                 width: 550,
@@ -1036,7 +1043,7 @@ const initialState = {
                     },
                     {
                         descr: 'Creative design.',
-                        link: 'https://demo.wiseup.dev/' + 'formation.ai/frontend/LP.html',
+                        link: server_formation + '/formation.ai/frontend/LP.html',
                         images: [
                             {
                                 width: 550,

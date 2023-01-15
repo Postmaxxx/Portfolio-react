@@ -31,7 +31,7 @@
         color: map.get($light, "text_soft");
         transition: color $transition_theme;
         resize: vertical;
-        min-height: 222px;
+        min-height: 180px;
 
         @include respond-to(xs) {
             font-size: 20px;

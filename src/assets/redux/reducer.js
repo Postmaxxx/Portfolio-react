@@ -69,6 +69,39 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 modalLink: action.payload
             }
+        case "SET_MODALMSG":
+            return {
+                ...state,
+                modalMsg: {
+                    ...state.modalMsg,
+                    active: action.payload
+                }
+            }
+        case "SET_MODALMSG_HEADER":
+            return {
+                ...state,
+                modalMsg: {
+                    ...state.modalMsg,
+                    header: action.payload
+                }
+            }
+        case "SET_MODALMSG_TEXT":
+            return {
+                ...state,
+                modalMsg: {
+                    ...state.modalMsg,
+                    text: action.payload
+                }
+            }
+        case "SET_MODALMSG_BTNTEXT":
+            return {
+                ...state,
+                modalMsg: {
+                    ...state.modalMsg,
+                    btnText: action.payload
+                }
+            }
+
         case "SET_CURRENT_GALLERY":
             return {
                 ...state,
