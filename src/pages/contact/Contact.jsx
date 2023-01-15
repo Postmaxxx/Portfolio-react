@@ -6,7 +6,7 @@ import axios from "axios";
 import Input from '../../components/blocks/input/Input';
 import Textarea from '../../components/blocks/textarea/Textarea';
 import ContactBlock from "../../components/blocks/contact/Contact_block";
-import Modal_message from '../../components/modals/Modal'
+import Modal from '../../components/modals/Modal'
 import Message from '../../components/message/Message'
 import './contact.scss';
 
@@ -66,14 +66,14 @@ const Contact = (props) => {
 
     return (
         <>
-            <Modal_message>
+            <Modal>
                 <Message 
                     header={props.store.modalMsg.header}
                     text={props.store.modalMsg.text}
                     buttonText={props.store.modalMsg.btnText}
                     buttonClickAction={() => props.setStore.setModalMsgVisible(false)}
                 />
-            </Modal_message>
+            </Modal>
             <div className="page-container">
                 <div className="page_contact">
                     <section className='contact-me'> 
