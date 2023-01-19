@@ -1,19 +1,12 @@
-type Ta<T> = (payload?: T) => {
-    readonly type: string;
-    readonly payload?: any;
-}
-
-export interface Action {
-    readonly type: string;
-    readonly payload?: any;
+export interface Action<T> {
+    type: string;
+    payload?: T; 
 }
 
 export interface ISetStore {
-    [key:string]: <T>(payload?: T) => {type: string, payload?: T}
+    [key: string]: <T>(payload?: T) => Action<T>
     //[key:string]: <T>(payload?: T) => {type: string, payload?: T}
 }
-
-
 
 
 export interface IProps {

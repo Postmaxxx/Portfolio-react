@@ -4,7 +4,7 @@ import { actionList } from '../../models';
 
 import initialState from './initialState';
 
-const reducer = function(state: IState = initialState, action: Action): IState {
+const reducer = function(state: IState = initialState, action: Action<any>): IState {
     switch (action.type) {
         case actionList.SET_THEME:
             return {
