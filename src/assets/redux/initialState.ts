@@ -1,3 +1,5 @@
+import { IState } from 'src/models';
+
 import sidePhoto from '../img/me_logo.jpg'
 import resumeDoc from '../docs/resume.pdf';
 
@@ -127,11 +129,11 @@ import components_hoverboard_small from '../img/portfolio/components/hoverboard_
 import components_shooter from '../img/portfolio/components/shooter.jpg'
 import components_shooter_big from '../img/portfolio/components/shooter_big.jpg'
 import components_shooter_small from '../img/portfolio/components/shooter_small.jpg'
+ 
+let portfolioPath: string = 'http://127.0.0.1:8887/';
+let server_formation: string = 'https://demo.wiseup.dev';
 
-let portfolioPath = 'http://127.0.0.1:8887/';
-let server_formation = 'https://demo.wiseup.dev';
-
-const initialState = {
+const initialState: IState = {
     theme: 'light',
     nav_ham: '',
     modal: false,
@@ -145,7 +147,7 @@ const initialState = {
         text: '',
         btnText: '',
     },
-    skillFillSpeed: 3,//ms
+    skillFillSpeed: 3,  //ms
     resumeDoc: resumeDoc,
     me: [
         {
@@ -1067,6 +1069,7 @@ const initialState = {
             {
                 name: 'Components',
                 descr: 'Some compenents created as a challenge with a 1-hour deadline.\n Stack: Html, css, JS',
+                link: '',
                 images: [
                     {
                         descr: 'Photo gallery with animation',
@@ -1303,7 +1306,7 @@ const initialState = {
             {
                 link: 'mailto:maksim.postnikov.it@gmail.com',
                 text: 'maksim.postnikov.it@gmail.com',
-                nenewWindoww: false
+                newWindow: false
             },
         ],
         address: [

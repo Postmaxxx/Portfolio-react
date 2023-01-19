@@ -22,7 +22,8 @@ module.exports = {
                 "sass-loader",
                 ],
             },
-      },
+      }, 
+
     plugins: [
         new Dotenv()
     ]

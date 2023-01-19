@@ -6,11 +6,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 
 class SidePanel extends Component {
+    //_container: React.ElementType;
+
     constructor(props) {
         super(props)
         this.changeNav = this.changeNav.bind(this);
         this.clicked = this.clicked.bind(this);
-        this.clickListener = undefined;
+
     }
 
     changeNav() {

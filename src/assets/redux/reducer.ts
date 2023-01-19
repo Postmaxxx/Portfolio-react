@@ -1,31 +1,35 @@
+import { IState } from 'src/models';
+import { Action } from 'src/models';
+import { actionList } from '../../models';
+
 import initialState from './initialState';
 
-const reducer = (state = initialState, action) => {
+const reducer = function(state: IState = initialState, action: Action): IState {
     switch (action.type) {
-        case "SET_THEME":
+        case actionList.SET_THEME:
             return {
                 ...state,
                 theme: action.payload
             }
-        case "SET_NAV_OPEN":
+        case actionList.SET_NAV_OPEN:
             return {
                 ...state,
                 nav_ham: 'nav_opened'
             }
-        case "SET_NAV_CLOSE":
+        case actionList.SET_NAV_CLOSE:
             return {
                 ...state,
                 nav_ham: ''
             }
-        case "SET_CONTACT_NAME":
-            return {
+        case actionList.SET_CONTACT_NAME:
+            return { 
                 ...state,
                 contact: {
                     ...state.contact,
-                    name : action.payload
+                    name: action.payload
                 }
             }
-        case "SET_CONTACT_EMAIL":
+        case actionList.SET_CONTACT_EMAIL:
             return {
                 ...state,
                 contact: {
@@ -33,7 +37,7 @@ const reducer = (state = initialState, action) => {
                     email : action.payload
                 }
             }
-        case "SET_CONTACT_SUBJECT":
+        case actionList.SET_CONTACT_SUBJECT:
             return {
                 ...state,
                 contact: {
@@ -41,7 +45,7 @@ const reducer = (state = initialState, action) => {
                     subject : action.payload
                 }
             }
-        case "SET_CONTACT_MESSAGE":
+        case actionList.SET_CONTACT_MESSAGE:
             return {
                 ...state,
                 contact: {
@@ -49,27 +53,27 @@ const reducer = (state = initialState, action) => {
                     message : action.payload
                 }
             }
-        case "SET_MODAL":
+        case actionList.SET_MODAL:
             return {
                 ...state,
                 modal: action.payload
             }
-        case "SET_MODAL_IMAGE":
+        case actionList.SET_MODAL_IMAGE:
             return {
                 ...state,
                 modalImage: action.payload
             }
-        case "SET_MODAL_DESCR":
+        case actionList.SET_MODAL_DESCR:
             return {
                 ...state,
                 modalDescr: action.payload
             }
-        case "SET_MODAL_LINK":
+        case actionList.SET_MODAL_LINK:
             return {
                 ...state,
                 modalLink: action.payload
             }
-        case "SET_MODALMSG":
+        case actionList.SET_MODALMSG:
             return {
                 ...state,
                 modalMsg: {
@@ -77,7 +81,7 @@ const reducer = (state = initialState, action) => {
                     active: action.payload
                 }
             }
-        case "SET_MODALMSG_HEADER":
+        case actionList.SET_MODALMSG_HEADER:
             return {
                 ...state,
                 modalMsg: {
@@ -85,7 +89,7 @@ const reducer = (state = initialState, action) => {
                     header: action.payload
                 }
             }
-        case "SET_MODALMSG_TEXT":
+        case actionList.SET_MODALMSG_TEXT:
             return {
                 ...state,
                 modalMsg: {
@@ -93,7 +97,7 @@ const reducer = (state = initialState, action) => {
                     text: action.payload
                 }
             }
-        case "SET_MODALMSG_BTNTEXT":
+        case actionList.SET_MODALMSG_BTNTEXT:
             return {
                 ...state,
                 modalMsg: {
@@ -101,36 +105,14 @@ const reducer = (state = initialState, action) => {
                     btnText: action.payload
                 }
             }
-
-        case "SET_CURRENT_GALLERY":
-            return {
-                ...state,
-                currentGallery: action.payload,
-            }
-        case "SET_SELECTED_PORTFOLIO":
+        case actionList.SET_SELECTED_PORTFOLIO:
             return {
                 ...state,
                 portfolios: {
                     ...state.portfolios,
                     selected: action.payload,
-                    //list: [...state.portfolios.list]
                 } 
             }
-        /*case "SET_IMG_LOADED":
-            console.log("!!!");
-            return {
-                ...state,
-                imgLoaded: action.payload,
-            }*/
-        /*case "SET_SLIDE_INDEX":
-            return {
-                ...state,
-                portfolios: {
-                    ...state.portfolios,
-                    slideIndex: action.payload,
-                    //list: [...state.portfolios.list]
-                } 
-            }*/
         default:
             return {
                 ...state   

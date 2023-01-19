@@ -1,4 +1,4 @@
-import * as actions from '../../assets/redux/actions'
+import * as actions from '../../assets/redux/actions.ts';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import About from "../../components/blocks/about/About";

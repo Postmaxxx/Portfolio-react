@@ -3,7 +3,7 @@ import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { setImage } from '../../../assets/js/setImage'
-import store from '../../../assets/redux/store'
+import store from '../../../assets/redux/store.ts'
 import './about.scss';
 import '../../preloader/preloader.scss'
 

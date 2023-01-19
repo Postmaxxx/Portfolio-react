@@ -5,9 +5,11 @@ import Skill from '../../components/blocks/skill/Skill';
 import History from '../../components/blocks/history/History';
 import resumeDoc from '../../assets/docs/resume.pdf';
 import './resume.scss';
+import { IProps } from 'src/models';
 
-
-const Resume = (props) => {
+const Resume = (props: IProps) => {
+    console.log(props);
+    
     return(
         <div className="page-container">
             <div className="page_resume">
