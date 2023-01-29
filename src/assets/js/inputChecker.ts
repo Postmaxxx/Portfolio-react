@@ -1,8 +1,8 @@
-export const checkInput = (text, type, minLength, maxLength) => {
-    const emailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const textFormat = /[a-zA-Z]$/;
-    const textNumbersFormat = /[a-zA-Z0-9]$/;
-    const numbersFormat = /[0-9]$/;
+export const checkInput: Function = (text: string, type: string, minLength: number, maxLength: number): boolean | string => {
+    const emailFormat: RegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const textFormat: RegExp = /[a-zA-Z]$/;
+    const textNumbersFormat: RegExp = /[a-zA-Z0-9]$/;
+    const numbersFormat: RegExp = /[0-9]$/;
     if (text.length < minLength) { 
         return `should be at least ${minLength} symbols`
     }

@@ -15,7 +15,7 @@ import { IDispatch, IProps, ISetStore, IState } from 'src/models';
 
 const Contact: React.FC  = (props: IProps): JSX.Element => {
 
-    const checkInputs: Function = (inputs: NodeListOf<HTMLInputElement>): boolean => {
+    const checkInputs = (inputs: NodeListOf<HTMLInputElement>): boolean => {
         let errorMessage: Array<string>= [];
         Array.from(inputs).forEach((input: HTMLInputElement) => {
             let error: string | boolean = checkInput(input.value.trim(), input.dataset.type, input.dataset.min_length,input.dataset.max_length); 
@@ -37,7 +37,7 @@ const Contact: React.FC  = (props: IProps): JSX.Element => {
     }
 
 
-    const sendMessage: Function = (e: React.FormEvent<HTMLButtonElement>): void => {
+    const sendMessage = (e: React.FormEvent<HTMLButtonElement>): void => {
         e.preventDefault();
         if (checkInputs(document.querySelectorAll('[data-input="contact"]'))) {
             let currentDate: Date = new Date();
@@ -66,7 +66,7 @@ const Contact: React.FC  = (props: IProps): JSX.Element => {
         }
     }
 
-    const changeValue: Function = (e: React.FormEvent<HTMLInputElement>): void => {
+    const changeValue = (e: React.FormEvent<HTMLInputElement>): void => {
         props.setStore.setContactEmail(e.currentTarget.value) 
         let parent:HTMLElement =  e.currentTarget.parentNode as HTMLElement;
         parent.classList.remove('incorrect')

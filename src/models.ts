@@ -1,5 +1,6 @@
 import { AnyAction } from 'redux';
 
+export type EmptyVoid = () => void
 
 export interface Action<T> {
     type: string;
@@ -71,7 +72,7 @@ export const actionList: IActionList = {
 
 
 
-type MeInfo = {
+export type MeInfo = {
     descr: string
     value: string
 }
@@ -90,16 +91,16 @@ export type WorkEducationItem = {
 }
 
 
-type ImageMe = {
+export type ImageMe = {
     width: number
-    image: string //!
+    image: string
 }
 
 
 type ProjectItemImageItem = {
     width: number
     height: number
-    image: string //!
+    image: string 
 }
 
 
@@ -118,7 +119,7 @@ type ProjectItemListItem = {
 }
 
 
-type PageItem = {
+export type PageItem = {
     link: string
     text: string
 }
@@ -139,7 +140,7 @@ export interface IState {
     theme: string
     nav_ham: string
     modal: boolean
-    modalImage: string //1
+    modalImage: string 
     modalDescr: string
     modalLink: string
     imgLoaded: boolean
@@ -183,4 +184,5 @@ export interface IState {
         email: Array<ContactItem>
         address: Array<ContactItem>
     }
+    getState?: Function
 }

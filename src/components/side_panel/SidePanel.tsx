@@ -4,36 +4,33 @@ import { Link, NavLink } from "react-router-dom";
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import { IDispatch, IProps, ISetStore, IState, ReviewItem } from 'src/models';
-
-type TChangeNav = () => void
-type TClicked = (e: MouseEvent) => void
+import { IDispatch, IProps, ISetStore, IState, EmptyVoid, PageItem } from 'src/models';
 
 
 const SidePanel: React.FC  = (props: IProps): JSX.Element => {
     //_container: React.ElementType;
 
-    const changeNav: TChangeNav = (): void => {
+    const changeNav: EmptyVoid = (): void => {
         props.store.nav_ham === '' ? props.setStore.setNavOpen() : props.setStore.setNavClose()
     }
 
-    const clicked:TClicked = (e: MouseEvent) => {
+    const clicked: EventListener = (e: MouseEvent): void => {
         if (props.store.nav_ham === 'nav_opened' && (e.clientX > 250)) {
             props.setStore.setNavClose();
         }
     }
  
 
-    useEffect(() => { //after dom rendered
+    useEffect((): void => { //after dom rendered
         document.addEventListener('click', clicked)
-    }, [])
+    }, )
 
 
     
-    useEffect(() => { //update
-        let _container = document.querySelector('.page-container');
-        let _sidePanel = document.querySelector('.side-panel');
-        let _hamburgerIcon = document.querySelector('.hamburger');
+    useEffect((): void => { //update
+        let _container: HTMLDivElement = document.querySelector('.page-container');
+        let _sidePanel: HTMLDivElement = document.querySelector('.side-panel');
+        let _hamburgerIcon: HTMLDivElement = document.querySelector('.hamburger');
         if (props.store.nav_ham === 'nav_opened') {
             _container?.classList?.add('nav_opened');
             _sidePanel.classList.add('nav_opened');
@@ -50,12 +47,12 @@ const SidePanel: React.FC  = (props: IProps): JSX.Element => {
         <div className="side-panel">
             <figure>
                 <Link to="/home"> 
-                    <img src={props.store.imagesMe.side} alt="My photo" />
+                    <img src={props.store.imagesMe.side} alt="It's me" />
                 </Link>
             </figure>
             <nav>
                 <ul className="site-navigation">
-                    {props.store.pages.map((page, index: number) => {
+                    {props.store.pages.map((page: PageItem, index: number) => {
                         return(
                             <li key={index}>
                                 <NavLink 
@@ -71,7 +68,7 @@ const SidePanel: React.FC  = (props: IProps): JSX.Element => {
                     })}
                 </ul>
             </nav>
-            <div className="hamburger" onClick={() => changeNav()}>
+            <div className="hamburger" onClick={(): void => changeNav()}>
                 <div></div>
                 <div></div>
                 <div></div>
@@ -88,7 +85,7 @@ const SidePanel: React.FC  = (props: IProps): JSX.Element => {
 const mapStateToProps = (store: IState): {store: IState}  => ({store: store})
 
 const mapDispatchToProps = (dispatch: IDispatch): {setStore: ISetStore} => ({
-    setStore: bindActionCreators(actions, dispatch),
+    setStore: bindActionCreators(actions, dispatch), 
 })
 
 
