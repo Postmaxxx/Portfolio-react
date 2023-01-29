@@ -1,4 +1,4 @@
-import preloader from '../../components/preloader/preloader.js'
+import preloader from '../../components/preloader/Preloader'
 
 export const setImagePortfolio = (_target, _widthBlock, images = [], callback) => {
     let _image = document.createElement("img"); //create new <img>

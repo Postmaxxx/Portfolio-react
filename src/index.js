@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter } from "react-router-dom";
 import store from './assets/redux/store'
 import { Provider } from 'react-redux'
-import Preloader from './components/preloader/Preloader.jsx'
+import Preloader from './components/preloader/Preloader.tsx'
 const LazyApp = lazy(() => import('./app'));
 
 

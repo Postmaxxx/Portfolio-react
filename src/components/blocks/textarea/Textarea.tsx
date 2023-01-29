@@ -1,15 +1,30 @@
 import './textarea.scss'
 
 
-const Textarea = (props) => {
+interface ITextareaProps {
+    type?: string
+    id: string
+    text: string
+    value: string
+    required: boolean
+    checkType: string
+    name: string
+    data: string
+    minLength: number
+    maxLength: number
+    changeValue(e: React.ChangeEvent<HTMLTextAreaElement>);
+}
+
+
+
+const Textarea: React.FC<ITextareaProps> = (props: ITextareaProps): JSX.Element => {
     return (
         <div className="textarea__container">
             <label htmlFor={props.id}>{props.text}</label>
             <textarea 
-                type={props.type} 
                 id={props.id}
                 value={props.value}
-                onChange={(e) => props.changeValue(e)}
+                onChange={props.changeValue}
                 required={props.required}
                 name={props.name}
                 data-input={props.data}

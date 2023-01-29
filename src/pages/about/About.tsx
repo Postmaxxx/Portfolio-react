@@ -1,12 +1,14 @@
-import * as actions from '../../assets/redux/actions.ts';
+import * as actions from '../../assets/redux/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import About from "../../components/blocks/about/About";
 import Services from "../../components/blocks/services/Services";
 import SpliderReviews from "../../components/blocks/splide_reviews/Splide_reviews";
 import './about.scss'
+import { IDispatch, ISetStore, IState } from 'src/models';
 
-function Aboutpage() {
+
+function Aboutpage(): JSX.Element {
     return (
         <div className="page-container">
             <div className="page_about">
@@ -29,10 +31,14 @@ function Aboutpage() {
     )
 }
 
-const mapStateToProps = (store) => ({store: store})
 
-const mapDispatchToProps = (dispatch) => ({
+const mapStateToProps = (store: IState): {store: IState}  => ({store: store})
+
+
+
+const mapDispatchToProps = (dispatch: IDispatch): {setStore: ISetStore} => ({
     setStore: bindActionCreators(actions, dispatch),
 })
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Aboutpage);

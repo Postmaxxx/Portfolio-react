@@ -4,11 +4,11 @@ import List3d_v from '../../components/blocks/list3d_v/List3d_v'
 import List from '../../components/blocks/list/List'
 import InfoPortfolio from '../../components/blocks/info_portfolio/Info_portfolio'
 import InfoPortfolioSlide from "../../components/blocks/info_portfolio-slide/Info_portfolio-slide";
-import Preloader from "../../components/preloader/Preloader.jsx";
+import Preloader from "../../components/preloader/Preloader";
 import './portfolio.scss'
 const LazySplidePortfolio = lazy(() => import('../../components/blocks/splide_portfolios/Splide_portfolio'));
 
-const Portfolio = () => {
+const Portfolio: React.FC  = (): JSX.Element  => {
     return(
         <div className="page-container">
             <div className="page_portfolio">

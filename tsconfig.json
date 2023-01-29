@@ -2,7 +2,7 @@
     "compilerOptions": {
       "moduleResolution": "node",
       "baseUrl": ".",
-      "jsx": "react-jsx"
-      // Rest
+      "jsx": "react-jsx",
+      "allowSyntheticDefaultImports" : true
     }
 }

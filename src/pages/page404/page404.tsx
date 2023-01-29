@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import './page404.scss';
 
-function Page404() {
+function Page404(): JSX.Element  {
     return (
         <div className="page-404">
             <h1>Page <em>{ window.location.pathname.slice(1) }</em> was not found</h1>

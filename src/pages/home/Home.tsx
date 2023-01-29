@@ -1,6 +1,6 @@
 import './home.scss'
 
-const Homepage = () => {
+const Homepage: React.FC = (): JSX.Element => {
     return (
         <div className="page-container">
             <div className="page_home">

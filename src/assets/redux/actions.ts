@@ -7,6 +7,7 @@ export const setTheme = <T extends string>(theme: T): Action<T> => ({
     payload: theme,
 })
 
+
 export const setNavOpen = <T>(): Action<T> => ({
     type: actionList.SET_NAV_OPEN,
 })
@@ -15,9 +16,9 @@ export const setNavClose = <T>(): Action<T> => ({
     type: actionList.SET_NAV_CLOSE,
 })
 
-export const setContactName = <T extends string>(text: T): Action<T> => ({
+export const setContactName = <T extends string>(email: T): Action<T> => ({
     type: actionList.SET_CONTACT_NAME,
-    payload: text
+    payload: email
 })
 
 
@@ -88,3 +89,9 @@ export const setImgLoaded = <T extends boolean>(isLoaded: T): Action<T> => ({
     type: actionList.SET_IMG_LOADED,
     payload: isLoaded
 })
+
+/*
+export const setTest = () => ({
+    type: actionList.SET_IMG_LOADED,
+    payload: 'hgf'
+})*/

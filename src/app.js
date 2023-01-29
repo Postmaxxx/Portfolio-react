@@ -1,6 +1,6 @@
 import  { Suspense, lazy } from 'react';
 import { Routes, Route } from "react-router-dom";
-import Preloader from './components/preloader/Preloader.jsx';
+import Preloader from './components/preloader/Preloader.tsx';
 const LazyModalImage = lazy(() => import('./components/modals/ModalImage.jsx'));
 const LazyThemeSwitcher = lazy(() => import('./components/theme_switcher/ThemeSwitcher'));
 const LazySidePanel = lazy(() => import('./components/side_panel/SidePanel'));

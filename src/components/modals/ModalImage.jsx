@@ -2,7 +2,7 @@ import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { useEffect } from "react";
-import preloader from '../preloader/preloader.js'
+import preloader from '../preloader/Preloader'
 import store from '../../assets/redux/store'
 import '@splidejs/react-splide/css';
 import './modalImage.scss'

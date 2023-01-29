@@ -1,6 +1,23 @@
 import './input.scss'
 
-const Input = (props) => {
+
+interface IInputProps {
+    id: string
+    text: string
+    type: string
+    value: string
+    required: boolean
+    checkType: string
+    name: string
+    data: string
+    minLength: number
+    maxLength: number
+    changeValue(e: React.ChangeEvent<HTMLInputElement>);
+}
+
+
+
+const Input: React.FC<IInputProps> = (props: IInputProps): JSX.Element => {
     return (
         <div className="input__container">
             <label htmlFor={props.id}>{props.text}</label>
@@ -8,7 +25,7 @@ const Input = (props) => {
                 type={props.type} 
                 id={props.id}
                 value={props.value}
-                onChange={(e) => props.changeValue(e)}
+                onChange={props.changeValue}
                 required={props.required}
                 name={props.name}
                 data-input={props.data}

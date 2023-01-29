@@ -5,18 +5,16 @@ import Skill from '../../components/blocks/skill/Skill';
 import History from '../../components/blocks/history/History';
 import resumeDoc from '../../assets/docs/resume.pdf';
 import './resume.scss';
-import { IProps } from 'src/models';
+import { MySkill, WorkEducationItem, IDispatch, ISetStore, IProps, IState } from 'src/models';
 
-const Resume = (props: IProps) => {
-    console.log(props);
-    
+const Resume: React.FC  = (props: IProps): JSX.Element  => {
     return(
         <div className="page-container">
             <div className="page_resume">
                 <section className='skills'> 
                     <h2>My skills<em>My skills</em></h2>
                     <div className="skills__container"> 
-                        {props.store.skills.map((skill, index) => {
+                        {props.store.skills.map((skill: MySkill, index: number) => {
                             return(
                                 <Skill key={index} skill={skill} speed={props.store.skillFillSpeed}/>
                             )
@@ -37,7 +35,7 @@ const Resume = (props: IProps) => {
                             <h3>Work experience</h3>
                         </div>
                         <div className="history__content">
-                            {props.store.workExperience.map((historyBlock, index) => {
+                            {props.store.workExperience.map((historyBlock: WorkEducationItem, index: number) => {
                                 return(
                                     <History key={index} historyBlock={historyBlock}/>
                                 )
@@ -52,7 +50,7 @@ const Resume = (props: IProps) => {
                             <h3>Education</h3>
                         </div>
                         <div className="history__content">
-                            {props.store.education.map((historyBlock, index) => {
+                            {props.store.education.map((historyBlock: WorkEducationItem, index: number) => {
                                 return(
                                     <History key={index} historyBlock={historyBlock}/>
                                 )
@@ -67,10 +65,14 @@ const Resume = (props: IProps) => {
 }
 
 
-const mapStateToProps = (store) => ({store: store})
+const mapStateToProps = (store: IState): {store: IState}  => ({store: store})
 
-const mapDispatchToProps = (dispatch) => ({
+
+
+const mapDispatchToProps = (dispatch: IDispatch): {setStore: ISetStore} => ({
     setStore: bindActionCreators(actions, dispatch),
 })
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Resume);

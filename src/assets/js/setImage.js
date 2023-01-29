@@ -1,4 +1,4 @@
-import preloader from '../../components/preloader/preloader.js'
+import preloader from '../../components/preloader/Preloader'
 
 export const setImage = (id, images = [], callback) => {
     let _target = document.querySelector(id); //container for image

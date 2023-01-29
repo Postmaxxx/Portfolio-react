@@ -1,11 +1,28 @@
+import { AnyAction } from 'redux';
+
+
 export interface Action<T> {
     type: string;
     payload?: T; 
 }
 
+//type Tinterf = <T>(payload: T) => Action<T>
+/*
+const t = <T>(payload? : T): Action<T> => {
+    return {
+        type: '',
+        payload
+    }
+}
+*/
+
+//export type Predicate = <T extends string>(p?: T) => Action<T>;
+
+
+
 export interface ISetStore {
-    [key: string]: <T>(payload?: T) => Action<T>
-    //[key:string]: <T>(payload?: T) => {type: string, payload?: T}
+    [key: string]: <T>(payload?: any) => Action<T> //Change any to T
+    //[key: string]: Predicate
 }
 
 
@@ -15,6 +32,10 @@ export interface IProps {
 }
 
 
+export interface IStore {
+    store: IState
+}
+
 
 
 
@@ -22,6 +43,11 @@ export interface IProps {
 export interface IActionList {
     [key:string]: string
 }
+
+export interface IDispatch {
+    <T extends AnyAction>(action: T): T
+}
+
 
 export const actionList: IActionList = {
     SET_THEME: 'SET_THEME',
@@ -50,12 +76,12 @@ type MeInfo = {
     value: string
 }
 
-type MeSkills = {
+export type MySkill = {
     name: string
     percent: number
 }
 
-type WorkEducationItem = {
+export type WorkEducationItem = {
     date: string
     header: string
     subHeader: string
@@ -97,7 +123,7 @@ type PageItem = {
     text: string
 }
 
-type ReviewItem = {
+export type ReviewItem = {
     text: string
     name: string
     add: string
@@ -126,7 +152,7 @@ export interface IState {
     skillFillSpeed: number
     resumeDoc: string
     me: Array<MeInfo>
-    skills: Array<MeSkills>
+    skills: Array<MySkill>
     workExperience: Array<WorkEducationItem>
     education: Array<WorkEducationItem>
     imagesMe: {
@@ -158,6 +184,3 @@ export interface IState {
         address: Array<ContactItem>
     }
 }
-
-
-

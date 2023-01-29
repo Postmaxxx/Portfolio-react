@@ -1,24 +1,27 @@
-import * as actions from '../../assets/redux/actions.ts'
+//import { HTMLInputTypeAttribute } from 'react';
+import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { checkInput } from '../../assets/js/inputChecker';
-import axios from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 import Input from '../../components/blocks/input/Input';
 import Textarea from '../../components/blocks/textarea/Textarea';
 import ContactBlock from "../../components/blocks/contact/Contact_block";
 import Modal from '../../components/modals/Modal'
 import Message from '../../components/message/Message'
 import './contact.scss';
+import { IDispatch, IProps, ISetStore, IState } from 'src/models';
 
 
-const Contact = (props) => {
-   
-    const checkInputs = (inputs) => {
-        let errorMessage  = [];
-        Array.from(inputs).forEach((input) => {
-            let error = checkInput(input.value.trim(), input.dataset.type, input.dataset.min_length,input.dataset.max_length);
+const Contact: React.FC  = (props: IProps): JSX.Element => {
+
+    const checkInputs: Function = (inputs: NodeListOf<HTMLInputElement>): boolean => {
+        let errorMessage: Array<string>= [];
+        Array.from(inputs).forEach((input: HTMLInputElement) => {
+            let error: string | boolean = checkInput(input.value.trim(), input.dataset.type, input.dataset.min_length,input.dataset.max_length); 
             if (error && input.required) {
-                input.parentNode.classList.add('incorrect')
+                let inputParent:HTMLElement = input.parentNode as HTMLElement;
+                inputParent.classList.add('incorrect')
                 errorMessage.push(`${input.name.charAt(0).toUpperCase() + input.name.slice(1)} ${error}`)
             }
         })
@@ -34,17 +37,17 @@ const Contact = (props) => {
     }
 
 
-    const sendMessage = (e) => {
+    const sendMessage: Function = (e: React.FormEvent<HTMLButtonElement>): void => {
         e.preventDefault();
         if (checkInputs(document.querySelectorAll('[data-input="contact"]'))) {
-            let currentDate = new Date();
-            let apiToken = process.env.REACT_APP_TG_TOK;
-            let chatId = process.env.REACT_APP_CHT_ID;
-            let text = `Date: ${currentDate.getDate() + '.' + (currentDate.getMonth()+1) + '.' + currentDate.getFullYear()}%0ATime: ${currentDate.getHours() + '.' + currentDate.getMinutes() + '.' + currentDate.getSeconds()}%0AName: ${props.store.contact.name}%0AEmail: ${props.store.contact.email}%0ATopic: ${props.store.contact.subject}%0A%0AMessage: ${props.store.contact.message}` ;
-            let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${text}`;
+            let currentDate: Date = new Date();
+            let apiToken: string = process.env.REACT_APP_TG_TOK;
+            let chatId: string = process.env.REACT_APP_CHT_ID;
+            let text: string = `Date: ${currentDate.getDate() + '.' + (currentDate.getMonth()+1) + '.' + currentDate.getFullYear()}%0ATime: ${currentDate.getHours() + '.' + currentDate.getMinutes() + '.' + currentDate.getSeconds()}%0AName: ${props.store.contact.name}%0AEmail: ${props.store.contact.email}%0ATopic: ${props.store.contact.subject}%0A%0AMessage: ${props.store.contact.message}` ;
+            let urlString: string = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${text}`;
     
             axios.get(urlString)
-                .then(function (response) {
+                .then(function(response: AxiosResponse): void {
                     props.setStore.setContactSubject('');
                     props.setStore.setContactMessage('');
                     //alert('Your message has been sent.');
@@ -53,15 +56,20 @@ const Contact = (props) => {
                     props.setStore.setModalMsgBtnText('Close');
                     props.setStore.setModalMsgVisible(true)
                 })
-                .catch(function (error) {
+                .catch(function(error: AxiosError): void {
                     props.setStore.setModalMsgHeader('Error');
                     props.setStore.setModalMsgText('Service unavailable. Please, try again later. \nError: '+ error.message);
                     props.setStore.setModalMsgBtnText('Close');
                     props.setStore.setModalMsgVisible(true)
                     //alert('Service unavailable. Please, try again later. Error: ' + error);
                 })
-                .then(function () {});
         }
+    }
+
+    const changeValue: Function = (e: React.FormEvent<HTMLInputElement>): void => {
+        props.setStore.setContactEmail(e.currentTarget.value) 
+        let parent:HTMLElement =  e.currentTarget.parentNode as HTMLElement;
+        parent.classList.remove('incorrect')
     }
 
     return (
@@ -82,28 +90,23 @@ const Contact = (props) => {
                         <div className="contact__container">
                             <form className="mail-me">
                                 <Input 
-                                    id='contact_name'
-                                    text='Your name *'
-                                    changeValue={ (e) => {
-                                        props.setStore.setContactName(e.target.value) 
-                                        e.target.parentNode.classList.remove('incorrect')
-                                    }}
+                                    id= 'contact_name'
+                                    text=  'Your name *'
+                                    changeValue={(e) => changeValue}
                                     value={props.store.contact.name}
                                     required={true}
-                                    type='text'
-                                    checkType='all'
-                                    name='name'
-                                    data='contact'
+                                    type= 'text'
+                                    checkType= 'all'
+                                    name= 'name'
+                                    data= 'contact'
                                     minLength={2}
                                     maxLength={15}
+                                
                                     />
                                 <Input 
                                     id='contact_email'
                                     text='Your email *'
-                                    changeValue={ (e) => {
-                                        props.setStore.setContactEmail(e.target.value) 
-                                        e.target.parentNode.classList.remove('incorrect')
-                                    }}
+                                    changeValue={(e) => changeValue}
                                     value={props.store.contact.email}
                                     required={true}
                                     type='email'
@@ -116,10 +119,7 @@ const Contact = (props) => {
                                 <Input 
                                     id='contact_subject'
                                     text='Your subject'
-                                    changeValue={ (e) => {
-                                        props.setStore.setContactSubject(e.target.value) 
-                                        e.target.parentNode.classList.remove('incorrect')
-                                    }}
+                                    changeValue={(e) => changeValue}
                                     value={props.store.contact.subject}
                                     required={false}
                                     type='text'
@@ -132,20 +132,16 @@ const Contact = (props) => {
                                 <Textarea
                                     id='contact_message'
                                     text='Your message *'
-                                    changeValue={ (e) => {
-                                        props.setStore.setContactMessage(e.target.value) 
-                                        e.target.parentNode.classList.remove('incorrect')
-                                    } }
+                                    changeValue={(e) => changeValue}
                                     value={props.store.contact.message}
                                     required={true}
-                                    type='text'
                                     checkType='all'
                                     name='message'
                                     data='contact'
                                     minLength={10}
                                     maxLength={300}
                                     />
-                                <button type="submit" className="link_button" onClick={(e) => sendMessage(e)}>Send message</button>      
+                                <button type="submit" className="link_button" onClick={(e: React.FormEvent<HTMLButtonElement>) => sendMessage(e)}>Send message</button>      
                             </form>
                             <div className="my-info">
                                 <ContactBlock 
@@ -185,10 +181,13 @@ const Contact = (props) => {
 }
 
 
-const mapStateToProps = (store) => ({store: store})
+const mapStateToProps = (store: IState): {store: IState}  => ({store: store})
 
-const mapDispatchToProps = (dispatch) => ({
+
+
+const mapDispatchToProps = (dispatch: IDispatch): {setStore: ISetStore} => ({
     setStore: bindActionCreators(actions, dispatch),
 })
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact);
