@@ -97,7 +97,7 @@ export type ImageMe = {
 }
 
 
-type ProjectItemImageItem = {
+export type ProjectItemImageItem = {
     width: number
     height: number
     image: string 
@@ -130,7 +130,7 @@ export type ReviewItem = {
     add: string
 }
 
-type ContactItem = {
+export type ContactItem = {
     link: string
     text:string
     newWindow: boolean

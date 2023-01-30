@@ -14,5 +14,5 @@ export const setImage = (id: string, images: ImageMe[] = [], callback: (obj: HTM
    
     _image.src = images.find((image: ImageMe) => {
         return image.width >= _target?.offsetWidth //find first image with 'width' more than 'container width'
-    })?.image; //return this image as src for created <img>
+    })?.image; //set this image as src for created <img>
 }
