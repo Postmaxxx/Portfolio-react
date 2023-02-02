@@ -50,6 +50,15 @@ export interface IDispatch {
 }
 
 
+export interface IMapStateToProps {
+    (store: IState): {store: IState}
+}
+
+export interface IMapdispatchToProps {
+    (dispatch: IDispatch): {setStore: ISetStore}
+}
+
+
 export const actionList: IActionList = {
     SET_THEME: 'SET_THEME',
     SET_NAV_OPEN: 'SET_NAV_OPEN',
@@ -111,7 +120,7 @@ type ProjectItemImagesImage = {
 }
 
 
-type ProjectItemListItem = {
+export type ProjectItemListItem = {
     name: string
     descr: string
     link: string

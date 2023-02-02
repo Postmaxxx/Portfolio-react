@@ -10,8 +10,8 @@ import ContactBlock from "../../components/blocks/contact/Contact_block";
 import Modal from '../../components/modals/Modal'
 import Message from '../../components/message/Message'
 import './contact.scss';
-import { IDispatch, IProps, ISetStore, IState } from 'src/models';
-
+import { IMapdispatchToProps, IMapStateToProps, IProps } from 'src/models';
+import { useRef } from 'react'
 
 const Contact: React.FC  = (props: IProps): JSX.Element => {
 
@@ -66,11 +66,28 @@ const Contact: React.FC  = (props: IProps): JSX.Element => {
         }
     }
 
-    const changeValue = (e: React.FormEvent<HTMLInputElement>): void => {
-        props.setStore.setContactEmail(e.currentTarget.value) 
+    const changeValue = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+        if (e.currentTarget.id === 'contact_name') {props.setStore.setContactName(e.currentTarget.value)}
+        if (e.currentTarget.id === 'contact_email') {props.setStore.setContactEmail(e.currentTarget.value)}
+        if (e.currentTarget.id === 'contact_subject') {props.setStore.setContactSubject(e.currentTarget.value)}
+        if (e.currentTarget.id === 'contact_message') {props.setStore.setContactMessage(e.currentTarget.value)}
         let parent:HTMLElement =  e.currentTarget.parentNode as HTMLElement;
         parent.classList.remove('incorrect')
     }
+
+
+    const inputEmail = useRef<HTMLInputElement>();
+    const inputSubject = useRef<HTMLTextAreaElement>()
+    const inputMessage = useRef<HTMLInputElement>()
+
+    const changeFocus = (e: React.KeyboardEvent): void => {
+        if (e.key === "Enter") {
+            if (e.currentTarget.id === 'contact_name') {inputEmail.current.focus()}
+            if (e.currentTarget.id === 'contact_email') {inputSubject.current.focus()}
+            if (e.currentTarget.id === 'contact_subject') {inputMessage.current.focus()}
+        }
+    }
+
 
     return (
         <>
@@ -88,11 +105,11 @@ const Contact: React.FC  = (props: IProps): JSX.Element => {
                         <h2>Contact me<em>Contact me</em></h2>
                         <h4>Get In Touch</h4>
                         <div className="contact__container">
-                            <form className="mail-me">
+                            <div className="mail-me">
                                 <Input 
                                     id= 'contact_name'
                                     text=  'Your name *'
-                                    changeValue={(e) => changeValue}
+                                    changeValue={changeValue}
                                     value={props.store.contact.name}
                                     required={true}
                                     type= 'text'
@@ -101,12 +118,12 @@ const Contact: React.FC  = (props: IProps): JSX.Element => {
                                     data= 'contact'
                                     minLength={2}
                                     maxLength={15}
-                                
+                                    onKeyUp={changeFocus}
                                     />
                                 <Input 
                                     id='contact_email'
                                     text='Your email *'
-                                    changeValue={(e) => changeValue}
+                                    changeValue={changeValue}
                                     value={props.store.contact.email}
                                     required={true}
                                     type='email'
@@ -115,11 +132,13 @@ const Contact: React.FC  = (props: IProps): JSX.Element => {
                                     data='contact'
                                     minLength={6}
                                     maxLength={50}
+                                    refLink={inputEmail}
+                                    onKeyUp={changeFocus}
                                     />
                                 <Input 
                                     id='contact_subject'
                                     text='Your subject'
-                                    changeValue={(e) => changeValue}
+                                    changeValue={changeValue}
                                     value={props.store.contact.subject}
                                     required={false}
                                     type='text'
@@ -128,21 +147,24 @@ const Contact: React.FC  = (props: IProps): JSX.Element => {
                                     data='contact'
                                     minLength={6}
                                     maxLength={50}
+                                    refLink={inputSubject}
+                                    onKeyUp={changeFocus}
                                     />
                                 <Textarea
                                     id='contact_message'
                                     text='Your message *'
-                                    changeValue={(e) => changeValue}
+                                    changeValue={changeValue}
                                     value={props.store.contact.message}
                                     required={true}
                                     checkType='all'
                                     name='message'
                                     data='contact'
                                     minLength={10}
-                                    maxLength={300}
+                                    maxLength={500}
+                                    refLink={inputMessage}
                                     />
                                 <button type="submit" className="link_button" onClick={(e: React.FormEvent<HTMLButtonElement>) => sendMessage(e)}>Send message</button>      
-                            </form>
+                            </div>
                             <div className="my-info">
                                 <ContactBlock 
                                     image={
@@ -181,11 +203,9 @@ const Contact: React.FC  = (props: IProps): JSX.Element => {
 }
 
 
-const mapStateToProps = (store: IState): {store: IState}  => ({store: store})
+const mapStateToProps: IMapStateToProps = (store)  => ({store: store})
 
-
-
-const mapDispatchToProps = (dispatch: IDispatch): {setStore: ISetStore} => ({
+const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),
 })
 

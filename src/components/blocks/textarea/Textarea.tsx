@@ -13,6 +13,8 @@ interface ITextareaProps {
     minLength: number
     maxLength: number
     changeValue(e: React.ChangeEvent<HTMLTextAreaElement>);
+    onKeyUp?: any
+    refLink?: any
 }
 
 
@@ -31,6 +33,8 @@ const Textarea: React.FC<ITextareaProps> = (props: ITextareaProps): JSX.Element 
                 data-min_length={props.minLength}
                 data-max_length={props.maxLength}
                 data-type={props.checkType}
+                ref={props.refLink}
+                onKeyUp={props.onKeyUp}
             />
         </div>
     )

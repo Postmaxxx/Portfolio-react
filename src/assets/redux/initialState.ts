@@ -689,7 +689,7 @@ const initialState: IState = {
             },
             {
                 name: 'Techlicious',
-                descr: 'Created partials for Techlicious.com as navigation, news-blocks and comparing tables from scratch as well as implementing new design for comments, news-blocks and other.\n Stack: Scss, js, Tailwind, GULP, Twig.',
+                descr: 'Created partials for Techlicious.com as navigation, news-blocks and comparing tables from scratch as well as implementing new design for comments, news-blocks and other.\n Stack: CraftCMS, Scss, js, Tailwind, GULP, Twig.',
                 link: 'https://www.techlicious.com',
                 images: [
                     {

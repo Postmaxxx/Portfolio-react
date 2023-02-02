@@ -1,7 +1,13 @@
+import { WorkEducationItem } from 'src/models';
 import './history.scss';
 
-const History = ({historyBlock}) => {
-    return(
+interface IHistory {
+    key?: number
+    historyBlock: WorkEducationItem
+}
+
+const History: React.FC<IHistory> = ({historyBlock}: IHistory): JSX.Element => {
+    return (
         <div className="history__block">
             <div>
                 <span>{historyBlock.date}</span>

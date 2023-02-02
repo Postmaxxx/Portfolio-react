@@ -4,11 +4,10 @@ import { Link, NavLink } from "react-router-dom";
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import { IDispatch, IProps, ISetStore, IState, EmptyVoid, PageItem } from 'src/models';
+import { IDispatch, IProps, ISetStore, IState, EmptyVoid, PageItem, IMapStateToProps, IMapdispatchToProps } from 'src/models';
 
 
-const SidePanel: React.FC  = (props: IProps): JSX.Element => {
-    //_container: React.ElementType;
+const SidePanel: React.FC = (props: IProps): JSX.Element => {
 
     const changeNav: EmptyVoid = (): void => {
         props.store.nav_ham === '' ? props.setStore.setNavOpen() : props.setStore.setNavClose()
@@ -21,9 +20,10 @@ const SidePanel: React.FC  = (props: IProps): JSX.Element => {
     }
  
 
-    useEffect((): void => { //after dom rendered
+    useEffect(() => { //after dom rendered
         document.addEventListener('click', clicked)
-    }, )
+        return () => document.removeEventListener('click', clicked)
+    } )
 
 
     
@@ -81,11 +81,10 @@ const SidePanel: React.FC  = (props: IProps): JSX.Element => {
 
 
 
+const mapStateToProps: IMapStateToProps = (store)  => ({store: store})
 
-const mapStateToProps = (store: IState): {store: IState}  => ({store: store})
-
-const mapDispatchToProps = (dispatch: IDispatch): {setStore: ISetStore} => ({
-    setStore: bindActionCreators(actions, dispatch), 
+const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
+    setStore: bindActionCreators(actions, dispatch),
 })
 
 
