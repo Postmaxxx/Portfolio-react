@@ -1,4 +1,4 @@
-import preloader from '../preloader/preloader_template'
+import preloader from './preloader_template'
 import './preloader.scss'
 
 
