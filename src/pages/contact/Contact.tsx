@@ -11,7 +11,7 @@ import Modal from '../../components/modals/Modal'
 import Message from '../../components/message/Message'
 import './contact.scss';
 import { IMapdispatchToProps, IMapStateToProps, IProps } from 'src/models';
-import { useRef } from 'react'
+import { useCallback, useRef } from 'react'
 
 const Contact: React.FC  = (props: IProps): JSX.Element => {
 
@@ -66,14 +66,14 @@ const Contact: React.FC  = (props: IProps): JSX.Element => {
         }
     }
 
-    const changeValue = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+    const changeValue = useCallback((e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         if (e.currentTarget.id === 'contact_name') {props.setStore.setContactName(e.currentTarget.value)}
         if (e.currentTarget.id === 'contact_email') {props.setStore.setContactEmail(e.currentTarget.value)}
         if (e.currentTarget.id === 'contact_subject') {props.setStore.setContactSubject(e.currentTarget.value)}
         if (e.currentTarget.id === 'contact_message') {props.setStore.setContactMessage(e.currentTarget.value)}
         let parent:HTMLElement =  e.currentTarget.parentNode as HTMLElement;
         parent.classList.remove('incorrect')
-    }
+    }, [])
 
 
     const inputEmail = useRef<HTMLInputElement>();

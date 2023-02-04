@@ -2,7 +2,7 @@ import preloader from '../preloader/preloader_template'
 import './preloader.scss'
 
 
-const Preloader: React.FC = (): JSX.Element => { 
+const Preloader = () => { 
     return <div dangerouslySetInnerHTML={{__html: preloader()}}></div> 
 }
 

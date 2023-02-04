@@ -9,8 +9,7 @@ import { IMapdispatchToProps, IMapStateToProps, IProps, ProjectItemListItem } fr
 type TUseStateNumber = [number, Function]
 type TUseStateTimer = [NodeJS.Timeout, Function]
 
-
-let selected: number;
+let selected: number = 0;
 
 const List3d: React.FC = (props: IProps): JSX.Element => {
     const [timeoutScroll, settimeoutScroll]: TUseStateTimer = useState(undefined)
@@ -32,6 +31,7 @@ const List3d: React.FC = (props: IProps): JSX.Element => {
         }
         
         selected = newRotateStep > 0 ? (newRotateStep % listLength) : ((listLength + newRotateStep % listLength) % listLength)
+        
         props.setStore.setSelectedPortfolio(selected)
         setRotateStep(newRotateStep)    
     }, [rotateStep, selected])
