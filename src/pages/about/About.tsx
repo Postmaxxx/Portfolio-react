@@ -19,7 +19,7 @@ function Aboutpage(): JSX.Element {
 
                 <section className='services'> 
                     <h2>Services<em>Services</em></h2>
-                    <Services/>
+                    <Services />
                 </section>
 
                 <section className='reviews'> 

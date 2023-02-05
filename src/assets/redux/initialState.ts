@@ -188,11 +188,11 @@ const initialState: IState = {
         },
         {
             name: 'JavaScript',
-            percent: 90
+            percent: 95
         },
         {
             name: 'React',
-            percent: 75
+            percent: 80
         },
         {
             name: 'Gulp',
@@ -216,7 +216,7 @@ const initialState: IState = {
         },
         {
             name: 'Bootstrap5',
-            percent: 70
+            percent: 75
         },
         {
             name: 'BEM',
@@ -224,7 +224,15 @@ const initialState: IState = {
         },
         {
             name: 'Scrum',
-            percent: 90
+            percent: 95
+        },
+        {
+            name: 'CraftCMS',
+            percent: 80
+        },
+        {
+            name: 'TypeScript',
+            percent: 85
         },
     ],
     workExperience: [

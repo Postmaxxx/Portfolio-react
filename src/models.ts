@@ -1,5 +1,12 @@
 import { AnyAction } from 'redux';
 
+export type IPropsJSX = (props: IProps) => JSX.Element
+export type INoPropsJSX = () => JSX.Element
+/*
+export interface IPropsJSX2 {
+    (props: IProps): JSX.Element
+} 
+*/
 export type EmptyVoid = () => void
 
 export interface Action<T> {
@@ -36,8 +43,6 @@ export interface IProps {
 export interface IStore {
     store: IState
 }
-
-
 
 
 
@@ -194,4 +199,57 @@ export interface IState {
         address: Array<ContactItem>
     }
     getState?: Function
+}
+
+
+export interface ISliderOptions {
+    lazyLoad?: boolean
+    fixedWidth?: string
+    updateOnMove?: boolean
+    type? : string
+    perPage?: number
+    gap?   : string
+    breakpoints?: {
+        [key:number]: {
+            perPage?: number
+            gap?   : string
+            wheel?: boolean
+        },
+    },
+    perMove?: number
+    pagination?: boolean
+    arrows?: boolean
+    drag?: boolean
+    speed?: number
+    snap?: boolean
+    wheel?: boolean
+    wheelSleep?: number
+    autoplay?: boolean
+    interval?: number
+    pauseOnHover?: boolean
+    rewind?: boolean
+}
+
+
+type InputCheck = {
+    text: string
+    type: string
+    minLength: number
+    maxLength: number
+}
+
+export interface IInputCheck {
+    (props: InputCheck): boolean | string
+} 
+
+
+type message = {
+    header: string
+    text: string
+    buttonText: string
+    buttonClickAction: () => void
+}
+
+export interface IMessage {
+    (props: message): JSX.Element
 }

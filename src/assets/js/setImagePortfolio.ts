@@ -1,7 +1,7 @@
 import { ProjectItemImageItem } from 'src/models';
 import preloader from '../../components/preloader/preloader_template'
 
-export const setImagePortfolio = (_target: HTMLElement, _widthBlock: HTMLElement, images: ProjectItemImageItem[] = [], callback: (obj: HTMLElement) => void): void => {
+export const setImagePortfolio = (_target: HTMLElement, _widthBlock: HTMLElement, images: ProjectItemImageItem[] = [], callback: (obj: HTMLElement) => any): void => {
     let _image: HTMLImageElement = document.createElement("img"); //create new <img>
     _target.innerHTML = preloader();
 

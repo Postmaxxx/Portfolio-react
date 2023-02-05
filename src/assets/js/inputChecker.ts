@@ -1,4 +1,6 @@
-export const checkInput: Function = (text: string, type: string, minLength: number, maxLength: number): boolean | string => {
+import { IInputCheck } from "src/models";
+
+export const checkInput:IInputCheck = ({text, type, minLength, maxLength}) => {
     const emailFormat: RegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const textFormat: RegExp = /[a-zA-Z]$/;
     const textNumbersFormat: RegExp = /[a-zA-Z0-9]$/;

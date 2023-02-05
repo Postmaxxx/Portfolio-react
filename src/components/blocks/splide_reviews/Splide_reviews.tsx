@@ -4,32 +4,9 @@ import { connect } from 'react-redux'
 import * as actions from '../../../assets/redux/actions'
 import '@splidejs/react-splide/css';
 import './splide_reviews.scss'
-import { IDispatch, IProps, ISetStore, IState, ReviewItem } from 'src/models';
+import { IDispatch, IProps, ISetStore, ISliderOptions, IState, ReviewItem } from 'src/models';
 
-interface ISliderOptions {
-    updateOnMove?: boolean
-    type? : string
-    perPage?: number
-    gap?   : string
-    breakpoints?: {
-        [key:number]: {
-            perPage?: number
-            gap?   : string
-        },
-    },
-    perMove?: number
-    pagination?: boolean
-    arrows?: boolean
-    drag?: boolean
-    speed?: number
-    snap?: boolean
-    wheel?: boolean
-    wheelSleep?: number
-    autoplay?: boolean
-    interval?: number
-    pauseOnHover?: boolean
-    rewind?: boolean
-}
+
 
 const SliderReviews: React.FC = (props: IProps): JSX.Element => {
     

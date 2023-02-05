@@ -10,15 +10,16 @@ import ContactBlock from "../../components/blocks/contact/Contact_block";
 import Modal from '../../components/modals/Modal'
 import Message from '../../components/message/Message'
 import './contact.scss';
-import { IMapdispatchToProps, IMapStateToProps, IProps } from 'src/models';
+import { IMapdispatchToProps, IMapStateToProps, IPropsJSX } from 'src/models';
 import { useCallback, useRef } from 'react'
 
-const Contact: React.FC  = (props: IProps): JSX.Element => {
+
+const Contact: IPropsJSX  = (props) => {
 
     const checkInputs = (inputs: NodeListOf<HTMLInputElement>): boolean => {
         let errorMessage: Array<string>= [];
         Array.from(inputs).forEach((input: HTMLInputElement) => {
-            let error: string | boolean = checkInput(input.value.trim(), input.dataset.type, input.dataset.min_length,input.dataset.max_length); 
+            let error: string | boolean = checkInput({text: input.value.trim(), type: input.dataset.type, minLength: Number(input.dataset.min_length), maxLength: Number(input.dataset.max_length)}); 
             if (error && input.required) {
                 let inputParent:HTMLElement = input.parentNode as HTMLElement;
                 inputParent.classList.add('incorrect')

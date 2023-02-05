@@ -2,8 +2,9 @@ import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import './info_portfolio-slide.scss'
+import { IMapdispatchToProps, IMapStateToProps, IPropsJSX } from 'src/models';
 
-const InfoPortfolioSlide = (props) => {
+const InfoPortfolioSlide: IPropsJSX = (props) => {
     return(
         <div className="info_portfolio-slide__container">
             <p>{props.store.modalDescr} </p> 
@@ -22,9 +23,9 @@ const InfoPortfolioSlide = (props) => {
 }
 
 
-const mapStateToProps = (store) => ({store: store})
+const mapStateToProps: IMapStateToProps = (store)  => ({store: store})
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),
 })
 

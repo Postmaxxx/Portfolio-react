@@ -1,7 +1,8 @@
+import { INoPropsJSX } from 'src/models';
 import './services.scss'
 
 
-const Services = () => {
+const Services:INoPropsJSX = () => { 
     return (
         <div className="services__container">
             <div className="service">

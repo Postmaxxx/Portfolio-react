@@ -1,6 +1,7 @@
 import './message.scss'
+import { IMessage } from 'src/models'
 
-function Message({header, text, buttonText, buttonClickAction}) {
+const Message: IMessage = ({header, text, buttonText, buttonClickAction}) => {
     return (
         <div className='message__container' onClick={e => e.stopPropagation()}>
             <h1 >{header}</h1>
