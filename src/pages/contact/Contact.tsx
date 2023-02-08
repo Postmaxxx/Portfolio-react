@@ -10,7 +10,7 @@ import ContactBlock from "../../components/blocks/contact/Contact_block";
 import Modal from '../../components/modals/Modal'
 import Message from '../../components/message/Message'
 import './contact.scss';
-import { IMapdispatchToProps, IMapStateToProps, IPropsJSX } from 'src/models';
+import { Action, IMapdispatchToProps, IMapStateToProps, IPropsJSX } from 'src/models';
 import { useCallback, useRef } from 'react'
 
 
@@ -97,7 +97,7 @@ const Contact: IPropsJSX  = (props) => {
                     header={props.store.modalMsg.header}
                     text={props.store.modalMsg.text}
                     buttonText={props.store.modalMsg.btnText}
-                    buttonClickAction={() => props.setStore.setModalMsgVisible(false)}
+                    buttonClickAction={(): Action<boolean> => props.setStore.setModalMsgVisible(false)}
                 />
             </Modal>
             <div className="page-container">

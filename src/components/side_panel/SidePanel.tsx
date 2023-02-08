@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
+import { MouseEventHandler, useEffect } from 'react';
 import './sidePanel.scss';
 import { Link, NavLink } from "react-router-dom";
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import { IDispatch, IProps, ISetStore, IState, EmptyVoid, PageItem, IMapStateToProps, IMapdispatchToProps } from 'src/models';
+import { IRemoveEventListener, PageItem, IMapStateToProps, IMapdispatchToProps, IPropsJSX } from 'src/models';
 
 
-const SidePanel: React.FC = (props: IProps): JSX.Element => {
+const SidePanel: IPropsJSX = (props) => {
 
-    const changeNav: EmptyVoid = (): void => {
+    const changeNav: MouseEventHandler = () => {
         props.store.nav_ham === '' ? props.setStore.setNavOpen() : props.setStore.setNavClose()
     }
 
@@ -20,9 +20,9 @@ const SidePanel: React.FC = (props: IProps): JSX.Element => {
     }
  
 
-    useEffect(() => { //after dom rendered
-        document.addEventListener('click', clicked)
-        return () => document.removeEventListener('click', clicked)
+    useEffect((): IRemoveEventListener => { //after dom rendered
+        document.addEventListener('click', clicked) 
+        return (): ReturnType<typeof document.removeEventListener> => document.removeEventListener('click', clicked)
     } )
 
 
@@ -68,7 +68,7 @@ const SidePanel: React.FC = (props: IProps): JSX.Element => {
                     })}
                 </ul>
             </nav>
-            <div className="hamburger" onClick={(): void => changeNav()}>
+            <div className="hamburger" onClick={changeNav}>
                 <div></div>
                 <div></div>
                 <div></div>

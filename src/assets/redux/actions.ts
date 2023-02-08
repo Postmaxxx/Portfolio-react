@@ -1,8 +1,9 @@
-import { Action } from 'src/models';
+import { FC, SVGProps } from 'react';
+import { Action, TTheme } from 'src/models';
 import { actionList } from 'src/models';
 
 
-export const setTheme = <T extends string>(theme: T): Action<T> => ({
+export const setTheme = <T extends TTheme>(theme: T): Action<T> => ({
     type: actionList.SET_THEME, 
     payload: theme,
 })
@@ -95,3 +96,17 @@ export const setTest = () => ({
     type: actionList.SET_IMG_LOADED,
     payload: 'hgf'
 })*/
+
+export interface IThemeSwitcherProps {
+    _themeSwitcher: string
+    star: FC<SVGProps<SVGSVGElement>>
+    cloud: FC<SVGProps<SVGSVGElement>>
+    width: number
+    height: number
+    circleSize: number
+    duration: number
+    theme: string,
+    numberOfStars: number
+    nodeForTheme: HTMLElement
+    saveState: string
+}

@@ -1,3 +1,4 @@
+import { MouseEventHandler } from 'react';
 import { AnyAction } from 'redux';
 
 export type IPropsJSX = (props: IProps) => JSX.Element
@@ -37,6 +38,7 @@ export interface ISetStore {
 export interface IProps {
     store: IState
     setStore: ISetStore
+    children?: JSX.Element
 }
 
 
@@ -63,6 +65,7 @@ export interface IMapdispatchToProps {
     (dispatch: IDispatch): {setStore: ISetStore}
 }
 
+export type TTheme = 'dark' | 'light'
 
 export const actionList: IActionList = {
     SET_THEME: 'SET_THEME',
@@ -151,7 +154,7 @@ export type ContactItem = {
 }
 
 export interface IState {
-    theme: string
+    theme: TTheme
     nav_ham: string
     modal: boolean
     modalImage: string 
@@ -247,9 +250,13 @@ type message = {
     header: string
     text: string
     buttonText: string
-    buttonClickAction: () => void
+    buttonClickAction: MouseEventHandler
 }
 
 export interface IMessage {
     (props: message): JSX.Element
+}
+
+export interface IRemoveEventListener {
+    (): ReturnType<typeof document.removeEventListener>
 }

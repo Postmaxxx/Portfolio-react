@@ -1,52 +1,57 @@
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import { useEffect } from "react";
-import preloader from '../preloader/Preloader'
+import { MouseEventHandler, useLayoutEffect } from "react";
+import preloader from '../../components/preloader/preloader_template'
 import store from '../../assets/redux/store'
 import '@splidejs/react-splide/css';
 import './modalImage.scss'
+import { EmptyVoid, IPropsJSX, IRemoveEventListener } from 'src/models';
 
 
-let escListener = undefined;
 
-const ModalImage = (props) => {
+const ModalImage:IPropsJSX = (props) => {
 
-    const closeModal = () => {
+    const closeModal: EmptyVoid = () => {
         props.setStore.setModal(false);
     }
 
-    const checkClose = (e) => {
-        if (e.target.tagName !== 'IMG') {
+    const checkClose: MouseEventHandler = (e) => {
+        if (e.currentTarget.tagName !== 'IMG') {
             closeModal()
         }
     }
-    
-    const _modal =  document.querySelector(".modal__background");
-    if (_modal) {
-        store.getState().modal ? _modal.classList.add('show') : _modal.classList.remove('show')
-    }
-     
 
-    useEffect(() => {
-        document.querySelector(".modal__background").addEventListener('click', (e) => e.target === e.currentTarget && closeModal(e));
-        escListener = document.addEventListener('keydown', (e) => e.key === 'Escape' && closeModal(e));
+    
+
+     
+    useLayoutEffect(() => {
+        const _modal: HTMLElement =  document.querySelector(".modal__background");
+        store.getState().modal ? _modal.classList.add('show') : _modal.classList.remove('show')
+    }, [store.getState().modal])
+
+
+    useLayoutEffect((): IRemoveEventListener => {
+        document.querySelector<HTMLElement>(".modal__background").addEventListener('click', (e) => e.target === e.currentTarget && closeModal());
+        document.addEventListener('keydown', (e) => e.key === 'Escape' && closeModal());
         
-        let _target = document.querySelector('.modal').childNodes[0].childNodes[0];
-        let _image = document.createElement("img");
+        let _target: HTMLElement = document.querySelector('.modal').childNodes[0].childNodes[0] as HTMLElement;
+        let _image: HTMLImageElement = document.createElement("img");
         _target.innerHTML = preloader();
-        _image.onload = () => { 
-            _target?.replaceChildren(_image);
-        }
+        _image.onload = () => { _target?.replaceChildren(_image) }
         _image.src = store.getState().modalImage;
         _image.alt = store.getState().modalDescr;
+        return () => {
+            document.querySelector<HTMLElement>(".modal__background").removeEventListener('click', (e) => e.target === e.currentTarget && closeModal());
+            document.removeEventListener('keydown', (e) => e.key === 'Escape' && closeModal());
+        }
     },[store.getState().modalImage])
     
     return (
-        <div className="modal__background"  onClick={(e) => checkClose(e)}>
+        <div className="modal__background" onClick={checkClose}>
             <div className="modal">
-                <div onClick={(e) => checkClose(e)}>
-                    <div onClick={(e) => checkClose(e)}>
+                <div onClick={checkClose}>
+                    <div onClick={checkClose}>
                         <img src="" alt="" />
                     </div>
                 </div>

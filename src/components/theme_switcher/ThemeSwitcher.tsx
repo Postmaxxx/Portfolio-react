@@ -6,28 +6,34 @@ import { createThemeSwitcher } from './theme-switcher.js'
 import cloud from '../../assets/img/svg/theme_day__cloud.svg'
 import star from '../../assets/img/svg/theme_nigth__star.svg'
 import './themeSwitcher.scss';
+import { EmptyVoid, IMapdispatchToProps, IMapStateToProps, IPropsJSX } from 'src/models';
 
-const ThemeSwitcher = props => {
 
-    const changeTheme = () => {
+
+
+const ThemeSwitcher: IPropsJSX = (props) => {
+
+    const changeTheme: EmptyVoid = () => {
         props.setStore.setTheme(document.getElementsByTagName("BODY")[0].classList.contains('dark') ? 'dark' : 'light');
     }
 
     useEffect(() => {
         props.setStore.setTheme(localStorage.getItem('theme') || 'light');
-        createThemeSwitcher({
+
+        const themeProps: actions.IThemeSwitcherProps = {
             _themeSwitcher: '.theme-switcher', 
             star: star, 
             cloud: cloud, 
-            width: document.querySelector('.theme-switcher').offsetWidth, 
-            height: document.querySelector('.theme-switcher').offsetHeight, 
-            circleSize: Math.round(document.querySelector('.theme-switcher').offsetHeight / 3), 
+            width: document.querySelector<HTMLElement>('.theme-switcher').offsetWidth, 
+            height: document.querySelector<HTMLElement>('.theme-switcher').offsetHeight, 
+            circleSize: Math.round(document.querySelector<HTMLElement>('.theme-switcher').offsetHeight / 3), 
             duration: 2000, 
             theme: localStorage.getItem('theme') || 'light', 
             numberOfStars: 30,
-            nodeForTheme: document.getElementsByTagName("BODY")[0], //node for adding class 'dark' / 'light'
+            nodeForTheme: document.querySelector("body"), //node for adding class 'dark' / 'light'
             saveState: 'theme',
-        });
+        }
+        createThemeSwitcher(themeProps);
     },[])
 
     return (
@@ -38,9 +44,9 @@ const ThemeSwitcher = props => {
 }
 
 
-const mapStateToProps = (store) => ({store: store})
+const mapStateToProps: IMapStateToProps = (store)  => ({store: store})
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),
 })
 
