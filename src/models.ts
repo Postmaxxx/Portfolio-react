@@ -1,5 +1,6 @@
-import { MouseEventHandler } from 'react';
-import { AnyAction } from 'redux';
+import { FC, MouseEventHandler, SVGProps } from 'react';
+import { AnyAction, Store } from 'redux';
+import { TTheme } from './components/theme_switcher/theme-switcher';
 
 export type IPropsJSX = (props: IProps) => JSX.Element
 export type INoPropsJSX = () => JSX.Element
@@ -65,7 +66,7 @@ export interface IMapdispatchToProps {
     (dispatch: IDispatch): {setStore: ISetStore}
 }
 
-export type TTheme = 'dark' | 'light'
+//export type TTheme = 'dark' | 'light'
 
 export const actionList: IActionList = {
     SET_THEME: 'SET_THEME',
@@ -153,7 +154,7 @@ export type ContactItem = {
     newWindow: boolean
 }
 
-export interface IState {
+export interface IState extends IProps {
     theme: TTheme
     nav_ham: string
     modal: boolean
@@ -201,7 +202,11 @@ export interface IState {
         email: Array<ContactItem>
         address: Array<ContactItem>
     }
-    getState?: Function
+    getState: any
+    dispatch :any
+    subscribe : any
+    replaceReducer: any
+    [Symbol.observable] : any
 }
 
 
@@ -260,3 +265,21 @@ export interface IMessage {
 export interface IRemoveEventListener {
     (): ReturnType<typeof document.removeEventListener>
 }
+
+/*
+
+export interface IThemeSwitcherProps {
+    themeSwitcher: string
+    star: FC<SVGProps<SVGSVGElement>>
+    cloud: FC<SVGProps<SVGSVGElement>>
+    width: number
+    height: number
+    circleSize: number
+    duration: number
+    theme: string,
+    numberOfStars: number
+    nodeForTheme: HTMLElement
+    saveState: string
+}
+*/
+

@@ -15,8 +15,7 @@
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity $transition_base, visibility $transition_base ;
-
+    transition: opacity $transition_base, visibility $transition_base;
 
     &.active {
         opacity: 1;

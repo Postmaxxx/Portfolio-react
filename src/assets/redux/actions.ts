@@ -1,5 +1,5 @@
-import { FC, SVGProps } from 'react';
-import { Action, TTheme } from 'src/models';
+import { TTheme } from 'src/components/theme_switcher/theme-switcher';
+import { Action } from 'src/models';
 import { actionList } from 'src/models';
 
 
@@ -97,16 +97,3 @@ export const setTest = () => ({
     payload: 'hgf'
 })*/
 
-export interface IThemeSwitcherProps {
-    _themeSwitcher: string
-    star: FC<SVGProps<SVGSVGElement>>
-    cloud: FC<SVGProps<SVGSVGElement>>
-    width: number
-    height: number
-    circleSize: number
-    duration: number
-    theme: string,
-    numberOfStars: number
-    nodeForTheme: HTMLElement
-    saveState: string
-}

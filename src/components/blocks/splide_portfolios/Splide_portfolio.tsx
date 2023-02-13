@@ -69,7 +69,7 @@ const SplidePortfolio:IPropsJSX = (props) => {
                         return (
                             <SplideSlide key={index}>
                                 <div className="splide__slide-container" data-slidecontainer={index}>
-                                    <img onClick={ShowModal} />
+                                    <img />
                                 </div>
                             </SplideSlide>
                         )

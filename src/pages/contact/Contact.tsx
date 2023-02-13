@@ -27,8 +27,9 @@ const Contact: IPropsJSX  = (props) => {
             }
         })
         if (errorMessage.length > 0) {
-            props.setStore.setModalMsgHeader('Incorrect data');
-            props.setStore.setModalMsgText(`Some errors were found: \n` + errorMessage.join(',\n'));
+            props.setStore.setModalMsgHeader('Form is completed incorrectly');
+            //props.setStore.setModalMsgText(`Some errors were found: \n` + errorMessage.join(',\n'));
+            props.setStore.setModalMsgText(`Please check: \n` + errorMessage.join(',\n'));
             props.setStore.setModalMsgBtnText('Close');
             props.setStore.setModalMsgVisible(true);
             return false

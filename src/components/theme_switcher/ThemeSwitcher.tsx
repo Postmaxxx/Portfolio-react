@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux'
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
-import { createThemeSwitcher } from './theme-switcher.js'
+import { createThemeSwitcher, IThemeSwitcherProps } from './theme-switcher'
 import cloud from '../../assets/img/svg/theme_day__cloud.svg'
 import star from '../../assets/img/svg/theme_nigth__star.svg'
 import './themeSwitcher.scss';
@@ -17,16 +17,16 @@ const ThemeSwitcher: IPropsJSX = (props) => {
         props.setStore.setTheme(document.getElementsByTagName("BODY")[0].classList.contains('dark') ? 'dark' : 'light');
     }
 
-    useEffect(() => {
+    useEffect((): void => {
         props.setStore.setTheme(localStorage.getItem('theme') || 'light');
-
-        const themeProps: actions.IThemeSwitcherProps = {
-            _themeSwitcher: '.theme-switcher', 
+        const themeSwitcher = '.theme-switcher'
+        const themeProps: IThemeSwitcherProps = {
+            themeSwitcher: themeSwitcher, 
             star: star, 
             cloud: cloud, 
-            width: document.querySelector<HTMLElement>('.theme-switcher').offsetWidth, 
-            height: document.querySelector<HTMLElement>('.theme-switcher').offsetHeight, 
-            circleSize: Math.round(document.querySelector<HTMLElement>('.theme-switcher').offsetHeight / 3), 
+            width: document.querySelector<HTMLElement>(themeSwitcher).offsetWidth, 
+            height: document.querySelector<HTMLElement>(themeSwitcher).offsetHeight, 
+            circleSize: Math.round(document.querySelector<HTMLElement>(themeSwitcher).offsetHeight / 3), 
             duration: 2000, 
             theme: localStorage.getItem('theme') || 'light', 
             numberOfStars: 30,
@@ -38,13 +38,13 @@ const ThemeSwitcher: IPropsJSX = (props) => {
 
     return (
         <div className='theme-switcher__container' >
-            <div className="theme-switcher" onClick={changeTheme}></div>
+            <div className="theme-switcher" onClick={changeTheme} aria-label="Change the site theme"></div>
         </div>
     )
 }
 
 
-const mapStateToProps: IMapStateToProps = (store)  => ({store: store})
+const mapStateToProps: IMapStateToProps = (store) => ({store: store})
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
     setStore: bindActionCreators(actions, dispatch),

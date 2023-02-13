@@ -13,7 +13,7 @@
     margin-right: auto;
     display: flex;
     flex-direction: column;
-    transform: translate(0, -500px);
+    transform: translate(0, -100%); //scale(0)
     opacity: 0;
     transition: background-color $transition_theme, border $transition_theme, transform $transition_base, opacity $transition_base;
     box-shadow: 0px 0px 20px #888;
@@ -53,7 +53,7 @@
 
 .modal_common.active .message__container{
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(1);
 }
 
 

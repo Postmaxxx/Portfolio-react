@@ -10,8 +10,8 @@ const Modal:IPropsJSX = (props) => {
     return (
         <>
             <div 
-            className={`modal_common ${props.store.modalMsg.active ? 'active' : ''}`}
-            onClick={(): Action<boolean> => props.setStore.setModalMsgVisible(false)}
+                className={`modal_common ${props.store.modalMsg.active ? 'active' : ''}`}
+                onClick={(): Action<boolean> => props.setStore.setModalMsgVisible(false)}
             >
                 {props.children}
             </div>

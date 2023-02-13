@@ -133,7 +133,12 @@ import components_shooter_small from '../img/portfolio/components/shooter_small.
 let portfolioPath: string = 'http://127.0.0.1:8887/';
 let server_formation: string = 'https://demo.wiseup.dev';
 
-const initialState: IState = {
+
+
+let initialState = {} as IState
+
+initialState = {
+    ...initialState,
     theme: 'light',
     nav_ham: '',
     modal: false,
@@ -240,7 +245,7 @@ const initialState: IState = {
             date: '2020 - Present',
             header: 'Web Developer',
             subHeader: 'WiseUpStudio',
-            text: 'Creating sites using design templates, creating specific interactive components, code review, bugs fixing. Applying frameworks (Bootstrap, Tailwind, React) as well as using pure Html+Css+Js. Following best practices using BEM, Git, Webpack and Mobile First application principles.',
+            text: 'Creating sites using design templates, creating specific interactive components, code review, bugs fixing. Applying frameworks (Bootstrap, Tailwind, React) as well as using pure HTML+CSS+JS. Following best practices using BEM, Git, Webpack and Mobile First application principles.',
             link: 'https://www.wiseupstudio.com/',
         },
         {
@@ -606,7 +611,7 @@ const initialState: IState = {
             },
             {
                 name: 'P2S Inc',
-                descr: 'New design templates for P2S Incorporated. Plethora of specific components, animations,  \n Stack: Gulp, Twig, JS, Scss',
+                descr: 'New design templates for P2S Incorporated. Plethora of specific components, animations,  \n Stack: Gulp, Twig, JS, Scss, JSON animation(Lottie), SplideJS',
                 link: 'https://www.p2sinc.com',
                 images: [
                     {
@@ -697,7 +702,7 @@ const initialState: IState = {
             },
             {
                 name: 'Techlicious',
-                descr: 'Created partials for Techlicious.com as navigation, news-blocks and comparing tables from scratch as well as implementing new design for comments, news-blocks and other.\n Stack: CraftCMS, Scss, js, Tailwind, GULP, Twig.',
+                descr: 'Created partials for Techlicious.com as navigation, news-blocks and comparing tables from scratch as well as implementing new design for comments, news-blocks and other.\n Stack: CraftCMS, Scss, JS, Tailwind, GULP, Twig.',
                 link: 'https://www.techlicious.com',
                 images: [
                     {
@@ -1076,7 +1081,7 @@ const initialState: IState = {
             },
             {
                 name: 'Components',
-                descr: 'Some compenents created as a challenge with a 1-hour deadline.\n Stack: Html, css, JS',
+                descr: 'Some compenents created as a challenge with a 1-hour deadline.\n Stack: HTML, CSS, JS',
                 link: '',
                 images: [
                     {
