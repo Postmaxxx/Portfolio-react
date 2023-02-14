@@ -1,5 +1,5 @@
-import { FC, MouseEventHandler, SVGProps } from 'react';
-import { AnyAction, Store } from 'redux';
+import { MouseEventHandler } from 'react';
+import { AnyAction } from 'redux';
 import { TTheme } from './components/theme_switcher/theme-switcher';
 
 export type IPropsJSX = (props: IProps) => JSX.Element

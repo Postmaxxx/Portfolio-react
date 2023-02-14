@@ -1,7 +1,7 @@
 import * as actions from '../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import { MouseEventHandler, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import preloader from '../../components/preloader/preloader_template'
 import store from '../../assets/redux/store'
 import '@splidejs/react-splide/css';
@@ -15,14 +15,14 @@ const ModalImage:IPropsJSX = (props) => {
     const closeModal: EmptyVoid = () => {
         props.setStore.setModal(false);
     }
-
+/*
     const checkClose: MouseEventHandler = (e) => {
         if (e.currentTarget.tagName !== 'IMG') {
             closeModal()
         }
     }
 
-    
+    */
 
      
     useLayoutEffect((): void => {

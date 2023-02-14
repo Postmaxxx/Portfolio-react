@@ -27,7 +27,7 @@ const List: IList = (props) => {
                         return (
                             <li 
                                 key={index} 
-                                className={index == props.store.portfolios.selected ? 'selected' : ''}
+                                className={index === props.store.portfolios.selected ? 'selected' : ''}
                                 onClick={():void => selectPortfolio(index)}
                             >
                                 {portfolio.name}

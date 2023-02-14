@@ -1,4 +1,4 @@
-import { useRef, useEffect, Ref} from "react";
+import { useRef, useEffect } from "react";
 import * as actions from '../../../assets/redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
@@ -50,7 +50,7 @@ const SplidePortfolio:IPropsJSX = (props) => {
     
 
     useEffect((): void => {
-        Array.from(document.querySelectorAll(`[data-slidecontainer]`)).map((slide: HTMLDivElement, slideNumber: number) => {
+        Array.from(document.querySelectorAll(`[data-slidecontainer]`)).forEach((slide: HTMLDivElement, slideNumber: number) => {
             let images: [ProjectItemImageItem] = store.getState().portfolios.list[store.getState().portfolios.selected].images[slideNumber].images;
             setImagePortfolio(slide, slide.parentNode as HTMLElement, images, obj => obj.addEventListener('click', ShowModal))
         })
@@ -69,7 +69,7 @@ const SplidePortfolio:IPropsJSX = (props) => {
                         return (
                             <SplideSlide key={index}>
                                 <div className="splide__slide-container" data-slidecontainer={index}>
-                                    <img />
+                                    <img alt=""/>
                                 </div>
                             </SplideSlide>
                         )
