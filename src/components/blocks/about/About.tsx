@@ -6,7 +6,7 @@ import { setImage } from "../../../assets/js/setImage";
 import store from "../../../assets/redux/store";
 import "./about.scss";
 import "../../preloader/preloader.scss";
-import { IDispatch, IProps, ISetStore, IState, MeInfo } from "src/models";
+import { IMapdispatchToProps, IMapStateToProps, IProps, MeInfo } from "src/models";
 
 const About: React.FC = (props: IProps): JSX.Element => {
 
@@ -43,10 +43,9 @@ const About: React.FC = (props: IProps): JSX.Element => {
 };
 
 
-const mapStateToProps = (store: IState): {store: IState}  => ({store: store});
+const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
 
-
-const mapDispatchToProps = (dispatch: IDispatch): {setStore: ISetStore} => ({
+const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
 });
 

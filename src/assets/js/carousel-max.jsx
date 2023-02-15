@@ -44,7 +44,7 @@ export function makeCarousel(params) {
 
 	carousel.innerHTML = `
         <div className="${destinationClass}-images-container">
-            ${picsArray.map((el, index) => {
+            ${picsArray.map(() => {
 		return (`
                 <div className="${destinationClass}-img-wrapper">
                     <div className="${destinationClass}-img-container">
@@ -131,7 +131,7 @@ export function makeCarousel(params) {
 	});
 
 
-	imgExpandIconList.forEach((el, index) => {
+	imgExpandIconList.forEach((el) => {
 		el.style.cssText = `
             width: ${expandIconWidth}px;
             height: ${expandIconHeignt}px;
@@ -337,7 +337,7 @@ export function makeCarousel(params) {
 
 
 
-	function closeImage(e) {
+	function closeImage() {
 		defaultFullScreenStyles();
 		expandImageShown = false;
 		setTimeoutToMove();
@@ -405,7 +405,7 @@ export function makeCarousel(params) {
 	function inertiaMovement(dx) {
 		clearInterval(inertiaCounter); //fix bug when some timers start simultaniously
 
-		inertiaCounter = setInterval((e) => {
+		inertiaCounter = setInterval(() => {
 			dx = dx * inertiaStep;
 			if (Math.abs(dx) <= 1) {
 				inertiaSpeedX = 0;
@@ -421,7 +421,7 @@ export function makeCarousel(params) {
 
 	function bgMovement(dx) {
 		clearInterval(bgMoveCounter);
-		bgMoveCounter = setInterval((e) => {
+		bgMoveCounter = setInterval(() => {
 			if (bgMove === 0) {
 				clearInterval(bgMoveCounter);
 			} else {
@@ -432,7 +432,7 @@ export function makeCarousel(params) {
 	}
 
 
-	const stopMove = (e) => { //stop move the carousel
+	const stopMove = () => { //stop move the carousel
 		move = false;
 		//restartMoveTimer = true;
 		dxRibbon = dxRibbon + dxMouse; //fixing the offset
@@ -458,7 +458,7 @@ export function makeCarousel(params) {
 
 	carousel.addEventListener("mouseout", e => stopMove(e));
 
-	carouselInertionTimer = setInterval((e) => { //check mouse speed every 100ms
+	carouselInertionTimer = setInterval(() => { //check mouse speed every 100ms
 		inertiaPreviousMouseX = inertiaCurrentMouseX;
 		inertiaCurrentMouseX = dxMouse;
 	}, 100);

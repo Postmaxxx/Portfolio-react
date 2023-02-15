@@ -6,7 +6,7 @@ import preloader from "../../components/preloader/preloader_template";
 import store from "../../assets/redux/store";
 import "@splidejs/react-splide/css";
 import "./modalImage.scss";
-import { EmptyVoid, IPropsJSX, IRemoveEventListener } from "src/models";
+import { EmptyVoid, IMapdispatchToProps, IMapStateToProps, IPropsJSX, IRemoveEventListener } from "src/models";
 
 
 
@@ -74,9 +74,9 @@ const ModalImage:IPropsJSX = (props) => {
 	); 
 };
 
-const mapStateToProps = (store) => ({store: store});
+const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
 });
 

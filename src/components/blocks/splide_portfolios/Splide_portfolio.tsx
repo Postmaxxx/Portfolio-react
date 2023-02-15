@@ -51,7 +51,7 @@ const SplidePortfolio:IPropsJSX = (props) => {
 
 	useEffect((): void => {
 		Array.from(document.querySelectorAll("[data-slidecontainer]")).forEach((slide: HTMLDivElement, slideNumber: number) => {
-			const images: [ProjectItemImageItem] = store.getState().portfolios.list[store.getState().portfolios.selected].images[slideNumber].images;
+			const images: ProjectItemImageItem[] = store.getState().portfolios.list[store.getState().portfolios.selected].images[slideNumber].images;
 			setImagePortfolio(slide, slide.parentNode as HTMLElement, images, obj => obj.addEventListener("click", ShowModal));
 		});
 		newModalImg();

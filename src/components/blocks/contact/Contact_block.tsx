@@ -1,4 +1,4 @@
-import { ContactItem, IProps } from "src/models";
+import { ContactItem } from "src/models";
 import "./contact_block.scss";
 
 interface IContactBlock {

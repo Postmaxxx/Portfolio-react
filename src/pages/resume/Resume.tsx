@@ -5,7 +5,7 @@ import Skill from "../../components/blocks/skill/Skill";
 import History from "../../components/blocks/history/History";
 import resumeDoc from "../../assets/docs/resume.pdf";
 import "./resume.scss";
-import { MySkill, WorkEducationItem, IDispatch, ISetStore, IProps, IState } from "src/models";
+import { MySkill, WorkEducationItem, IProps, IMapStateToProps, IMapdispatchToProps } from "src/models";
 
 const Resume: React.FC  = (props: IProps): JSX.Element  => {
 	return(
@@ -65,11 +65,9 @@ const Resume: React.FC  = (props: IProps): JSX.Element  => {
 };
 
 
-const mapStateToProps = (store: IState): {store: IState}  => ({store: store});
+const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
 
-
-
-const mapDispatchToProps = (dispatch: IDispatch): {setStore: ISetStore} => ({
+const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
 });
 

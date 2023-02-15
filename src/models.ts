@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react";
-import { AnyAction } from "redux";
+import { AnyAction, ActionCreatorsMapObject } from "redux";
 import { TTheme } from "./components/theme_switcher/theme-switcher";
 
 export type IPropsJSX = (props: IProps) => JSX.Element
@@ -31,7 +31,7 @@ const t = <T>(payload? : T): Action<T> => {
 
 
 export interface ISetStore {
-    [key: string]: <T>(payload?: any) => Action<T> //Change any to T
+    [key: string]: <T>(payload?: T) => Action<T> //Change any to T
     //[key: string]: Predicate
 }
 
@@ -62,8 +62,13 @@ export interface IMapStateToProps {
     (store: IState): {store: IState}
 }
 
+
+export interface ISetStore2 {
+    [key: string]: <T>(payload?: T) => Action<T> //Change any to T
+}
+
 export interface IMapdispatchToProps {
-    (dispatch: IDispatch): {setStore: ISetStore}
+    (dispatch: IDispatch): {setStore: ActionCreatorsMapObject}
 }
 
 //export type TTheme = 'dark' | 'light'
@@ -202,9 +207,9 @@ export interface IState extends IProps {
         email: Array<ContactItem>
         address: Array<ContactItem>
     }
-    getState: any
-    dispatch :any
-    subscribe : any
+    getState: () => IState
+    dispatch: any
+    subscribe: any
     replaceReducer: any
     [Symbol.observable] : any
 }

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as actions from "../../../assets/redux/actions";
 import "@splidejs/react-splide/css";
 import "./splide_reviews.scss";
-import { IDispatch, IProps, ISetStore, ISliderOptions, IState, ReviewItem } from "src/models";
+import { IMapdispatchToProps, IMapStateToProps, IProps, ISliderOptions, ReviewItem } from "src/models";
 
 
 
@@ -58,13 +58,10 @@ const SliderReviews: React.FC = (props: IProps): JSX.Element => {
 };
 
 
-const mapStateToProps = (store: IState): {store: IState}  => ({store: store});
+const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
 
-
-
-const mapDispatchToProps = (dispatch: IDispatch): {setStore: ISetStore} => ({
+const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
 });
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(SliderReviews);

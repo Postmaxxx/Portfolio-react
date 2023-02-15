@@ -1,7 +1,7 @@
 import { ImageMe } from "./../../models";
 import preloader from "../../components/preloader/preloader_template";
 
-export const setImage = (id: string, images: ImageMe[] = [], callback: (obj: HTMLElement) => any): void => {
+export const setImage = (id: string, images: ImageMe[] = [], callback: (obj: HTMLElement) => void): void => {
 	const _target: HTMLElement = document.querySelector(id); //container for image
 	const _image: HTMLImageElement  = document.createElement("img"); //create new <img>
 	_target.innerHTML = preloader();

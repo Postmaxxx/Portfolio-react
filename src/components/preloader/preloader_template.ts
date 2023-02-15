@@ -1,5 +1,3 @@
-import { INoPropsJSX } from "src/models";
-
 const preloader = (): string => {
 	return `
         <div class='preloader__container'>

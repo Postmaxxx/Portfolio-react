@@ -2,7 +2,7 @@ import { FC, SVGProps } from "react";
 
 type EmptyVoid = () => void
 
-export type TTheme = "dark" | "light"
+export type TTheme = "dark" | "light";
 
 type Cloud = {
     width: number
@@ -126,7 +126,7 @@ theme_state = {
  
 
 const classSwitcher = (classRemove: string, classAdd: string, delay: number): Promise<void> => { //class +/- for _contentSwitcher using delay
-	return new Promise((res, rej) => {
+	return new Promise((res) => {
 		setTimeout((): void => {
 			classRemove ? theme_state._contentSwitcher.classList.remove(classRemove) : void 0;
 			classAdd ? theme_state._contentSwitcher.classList.add(classAdd) : void 0;
@@ -371,7 +371,7 @@ export const createThemeSwitcher = (props: IThemeSwitcherProps): void => {
 	theme_state.clouds = props.clouds ? props.clouds : theme_state__default.clouds;
 	theme_state.starsBlinkingAnimation = props.starsBlinkingAnimation ? props.starsBlinkingAnimation : theme_state__default.starsBlinkingAnimation;
 	theme_state.saveState = props.saveState ? props.saveState : theme_state__default.saveState;
-	new Promise<void>((res, rej) => {
+	new Promise<void>((res) => {
 		createThemeSwitcherHtml("light");
 		createThemeSwitcherStyles();
 		createStars();

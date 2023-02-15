@@ -5,7 +5,7 @@ import About from "../../components/blocks/about/About";
 import Services from "../../components/blocks/services/Services";
 import SpliderReviews from "../../components/blocks/splide_reviews/Splide_reviews";
 import "./about.scss";
-import { IDispatch, ISetStore, IState } from "src/models";
+import { IMapdispatchToProps, IMapStateToProps } from "src/models";
 
 
 function Aboutpage(): JSX.Element {
@@ -32,11 +32,9 @@ function Aboutpage(): JSX.Element {
 }
 
 
-const mapStateToProps = (store: IState): {store: IState}  => ({store: store});
+const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
 
-
-
-const mapDispatchToProps = (dispatch: IDispatch): {setStore: ISetStore} => ({
+const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
 });
 
