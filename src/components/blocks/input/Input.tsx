@@ -1,4 +1,4 @@
-import './input.scss'
+import "./input.scss";
 
 
 interface IInputProps {
@@ -20,25 +20,25 @@ interface IInputProps {
 
 
 const Input: React.FC<IInputProps> = (props: IInputProps): JSX.Element => {
-    return (
-        <div className="input__container">
-            <label htmlFor={props.id}>{props.text}</label>
-            <input 
-                type={props.type} 
-                id={props.id}
-                value={props.value}
-                onChange={props.changeValue}
-                required={props.required}
-                name={props.name}
-                data-input={props.data}
-                data-min_length={props.minLength}
-                data-max_length={props.maxLength}
-                data-type={props.checkType}
-                onKeyUp={props.onKeyUp}
-                ref={props.refLink}
-            />
-        </div>
-    )
-}
+	return (
+		<div className="input__container">
+			<label htmlFor={props.id}>{props.text}</label>
+			<input 
+				type={props.type} 
+				id={props.id}
+				value={props.value}
+				onChange={props.changeValue}
+				required={props.required}
+				name={props.name}
+				data-input={props.data}
+				data-min_length={props.minLength}
+				data-max_length={props.maxLength}
+				data-type={props.checkType}
+				onKeyUp={props.onKeyUp}
+				ref={props.refLink}
+			/>
+		</div>
+	);
+};
 
 export default Input;

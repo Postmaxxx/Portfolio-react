@@ -1,11 +1,11 @@
 import { INoPropsJSX } from "src/models";
 
 const preloader = (): string => {
-    return `
+	return `
         <div class='preloader__container'>
             <div class="preloader"></div>
             <p class='preloader__text'></p>
-        </div>`
-}
+        </div>`;
+};
 
 export default preloader;

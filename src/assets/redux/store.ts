@@ -1,7 +1,7 @@
-import { createStore } from 'redux';
-import reducer from './reducer'
-import { IState } from 'src/models';
+import { createStore } from "redux";
+import reducer from "./reducer";
+import { IState } from "src/models";
  
-let store: IState = createStore(reducer);
+const store: IState = createStore(reducer);
  
-export default store 
+export default store; 
