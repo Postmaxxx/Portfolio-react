@@ -12,7 +12,7 @@ const SliderReviews: React.FC = (props: IProps): JSX.Element => {
     
 	const options: ISliderOptions = {
 		updateOnMove: true,
-		type : "loop",
+		//type : "loop",
 		perPage: 2,
 		gap   : "2rem",
 		breakpoints: {
@@ -23,16 +23,16 @@ const SliderReviews: React.FC = (props: IProps): JSX.Element => {
 		},
 		perMove: 1,
 		pagination: false,
-		arrows: false,
+		arrows: true,
 		drag: true,
 		speed: 500,
 		snap: false,
 		wheel: true,
 		wheelSleep: 500,
 		autoplay: true,
-		interval: 5000,
+		interval: 10000,
 		pauseOnHover: true,
-		rewind: false,
+		//rewind: true,
 	};
 
 

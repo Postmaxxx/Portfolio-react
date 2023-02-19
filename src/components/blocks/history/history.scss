@@ -80,6 +80,21 @@
 
         & a {
             text-decoration: none;
+            //display: block;
+            font-size: 18px;
+            margin-top: 5px;
+            color: map.get($light, "text_hard");
+            font-weight: 600;
+            transition: color $transition_theme; 
+
+            @include respond-to(sm) {
+                font-size: 16px;
+                margin-top: 8px;
+            }
+    
+            @include respond-to(xs) {
+                font-size: 14px;
+            }
         }
 
         & span {
@@ -140,6 +155,9 @@ body.dark {
         & .history__description {
             & > h4 {
                 color: map.get($dark, "text_em");
+            }
+            & a {
+                color: map.get($dark, "text_hard");
             }
             & span {
                 color: map.get($dark, "text_hard");

@@ -42,6 +42,12 @@ import plenco_9_small from "../img/portfolio/plenco/9_small.jpg";
 import plenco_10 from "../img/portfolio/plenco/10.jpg";
 import plenco_10_big from "../img/portfolio/plenco/10_big.jpg";
 import plenco_10_small from "../img/portfolio/plenco/10_small.jpg";
+import plenco_11 from "../img/portfolio/plenco/10.jpg";
+import plenco_11_big from "../img/portfolio/plenco/10_big.jpg";
+import plenco_11_small from "../img/portfolio/plenco/10_small.jpg";
+import plenco_12 from "../img/portfolio/plenco/10.jpg";
+import plenco_12_big from "../img/portfolio/plenco/10_big.jpg";
+import plenco_12_small from "../img/portfolio/plenco/10_small.jpg";
 import plenco_desktop_xd from "../img/portfolio/plenco/desktop_xd.jpg";
 import plenco_desktop_xd_big from "../img/portfolio/plenco/desktop_xd_big.jpg";
 import plenco_desktop_xd_small from "../img/portfolio/plenco/desktop_xd_small.jpg";
@@ -75,6 +81,9 @@ import techlicious_3_small from "../img/portfolio/techlicious/3_small.jpg";
 import techlicious_4 from "../img/portfolio/techlicious/4.jpg";
 import techlicious_4_big from "../img/portfolio/techlicious/4_big.jpg";
 import techlicious_4_small from "../img/portfolio/techlicious/4_small.jpg";
+import techlicious_5 from "../img/portfolio/techlicious/5.jpg";
+import techlicious_5_big from "../img/portfolio/techlicious/5_big.jpg";
+import techlicious_5_small from "../img/portfolio/techlicious/5_small.jpg";
 
 import formation_1 from "../img/portfolio/formation/1.jpg";
 import formation_1_big from "../img/portfolio/formation/1_big.jpg";
@@ -130,7 +139,7 @@ import components_shooter from "../img/portfolio/components/shooter.jpg";
 import components_shooter_big from "../img/portfolio/components/shooter_big.jpg";
 import components_shooter_small from "../img/portfolio/components/shooter_small.jpg";
  
-const portfolioPath = "http://127.0.0.1:8887/";
+const portfolioPath = "https://postmaxxx.github.io/Portfolio-examples/";
 const server_formation = "https://demo.wiseup.dev";
 
 
@@ -238,6 +247,14 @@ initialState = {
 		{
 			name: "TypeScript",
 			percent: 85
+		},
+		{
+			name: "PWA",
+			percent: 70
+		},
+		{
+			name: "JEST",
+			percent: 80
 		},
 	],
 	workExperience: [
@@ -352,9 +369,261 @@ initialState = {
 		list: [
 			{
 				name: "Plenco",
-				descr: "Created frontend for Plenco company based on Bootstrap 5 using provided design in AdobeXD. More than 81 pages, accordions, dropdown lists, animation, adaptive design, galleries, carousels, preloaders and so on.\n Stack: Gulp, Twig, Bootstrap 5, Tailwind, JS, Scss",
+				descr: "Created frontend templates for Plenco company based on Bootstrap 5 using provided design in AdobeXD. More than 81 pages, accordions, dropdown lists, animation, adaptive design, galleries, carousels, preloaders and so on.\n Stack: Gulp, Twig, Bootstrap 5, Tailwind, JS, Scss",
 				link: "https://www.plenco.com",
 				images: [
+					{
+						descr: "Home page",
+						link: portfolioPath + "plenco/home.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image:plenco_1_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_1_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_1,
+							},
+						]
+					},
+					{
+						descr: "Home page",
+						link: portfolioPath + "plenco/home.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_2_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_2_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_2,
+							},
+						]
+					},
+					{
+						descr: "News blog",
+						link: portfolioPath + "plenco/news-blog.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_3_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_3_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_3,
+							},
+						]
+					},
+					{
+						descr: "About Plenco",
+						link: portfolioPath + "plenco/about.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_4_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_4_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_4,
+							},
+						]
+					},
+					{
+						descr: "Dropdown lists",
+						link: portfolioPath + "plenco/pn-rr-app.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_5_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_5_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_5,
+							},
+						]
+					},
+					{
+						descr: "Careers",
+						link: portfolioPath + "plenco/careers.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_6_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_6_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_6,
+							},
+						]
+					},
+					{
+						descr: "Certifications",
+						link: portfolioPath + "plenco/certifications.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_7_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_7_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_7,
+							},
+						]
+					},
+					{
+						descr: "Accordions",
+						link: portfolioPath + "plenco/tmg-bmc.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_8_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_8_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_8,
+							},
+						]
+					},
+					{
+						descr: "Slider",
+						link: portfolioPath + "plenco/tech-service-news-detail.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_9_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_9_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_9,
+							},
+						]
+					},
+					{
+						descr: "Mobile navigation",
+						link: portfolioPath + "plenco/automotive.html",//processing-guide
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_10_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_10_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_10,
+							},
+						]
+					},
+					{
+						descr: "Unrelated accordions",
+						link: portfolioPath + "plenco/series-07000.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_11_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_11_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_11,
+							},
+						]
+					},
+					{
+						descr: "Related accordions",
+						link: portfolioPath + "plenco/cmg-bmc.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_12_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_12_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_12,
+							},
+						]
+					},
 					{
 						descr: "Design templates for desktop version",
 						link: "",
@@ -362,7 +631,7 @@ initialState = {
 							{
 								width: 550,
 								height: 400,
-								image:plenco_desktop_xd_small,
+								image: plenco_desktop_xd_small,
 							},
 							{
 								width: 1075,
@@ -394,216 +663,6 @@ initialState = {
 								width: 10000,
 								height: 10000,
 								image: plenco_mobile_xd,
-							},
-						]
-					},
-					{
-						descr: "Home page",
-						link: portfolioPath + "plenco/home.html",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: plenco_1_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: plenco_1_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: plenco_1,
-							},
-						]
-					},
-					{
-						descr: "Dropdown menu for quick application selection",
-						link: "",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: plenco_2_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: plenco_2_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: plenco_2,
-							},
-						]
-					},
-					{
-						descr: "Certificates & latest news",
-						link: portfolioPath + "plenco/certifications.html",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: plenco_3_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: plenco_3_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: plenco_3,
-							},
-						]
-					},
-					{
-						descr: "Mobile menu",
-						link: "",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: plenco_4_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: plenco_4_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: plenco_4,
-							},
-						]
-					},
-					{
-						descr: "Accordions",
-						link: portfolioPath + "plenco/pn-rr-app.html",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: plenco_5_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: plenco_5_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: plenco_5,
-							},
-						]
-					},
-					{
-						descr: "Related accordions",
-						link: portfolioPath + "plenco/oil-gas.html",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: plenco_6_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: plenco_6_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: plenco_6,
-							},
-						]
-					},
-					{
-						descr: "News carousel",
-						link: portfolioPath + "plenco/news-blog-detail.html",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: plenco_7_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: plenco_7_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: plenco_7,
-							},
-						]
-					},
-					{
-						descr: "News block with tags and categories",
-						link: portfolioPath + "plenco/news-blog.html",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: plenco_8_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: plenco_8_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: plenco_8,
-							},
-						]
-					},
-					{
-						descr: "Search with filters",
-						link: "",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: plenco_9_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: plenco_9_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: plenco_9,
-							},
-						]
-					},
-					{
-						descr: "Mobile navigation",
-						link: "",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: plenco_10_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: plenco_10_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: plenco_10,
 							},
 						]
 					},
@@ -770,7 +829,7 @@ initialState = {
 					},
 					{
 						descr: "News page",
-						link: "https://dev.techlicious.com",
+						link: "https://dev.techlicious.com/news",
 						images: [
 							{
 								width: 550,
@@ -789,32 +848,24 @@ initialState = {
 							},
 						],
 					},
-				]
-			},
-			{
-				name: "P & V",
-				descr: "Passports and Visas. ",
-				link: "https://www.google.com",
-				images: [
 					{
-						//mock
-						descr: "Accordions",
-						link: portfolioPath + "plenco/pn-rr-app.html",
+						descr: "Blog page",
+						link: "https://dev.techlicious.com/news",
 						images: [
 							{
 								width: 550,
 								height: 400,
-								image: plenco_5_small,
+								image: techlicious_5_small,
 							},
 							{
 								width: 1075,
 								height: 440,
-								image: plenco_5_big,
+								image: techlicious_5_big,
 							},
 							{
 								width: 10000,
 								height: 10000,
-								image: plenco_5,
+								image: techlicious_5,
 							},
 						],
 					},
@@ -1080,6 +1131,35 @@ initialState = {
 				]
 			},
 			{
+				name: "P & V",
+				descr: "Passports and Visas. ",
+				link: "https://www.google.com",
+				images: [
+					{
+						//mock
+						descr: "Accordions",
+						link: portfolioPath + "plenco/pn-rr-app.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: plenco_5_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: plenco_5_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: plenco_5,
+							},
+						],
+					},
+				]
+			},
+			{
 				name: "Components",
 				descr: "Some compenents created as a challenge with a 1-hour deadline.\n Stack: HTML, CSS, JS",
 				link: "",
@@ -1171,6 +1251,27 @@ initialState = {
 					{
 						descr: "Baloons shooter minigame",
 						link: portfolioPath + "components/5_Circle_Shooter/index.html",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: components_shooter_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: components_shooter_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: components_shooter,
+							},
+						],
+					},
+					{
+						descr: "Baloons shooter minigame",
+						link: "!gallery",
 						images: [
 							{
 								width: 550,
@@ -1283,22 +1384,27 @@ initialState = {
 	reviews: [
 		{
 			text: "Stick to deadlines, feeling of design concept and ease of communication - Max has everything we need for productive work.",
-			name: "Oleg Abramov",
+			name: "Oleg Abramov, CEO",
 			add: "WiseUpStudio"
 		},
 		{
 			text: "One of the most responsible person we had worked in web developement. Meticulous attention to every single detail is the reason for acceptance of the project from the first time.",
-			name: "Name Family",
+			name: "Mitra Boase, IT department",
 			add: "Plenco"
 		},
 		{
-			text: "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quos.dfsg dg  fdg dfsg   ",
-			name: "Nina Ptichkina",
-			add: "Techlicious"
+			text: "The application of a creative approach to solving some complex propblems convinced us that we are dealing with a real pro. Creativity, punctilious and focus on the project left a great impression of working with Max.",
+			name: "Nina Ptichkina, UI/UX Designer",
+			add: "Formation"
 		},
 		{
-			text: "4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quos.dfsg dg  fdg dfsg   ",
-			name: "Designer",
+			text: "He can make a website your way with custom features in no time. I had a really positive impression of cooperation.",
+			name: "Josh Kirschner, Web design",
+			add: "Techlicious"
+		}, 
+		{
+			text: "Maksim can assist in developing applications, features, and internal functions for your website as a knowledgeable, hardworking front-end developer.",
+			name: "Henry Cooper, IT",
 			add: "P2S Inc."
 		}, 
 	],

@@ -8,6 +8,11 @@
     margin-top: 30px;
     position: relative;
 
+    &:hover {
+        border: 1px solid map.get($light, "nav_selected");
+        transition: border-color $transition_base !important;
+    }
+
     & > label {
         position: absolute;
         top: -10px;
@@ -29,6 +34,7 @@
         font-size: 24px;
         color: map.get($light, "text_soft");
         transition: color $transition_theme;
+
 
         @include respond-to(xs) {
             font-size: 20px;
@@ -55,6 +61,10 @@ body.dark {
     .input__container {
         border: 1px solid map.get($dark, "border_light");
         transition: border-color $transition_theme !important;
+
+        &:hover {
+            border: 1px solid map.get($dark, "nav_selected");
+        }
     
         & > label {
             background-color: map.get($dark, "bg");

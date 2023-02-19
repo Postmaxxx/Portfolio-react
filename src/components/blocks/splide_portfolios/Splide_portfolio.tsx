@@ -25,10 +25,10 @@ const SplidePortfolio:IPropsJSX = (props) => {
 		wheel: true,
 		wheelSleep: 300,
 		//wheelMinThreshold: 50,
-		autoplay: false,
-		interval: 5000,
+		//autoplay: true,
+		interval: 15000,
 		pauseOnHover: true,
-		//rewind: false,
+		//rewind: true,
 		breakpoints: {
 			768: {
 				wheel: false,

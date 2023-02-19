@@ -4,6 +4,10 @@ import { HashRouter } from "react-router-dom";
 import store from "./assets/redux/store";
 import { Provider } from "react-redux";
 import Preloader from "./components/preloader/Preloader";
+
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration.js";
+
+
 const LazyApp = lazy(() => import("./app"));
 
 
@@ -17,3 +21,6 @@ root.render(
 		</Provider>
 	</HashRouter>
 );
+
+
+serviceWorkerRegistration.register();

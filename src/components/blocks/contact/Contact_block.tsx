@@ -15,7 +15,7 @@ const ContactBlock: React.FC<IContactBlock> = (props: IContactBlock): JSX.Elemen
 			</div>
 			<div className="contact-info">
 				<span>{props.header}</span>
-				{props.links?.map((link: ContactItem, index: number) => <a href={link.link} key={index} target={link.newWindow ? "_blank" : null} rel="noreferrer">{link.text}</a>)}
+				{props.links?.map((link: ContactItem, index: number) => <a className="decorated" href={link.link} key={index} target={link.newWindow ? "_blank" : null} rel="noreferrer">{link.text}</a>)}
 			</div>
 		</div>
 	);

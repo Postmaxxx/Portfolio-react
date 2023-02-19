@@ -82,7 +82,7 @@ const Services:INoPropsJSX = () => {
 				</svg>
 				<h4>Components</h4>
 				<div className="line"></div>
-				<p>Creating any kind of components to make your site unique and catchy. Animation, interactive and usability for outstanding experience.</p>
+				<p>Creating any kind of features to make your site unique and catchy. Animation, interactive and usability for outstanding experience.</p>
 			</div>
 		</div>
 	);

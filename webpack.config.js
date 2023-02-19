@@ -2,6 +2,7 @@
 //const HtmlWebpackPlugin = require('html-webpack-plugin');
 import Dotenv from "dotenv-webpack";
 //const port = process.env.PORT || 3000;
+const {InjectManifest} = require("workbox-webpack-plugin");
 
 module.exports = {
 	entry: "./src/public/index.js",
@@ -25,6 +26,11 @@ module.exports = {
 	}, 
 
 	plugins: [
-		new Dotenv()
+		new Dotenv(),
+		new InjectManifest({
+			swSrc: "./service-worker.js",
+			swDest: "service-worker.js",
+			// Any other config if needed.
+		})
 	]
 };

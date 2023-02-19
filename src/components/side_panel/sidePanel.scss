@@ -29,6 +29,10 @@
 
         & > nav > ul {
             line-height: 3;
+
+            @include respond-to(sm) {
+                line-height: 2.5;
+            }
         }
     }
 
@@ -67,6 +71,14 @@
             width: 100%;
             margin-bottom: 100px;
             letter-spacing: 0.15rem;
+
+            @include respond-to(sm) {
+                font-size: 18px;
+            }
+
+            @include respond-to(xs) {
+                font-size: 20px;
+            }
 
             & > li {
                 width: 100%;
@@ -125,6 +137,8 @@
         display: none;
         cursor: pointer;
         transition: background-color $transition_theme, border-color $transition_theme, top $transition_base;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 
         @include respond-to(lg) {
             display: flex;

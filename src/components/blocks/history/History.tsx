@@ -15,7 +15,7 @@ const History: React.FC<IHistory> = ({historyBlock}: IHistory): JSX.Element => {
 			<div className="history__description">
 				<h4>{historyBlock.header}</h4>
 				{historyBlock.link ? 
-					<a href={historyBlock.link} target='_blank' rel="noreferrer"><span>{historyBlock.subHeader}</span></a>
+					<a className="decorated" href={historyBlock.link} target='_blank' rel="noreferrer">{historyBlock.subHeader}</a>
 					:
 					<span>{historyBlock.subHeader}</span>
 				}

@@ -1,5 +1,6 @@
 module.exports = {
 	"env": {
+		"node": true,
 		"browser": true,
 		"commonjs": true,
 		"es2021": true
@@ -24,10 +25,10 @@ module.exports = {
 			"error",
 			"tab"
 		],
-		"linebreak-style": [
+		/*"linebreak-style": [
 			"error",
 			"windows"
-		],
+		],*/
 		"quotes": [
 			"error",
 			"double"
@@ -41,5 +42,6 @@ module.exports = {
 		"no-mixed-spaces-and-tabs": 0, // disable rule
 		"@typescript-eslint/no-var-requires": 0,
 		"@typescript-eslint/no-inferrable-types": "off",
+		"linebreak-style": 0 ,
 	}
 };
