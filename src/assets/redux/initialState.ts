@@ -190,6 +190,10 @@ initialState = {
 			descr: "Freelance",
 			value: "Available"
 		},
+		{
+			descr: "Fulltime",
+			value: "Available"// (British Columbia)
+		},
 	],
 	skills: [
 		{
