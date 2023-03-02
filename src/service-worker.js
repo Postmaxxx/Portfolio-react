@@ -12,9 +12,10 @@ const ignored = self.__WB_MANIFEST;
 
 const versionStyles = 1.03;
 const versionScripts = 1.03;
-const versionImages = 1.04;
-const versionFonts = 1.04;
+const versionImages = 1.03;
+const versionFonts = 1.03;
 const versionHtmls = 1.03;
+//const versionOffline = 1.03;
 
 
 const cachesCurrent = {
@@ -22,17 +23,16 @@ const cachesCurrent = {
 	scripts: `scripts-${versionScripts}`,
 	images: `images-${versionImages}`,
 	fonts: `fonts-${versionFonts}`,
-	htmls: `htmls-${versionHtmls}`
+	htmls: `htmls-${versionHtmls}`,
+	//offline: `offline-fallbacks-${versionOffline}`
 };
 
 
 clientsClaim();
-
-
+//navigationPreload.enable();
 
 // Handle styles:
 const stylesRoute = new Route(({ request }) => {
-	//request.destination === "style" && console.log("req style: ", request.url);
 	return request.destination === "style";
 }, new CacheFirst({
 	cacheName: cachesCurrent.styles,
@@ -45,7 +45,6 @@ const stylesRoute = new Route(({ request }) => {
 }));
 
 const scriptsRoute = new Route(({ request }) => {
-	//request.destination === "script" && console.log("req script: ", request.url);
 	return request.destination === "script";
 }, new CacheFirst({
 	cacheName: cachesCurrent.scripts,
@@ -58,14 +57,13 @@ const scriptsRoute = new Route(({ request }) => {
 }));
 
 const imagesRoute = new Route(({ request }) => {
-	//request.destination === "image" && console.log("req image: ", request.url);
 	return request.destination === "image";
 }, new CacheFirst({
 	cacheName: cachesCurrent.images,
 	plugins: [
 		new ExpirationPlugin({
 		  maxAgeSeconds: 60 * 60 * 24 * 30,
-		  maxEntries: 50,
+		  maxEntries: 100,
 		})
 	  ]
 }));
@@ -83,19 +81,19 @@ const fontsRoute = new Route(({ request }) => {
 	  ]
 }));
 
-/*
+
 const htmlsRoute = new Route(({ request }) => {
-	return request.destination === "html";
+	return request.destination === "document";
 }, new StaleWhileRevalidate({
 	cacheName: cachesCurrent.htmls
 }));
-*/
+
 
 registerRoute(stylesRoute);
 registerRoute(scriptsRoute);
 registerRoute(imagesRoute);
 registerRoute(fontsRoute);
-//registerRoute(htmlsRoute);
+registerRoute(htmlsRoute);
 
 
 
@@ -107,9 +105,16 @@ self.addEventListener("message", (event) => {
 	}
 });
 
+
+
 //auto set new sw
 self.addEventListener("install", event => {
 	console.log("ServiceWorker will be updated in a moment...");
+	/*const files = ["./pages/page404/page404.tsx"]; // you can add more resources here
+	event.waitUntil(
+	  self.caches.open(cachesCurrent.offline)
+		  .then(cache => cache.addAll(files))
+	);*/
 	self.skipWaiting();
 }); 
 
@@ -121,12 +126,8 @@ self.addEventListener("activate", async event => {
 	const siteCahceKeys = await caches.keys();
 	const cacheKeys = Object.values(cachesCurrent);
 
-	console.log("siteCahceKeys: ", siteCahceKeys);
-	console.log("cacheKeys: ", cacheKeys);
-
 	await siteCahceKeys
 		.filter(cache => {
-			console.log("Current: ", cache, !cacheKeys.includes(cache));
 			return !cacheKeys.includes(cache);
 		})
 		.forEach(async cache => await caches.delete(cache));

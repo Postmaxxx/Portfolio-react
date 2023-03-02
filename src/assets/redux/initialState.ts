@@ -254,11 +254,11 @@ initialState = {
 		},
 		{
 			name: "PWA",
-			percent: 70
+			percent: 75
 		},
 		{
 			name: "JEST",
-			percent: 80
+			percent: 85
 		},
 	],
 	workExperience: [
@@ -374,7 +374,7 @@ initialState = {
 			{
 				name: "Plenco",
 				descr: "Created frontend templates for Plenco company based on Bootstrap 5 using provided design in AdobeXD. More than 81 pages, accordions, dropdown lists, animation, adaptive design, galleries, carousels, preloaders and so on.\n Stack: Gulp, Twig, Bootstrap 5, Tailwind, JS, Scss",
-				link: "https://www.plenco.com",
+				link: "https://demo.wiseup.dev/plenco/home.html",
 				images: [
 					{
 						descr: "Home page",

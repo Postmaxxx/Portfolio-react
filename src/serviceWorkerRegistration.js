@@ -14,22 +14,23 @@ export function register(config) {
 }
 
 async function registerValidSW(swUrl, config) {
-	console.log(swUrl);
+	//console.log(swUrl);
 	try {
 		const regSW = await navigator.serviceWorker.register(swUrl, {
 			scope: "./",
 			//updateViaCache: 'none'
 		});
 		regSW.update();
-		console.log("ServiceWorker registered successfully", regSW);
+		//console.log("ServiceWorker registered successfully", regSW);
 		navigator.serviceWorker.oncontrollerchange = (ev) => {
-			console.log("New ServiceWorker activated");
+			//console.log("New ServiceWorker activated");
 			location.reload();
 		};
 	} catch (error) {
 		console.log("ServiceWorker register fail");
 	}
 }
+
 
 export function unregister() {
 	if ("serviceWorker" in navigator) {

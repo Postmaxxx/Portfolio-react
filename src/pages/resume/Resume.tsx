@@ -16,7 +16,7 @@ const Resume: React.FC  = (props: IProps): JSX.Element  => {
 					<div className="skills__container"> 
 						{props.store.skills.map((skill: MySkill, index: number) => {
 							return(
-								<Skill key={index} skill={skill} speed={props.store.skillFillSpeed}/>
+								<Skill key={skill.name} skill={skill} speed={props.store.skillFillSpeed}/>
 							);
 						})}
 					</div>

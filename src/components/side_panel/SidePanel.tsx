@@ -54,7 +54,7 @@ const SidePanel: IPropsJSX = (props) => {
 				<ul className="site-navigation">
 					{props.store.pages.map((page: PageItem, index: number) => {
 						return(
-							<li key={index}>
+							<li key={page.link}>
 								<NavLink 
 									className={ ({ isActive }) => {
 										return isActive ? "selected" : "";

@@ -41,7 +41,7 @@ const SliderReviews: React.FC = (props: IProps): JSX.Element => {
 			<Splide options={options}>
 				{props.store.reviews.map((review: ReviewItem, index: number) => {
 					return (
-						<SplideSlide key={index}>
+						<SplideSlide key={review.name}>
 							<div className="splide__slide-container">
 								<div className="review__slide">
 									<p>{review.text}</p>

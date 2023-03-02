@@ -59,7 +59,7 @@ const List3d: React.FC = (props: IProps): JSX.Element => {
 		portfolioStyle.opacity = opacity;
 
 		return (
-			<div key={index} style={portfolioStyle} className={selected === index ? "selected" : ""}>
+			<div key={portfolio.name} style={portfolioStyle} className={selected === index ? "selected" : ""}>
 				<a target="_blank" href={portfolio.link} rel="noreferrer">{portfolio.name}</a>
 			</div>
 		);
