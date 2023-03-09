@@ -58,6 +58,10 @@
 
     & .history__description {
         width: 75%;
+        opacity: 0;
+        transform: translateX(5%);
+        transition: transform $transition_scroll, opacity $transition_scroll, filter $transition_scroll;
+        filter: blur(8px);
 
         @include respond-to(sm) {
             width: 100%;
@@ -127,6 +131,13 @@
             @include respond-to(xs) {
                 font-size: 14px;
             }
+        }
+
+        &.show {
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateX(0);
+            transition: transform $transition_scroll, opacity $transition_scroll, filter $transition_scroll;
         }
     }
 

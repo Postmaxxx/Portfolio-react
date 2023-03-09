@@ -19,7 +19,6 @@ const List3d: React.FC = (props: IProps): JSX.Element => {
 	const [rotateStep, setRotateStep]: TUseStateNumber = useState<number>(0);
 	let stepsToMove: number = props.store.portfolios.selected - selected;
 	selected = props.store.portfolios.selected;
-    
 
 	useEffect((): void => {
 		let newRotateStep: number = rotateStep;

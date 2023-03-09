@@ -32,6 +32,7 @@ const Portfolio: React.FC  = (): JSX.Element  => {
 					<div className="portfolio__content">
 						<List />
 						<List3d_v />
+
 						<div className="portfolio__splide">
 							<InfoPortfolio />
 							<Suspense fallback={<Preloader />}>

@@ -17,16 +17,55 @@
         background-color: map.get($light, "bg_side-panel");
         border: 1px solid map.get($light, "border");
         border-top: 5px solid map.get($light, "border");
-        transition: border $transition_base, background-color $transition_theme;
         padding: 20px;
         margin-bottom: 30px;
+        
+        transition: border $transition_base, background-color $transition_theme, transform $transition_base ease-in-out, opacity $transition_base;
+        opacity: 0;
+        transform: scale(0.8);
+
+        &:nth-child(1) {
+            transform: translate(110%, 0);
+        }
+        &:nth-child(2) {
+            opacity: 0.8;
+        }
+        &:nth-child(3) {
+            transform: translate(-110%, 0);
+        }
 
         @include respond-to(md) {
             width: 48%;
+
+            &:nth-child(1) {
+                opacity: 0;
+                transform: translate(120%, 0);
+            }
+            &:nth-child(2) {
+                opacity: 0.8;
+            }
+            &:nth-child(3) {
+                opacity: 0;
+                transform: translate(0, -100%);
+            }
+
         }
 
         @include respond-to(sm) {
             width: 100%;
+
+            &:nth-child(1) {
+                opacity: 0.8;
+                transform: translate(0);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+                transform: translate(0, -30%);
+            }
+            &:nth-child(3) {
+                opacity: 0;
+                transform: translate(0%, -30%);
+            }
         }
 
         &:hover {
@@ -118,6 +157,38 @@
         & > p {
             margin-top: 20px;
         }
+
+
+        &.show {
+            opacity: 1;
+            transform: scale(1);
+            transform: translate(0);
+
+            &:nth-child(2n+1) {
+                transition: border $transition_base, background-color $transition_theme, transform $transition_scroll $delay_transition, opacity $transition_scroll $delay_transition;
+            }
+            &:nth-child(2) {
+                transition: border $transition_base, background-color $transition_theme, transform $transition_scroll $delay_transition * 0, opacity $transition_scroll $delay_transition * 0;
+            }
+
+            @include respond-to(sm) {
+
+            }
+/*
+            @include respond-to(md) {
+                &.positioned {
+                    &:last-child {
+                        //transition: border $transition_base, background-color $transition_theme, transform $transition_scroll 2s, opacity $transition_scroll 2s !important;
+                        transform: translateX(50%);
+                    }
+                }
+            }
+
+            */
+
+
+        }
+
     }
 }
 
@@ -132,7 +203,7 @@ body.dark {
                     background-color: map.get($dark, "bg_side-panel");
                     border: 1px solid map.get($dark, "border");
                     border-top: 5px solid map.get($dark, "border");
-                    transition: border $transition_base, background-color $transition_theme;
+                    //transition: border $transition_base, background-color $transition_theme, transform 3s ease-in-out, opacity $transition_base;
 
                     &:hover {
                         border-top: 5px solid map.get($dark, "nav_selected");

@@ -15,7 +15,6 @@ const List3d_v = (props) => {
 	stepsToMove = props.store.portfolios.selected - selected;
 	selected = props.store.portfolios.selected;
 	listLength = props.store.portfolios.list.length;
-
 	if (stepsToMove != 0) {
 		if (Math.abs(stepsToMove) > listLength / 2) {
 			stepsToMove = stepsToMove - Math.sign(stepsToMove)*listLength;

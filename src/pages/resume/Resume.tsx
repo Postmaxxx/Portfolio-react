@@ -6,8 +6,24 @@ import History from "../../components/blocks/history/History";
 import resumeDoc from "../../assets/docs/resume.pdf";
 import "./resume.scss";
 import { MySkill, WorkEducationItem, IProps, IMapStateToProps, IMapdispatchToProps } from "src/models";
+import { useEffect } from "react";
+
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add("show");
+		}
+	});
+}, {
+	threshold: 0.4
+});
 
 const Resume: React.FC  = (props: IProps): JSX.Element  => {
+	
+	useEffect(() => {
+		document.querySelectorAll(".history .history__block .history__description").forEach(el => observer.observe(el));
+	}, []);
+
 	return(
 		<div className="page-container">
 			<div className="page_resume">

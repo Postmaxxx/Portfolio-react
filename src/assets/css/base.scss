@@ -154,9 +154,9 @@ em {
 
     &.nav_opened {
 
-        @include respond-to(lg) {
+        /*@include respond-to(lg) {
             margin-left: $sidePanelWidthSmall;
-        } 
+        } */
 
         @include respond-to(md) {
            margin-left: 0;
