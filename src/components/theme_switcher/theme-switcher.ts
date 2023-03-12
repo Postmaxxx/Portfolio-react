@@ -1,4 +1,4 @@
-import { FC, SVGProps } from "react";
+import { createElement, FC, SVGProps } from "react";
 
 type EmptyVoid = () => void
 
@@ -313,16 +313,23 @@ const createThemeSwitcherStyles:EmptyVoid = () => {
 
 
 const createThemeSwitcherHtml = (currentTheme: TTheme) => {
-	document.querySelector(theme_state.themeSwitcher).innerHTML = `
-        <div class="content-switcher ${currentTheme !== "dark" ? "theme_light" : ""}">
-            <div class="dark"></div>
-            <div class="light"></div>
-        </div>`;
+	const _themeSwitcher = document.querySelector(theme_state.themeSwitcher);
+	const _contentSwitcher = document.createElement("div");
+	_contentSwitcher.classList.add("content-switcher");
+	_contentSwitcher.classList.add(currentTheme !== "dark" ? "theme_light" : "");
+	_themeSwitcher.appendChild(_contentSwitcher);
+	const _dark = document.createElement("div");
+	const _light = document.createElement("div");
+	_dark.classList.add("dark");
+	_light.classList.add("light");
+	_contentSwitcher.appendChild(_dark);
+	_contentSwitcher.appendChild(_light);
 	theme_state._contentSwitcher = theme_state._themeSwitcher.querySelector(".content-switcher");
 };
 
 
 const createStars: EmptyVoid = () => {
+	const _contentSwitcherDark = theme_state._themeSwitcher.querySelector(".content-switcher .dark");
 	new Array(theme_state.numberOfStars)
 		.fill("")
 		.map((): IStar => {
@@ -336,22 +343,33 @@ const createStars: EmptyVoid = () => {
 			};
 		})
 		.forEach((star: IStar) => {
-			theme_state._themeSwitcher.querySelector(".content-switcher .dark").innerHTML += `
-                <img class="theme_dark__star-${star.blinkDuration}" src="${theme_state.star}" style="position: absolute; left: ${star.x}px; top: ${star.y}px; width: ${star.size}px; aspect-ratio: 1">
-            `;
+			const _star = document.createElement("img");
+			_star.classList.add(`theme_dark__star-${star.blinkDuration}`);
+			_star.style.position = "absolute";
+			_star.style.left = `${star.x}px`;
+			_star.style.top = `${star.y}px`;
+			_star.style.width = `${star.size}px`;
+			_star.style.aspectRatio = "1";
+			_star.src = String(theme_state.star);
+			_contentSwitcherDark.appendChild(_star);
 		});
 };
 
 
 const createClouds: EmptyVoid = () => {
+	const _contentSwitcherLight = theme_state._themeSwitcher.querySelector(".content-switcher .light");
 	const numberOfClouds: string[] = new Array(Math.ceil(theme_state.width / (theme_state.clouds[theme_state.clouds.length - 1].width + theme_state.clouds[theme_state.clouds.length - 1].gap) + 2)).fill(""); //number of clouds in a cloud-raw, depends on the cloud size and gap between clouds + some reserve
 	theme_state.clouds.forEach((cloud, index: number) => {
-		theme_state._themeSwitcher.querySelector(".content-switcher .light").innerHTML += `
-        <div class="clouds-${index}">
-            ${numberOfClouds.map((): string => {
-		return `<img class="cloud" src="${theme_state.cloud}" >`;
-	}).join("")}
-        </div>`;
+		const _clouds = document.createElement("div");
+		_clouds.classList.add(`clouds-${index}`);
+		_contentSwitcherLight.appendChild(_clouds);
+
+		numberOfClouds.forEach((): void => {
+			const _cloud = document.createElement("img");
+			_cloud.classList.add("cloud");
+			_cloud.src = String(theme_state.cloud);
+			_clouds.appendChild(_cloud);
+		});
 	});
 };
 

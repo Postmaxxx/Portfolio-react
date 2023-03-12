@@ -345,6 +345,11 @@ body.dark {
         transition: $transition_theme;
     }
 
+    .side-panel img,
+    .portfolio__content img {
+        filter: brightness(0.8) contrast(1.2);
+    }
+
     .link_button {
         background-color: map.get($dark, "nav_selected");
     }

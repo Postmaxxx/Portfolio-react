@@ -22,7 +22,7 @@ const ThemeSwitcher: IPropsJSX = (props) => {
 		const themeSwitcher = ".theme-switcher";
 		const themeProps: IThemeSwitcherProps = {
 			themeSwitcher: themeSwitcher, 
-			star: star, 
+			star: star,
 			cloud: cloud, 
 			width: document.querySelector<HTMLElement>(themeSwitcher).offsetWidth, 
 			height: document.querySelector<HTMLElement>(themeSwitcher).offsetHeight, 
@@ -37,8 +37,11 @@ const ThemeSwitcher: IPropsJSX = (props) => {
 	},[]);
 
 	return (
-		<div className='theme-switcher__container' >
-			<div className="theme-switcher" onClick={changeTheme} aria-label="Change the site theme"></div>
+		<div className='theme-switcher__container'>
+			<label>
+				<input type="checkbox" onChange={changeTheme} aria-label="Change the site theme"/>
+				<div className="theme-switcher"></div>
+			</label>
 		</div>
 	);
 };

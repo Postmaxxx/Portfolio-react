@@ -5,27 +5,28 @@ export const checkInput:IInputCheck = ({text, type, minLength, maxLength}) => {
 	const textFormat = /[a-zA-Z]$/;
 	const textNumbersFormat = /[a-zA-Z0-9]$/;
 	const numbersFormat = /[0-9]$/;
+	const errorsList:string[] = [];
 	if (text.length < minLength) { 
-		return `should be at least ${minLength} symbols`;
+		errorsList.push(`should be at least ${minLength} symbols`);
 	}
 	if (text.length > maxLength) { 
-		return `should be no more than ${maxLength} symbols`;
+		errorsList.push(`should be no more than ${maxLength} symbols`);
 	}
 	if (type ==="email" && !text.match(emailFormat)) { 
-		return "format is incorrect";
+		errorsList.push("format is incorrect");
 	}
 	if (type ==="text" && !text.match(textFormat)) { 
-		return "only english letters are allowed";
+		errorsList.push("only english letters are allowed");
 	}
 	if (type ==="textNumbers" && !text.match(textNumbersFormat)) { 
-		return "only english letters and numbers are allowed";
+		errorsList.push("only english letters and numbers are allowed");
 	}
 	if (type ==="numbers" && !text.match(numbersFormat)) { 
-		return "only numbers are allowed";
+		errorsList.push("only numbers are allowed");
 	}
 	if (type === "all") {
-		return false;
+		return errorsList;
 	}
-	return false;
+	return errorsList;
 };
 

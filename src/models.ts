@@ -252,7 +252,7 @@ type InputCheck = {
 }
 
 export interface IInputCheck {
-    (props: InputCheck): boolean | string
+    (props: InputCheck): Array<string>
 } 
 
 

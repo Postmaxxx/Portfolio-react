@@ -22,6 +22,11 @@
         right: 0px;
     }
 
+    & input {
+        visibility: hidden;
+        position: absolute;
+    }
+
     & > .theme-switcher {
         width: 100%;
         height: 100%;

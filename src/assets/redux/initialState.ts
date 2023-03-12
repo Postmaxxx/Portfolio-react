@@ -383,7 +383,7 @@ initialState = {
 							{
 								width: 550,
 								height: 400,
-								image:plenco_1_small,
+								image: plenco_1_small,
 							},
 							{
 								width: 1075,
