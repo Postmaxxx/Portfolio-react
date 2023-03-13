@@ -10,12 +10,12 @@ import { EmptyVoid, IMapdispatchToProps, IMapStateToProps, IPropsJSX, IRemoveEve
 
 
 
-const ModalImage:IPropsJSX = (props) => {
+const ModalNew:IPropsJSX = (props) => {
 
 	const closeModal: EmptyVoid = () => {
 		props.setStore.setModal(false);
 	};
-     
+	/*
 	useLayoutEffect((): void => {
 		const _modal: HTMLElement =  document.querySelector(".modal__background");
 		store.getState().modal ? _modal.classList.add("show") : _modal.classList.remove("show");
@@ -32,21 +32,9 @@ const ModalImage:IPropsJSX = (props) => {
 
 
 	useLayoutEffect((): IRemoveEventListener => {
-		document.querySelector<HTMLElement>(".modal__background").addEventListener("click", modalBgListener);
-		document.addEventListener("keydown", modalKeyListener);
-        
-		const _target: HTMLElement = document.querySelector(".modal").childNodes[0].childNodes[0] as HTMLElement;
-		const _image: HTMLImageElement = document.createElement("img");
-		_target.innerHTML = preloader();
-		_image.onload = () => { _target?.replaceChildren(_image); };
-		_image.src = store.getState().modalImage;
-		_image.alt = store.getState().modalDescr;
-		return () => {
-			document.querySelector<HTMLElement>(".modal__background").removeEventListener("click", modalBgListener);
-			document.removeEventListener("keydown", modalKeyListener);
-		};
+
 	},[store.getState().modalImage]);
-    
+    */
 	return (
 		<div className="modal__background">
 			<div className="modal">
@@ -71,4 +59,4 @@ const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalImage);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalNew);

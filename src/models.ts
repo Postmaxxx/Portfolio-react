@@ -217,11 +217,11 @@ export interface IState extends IProps {
 
 export interface ISliderOptions {
     lazyLoad?: boolean
-    fixedWidth?: string
+    fixedWidth?: string | number
     updateOnMove?: boolean
     type? : string
     perPage?: number
-    gap?   : string
+    gap?   : number | string
     breakpoints?: {
         [key:number]: {
             perPage?: number

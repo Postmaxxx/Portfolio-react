@@ -3,11 +3,11 @@ import * as actions from "../../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 //import { Splide, SplideSlide } from "@splidejs/react-splide";
-import SplideMain from "@splidejs/splide";
+import Splide from "@splidejs/splide";
 //import { setImagePortfolio } from "../../../assets/js/setImagePortfolio";
 import "./splide_portfolio.scss";
 import store from "../../../assets/redux/store";
-import { EmptyVoid, IMapdispatchToProps, IMapStateToProps, IPropsJSX, ISliderOptions, ProjectItemImageItem } from "src/models";
+import { IMapdispatchToProps, IMapStateToProps, IPropsJSX, ISliderOptions } from "src/models";
 import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
 
 interface IContainerSize {
@@ -17,7 +17,9 @@ interface IContainerSize {
 
 const SplidePortfolio:IPropsJSX = (props) => {
 	let portfolioMainSplide;
+	//let portfolioThumbsSplide;
 	const _splideMain = useRef(null);
+	//const _splideThumbs = useRef(null);
 	const [containerSize, setContainerSize] = useState({} as IContainerSize);
 
 	const optionsMain: ISliderOptions = {
@@ -45,6 +47,37 @@ const SplidePortfolio:IPropsJSX = (props) => {
 		},
 	};
 
+	/*
+	const optionsThumbs: ISliderOptions = {
+		lazyLoad: false,
+		updateOnMove: true,
+		perPage: 2,
+		fixedWidth: "100%",
+		perMove: 1,
+		//pagination: true,
+		arrows: true,
+		drag: true,
+		speed: 500,
+		//snap: false,
+		wheel: true,
+		wheelSleep: 300,
+		//wheelMinThreshold: 50,
+		//autoplay: true,
+		interval: 15000,
+		pauseOnHover: true,
+		//rewind: true,
+		//fixedWidth: 100,
+		gap       : 10,
+		rewind    : true,
+		pagination: false,
+		breakpoints: {
+			768: {
+				wheel: false,
+			}, 
+		},
+	};
+
+*/
 
     
 	const changeDescription = (selectedImage) => {
@@ -60,8 +93,11 @@ const SplidePortfolio:IPropsJSX = (props) => {
 				width: _splideMain.current.offsetWidth,
 				height:  _splideMain.current.offsetHeight,
 			});
-			portfolioMainSplide = new SplideMain("#portfolioMainSplide", optionsMain);
+			portfolioMainSplide = new Splide("#portfolioMainSplide", optionsMain);
+			//portfolioThumbsSplide = new Splide("#portfolioMainSplide", optionsThumbs);
+			//portfolioMainSplide.sync( portfolioThumbsSplide );
 			portfolioMainSplide.mount();		
+			//portfolioThumbsSplide.mount();		
 			portfolioMainSplide.on("active", () => {changeDescription(portfolioMainSplide.index);});
 			
 			const showModal = () => {
@@ -76,13 +112,14 @@ const SplidePortfolio:IPropsJSX = (props) => {
 				portfolioMainSplide.destroy();
 			};
 		}
+
 	}, [store.getState().portfolios.selected]);
 
 
 	
 	return (
-		<div className="splide_portfolio__container" ref={_splideMain}>
-			<div id="portfolioMainSplide" className="splide">
+		<div className="splide_portfolio__container">
+			<div id="portfolioMainSplide" className="splide splideMain" ref={_splideMain} aria-label="The carousel with thumbnails. Click the image to expand.">
 				<div className="splide__track">
 					<ul className="splide__list">
 						{props.store.portfolios.list[props.store.portfolios.selected].images.map((slide, index: number) => {
@@ -105,6 +142,7 @@ const SplidePortfolio:IPropsJSX = (props) => {
 					</ul>
 				</div>
 			</div>
+
 		</div>
 	);
 };
