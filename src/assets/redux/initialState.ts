@@ -370,6 +370,7 @@ initialState = {
 
 	portfolios: {
 		selected: 0,
+		selectedImage: 0,
 		list: [
 			{
 				name: "Plenco",

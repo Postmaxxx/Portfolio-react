@@ -90,7 +90,8 @@ export const actionList: IActionList = {
 	SET_MODALMSG_TEXT: "SET_MODALMSG_TEXT",
 	SET_MODALMSG_BTNTEXT: "SET_MODALMSG_BTNTEXT",
 	SET_SELECTED_PORTFOLIO: "SET_SELECTED_PORTFOLIO",
-	SET_IMG_LOADED: "SET_IMG_LOADED"
+	SET_IMG_LOADED: "SET_IMG_LOADED",
+	SET_SELECTED_PORTFOLIO_IMAGE: "SET_SELECTED_PORTFOLIO_IMAGE"
 };
 
 
@@ -192,6 +193,7 @@ export interface IState extends IProps {
     }
     portfolios: {
         selected: number
+        selectedImage: number
         list: Array<ProjectItemListItem>
     }
     contact: {

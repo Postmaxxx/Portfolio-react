@@ -2,7 +2,7 @@ import  { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Preloader from "./components/preloader/Preloader";
 import { INoPropsJSX } from "./models";
-const LazyModalImage = lazy(() => import("./components/modals/ModalImage"));
+const LazyModalImage = lazy(() => import("./components/modals/ModalNew"));
 const LazyThemeSwitcher = lazy(() => import("./components/theme_switcher/ThemeSwitcher"));
 const LazySidePanel = lazy(() => import("./components/side_panel/SidePanel"));
 const LazyHomepage = lazy(() => import("./pages/home/Home"));

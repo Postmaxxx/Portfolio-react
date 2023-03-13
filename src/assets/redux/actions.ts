@@ -85,6 +85,11 @@ export const setSelectedPortfolio = <T extends number>(number: T): Action<T> => 
 	payload: number
 });
 
+export const setSelectedPortfolioImage = <T extends number>(number: T): Action<T> => ({
+	type: actionList.SET_SELECTED_PORTFOLIO_IMAGE,
+	payload: number
+});
+
 
 export const setImgLoaded = <T extends boolean>(isLoaded: T): Action<T> => ({
 	type: actionList.SET_IMG_LOADED,

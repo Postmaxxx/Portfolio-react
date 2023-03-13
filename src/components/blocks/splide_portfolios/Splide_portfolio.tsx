@@ -14,9 +14,9 @@ interface IContainerSize {
 	width: number
 	height: number
 }
+let portfolioMainSplide;
 
 const SplidePortfolio:IPropsJSX = (props) => {
-	let portfolioMainSplide;
 	//let portfolioThumbsSplide;
 	const _splideMain = useRef(null);
 	//const _splideThumbs = useRef(null);
@@ -82,9 +82,10 @@ const SplidePortfolio:IPropsJSX = (props) => {
     
 	const changeDescription = (selectedImage) => {
 		const portfolioNumber = props.store.portfolios.selected;
-		props.setStore.setModalImage(store.getState().portfolios.list[portfolioNumber].images[selectedImage]?.images.slice(-1)[0].image);
-		props.setStore.setModalLink(store.getState().portfolios.list[portfolioNumber].images[selectedImage]?.link);
-		props.setStore.setModalDescr(store.getState().portfolios.list[portfolioNumber].images[selectedImage]?.descr);
+		props.setStore.setSelectedPortfolioImage(selectedImage);
+		props.setStore.setModalImage(props.store.portfolios.list[portfolioNumber].images[selectedImage]?.images.slice(-1)[0].image);
+		props.setStore.setModalLink(props.store.portfolios.list[portfolioNumber].images[selectedImage]?.link);
+		props.setStore.setModalDescr(props.store.portfolios.list[portfolioNumber].images[selectedImage]?.descr);
 	};
 
 	useEffect(() => {
@@ -93,11 +94,8 @@ const SplidePortfolio:IPropsJSX = (props) => {
 				width: _splideMain.current.offsetWidth,
 				height:  _splideMain.current.offsetHeight,
 			});
-			portfolioMainSplide = new Splide("#portfolioMainSplide", optionsMain);
-			//portfolioThumbsSplide = new Splide("#portfolioMainSplide", optionsThumbs);
-			//portfolioMainSplide.sync( portfolioThumbsSplide );
+			portfolioMainSplide = new Splide(_splideMain.current, optionsMain);
 			portfolioMainSplide.mount();		
-			//portfolioThumbsSplide.mount();		
 			portfolioMainSplide.on("active", () => {changeDescription(portfolioMainSplide.index);});
 			
 			const showModal = () => {
@@ -113,13 +111,21 @@ const SplidePortfolio:IPropsJSX = (props) => {
 			};
 		}
 
-	}, [store.getState().portfolios.selected]);
+	}, [props.store.portfolios.selected]);
 
 
+	useEffect(() => {
+		if (_splideMain.current) {
+			portfolioMainSplide.go(props.store.portfolios.selectedImage);
+		}
+
+	}, [props.store.portfolios.selectedImage]);
 	
+
+
 	return (
 		<div className="splide_portfolio__container">
-			<div id="portfolioMainSplide" className="splide splideMain" ref={_splideMain} aria-label="The carousel with thumbnails. Click the image to expand.">
+			<div id="portfolioMainSplide" className="splide" ref={_splideMain} aria-label="The carousel with thumbnails. Click the image to expand.">
 				<div className="splide__track">
 					<ul className="splide__list">
 						{props.store.portfolios.list[props.store.portfolios.selected].images.map((slide, index: number) => {

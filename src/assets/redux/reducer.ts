@@ -113,6 +113,14 @@ const reducer = function(state: IState = initialState, action: Action<any>): ISt
 				selected: action.payload,
 			} 
 		};
+	case actionList.SET_SELECTED_PORTFOLIO_IMAGE:
+		return {
+			...state,
+			portfolios: {
+				...state.portfolios,
+				selectedImage: action.payload,
+			} 
+		};
 	default:
 		return {
 			...state   
