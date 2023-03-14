@@ -14,9 +14,9 @@ interface IContainerSize {
 	width: number
 	height: number
 }
-let portfolioMainSplide;
 
 const SplidePortfolio:IPropsJSX = (props) => {
+	const [portfolioSplideS, setPortfolioSplideS] = useState<any>();
 	//let portfolioThumbsSplide;
 	const _splideMain = useRef(null);
 	//const _splideThumbs = useRef(null);
@@ -47,38 +47,6 @@ const SplidePortfolio:IPropsJSX = (props) => {
 		},
 	};
 
-	/*
-	const optionsThumbs: ISliderOptions = {
-		lazyLoad: false,
-		updateOnMove: true,
-		perPage: 2,
-		fixedWidth: "100%",
-		perMove: 1,
-		//pagination: true,
-		arrows: true,
-		drag: true,
-		speed: 500,
-		//snap: false,
-		wheel: true,
-		wheelSleep: 300,
-		//wheelMinThreshold: 50,
-		//autoplay: true,
-		interval: 15000,
-		pauseOnHover: true,
-		//rewind: true,
-		//fixedWidth: 100,
-		gap       : 10,
-		rewind    : true,
-		pagination: false,
-		breakpoints: {
-			768: {
-				wheel: false,
-			}, 
-		},
-	};
-
-*/
-
     
 	const changeDescription = (selectedImage) => {
 		const portfolioNumber = props.store.portfolios.selected;
@@ -87,6 +55,17 @@ const SplidePortfolio:IPropsJSX = (props) => {
 		props.setStore.setModalLink(props.store.portfolios.list[portfolioNumber].images[selectedImage]?.link);
 		props.setStore.setModalDescr(props.store.portfolios.list[portfolioNumber].images[selectedImage]?.descr);
 	};
+	
+	const showModal = () => {
+		props.setStore.setModal(true);
+	};
+
+
+	const goToImage = (imageOrder) => {
+		if (portfolioSplideS) {
+			portfolioSplideS.go(imageOrder);
+		}
+	};
 
 	useEffect(() => {
 		if (_splideMain.current) {
@@ -94,20 +73,18 @@ const SplidePortfolio:IPropsJSX = (props) => {
 				width: _splideMain.current.offsetWidth,
 				height:  _splideMain.current.offsetHeight,
 			});
-			portfolioMainSplide = new Splide(_splideMain.current, optionsMain);
-			portfolioMainSplide.mount();		
-			portfolioMainSplide.on("active", () => {changeDescription(portfolioMainSplide.index);});
-			
-			const showModal = () => {
-				props.setStore.setModal(true);
-			};
+			const portfolioSplide = new Splide(_splideMain.current, optionsMain);
+			portfolioSplide.mount();		
+			portfolioSplide.on("active", () => {changeDescription(portfolioSplide.index);});
 			
 			const _slides = _splideMain.current.querySelectorAll(".splide__slide-container");
 			_slides.forEach(cont => cont.addEventListener("click", showModal));
-			changeDescription(portfolioMainSplide.index);
+			changeDescription(portfolioSplide.index);
+
+			setPortfolioSplideS(portfolioSplide);
 			return () => {
 				_slides.forEach(cont => cont.removeEventListener("click", showModal));
-				portfolioMainSplide.destroy();
+				portfolioSplide.destroy();
 			};
 		}
 
@@ -115,10 +92,7 @@ const SplidePortfolio:IPropsJSX = (props) => {
 
 
 	useEffect(() => {
-		if (_splideMain.current) {
-			portfolioMainSplide.go(props.store.portfolios.selectedImage);
-		}
-
+		goToImage(props.store.portfolios.selectedImage);
 	}, [props.store.portfolios.selectedImage]);
 	
 

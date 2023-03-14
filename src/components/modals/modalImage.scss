@@ -63,6 +63,7 @@
                 
                 & #modalMain {
                     border: 3px solid red;
+                    min-width: 100%;
                     height: calc(100% - 120px);
 
                     & .splide__track {
@@ -97,6 +98,7 @@
                         align-items: center;
                         justify-content: center;
                         max-height: 100px;
+                        min-width: 70px;
 
                         &.is-active {
                             opacity: 1;
