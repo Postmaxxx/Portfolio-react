@@ -8,16 +8,9 @@ import { EmptyVoid, IMapdispatchToProps, IMapStateToProps, IPropsJSX, IRemoveEve
 import Splide from "@splidejs/splide";
 import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
 
-type tFocus = number | "center"
 
 interface IOptionsThumbs {
-	perPage: number
-	gap        : number
-	rewind     : boolean
-	pagination : boolean
-	isNavigation: boolean
-	focus: 		tFocus
-	lazyLoad: 	boolean
+	[propName: string]: any;
 }
 
 
@@ -25,54 +18,67 @@ interface IOptionsThumbs {
 
 
 const ModalNew:IPropsJSX = (props) => {
-	//let thumbnails;
+	const mainRef =useRef<any>();
+	const thumbsRef =useRef<any>();
 	const [firstRender, setFirstRender] = useState(true);
-	const [thumbnailsS, setThumbnailsS] = useState<any>();
-	const [mainS, setMainS] = useState<any>();
 	const _splideMain = useRef();
 	const _splideThumbs = useRef();
 	
 	
 		
 	const optionsThumbs:IOptionsThumbs = {
-		//fixedWidth : 100,
-    	//fixedHeight: 60,
 		lazyLoad: false,
-		perPage: 10,
+		perPage: 12,
 		gap        : 10,
-		rewind     : true,
+		rewind     : false,
 		pagination : false,
 		isNavigation: true,
-		focus: 		"center"
+		focus: 		"center",
+		breakpoints: {
+			1600: {
+				perPage: 10
+			}, 
+			1241: {
+				perPage: 8
+			}, 
+			992: {
+				perPage: 7
+			}, 
+			768: {
+				perPage: 5
+			}, 
+			480: {
+				perPage: 4
+			}, 
+		},
 	};
 
 
 	const optionsMain = {
 		lazyLoad: true,
 		type      : "fade",
-		rewind    : true,
+		rewind    : false,
 		pagination: false,
 		speed: 500,
 		wheel: true,
 		wheelSleep: 300,
-		//arrows    : false,
 	};
 
 	const closeModal = () => {
-		props.setStore.setSelectedPortfolioImage(mainS.index);
+		props.setStore.setSelectedPortfolioImage(thumbsRef.current.index);
+		document.querySelector("body").classList.remove("noscroll");
 		props.setStore.setModal(false);
 	};
 
-	const goToImage = (imageOrder) => {
-		if (thumbnailsS) {
-			mainS.go(imageOrder);
-		}
+	const showSlide = (slideToGo) => {
+		if (firstRender) return;
+		thumbsRef.current.go(slideToGo);
 	};
 
 	function modalKeyListener (e) {
-		console.log(111);
-		
 		e.key === "Escape" && closeModal();
+		e.keyCode === 37 && showSlide("<");
+		e.keyCode === 39 && showSlide(">");
 	}
 
 
@@ -85,10 +91,9 @@ const ModalNew:IPropsJSX = (props) => {
 		main.sync(thumbnails);
 		main.mount();
 		thumbnails.mount();
-		
-		setThumbnailsS(thumbnails);
-		setMainS(main);
-		
+		thumbsRef.current = thumbnails;
+		mainRef.current = main;
+
 		return () => {
 			thumbnails.destroy();
 			main.destroy();
@@ -98,14 +103,14 @@ const ModalNew:IPropsJSX = (props) => {
 
 
 	useEffect(() => {
-		goToImage(props.store.portfolios.selectedImage);
-		if (props.store.modal) {
-			document.addEventListener("keyup", modalKeyListener);
-		} 
+		if (firstRender) return;
+		showSlide(props.store.portfolios.selectedImage);
+		props.store.modal && document.addEventListener("keyup", modalKeyListener);
+		props.store.modal && document.querySelector("body").classList.add("noscroll");
 		return (() => {
 			document.removeEventListener("keyup", modalKeyListener);
 		});
-	}, [props.store.modal]);
+	}, [props.store.modal, firstRender]);
 
 
 	return (

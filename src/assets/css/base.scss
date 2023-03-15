@@ -61,6 +61,10 @@ body {
         background-color: map.get($dark, "bg");
         color: $white;
     }
+
+    &.noscroll {
+        overflow: hidden;
+    }
 }
 
 

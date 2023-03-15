@@ -16,6 +16,10 @@
     visibility: hidden;
     transition: $transition_base;
 
+    @include respond-to(sm){
+        padding-bottom: 50px;
+    }
+
     & * {
         box-sizing: border-box;
     }
@@ -37,7 +41,7 @@
         justify-content: center;
         
         @include respond-to(sm) {
-            height: 100%;
+            //height: 100%;
             margin: 0;
         }
 
@@ -47,6 +51,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%; //!
+
 
             @include respond-to(sm) {
                 width: 100%;
@@ -62,9 +68,59 @@
                 max-width: 90%;
                 
                 & #modalMain {
-                    border: 3px solid red;
                     min-width: 100%;
                     height: calc(100% - 120px);
+
+
+                    & .splide__arrows { 
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+            
+                        @include respond-to(sm) {
+                            display: none;
+                        }
+            
+                        & .splide__arrow {
+                            background-color: transparent;
+                            transition: $transition_base;
+                            //height: 100%;
+                            border-radius: 0;
+                            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                            bottom: 5px;
+                            top: auto;
+            
+                            &:disabled {
+                                width: 0;
+                            }
+                            
+                            & > svg {
+                                width: 50px;
+                                height: auto;
+                                fill: map.get($dark, "arrow_splide");
+                                transition: $transition_base;
+                            }
+            
+                            &:hover {
+                                & svg {
+                                    fill: map.get($dark, "nav_selected");
+                                }
+                            }
+            
+                            &--prev:hover {
+                                & svg {
+                                    translate: -10px;
+                                }
+                            }
+            
+                            &--next:hover {
+                                & svg {
+                                    translate: 10px;
+                                }
+                            }
+                        }
+                    }
+
 
                     & .splide__track {
                         height: 100%;
@@ -91,17 +147,69 @@
 
                 & #modalThumbs {
                     align-self: flex-end;
+                    width: 100%;
+
+                   
+                    & .splide__arrows { 
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+
+                        @include respond-to(sm) {
+                            display: none;
+                        }
+            
+                        & .splide__arrow {
+                            background-color: transparent;
+                            transition: $transition_base;
+                            //height: 100%;
+                            border-radius: 0;
+                            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                            //bottom: 5px;
+                            //top: auto;
+            
+                            &:disabled {
+                                width: 0;
+                            }
+                            
+                            & > svg {
+                                width: 50px;
+                                height: auto;
+                                fill: map.get($dark, "arrow_splide");
+                                transition: $transition_base;
+                            }
+            
+                            &:hover {
+                                & svg {
+                                    fill: map.get($dark, "nav_selected");
+                                }
+                            }
+            
+                            &--prev:hover {
+                                & svg {
+                                    translate: -10px;
+                                }
+                            }
+            
+                            &--next:hover {
+                                & svg {
+                                    translate: 10px;
+                                }
+                            }
+                        }
+                    }
+                   
                     & .splide__slide {
-                        opacity: 0.6;
-                        border: 3px solid blue;
+                        opacity: 0.4;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         max-height: 100px;
-                        min-width: 70px;
+                        min-width: 50px;
 
                         &.is-active {
                             opacity: 1;
+                            border: none;
                         }
 
                         & img {

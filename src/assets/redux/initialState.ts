@@ -15,112 +15,147 @@ import photoDay350 from "../img/me_day_350.jpg";
 import plenco_1 from "../img/portfolio/plenco/1.jpg";
 import plenco_1_big from "../img/portfolio/plenco/1_big.jpg";
 import plenco_1_small from "../img/portfolio/plenco/1_small.jpg";
+import plenco_1_preview from "../img/portfolio/plenco/1_preview.jpg";
 import plenco_2 from "../img/portfolio/plenco/2.jpg";
 import plenco_2_big from "../img/portfolio/plenco/2_big.jpg";
 import plenco_2_small from "../img/portfolio/plenco/2_small.jpg";
+import plenco_2_preview from "../img/portfolio/plenco/2_preview.jpg";
 import plenco_3 from "../img/portfolio/plenco/3.jpg";
 import plenco_3_big from "../img/portfolio/plenco/3_big.jpg";
 import plenco_3_small from "../img/portfolio/plenco/3_small.jpg";
+import plenco_3_preview from "../img/portfolio/plenco/3_preview.jpg";
 import plenco_4 from "../img/portfolio/plenco/4.jpg";
 import plenco_4_big from "../img/portfolio/plenco/4_big.jpg";
 import plenco_4_small from "../img/portfolio/plenco/4_small.jpg";
+import plenco_4_preview from "../img/portfolio/plenco/4_preview.jpg";
 import plenco_5 from "../img/portfolio/plenco/5.jpg";
 import plenco_5_big from "../img/portfolio/plenco/5_big.jpg";
 import plenco_5_small from "../img/portfolio/plenco/5_small.jpg";
+import plenco_5_preview from "../img/portfolio/plenco/5_preview.jpg";
 import plenco_6 from "../img/portfolio/plenco/6.jpg";
 import plenco_6_big from "../img/portfolio/plenco/6_big.jpg";
 import plenco_6_small from "../img/portfolio/plenco/6_small.jpg";
+import plenco_6_preview from "../img/portfolio/plenco/6_preview.jpg";
 import plenco_7 from "../img/portfolio/plenco/7.jpg";
 import plenco_7_big from "../img/portfolio/plenco/7_big.jpg";
 import plenco_7_small from "../img/portfolio/plenco/7_small.jpg";
+import plenco_7_preview from "../img/portfolio/plenco/7_preview.jpg";
 import plenco_8 from "../img/portfolio/plenco/8.jpg";
 import plenco_8_big from "../img/portfolio/plenco/8_big.jpg";
 import plenco_8_small from "../img/portfolio/plenco/8_small.jpg";
+import plenco_8_preview from "../img/portfolio/plenco/8_preview.jpg";
 import plenco_9 from "../img/portfolio/plenco/9.jpg";
 import plenco_9_big from "../img/portfolio/plenco/9_big.jpg";
 import plenco_9_small from "../img/portfolio/plenco/9_small.jpg";
+import plenco_9_preview from "../img/portfolio/plenco/9_preview.jpg";
 import plenco_10 from "../img/portfolio/plenco/10.jpg";
 import plenco_10_big from "../img/portfolio/plenco/10_big.jpg";
 import plenco_10_small from "../img/portfolio/plenco/10_small.jpg";
+import plenco_10_preview from "../img/portfolio/plenco/10_preview.jpg";
 import plenco_11 from "../img/portfolio/plenco/11.jpg";
 import plenco_11_big from "../img/portfolio/plenco/11_big.jpg";
 import plenco_11_small from "../img/portfolio/plenco/11_small.jpg";
+import plenco_11_preview from "../img/portfolio/plenco/11_preview.jpg";
 import plenco_12 from "../img/portfolio/plenco/12.jpg";
 import plenco_12_big from "../img/portfolio/plenco/12_big.jpg";
 import plenco_12_small from "../img/portfolio/plenco/12_small.jpg";
+import plenco_12_preview from "../img/portfolio/plenco/12_preview.jpg";
 import plenco_desktop_xd from "../img/portfolio/plenco/desktop_xd.jpg";
 import plenco_desktop_xd_big from "../img/portfolio/plenco/desktop_xd_big.jpg";
 import plenco_desktop_xd_small from "../img/portfolio/plenco/desktop_xd_small.jpg";
+import plenco_desktop_xd_preview from "../img/portfolio/plenco/desktop_xd_preview.jpg";
 import plenco_mobile_xd from "../img/portfolio/plenco/mobile_xd.jpg";
 import plenco_mobile_xd_big from "../img/portfolio/plenco/mobile_xd_big.jpg";
 import plenco_mobile_xd_small from "../img/portfolio/plenco/mobile_xd_small.jpg";
+import plenco_mobile_xd_preview from "../img/portfolio/plenco/mobile_xd_preview.jpg";
 
 import p2s_1 from "../img/portfolio/p2s/1.jpg";
 import p2s_1_big from "../img/portfolio/p2s/1_big.jpg";
 import p2s_1_small from "../img/portfolio/p2s/1_small.jpg";
+import p2s_1_preview from "../img/portfolio/p2s/1_preview.jpg";
 import p2s_2 from "../img/portfolio/p2s/2.jpg";
 import p2s_2_big from "../img/portfolio/p2s/2_big.jpg";
 import p2s_2_small from "../img/portfolio/p2s/2_small.jpg";
+import p2s_2_preview from "../img/portfolio/p2s/2_preview.jpg";
 import p2s_3 from "../img/portfolio/p2s/3.jpg";
 import p2s_3_big from "../img/portfolio/p2s/3_big.jpg";
 import p2s_3_small from "../img/portfolio/p2s/3_small.jpg";
+import p2s_3_preview from "../img/portfolio/p2s/3_preview.jpg";
 import p2s_4 from "../img/portfolio/p2s/4.jpg";
 import p2s_4_big from "../img/portfolio/p2s/4_big.jpg";
 import p2s_4_small from "../img/portfolio/p2s/4_small.jpg";
+import p2s_4_preview from "../img/portfolio/p2s/4_preview.jpg";
 
 
 import techlicious_1 from "../img/portfolio/techlicious/1.jpg";
 import techlicious_1_big from "../img/portfolio/techlicious/1_big.jpg";
 import techlicious_1_small from "../img/portfolio/techlicious/1_small.jpg";
+import techlicious_1_preview from "../img/portfolio/techlicious/1_preview.jpg";
 import techlicious_2 from "../img/portfolio/techlicious/2.jpg";
 import techlicious_2_big from "../img/portfolio/techlicious/2_big.jpg";
 import techlicious_2_small from "../img/portfolio/techlicious/2_small.jpg";
+import techlicious_2_preview from "../img/portfolio/techlicious/2_preview.jpg";
 import techlicious_3 from "../img/portfolio/techlicious/3.jpg";
 import techlicious_3_big from "../img/portfolio/techlicious/3_big.jpg";
 import techlicious_3_small from "../img/portfolio/techlicious/3_small.jpg";
+import techlicious_3_preview from "../img/portfolio/techlicious/3_preview.jpg";
 import techlicious_4 from "../img/portfolio/techlicious/4.jpg";
 import techlicious_4_big from "../img/portfolio/techlicious/4_big.jpg";
 import techlicious_4_small from "../img/portfolio/techlicious/4_small.jpg";
+import techlicious_4_preview from "../img/portfolio/techlicious/4_preview.jpg";
 import techlicious_5 from "../img/portfolio/techlicious/5.jpg";
 import techlicious_5_big from "../img/portfolio/techlicious/5_big.jpg";
 import techlicious_5_small from "../img/portfolio/techlicious/5_small.jpg";
+import techlicious_5_preview from "../img/portfolio/techlicious/5_preview.jpg";
 
 import formation_1 from "../img/portfolio/formation/1.jpg";
 import formation_1_big from "../img/portfolio/formation/1_big.jpg";
 import formation_1_small from "../img/portfolio/formation/1_small.jpg";
+import formation_1_preview from "../img/portfolio/formation/1_preview.jpg";
 import formation_2 from "../img/portfolio/formation/2.jpg";
 import formation_2_big from "../img/portfolio/formation/2_big.jpg";
 import formation_2_small from "../img/portfolio/formation/2_small.jpg";
+import formation_2_preview from "../img/portfolio/formation/2_preview.jpg";
 import formation_3 from "../img/portfolio/formation/3.jpg";
 import formation_3_big from "../img/portfolio/formation/3_big.jpg";
 import formation_3_small from "../img/portfolio/formation/3_small.jpg";
+import formation_3_preview from "../img/portfolio/formation/3_preview.jpg";
 import formation_4 from "../img/portfolio/formation/4.jpg";
 import formation_4_big from "../img/portfolio/formation/4_big.jpg";
 import formation_4_small from "../img/portfolio/formation/4_small.jpg";
+import formation_4_preview from "../img/portfolio/formation/4_preview.jpg";
 import formation_5 from "../img/portfolio/formation/5.jpg";
 import formation_5_big from "../img/portfolio/formation/5_big.jpg";
 import formation_5_small from "../img/portfolio/formation/5_small.jpg";
+import formation_5_preview from "../img/portfolio/formation/5_preview.jpg";
 import formation_6 from "../img/portfolio/formation/6.jpg";
 import formation_6_big from "../img/portfolio/formation/6_big.jpg";
 import formation_6_small from "../img/portfolio/formation/6_small.jpg";
+import formation_6_preview from "../img/portfolio/formation/6_preview.jpg";
 import formation_7 from "../img/portfolio/formation/7.jpg";
 import formation_7_big from "../img/portfolio/formation/7_big.jpg";
 import formation_7_small from "../img/portfolio/formation/7_small.jpg";
+import formation_7_preview from "../img/portfolio/formation/7_preview.jpg";
 import formation_8 from "../img/portfolio/formation/8.jpg";
 import formation_8_big from "../img/portfolio/formation/8_big.jpg";
 import formation_8_small from "../img/portfolio/formation/8_small.jpg";
+import formation_8_preview from "../img/portfolio/formation/8_preview.jpg";
 import formation_9 from "../img/portfolio/formation/9.jpg";
 import formation_9_big from "../img/portfolio/formation/9_big.jpg";
 import formation_9_small from "../img/portfolio/formation/9_small.jpg";
+import formation_9_preview from "../img/portfolio/formation/9_preview.jpg";
 import formation_10 from "../img/portfolio/formation/10.jpg";
 import formation_10_big from "../img/portfolio/formation/10_big.jpg";
 import formation_10_small from "../img/portfolio/formation/10_small.jpg";
+import formation_10_preview from "../img/portfolio/formation/10_preview.jpg";
 import formation_11 from "../img/portfolio/formation/11.jpg";
 import formation_11_big from "../img/portfolio/formation/11_big.jpg";
 import formation_11_small from "../img/portfolio/formation/11_small.jpg";
+import formation_11_preview from "../img/portfolio/formation/11_preview.jpg";
 import formation_12 from "../img/portfolio/formation/12.jpg";
 import formation_12_big from "../img/portfolio/formation/12_big.jpg";
 import formation_12_small from "../img/portfolio/formation/12_small.jpg";
+import formation_12_preview from "../img/portfolio/formation/12_preview.jpg";
 
 
 import components_gallery from "../img/portfolio/components/gallery.jpg";
@@ -382,6 +417,11 @@ initialState = {
 						link: portfolioPath + "plenco/home.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: plenco_1_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: plenco_1_small,
@@ -402,6 +442,11 @@ initialState = {
 						descr: "Home page",
 						link: portfolioPath + "plenco/home.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: plenco_2_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -424,6 +469,11 @@ initialState = {
 						link: portfolioPath + "plenco/news-blog.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: plenco_3_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: plenco_3_small,
@@ -444,6 +494,11 @@ initialState = {
 						descr: "About Plenco",
 						link: portfolioPath + "plenco/about.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: plenco_4_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -466,6 +521,11 @@ initialState = {
 						link: portfolioPath + "plenco/pn-rr-app.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: plenco_5_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: plenco_5_small,
@@ -486,6 +546,11 @@ initialState = {
 						descr: "Careers",
 						link: portfolioPath + "plenco/careers.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: plenco_6_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -508,6 +573,11 @@ initialState = {
 						link: portfolioPath + "plenco/certifications.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: plenco_7_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: plenco_7_small,
@@ -528,6 +598,11 @@ initialState = {
 						descr: "Accordions",
 						link: portfolioPath + "plenco/tmg-bmc.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: plenco_8_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -550,6 +625,11 @@ initialState = {
 						link: portfolioPath + "plenco/tech-service-news-detail.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: plenco_9_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: plenco_9_small,
@@ -570,6 +650,11 @@ initialState = {
 						descr: "Mobile navigation",
 						link: portfolioPath + "plenco/automotive.html",//processing-guide
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: plenco_10_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -592,6 +677,11 @@ initialState = {
 						link: portfolioPath + "plenco/series-07000.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: plenco_11_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: plenco_11_small,
@@ -612,6 +702,11 @@ initialState = {
 						descr: "Related accordions",
 						link: portfolioPath + "plenco/cmg-bmc.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: plenco_12_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -634,6 +729,11 @@ initialState = {
 						link: "",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: plenco_desktop_xd_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: plenco_desktop_xd_small,
@@ -654,6 +754,11 @@ initialState = {
 						descr: "Design templates for mobile version",
 						link: "",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: plenco_mobile_xd_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -683,6 +788,11 @@ initialState = {
 						link: portfolioPath + "p2sinc/web/projects.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: p2s_1_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: p2s_1_small,
@@ -703,6 +813,11 @@ initialState = {
 						descr: "Getting detail about project",
 						link: portfolioPath + "p2sinc/web/projects.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: p2s_2_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -725,6 +840,11 @@ initialState = {
 						link: portfolioPath + "p2sinc/web/projects.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: p2s_3_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: p2s_3_small,
@@ -745,6 +865,11 @@ initialState = {
 						descr: "Homepage with news-carousel",
 						link: portfolioPath + "p2sinc/web/index.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: p2s_4_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -774,6 +899,11 @@ initialState = {
 						link: "https://dev.techlicious.com",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: techlicious_1_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: techlicious_1_small,
@@ -794,6 +924,11 @@ initialState = {
 						descr: "Homepage mobile version",
 						link: "https://dev.techlicious.com",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: techlicious_2_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -816,6 +951,11 @@ initialState = {
 						link: "https://dev.techlicious.com",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: techlicious_3_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: techlicious_3_small,
@@ -837,6 +977,11 @@ initialState = {
 						link: "https://dev.techlicious.com/news",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: techlicious_4_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: techlicious_4_small,
@@ -857,6 +1002,11 @@ initialState = {
 						descr: "Blog page",
 						link: "https://dev.techlicious.com/news",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: techlicious_5_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -886,6 +1036,11 @@ initialState = {
 						link: server_formation + "/formation.ai/frontend/blog.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: formation_2_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: formation_2_small,
@@ -906,6 +1061,11 @@ initialState = {
 						descr: "Navigation for mobile devices.",
 						link: server_formation + "/formation.ai/frontend/index.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: formation_1_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -928,6 +1088,11 @@ initialState = {
 						link: server_formation + "/formation.ai/frontend/grocery.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: formation_3_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: formation_3_small,
@@ -948,6 +1113,11 @@ initialState = {
 						descr: "Join page. Owl carousel for better design.",
 						link: server_formation + "/formation.ai/frontend/join.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: formation_4_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -970,6 +1140,11 @@ initialState = {
 						link: server_formation + "/formation.ai/frontend/resources_overview.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: formation_5_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: formation_5_small,
@@ -990,6 +1165,11 @@ initialState = {
 						descr: "Resource contnet page with categories and search.",
 						link: server_formation + "/formation.ai/frontend/resources_content.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: formation_6_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -1012,6 +1192,11 @@ initialState = {
 						link: server_formation + "/formation.ai/frontend/resources_overview.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: formation_7_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: formation_7_small,
@@ -1032,6 +1217,11 @@ initialState = {
 						descr: "Resource theme page with categories and search.",
 						link: server_formation + "/formation.ai/frontend/resources_theme.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: formation_8_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -1054,6 +1244,11 @@ initialState = {
 						link: server_formation + "/formation.ai/frontend/solution.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: formation_9_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: formation_9_small,
@@ -1074,6 +1269,11 @@ initialState = {
 						descr: "Retail page for mobile devices.",
 						link: server_formation + "/formation.ai/frontend/retail.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: formation_10_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -1096,6 +1296,11 @@ initialState = {
 						link: server_formation + "/formation.ai/frontend/solutions.html",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: formation_11_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: formation_11_small,
@@ -1116,6 +1321,11 @@ initialState = {
 						descr: "Creative design.",
 						link: server_formation + "/formation.ai/frontend/LP.html",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: formation_12_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -1445,3 +1655,6 @@ initialState = {
 };
 
 export default initialState;
+
+
+//max preview image size: 130*100
