@@ -1,5 +1,6 @@
 @use "sass:map";
-@import '../../../assets/css/base.scss';
+@use "/src/assets/css/variables" as *;
+//@import '../../../assets/css/base.scss';
 
 .resume__skill {
     width: 48%;

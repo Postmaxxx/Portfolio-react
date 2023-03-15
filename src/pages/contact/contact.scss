@@ -1,5 +1,5 @@
 @use "sass:map";
-@import '../../assets/css/base.scss';
+@use "/src/assets/css/variables" as *;
 
 
 .page_contact {

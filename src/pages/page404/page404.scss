@@ -1,5 +1,5 @@
 @use "sass:map";
-@import '../../assets/css/variables.scss';
+@use "/src/assets/css/variables" as *;
 
 .page-404 {
     position:absolute;
