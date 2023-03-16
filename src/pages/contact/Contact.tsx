@@ -92,7 +92,7 @@ const Contact: IPropsJSX  = (props) => {
 		}
 	};
 
-
+	
 	return (
 		<>
 			<Modal>

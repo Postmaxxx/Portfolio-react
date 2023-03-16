@@ -26,6 +26,8 @@ function Aboutpage(): JSX.Element {
 		document.querySelectorAll(".services__container .service").forEach(el => observer.observe(el));
 	}, []);
 
+	console.log("about");
+	
 	return (
 		<div className="page-container">
 			<div className="page_about">
@@ -56,4 +58,4 @@ const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Aboutpage);
+export default connect(null, mapDispatchToProps)(Aboutpage);

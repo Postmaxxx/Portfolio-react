@@ -13,10 +13,6 @@ interface IOptionsThumbs {
 	[propName: string]: any;
 }
 
-
-
-
-
 const ModalNew:IPropsJSX = (props) => {
 	const mainRef =useRef<any>();
 	const thumbsRef =useRef<any>();
@@ -112,6 +108,8 @@ const ModalNew:IPropsJSX = (props) => {
 		});
 	}, [props.store.modal, firstRender]);
 
+	//console.log("rerender");
+
 
 	return (
 		<div className={props.store.modal ? "modal__background show" : "modal__background"}>
@@ -178,23 +176,3 @@ const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalNew);
-/*
-	useLayoutEffect((): void => {
-		const _modal: HTMLElement =  document.querySelector(".modal__background");
-		store.getState().modal ? _modal.classList.add("show") : _modal.classList.remove("show");
-	}, [store.getState().modal]);
-
-
-	const modalBgListener: EventListener = (e: MouseEvent): void => {
-		(e.target as HTMLElement).tagName === "IMG" || closeModal();
-	};
-
-	const modalKeyListener: EventListener = (e: KeyboardEvent): void => {
-		e.key === "Escape" && closeModal();
-	};
-
-
-	useLayoutEffect((): IRemoveEventListener => {
-
-	},[store.getState().modalImage]);
-    */

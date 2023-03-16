@@ -2,11 +2,8 @@ import { useRef, useEffect, useState } from "react";
 import * as actions from "../../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-//import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Splide from "@splidejs/splide";
-//import { setImagePortfolio } from "../../../assets/js/setImagePortfolio";
 import "./splide_portfolio.scss";
-import store from "../../../assets/redux/store";
 import { IMapdispatchToProps, IMapStateToProps, IPropsJSX, ISliderOptions } from "src/models";
 import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
 
@@ -17,9 +14,7 @@ interface IContainerSize {
 
 const SplidePortfolio:IPropsJSX = (props) => {
 	const [portfolioSplideS, setPortfolioSplideS] = useState<any>();
-	//let portfolioThumbsSplide;
 	const _splideMain = useRef(null);
-	//const _splideThumbs = useRef(null);
 	const [containerSize, setContainerSize] = useState({} as IContainerSize);
 
 	const optionsMain: ISliderOptions = {
@@ -135,48 +130,3 @@ const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SplidePortfolio);
-
-
-/*
-			<Splide 
-				ref={ splidePortfolio }
-				onMove={newModalImg}
-				onRefresh={newModalImg }
-				options={ optionsMain }>
-				{props.store.portfolios.list[props.store.portfolios.selected].images.map((slide, index: number) => {
-					return (
-						<SplideSlide key={index}>
-							<div className="splide__slide-container" data-slidecontainer={index}>
-								<img alt=""/>
-							</div>
-						</SplideSlide>
-					);
-				})}
-			</Splide>
-
-*/
-
-/*const showModal = (selectedImage) => {
-		const portfolioNumber = props.store.portfolios.selected;
-		props.setStore.setModalImage(store.getState().portfolios.list[portfolioNumber].images[selectedImage]?.images.slice(-1)[0].image);
-		props.setStore.setModalLink(store.getState().portfolios.list[portfolioNumber].images[selectedImage]?.link);
-		props.setStore.setModalDescr(store.getState().portfolios.list[portfolioNumber].images[selectedImage]?.descr);
-		props.setStore.setModal(true);
-	};*/
-
-/*const newModalImg: EmptyVoid = () => {
-		/*const selected: number = store.getState().portfolios.selected;
-		const slideIndex:number = portfolioMainSplide?.index ?? 0;
-		props.setStore.setModalImage(store.getState().portfolios.list[selected].images[slideIndex]?.images.slice(-1)[0].image);
-		props.setStore.setModalLink(store.getState().portfolios.list[selected].images[slideIndex]?.link);
-		props.setStore.setModalDescr(store.getState().portfolios.list[selected].images[slideIndex]?.descr);
-	};   */
-    
-
-/*useEffect((): void => {
-		/*Array.from(document.querySelectorAll("[data-slidecontainer]")).forEach((slide: HTMLDivElement, slideNumber: number) => {
-			const images: ProjectItemImageItem[] = store.getState().portfolios.list[store.getState().portfolios.selected].images[slideNumber].images;
-			setImagePortfolio(slide, slide.parentNode as HTMLElement, images, obj => obj.addEventListener("click", ShowModal));
-		});
-		//newModalImg();
-	},[store.getState().portfolios.selected]);*/

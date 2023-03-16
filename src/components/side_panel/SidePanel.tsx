@@ -43,6 +43,7 @@ const SidePanel: IPropsJSX = (props) => {
 	}, [props.store.nav_ham]);
 
 
+
 	return (
 		<div className="side-panel">
 			<figure>
