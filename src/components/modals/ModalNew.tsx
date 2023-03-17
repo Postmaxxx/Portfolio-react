@@ -13,7 +13,7 @@ interface IOptionsThumbs {
 	[propName: string]: any;
 }
 
-const ModalNew:IPropsJSX = (props) => {
+const ModalNew = (props) => {
 	const mainRef =useRef<any>();
 	const thumbsRef =useRef<any>();
 	const [firstRender, setFirstRender] = useState(true);
@@ -91,38 +91,40 @@ const ModalNew:IPropsJSX = (props) => {
 		mainRef.current = main;
 
 		return () => {
+			console.log(222);
+			
 			thumbnails.destroy();
 			main.destroy();
 		};
 		
-	}, [props.store.portfolios.selected, firstRender]);
+	}, [props.portfolios.selected, firstRender]);
 
 
 	useEffect(() => {
 		if (firstRender) return;
-		showSlide(props.store.portfolios.selectedImage);
-		props.store.modal && document.addEventListener("keyup", modalKeyListener);
-		props.store.modal && document.querySelector("body").classList.add("noscroll");
+		showSlide(props.portfolios.selectedImage);
+		props.modal && document.addEventListener("keyup", modalKeyListener);
+		props.modal && document.querySelector("body").classList.add("noscroll");
 		return (() => {
 			document.removeEventListener("keyup", modalKeyListener);
 		});
-	}, [props.store.modal, firstRender]);
+	}, [props.modal, firstRender]);
 
-	//console.log("rerender");
+	console.log("rerender222");
 
 
 	return (
-		<div className={props.store.modal ? "modal__background show" : "modal__background"}>
+		<div className={props.modal ? "modal__background show" : "modal__background"}>
 			<div className="modal">
 				<div>
 					<div>
 						<div id="modalMain" className="splide" ref={_splideMain}>
 							<div className="splide__track">
 								<ul className="splide__list">
-									{props.store.portfolios.list[props.store.portfolios.selected].images.map((slide) => {
+									{props.portfolios.list[props.portfolios.selected].images.map((slide) => {
 										return (
 											<li className="splide__slide" key={slide.images[0].image}>
-												{props.store.modal ?
+												{props.modal ?
 													<ImgWithPreloader link={slide.images[slide.images.length-1].image} alt={slide.descr} />
 													:
 													<></>
@@ -138,10 +140,10 @@ const ModalNew:IPropsJSX = (props) => {
 						<div id="modalThumbs" className="splide" ref={_splideThumbs}>
 							<div className="splide__track">
 								<ul className="splide__list">
-									{props.store.portfolios.list[props.store.portfolios.selected].images.map((slide) => {
+									{props.portfolios.list[props.portfolios.selected].images.map((slide) => {
 										return (
 											<li className="splide__slide" key={slide.images[0].image}>
-												{props.store.modal ?
+												{props.modal ?
 													<ImgWithPreloader link={slide.images[0].image} alt={slide.descr} />
 													:
 													<></>
@@ -169,7 +171,19 @@ const ModalNew:IPropsJSX = (props) => {
 	); 
 };
 
-const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
+
+
+const mapStateToProps = (state)  => {
+	return {
+		selected: state.portfolios.selected,
+		selectedImage: state.portfolios.selectedImage,
+		modal: state.modal,
+		portfolios: state.portfolios,
+	};
+};
+
+
+
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { useCallback, useMemo } from "react";
 
 const Test = (props) => {
-	//console.log(props);
+	//console.log("test", props);
 	
 
 	return (
@@ -19,10 +19,10 @@ const p = {a: "", b: ""};
 const mapStateToProps = (state)  => {
 	p.a = state.portfolios.selected;
 	p.b = state.portfolios.selectedImage;
-	//console.log("p", p);
-	
+
 	return {
-		p
+		store: state.portfolios,
+		store2: state.me
 	};
 };
 

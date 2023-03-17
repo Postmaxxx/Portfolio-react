@@ -8,20 +8,40 @@ import "./resume.scss";
 import { MySkill, WorkEducationItem, IProps, IMapStateToProps, IMapdispatchToProps } from "src/models";
 import { useEffect } from "react";
 
-const observer = new IntersectionObserver((entries) => {
-	entries.forEach(entry => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add("show");
-		}
-	});
-}, {
-	threshold: 0.4
-});
 
-const Resume: React.FC  = (props: IProps): JSX.Element  => {
+
+interface IResumeProps {
+	skills: Array<MySkill>
+	skillFillSpeed: number,
+	workExperience: Array<WorkEducationItem>,
+	education: Array<WorkEducationItem>,
+}
+
+
+const Resume: React.FC<IResumeProps>  = (props: IResumeProps) => {
+
+	const observerRule = (entries, thisObserver) => {
+		entries.forEach(entry  => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add("show");
+				thisObserver.unobserve(entry.target);
+			}
+		});
+	};
+	
+	const observerOptions = {
+		threshold: 0.4,
+	};
+	
+	
 	
 	useEffect(() => {
-		document.querySelectorAll(".history .history__block .history__description").forEach(el => observer.observe(el));
+		const observer = new IntersectionObserver(observerRule, observerOptions);
+		const listToObserve = document.querySelectorAll(".history .history__block .history__description");
+		listToObserve.forEach(el => observer.observe(el));
+		return () => {
+			listToObserve.forEach(el => observer.unobserve(el));
+		};
 	}, []);
 
 	return(
@@ -30,9 +50,9 @@ const Resume: React.FC  = (props: IProps): JSX.Element  => {
 				<section className='skills'> 
 					<h2>My skills<em>My skills</em></h2>
 					<div className="skills__container"> 
-						{props.store.skills.map((skill: MySkill, index: number) => {
+						{props.skills.map((skill: MySkill, index: number) => {
 							return(
-								<Skill key={skill.name} skill={skill} speed={props.store.skillFillSpeed}/>
+								<Skill key={skill.name} skill={skill} speed={props.skillFillSpeed}/>
 							);
 						})}
 					</div>
@@ -51,7 +71,7 @@ const Resume: React.FC  = (props: IProps): JSX.Element  => {
 							<h3>Work experience</h3>
 						</div>
 						<div className="history__content">
-							{props.store.workExperience.map((historyBlock: WorkEducationItem, index: number) => {
+							{props.workExperience.map((historyBlock: WorkEducationItem, index: number) => {
 								return(
 									<History key={index} historyBlock={historyBlock}/>
 								);
@@ -66,7 +86,7 @@ const Resume: React.FC  = (props: IProps): JSX.Element  => {
 							<h3>Education</h3>
 						</div>
 						<div className="history__content">
-							{props.store.education.map((historyBlock: WorkEducationItem, index: number) => {
+							{props.education.map((historyBlock: WorkEducationItem, index: number) => {
 								return(
 									<History key={index} historyBlock={historyBlock}/>
 								);
@@ -81,7 +101,14 @@ const Resume: React.FC  = (props: IProps): JSX.Element  => {
 };
 
 
-const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
+const mapStateToProps = (state)  => {
+	return {
+		skills: state.skills,
+		skillFillSpeed: state.skillFillSpeed,
+		workExperience: state.workExperience,
+		education: state.education,
+	};
+};
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),

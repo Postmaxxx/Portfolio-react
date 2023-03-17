@@ -26,8 +26,6 @@ function Aboutpage(): JSX.Element {
 		document.querySelectorAll(".services__container .service").forEach(el => observer.observe(el));
 	}, []);
 
-	console.log("about");
-	
 	return (
 		<div className="page-container">
 			<div className="page_about">
@@ -50,8 +48,6 @@ function Aboutpage(): JSX.Element {
 	);
 }
 
-
-const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),

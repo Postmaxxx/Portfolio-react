@@ -5,16 +5,18 @@ import { connect } from "react-redux";
 import { checkInput } from "../../assets/js/inputChecker";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import Input from "../../components/blocks/input/Input";
-import Textarea from "../../components/blocks/textarea/Textarea";
 import ContactBlock from "../../components/blocks/contact/Contact_block";
 import Modal from "../../components/modals/Modal";
 import Message from "../../components/message/Message";
 import "./contact.scss";
 import { Action, IMapdispatchToProps, IMapStateToProps, IPropsJSX } from "src/models";
-import { useCallback, useRef, useState } from "react";
+import { useRef } from "react";
 
 
-const Contact: IPropsJSX  = (props) => {
+const Contact  = (props) => {
+	const inputEmail = useRef<HTMLElement>();
+	const inputSubject = useRef<HTMLElement>();
+	const inputMessage = useRef<HTMLElement>();
 
 	const checkInputs = (inputs: NodeListOf<HTMLInputElement>): boolean => {
 		const errorMessages: Array<string>= [];
@@ -47,14 +49,19 @@ const Contact: IPropsJSX  = (props) => {
 			const currentDate: Date = new Date();
 			const apiToken: string = process.env.REACT_APP_TG_TOK;
 			const chatId: string = process.env.REACT_APP_CHT_ID;
-			const text = `Date: ${currentDate.getDate() + "." + (currentDate.getMonth()+1) + "." + currentDate.getFullYear()}%0ATime: ${currentDate.getHours() + "." + currentDate.getMinutes() + "." + currentDate.getSeconds()}%0AName: ${props.store.contact.name}%0AEmail: ${props.store.contact.email}%0ATopic: ${props.store.contact.subject}%0A%0AMessage: ${props.store.contact.message}` ;
+			const name = (document.querySelector("#contact_name") as HTMLInputElement).value;
+			const email = (document.querySelector("#contact_email") as HTMLInputElement).value;
+			const subject = (document.querySelector("#contact_subject") as HTMLInputElement).value;
+			const message = (document.querySelector("#contact_message") as HTMLInputElement).value;
+			const text = `Date: ${currentDate.getDate() + "." + (currentDate.getMonth()+1) + "." + currentDate.getFullYear()}%0ATime: ${currentDate.getHours() + "." + currentDate.getMinutes() + "." + currentDate.getSeconds()}%0AName: ${name}%0AEmail: ${email}%0ATopic: ${subject}%0A%0AMessage: ${message}` ;
 			const urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${text}`;
     
+			
+			
 			axios.get(urlString)
 				.then(function(response: AxiosResponse): void {
 					props.setStore.setContactSubject("");
 					props.setStore.setContactMessage("");
-					//alert('Your message has been sent.');
 					props.setStore.setModalMsgHeader("");
 					props.setStore.setModalMsgText("Your message has been sent.");
 					props.setStore.setModalMsgBtnText("Close");
@@ -62,27 +69,20 @@ const Contact: IPropsJSX  = (props) => {
 				})
 				.catch(function(error: AxiosError): void {
 					props.setStore.setModalMsgHeader("Error");
-					props.setStore.setModalMsgText("Service unavailable. Please, try again later. \nError: "+ error.message);
 					props.setStore.setModalMsgBtnText("Close");
+					if (error.response) {
+						props.setStore.setModalMsgText("Service unavailable. Please, try again later. \nError: " + [error.response.status, error.response.data].join(","));
+					} else if (error.request) {
+						props.setStore.setModalMsgText("Service unavailable. Please, try again later. \nError: " + [error.response.request]);
+					} else {
+						props.setStore.setModalMsgText("Service unavailable. Please, try again later. \nError: "+ error.message);
+					}
 					props.setStore.setModalMsgVisible(true);
-					//alert('Service unavailable. Please, try again later. Error: ' + error);
 				});
 		}
 	};
 
-	const changeValue = useCallback((e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		if (e.currentTarget.id === "contact_name") {props.setStore.setContactName(e.currentTarget.value);}
-		if (e.currentTarget.id === "contact_email") {props.setStore.setContactEmail(e.currentTarget.value);}
-		if (e.currentTarget.id === "contact_subject") {props.setStore.setContactSubject(e.currentTarget.value);}
-		if (e.currentTarget.id === "contact_message") {props.setStore.setContactMessage(e.currentTarget.value);}
-		const parent:HTMLElement =  e.currentTarget.parentNode as HTMLElement;
-		parent.classList.remove("incorrect");
-	}, []);
 
-
-	const inputEmail = useRef<HTMLInputElement>();
-	const inputSubject = useRef<HTMLTextAreaElement>();
-	const inputMessage = useRef<HTMLInputElement>();
 
 	const changeFocus = (e: React.KeyboardEvent): void => {
 		if (e.key === "Enter") {
@@ -91,15 +91,14 @@ const Contact: IPropsJSX  = (props) => {
 			if (e.currentTarget.id === "contact_subject") {inputMessage.current.focus();}
 		}
 	};
-
 	
 	return (
 		<>
 			<Modal>
 				<Message 
-					header={props.store.modalMsg.header}
-					text={props.store.modalMsg.text}
-					buttonText={props.store.modalMsg.btnText}
+					header={props.modalMsg.header}
+					text={props.modalMsg.text}
+					buttonText={props.modalMsg.btnText}
 					buttonClickAction={(): Action<boolean> => props.setStore.setModalMsgVisible(false)}
 				/>
 			</Modal>
@@ -113,8 +112,7 @@ const Contact: IPropsJSX  = (props) => {
 								<Input 
 									id= 'contact_name'
 									text=  'Your name *'
-									changeValue={changeValue}
-									value={props.store.contact.name}
+									value={props.contact.name}
 									required={true}
 									type= 'text'
 									checkType= 'all'
@@ -127,8 +125,7 @@ const Contact: IPropsJSX  = (props) => {
 								<Input 
 									id='contact_email'
 									text='Your email *'
-									changeValue={changeValue}
-									value={props.store.contact.email}
+									value={props.contact.email}
 									required={true}
 									type='email'
 									checkType='email'
@@ -142,8 +139,7 @@ const Contact: IPropsJSX  = (props) => {
 								<Input 
 									id='contact_subject'
 									text='Your subject'
-									changeValue={changeValue}
-									value={props.store.contact.subject}
+									value={props.contact.subject}
 									required={false}
 									type='text'
 									checkType='all'
@@ -154,20 +150,20 @@ const Contact: IPropsJSX  = (props) => {
 									refLink={inputSubject}
 									onKeyUp={changeFocus}
 								/>
-								<Textarea
+								<Input
 									id='contact_message'
 									text='Your message *'
-									changeValue={changeValue}
-									value={props.store.contact.message}
+									value={props.contact.message}
 									required={true}
 									checkType='all'
+									typeEl = 'textarea'
 									name='message'
 									data='contact'
 									minLength={10}
 									maxLength={500}
 									refLink={inputMessage}
 								/>
-								<button type="submit" className="link_button" onClick={(e: React.FormEvent<HTMLButtonElement>) => sendMessage(e)}>Send message</button>      
+								<button type="submit" className="link_button" onClick={sendMessage}>Send message</button>      
 							</div>
 							<div className="my-info">
 								<ContactBlock 
@@ -177,7 +173,7 @@ const Contact: IPropsJSX  = (props) => {
 										</svg>
 									}
 									header='Phone'
-									links={props.store.contacts.phone}
+									links={props.contacts.phone}
 								/>
 								<ContactBlock 
 									image={
@@ -186,7 +182,7 @@ const Contact: IPropsJSX  = (props) => {
 										</svg>
 									}
 									header='Email'
-									links={props.store.contacts.email}
+									links={props.contacts.email}
 								/>
 								<ContactBlock 
 									image={
@@ -195,7 +191,7 @@ const Contact: IPropsJSX  = (props) => {
 										</svg>
 									}
 									header='Address'
-									links={props.store.contacts.address}
+									links={props.contacts.address}
 								/>
 							</div>
 						</div>
@@ -207,7 +203,14 @@ const Contact: IPropsJSX  = (props) => {
 };
 
 
-const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
+
+const mapStateToProps = (state)  => {
+	return {
+		contacts: state.contacts,
+		contact: state.contact,
+		modalMsg: state.modalMsg
+	};
+};
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
