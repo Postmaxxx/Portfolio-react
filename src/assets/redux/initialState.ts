@@ -1484,27 +1484,6 @@ initialState = {
 							},
 						],
 					},
-					{
-						descr: "Baloons shooter minigame",
-						link: "!gallery",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: components_shooter_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: components_shooter_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: components_shooter,
-							},
-						],
-					},
 				]
 			},
 			/*{
