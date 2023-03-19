@@ -6,6 +6,7 @@ import Splide from "@splidejs/splide";
 import "./splide_portfolio.scss";
 import { IMapdispatchToProps, IMapStateToProps, IPropsJSX, ISliderOptions } from "src/models";
 import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
+import { findBestSuitedImg } from "src/assets/js/findBestSuitedImg";
 
 interface IContainerSize {
 	width: number
@@ -101,14 +102,10 @@ const SplidePortfolio = (props) => {
 				<div className="splide__track">
 					<ul className="splide__list">
 						{props.list[props.selected].images.map((slide, index: number) => {
-							let resultImage;
-							if (portfolioSplide.current) {
-								resultImage = slide.images.find(image => ((image.width >= containerSize.current.width) || (image.height >= containerSize.current.height)));
-							} 
 							return (
 								<li className="splide__slide" key={props.selected * 1000 + index}>
 									<div className="splide__slide-container">
-										{portfolioSplide.current && <ImgWithPreloader link={resultImage.image} alt={slide.descr}/>}
+										{portfolioSplide.current && <ImgWithPreloader link={findBestSuitedImg({images: slide.images, width: containerSize.current.width, height: containerSize.current.height}).image} alt={slide.descr}/>}
 									</div>
 								</li>
 							);

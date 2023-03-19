@@ -117,6 +117,7 @@ export type WorkEducationItem = {
 
 export type ImageMe = {
     width: number
+	height: number
     image: string
 }
 

@@ -359,18 +359,22 @@ initialState = {
 			images: [
 				{
 					width: 350,
+					height: 1,
 					image: photoDay350,
 				},
 				{
 					width: 500,
+					height: 1,
 					image: photoDay500,
 				},
 				{
 					width: 750,
+					height: 1,
 					image: photoDay750,
 				},
 				{
 					width: 10000,
+					height: 1,
 					image: photoDay,
 				},
 			],
@@ -380,18 +384,22 @@ initialState = {
 			images: [
 				{
 					width: 350,
+					height: 1,
 					image: photoNight350,
 				},
 				{
 					width: 500,
+					height: 1,
 					image: photoNight500,
 				},
 				{
 					width: 750,
+					height: 1,
 					image: photoNight750,
 				},
 				{
 					width: 10000,
+					height: 1,
 					image: photoNight,
 				},
 			],
@@ -399,7 +407,7 @@ initialState = {
 
 	},
 
-	portfolios: {
+	portfolios: { //530*325
 		selected: 0,
 		selectedImage: 0, //for changing to 0 to add 1 initial render in SplidePortfolio, should be be <> 0
 		list: [
