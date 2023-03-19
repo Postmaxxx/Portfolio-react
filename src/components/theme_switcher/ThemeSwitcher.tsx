@@ -108,11 +108,13 @@ const ThemeSwitcher = (props) => {
 			state.saveState && localStorage.setItem(state.saveState, state.theme);
 			state.isChanging = true;
 			if (newTheme === "light") {
+				props.setStore.setTheme("light");
 				state.nodeForTheme.classList.remove("dark");
 				classSwitcher("", "theme_light_1", 0)
 					.then(() => classSwitcher("theme_light_1", "theme_light_2", state.duration / 4))
 					.then(() => {classSwitcher("theme_light_2", "theme_light", 30); state.isChanging = false;});
 			} else {
+				props.setStore.setTheme("dark");
 				state.nodeForTheme.classList.add("dark");
 				classSwitcher("theme_light", "theme_light_back_1", 0)
 					.then(() => classSwitcher("theme_light_back_1", "theme_light_back_2", state.duration / 4))
@@ -291,7 +293,6 @@ const ThemeSwitcher = (props) => {
 		
 			_label.appendChild(state._themeSwitcherInput);
 			_label.appendChild(state._themeSwitcher);
-			console.log(state._themeSwitcherContainer);
 			
 			state._themeSwitcherContainer.appendChild(_label);
 			

@@ -12,6 +12,8 @@ type PfindBestSuitedImg = {
 }
 
 const findBestSuitedImg = ({width, height, images}: PfindBestSuitedImg): PImage => {
+	console.log(width, height);
+	
 	const resultImage = images.find(image => ((image.width >= width) || (image.height >= height)));
 	return resultImage || images[images.length - 1];
 };

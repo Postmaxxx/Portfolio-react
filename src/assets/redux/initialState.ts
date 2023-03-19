@@ -185,11 +185,12 @@ initialState = {
 	...initialState,
 	theme: "light",
 	nav_ham: "",
-	modal: false,
-	modalImage: "",
-	modalDescr: "",
-	modalLink: "",
-	imgLoaded: false,
+	modalSplide: {
+		show: false,
+	},
+	modalImage: {
+		show: false
+	},
 	modalMsg: {
 		active: false,
 		header: "",

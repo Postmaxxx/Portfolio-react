@@ -39,12 +39,17 @@ export const setContactMessage = <T extends string>(text: T): Action<T> => ({
 });
 
 
-export const setModal = <T extends boolean>(status: T): Action<T> => ({
-	type: actionList.SET_MODAL,
+export const setModalImage = <T extends boolean>(status: T): Action<T> => ({
+	type: actionList.SET_MODAL_IMAGE,
 	payload: status
 });
 
+export const setModalSplide = <T extends boolean>(status: T): Action<T> => ({
+	type: actionList.SET_MODAL_SPLIDE,
+	payload: status
+});
 
+/*
 export const setModalImage = <T extends string>(url: T): Action<T> => ({
 	type: actionList.SET_MODAL_IMAGE,
 	payload: url
@@ -59,7 +64,7 @@ export const setModalLink = <T extends string>(link: T): Action<T> => ({
 	type: actionList.SET_MODAL_LINK,
 	payload: link
 });
-
+*/
 export const setModalMsgVisible = <T extends boolean>(visible: T): Action<T> => ({
 	type: actionList.SET_MODALMSG,
 	payload: visible
@@ -90,12 +95,12 @@ export const setSelectedPortfolioImage = <T extends number>(number: T): Action<T
 	payload: number
 });
 
-
+/*
 export const setImgLoaded = <T extends boolean>(isLoaded: T): Action<T> => ({
 	type: actionList.SET_IMG_LOADED,
 	payload: isLoaded
 });
-
+*/
 /*
 export const setTest = () => ({
     type: actionList.SET_IMG_LOADED,

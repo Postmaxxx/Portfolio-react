@@ -81,17 +81,18 @@ export const actionList: IActionList = {
 	SET_CONTACT_EMAIL: "SET_CONTACT_EMAIL",
 	SET_CONTACT_SUBJECT: "SET_CONTACT_SUBJECT",
 	SET_CONTACT_MESSAGE: "SET_CONTACT_MESSAGE",
-	SET_MODAL: "SET_MODAL",
 	SET_MODAL_IMAGE: "SET_MODAL_IMAGE",
+	/*SET_MODAL_IMAGE: "SET_MODAL_IMAGE",
 	SET_MODAL_DESCR: "SET_MODAL_DESCR",
-	SET_MODAL_LINK: "SET_MODAL_LINK",
+	SET_MODAL_LINK: "SET_MODAL_LINK",*/
 	SET_MODALMSG: "SET_MODALMSG",
 	SET_MODALMSG_HEADER: "SET_MODALMSG_HEADER",
 	SET_MODALMSG_TEXT: "SET_MODALMSG_TEXT",
 	SET_MODALMSG_BTNTEXT: "SET_MODALMSG_BTNTEXT",
 	SET_SELECTED_PORTFOLIO: "SET_SELECTED_PORTFOLIO",
-	SET_IMG_LOADED: "SET_IMG_LOADED",
-	SET_SELECTED_PORTFOLIO_IMAGE: "SET_SELECTED_PORTFOLIO_IMAGE"
+	//SET_IMG_LOADED: "SET_IMG_LOADED",
+	SET_SELECTED_PORTFOLIO_IMAGE: "SET_SELECTED_PORTFOLIO_IMAGE",
+	SET_MODAL_SPLIDE: "SET_MODAL_SPLIDE"
 };
 
 
@@ -164,11 +165,15 @@ export type ContactItem = {
 export interface IState extends IProps {
     theme: TTheme
     nav_ham: string
-    modal: boolean
-    modalImage: string 
+    modalSplide: {
+        show: boolean
+    }
+    modalImage: {
+        show: boolean
+    }
+    /*modalImage: string 
     modalDescr: string
-    modalLink: string
-    imgLoaded: boolean
+    modalLink: string*/
     modalMsg: {
         active: boolean
         header: string

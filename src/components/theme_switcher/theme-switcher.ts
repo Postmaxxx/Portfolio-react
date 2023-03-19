@@ -444,7 +444,7 @@ export const dayLightSwitcher = (props) => {
 			state.theme =theme;
 			changeTheme(theme);
 		},
-		change: setNewTheme
+		change: setNewTheme,
 	};
 	
 };

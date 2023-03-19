@@ -48,13 +48,13 @@ const SplidePortfolio = (props) => {
 	const changeDescription = (selectedImage) => {
 		const portfolioNumber = props.selected;
 		props.setStore.setSelectedPortfolioImage(selectedImage);
-		props.setStore.setModalImage(props.list[portfolioNumber].images[selectedImage]?.images.slice(-1)[0].image);
+		/*props.setStore.setModalImage(props.list[portfolioNumber].images[selectedImage]?.images.slice(-1)[0].image);
 		props.setStore.setModalLink(props.list[portfolioNumber].images[selectedImage]?.link);
-		props.setStore.setModalDescr(props.list[portfolioNumber].images[selectedImage]?.descr);
+		props.setStore.setModalDescr(props.list[portfolioNumber].images[selectedImage]?.descr);*/
 	};
 	
-	const showModal = () => {
-		props.setStore.setModal(true);
+	const showSplideModal = () => {
+		props.setStore.setModalSplide(true);
 	};
 
 
@@ -76,11 +76,11 @@ const SplidePortfolio = (props) => {
 		portfolioSplide.current.on("active", () => {changeDescription(portfolioSplide.current.index);});
 			
 		const _slides = _splideMain.current.querySelectorAll(".splide__slide-container");
-		_slides.forEach(cont => cont.addEventListener("click", showModal));
+		_slides.forEach(cont => cont.addEventListener("click", showSplideModal));
 		changeDescription(portfolioSplide.current.index);
 		return () => {
 			
-			_slides.forEach(cont => cont.removeEventListener("click", showModal));
+			_slides.forEach(cont => cont.removeEventListener("click", showSplideModal));
 			portfolioSplide.current.destroy();
 		};
 	}, [props.selected]);

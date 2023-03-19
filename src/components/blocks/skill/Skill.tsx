@@ -13,14 +13,11 @@ function Skill ({name, percent}: MySkill): JSX.Element {
 		setTimeout(() => {
 			setCurrentPercent(percent);
 		},100);
-		console.log("setted");
 		return () => {
-			console.log("removed");
 			setCurrentPercent(0);
 		};
 	}, []);
 
-	console.log("rerendered");
 	
 
 	return(

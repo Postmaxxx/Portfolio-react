@@ -53,12 +53,23 @@ const reducer = function(state: IState = initialState, action: Action<any>): ISt
 				message : action.payload
 			}
 		};
-	case actionList.SET_MODAL:
+	case actionList.SET_MODAL_IMAGE:
 		return {
 			...state,
-			modal: action.payload
+			modalImage: {
+				...state.modalImage,
+				show: action.payload
+			}
 		};
-	case actionList.SET_MODAL_IMAGE:
+	case actionList.SET_MODAL_SPLIDE:
+		return {
+			...state,
+			modalSplide: {
+				...state.modalSplide,
+				show: action.payload
+			}
+		};
+	/*case actionList.SET_MODAL_IMAGE:
 		return {
 			...state,
 			modalImage: action.payload
@@ -72,7 +83,7 @@ const reducer = function(state: IState = initialState, action: Action<any>): ISt
 		return {
 			...state,
 			modalLink: action.payload
-		};
+		};*/
 	case actionList.SET_MODALMSG:
 		return {
 			...state,
