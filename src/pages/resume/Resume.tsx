@@ -6,13 +6,12 @@ import History from "../../components/blocks/history/History";
 import resumeDoc from "../../assets/docs/resume.pdf";
 import "./resume.scss";
 import { MySkill, WorkEducationItem, IProps, IMapStateToProps, IMapdispatchToProps } from "src/models";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 
 
 interface IResumeProps {
 	skills: Array<MySkill>
-	skillFillSpeed: number,
 	workExperience: Array<WorkEducationItem>,
 	education: Array<WorkEducationItem>,
 }
@@ -44,15 +43,16 @@ const Resume: React.FC<IResumeProps>  = (props: IResumeProps) => {
 		};
 	}, []);
 
+
 	return(
 		<div className="page-container">
 			<div className="page_resume">
 				<section className='skills'> 
 					<h2>My skills<em>My skills</em></h2>
 					<div className="skills__container"> 
-						{props.skills.map((skill: MySkill, index: number) => {
+						{props.skills.map((skill: MySkill) => {
 							return(
-								<Skill key={skill.name} skill={skill} speed={props.skillFillSpeed}/>
+								<Skill key={skill.name} name={skill.name} percent={skill.percent}/>
 							);
 						})}
 					</div>
@@ -104,7 +104,6 @@ const Resume: React.FC<IResumeProps>  = (props: IResumeProps) => {
 const mapStateToProps = (state)  => {
 	return {
 		skills: state.skills,
-		skillFillSpeed: state.skillFillSpeed,
 		workExperience: state.workExperience,
 		education: state.education,
 	};

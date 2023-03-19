@@ -16,6 +16,7 @@
     display: flex;
     visibility: hidden;
     transition: $transition_base;
+    
 
     @include respond-to(sm){
         padding-bottom: 50px;
@@ -201,7 +202,8 @@
                     }
                    
                     & .splide__slide {
-                        opacity: 0.4;
+                        //opacity: 0.4;
+                        filter: brightness(0.4);
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -209,7 +211,8 @@
                         min-width: 50px;
 
                         &.is-active {
-                            opacity: 1;
+                            //opacity: 1;
+                            filter: brightness(1);
                             border: none;
                         }
 
@@ -235,12 +238,14 @@
 
     & .modal__close {
         transition: $transition_base;
+        background-color: transparent;
         opacity: 0;
         position: absolute;
         top: 20px;
         right: 20px;
-        width: 35px;
+        width: 45px;
         border-radius: 50%;
+        border: 1px solid map.get($dark, "text_soft");
         display: flex;
         align-items: center;
         justify-content: center;
@@ -253,20 +258,20 @@
         & > svg {
             fill: map.get($dark, "text_soft");
             transition: fill $transition_base;
-            width: 100%;
+            width: 80%;
         }
 
         &:hover {
             cursor: pointer;
             & > svg {
-                fill: map.get($light, "nav_selected");
+                fill: map.get($dark, "nav_selected");
             }
         }
     }
 
     &.show {
         visibility: visible;
-        background-color: map.get($light, "modal_bg");
+        background-color: map.get($dark, "modal_bg");
         transition: $transition_base;
 
         & .modal {
@@ -282,3 +287,6 @@
     }
 }
 
+body.dark {
+
+}

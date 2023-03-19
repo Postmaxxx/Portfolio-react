@@ -11,5 +11,4 @@ const Message: IMessage = ({header, text, buttonText, buttonClickAction }) => {
 	);
 };
 
-
 export default Message;

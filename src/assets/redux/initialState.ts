@@ -204,10 +204,6 @@ initialState = {
 			value: "Max Postnikov"
 		},
 		{
-			descr: "Age",
-			value: "39",
-		},
-		{
 			descr: "Nationality",
 			value: "Russian"
 		},
@@ -219,7 +215,7 @@ initialState = {
 
 		{
 			descr: "Adress",
-			value: "Alanya, Turkey"
+			value: "Vancouver, BC"
 		},
 		{
 			descr: "Freelance",
@@ -227,7 +223,7 @@ initialState = {
 		},
 		{
 			descr: "Fulltime",
-			value: "Available"// (British Columbia)
+			value: "Available"
 		},
 	],
 	skills: [
@@ -405,7 +401,7 @@ initialState = {
 
 	portfolios: {
 		selected: 0,
-		selectedImage: 0,
+		selectedImage: 0, //for changing to 0 to add 1 initial render in SplidePortfolio, should be be <> 0
 		list: [
 			{
 				name: "Plenco",

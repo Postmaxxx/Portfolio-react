@@ -6,11 +6,11 @@ import { Action, IMapdispatchToProps, IMapStateToProps, IPropsJSX } from "src/mo
 
 
 
-const Modal:IPropsJSX = (props) => {
+const Modal = (props) => {
 	return (
 		<>
 			<div 
-				className={`modal_common ${props.store.modalMsg.active ? "active" : ""}`}
+				className={`modal_common ${props.active ? "active" : ""}`}
 				onClick={(): Action<boolean> => props.setStore.setModalMsgVisible(false)}
 			>
 				{props.children}
@@ -20,9 +20,14 @@ const Modal:IPropsJSX = (props) => {
 };
 
 
+const mapStateToProps = (state)  => {
+	return {
+		active: state.modalMsg.active
+	};
+};
 
 
-const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
+
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),

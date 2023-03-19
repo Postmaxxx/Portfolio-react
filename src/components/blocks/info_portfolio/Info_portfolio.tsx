@@ -6,15 +6,21 @@ import { IMapdispatchToProps, IMapStateToProps, IPropsJSX } from "src/models";
 
 
 
-const InfoPortfolio:IPropsJSX = (props) => {
+const InfoPortfolio = (props) => {
 	return(
 		<div className="info_portfolio__container">
-			<p>{props.store.portfolios.list[props.store.portfolios.selected].descr}</p>
+			<p>{props.list[props.selected].descr}</p>
 		</div>
 	);
 };
 
-const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
+const mapStateToProps = (state)  => {
+	return {
+		list: state.portfolios.list,
+		selected: state.portfolios.selected
+	};
+};
+
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),

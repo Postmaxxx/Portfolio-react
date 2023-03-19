@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Preloader from "./components/preloader/Preloader";
 import { INoPropsJSX } from "./models";
 import "./assets/css/_base.scss";
-import Test from "./pages/Test";
 const LazyModalImage = lazy(() => import("./components/modals/ModalNew"));
 const LazyThemeSwitcher = lazy(() => import("./components/theme_switcher/ThemeSwitcher"));
 const LazySidePanel = lazy(() => import("./components/side_panel/SidePanel"));
@@ -17,7 +16,6 @@ const LazyPage404 = lazy(() => import("./pages/page404/page404"));
 const App: INoPropsJSX = () => {
 	return (
 		<>
-			<Test />
 			<Suspense fallback={<Preloader />}>
 				<LazyModalImage />
 			</Suspense>

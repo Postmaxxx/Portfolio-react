@@ -1,4 +1,5 @@
 import { createElement, FC, SVGProps } from "react";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 type EmptyVoid = () => void
 
@@ -18,7 +19,7 @@ interface IStar {
     size: number
     blinkDuration:  number
 }
-
+/*
 export interface IThemeSwitcherProps {
     themeSwitcher: string
     star: FC<SVGProps<SVGSVGElement>>
@@ -63,347 +64,387 @@ interface IThemeStateDefault {
     clouds: Cloud[]
 }
 */
-let theme_state__default = {} as IThemeState;
+//let state__default = {} as IThemeState;
 
-theme_state__default = {
-	...theme_state__default,
-	width: 70,
-	height: 40,
-	circleSize: 14,
-	duration: 2000,
-	theme: "light",
-	numberOfStars: 30,
-	nodeForTheme: document.querySelector("body"),
-	saveState: "",
-	starsBlinkingDuration: [0.9, 1.2, 1.4, 1.6, 1.8, 2.1], //default durations
-	starsBlinkingAnimation: `
-        0% { opacity: .2 }
-        50% { opacity: .8 }
-        100% { opacity: .2 }`,
-	clouds: [ //default styles for clouds
-		{
-			width: 30, //px
-			gap: 15, //px
-			top: 0, //in percent of height
-			speed: 7, //sec for 1 cycle, less -> faster
-			opacity: 1, //transparent for line
-		},
-		{
-			width: 25,
-			gap: 20,
-			top: 25,
-			speed: 4,
-			opacity: 0.85,
-		},
-		{
-			width: 20,
-			gap: 20,
-			top: 40,
-			speed: 5,
-			opacity: 0.7,
-		},
-	]
-};
-
-
-let theme_state = {} as IThemeState;
-
-theme_state = {
-	...theme_state,
-	width: theme_state__default.width,
-	height: theme_state__default.height,
-	circleSize: theme_state__default.circleSize,
-	duration: theme_state__default.duration,
-	theme: theme_state__default.theme,
-	numberOfStars: theme_state__default.numberOfStars,
-	starsBlinkingDuration: theme_state__default.starsBlinkingDuration, //default durations
-	clouds: theme_state__default.clouds,
-	starsBlinkingAnimation: theme_state__default.starsBlinkingAnimation,
-	isChanging: false,
-	nodeForTheme: theme_state__default.nodeForTheme,
-	saveState: theme_state__default.saveState,
-};
- 
-
-const classSwitcher = (classRemove: string, classAdd: string, delay: number): Promise<void> => { //class +/- for _contentSwitcher using delay
-	return new Promise((res) => {
-		setTimeout((): void => {
-			classRemove ? theme_state._contentSwitcher.classList.remove(classRemove) : void 0;
-			classAdd ? theme_state._contentSwitcher.classList.add(classAdd) : void 0;
-			res();
-		}, delay);
-	});
-};
-
-  
-const changeTheme: EmptyVoid = () => { //main switcher
-	if (theme_state.isChanging) { return; }
-	theme_state.saveState && localStorage.setItem(theme_state.saveState, theme_state.theme);
-	theme_state.isChanging = true;
-	if (theme_state.theme === "light") {
-		//console.log('In light');
-		theme_state.nodeForTheme.classList.remove("dark");
-		classSwitcher("", "theme_light_1", 0)
-			.then(() => classSwitcher("theme_light_1", "theme_light_2", theme_state.duration / 4))
-			.then(() => {classSwitcher("theme_light_2", "theme_light", 30); theme_state.isChanging = false;});
-	} else {
-		//console.log('In dark');
-		theme_state.nodeForTheme.classList.add("dark");
-		classSwitcher("theme_light", "theme_light_back_1", 0)
-			.then(() => classSwitcher("theme_light_back_1", "theme_light_back_2", theme_state.duration / 4))
-			.then(() => {classSwitcher("theme_light_back_2", "", 30); theme_state.isChanging = false;});
-	}
-};
-
-
-const createThemeSwitcherStyles:EmptyVoid = () => {
-	const circlePosition: number = theme_state.width / 2 - theme_state.circleSize; //circles must contact each other
-
-	const styleEl: HTMLStyleElement = document.createElement("style");
-	document.head.appendChild(styleEl);
-	const styleThemeSwitcher: CSSStyleSheet = styleEl.sheet;
-
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher {
-            width: ${theme_state.width}px;
-            height: ${theme_state.height}px;
-            border-radius: ${theme_state.height / 2}px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        }`);
-
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher > div {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-        }`);
-
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher > div.light {
-            background-color: rgb(100 181 245);
-            clip-path: circle(${theme_state.circleSize}px at ${circlePosition}px 50%);
-            transition: ${theme_state.duration/4}ms cubic-bezier(0,1,0,1);
-        }`);
-
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher > div.dark {
-            transition: ${theme_state.duration/4}ms cubic-bezier(0,1,0,1);
-            background-color: #002E6E;
-        }`);
-
-
-	//theme light_1
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher.theme_light_1 .light {
-            transition: ${theme_state.duration/4}ms cubic-bezier(1,0,1,0);
-            clip-path: circle(${theme_state.width*10}px at ${circlePosition - theme_state.width * 10 + theme_state.circleSize}px 50%);
-        }`);
-       
-
-	//theme light_2
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher.theme_light_2 .light {
-            transition: ${theme_state.duration/4}ms cubic-bezier(1,0,1,0);
-            clip-path: circle(${theme_state.width*10}px at ${circlePosition - theme_state.width * 10 + theme_state.circleSize}px 50%);
-        }`);
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher.theme_light_2 .dark {
-            transition: ${theme_state.duration/4}ms cubic-bezier(1,0,1,0);
-            clip-path: circle(${theme_state.width*10}px at ${circlePosition + theme_state.width * 10 + theme_state.circleSize}px 50%);
-        }`);
-
-    
-	//theme light
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher.theme_light .light {
-            transition: ${theme_state.duration/4}ms cubic-bezier(0,1,0,1);
-            z-index: 900;
-            clip-path: circle(${theme_state.width*10}px at ${theme_state.circleSize - theme_state.width * 9}px 50%);
-        }`);
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher.theme_light .dark {
-            transition: ${theme_state.duration/4}ms cubic-bezier(0,1,0,1);
-            z-index: 1000;
-            clip-path: circle(${theme_state.circleSize}px at ${circlePosition + theme_state.circleSize * 2}px 50%);
-        }`);
-
-
-	//theme light_back_1
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher.theme_light_back_1 .light {
-            transition: 0ms;
-            z-index: 900;
-            clip-path: circle(${theme_state.width*10}px at ${theme_state.circleSize - theme_state.width * 9}px 50%);
-
-        }`);
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher.theme_light_back_1 .dark {
-            transition: ${theme_state.duration/4}ms cubic-bezier(1,0,1,0);
-            z-index: 1000;
-            clip-path: circle(${theme_state.width * 10}px at ${circlePosition + theme_state.circleSize + theme_state.width * 10}px 50%);
-        }`);
-
-
-	//theme light_back_2
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher.theme_light_back_2 .light {
-            transition: 0ms;
-            z-index: 1000;
-            clip-path: circle(${theme_state.width*10}px at ${circlePosition - theme_state.width * 10 + theme_state.circleSize}px 50%);
-        }`);
-        
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher.theme_light_back_2 .dark {
-            transition: 0ms;
-            z-index: 900;
-            clip-path: circle(${theme_state.width * 10}px at ${circlePosition + theme_state.circleSize + theme_state.width * 10}px 50%);
-        }`);
-
-
-	// themes_dark__star blinks
-	theme_state.starsBlinkingDuration.forEach((duration, index) => {
-		styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher .dark .theme_dark__star-${index} {
-            animation: star-blink ${duration}s linear infinite;
-        }`);
-	});
-
-
-	//star blinking animation
-	styleThemeSwitcher.insertRule(`
-        @keyframes star-blink {
-            ${theme_state.starsBlinkingAnimation}
-        }`);
-
-        
-	// Clouds base
-	styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher .light > div {
-            display: inline-block;
-            height: auto;
-            position: absolute;
-            left: 0;
-        }`);
-
-	// all lines of clouds (line, cloud, animation)
-	theme_state.clouds.forEach((cloud, index) => {
-		styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher .light .clouds-${index} {
-            width: ${(cloud.width * 6 + cloud.gap * 5)}px;
-            top: ${cloud.top}%;
-            animation: theme-clouds-${index}  linear infinite;
-            animation-duration: ${cloud.speed}s;
-        }`);
-		styleThemeSwitcher.insertRule(`
-        ${theme_state.themeSwitcher} > .content-switcher .light .clouds-${index} .cloud {
-            width: ${cloud.width}px;
-            margin-right: ${cloud.gap}px;
-            opacity: ${cloud.opacity};
-        }`); 
-		styleThemeSwitcher.insertRule(`
-        @keyframes theme-clouds-${index} {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(${-(cloud.width + cloud.gap)}px); }
-        }`);
-	});    
-};
-
-
-const createThemeSwitcherHtml = (currentTheme: TTheme) => {
-	const _themeSwitcher = document.querySelector(theme_state.themeSwitcher);
-	const _contentSwitcher = document.createElement("div");
-	_contentSwitcher.classList.add("content-switcher");
-	_contentSwitcher.classList.add(currentTheme !== "dark" ? "theme_light" : "");
-	_themeSwitcher.appendChild(_contentSwitcher);
-	const _dark = document.createElement("div");
-	const _light = document.createElement("div");
-	_dark.classList.add("dark");
-	_light.classList.add("light");
-	_contentSwitcher.appendChild(_dark);
-	_contentSwitcher.appendChild(_light);
-	theme_state._contentSwitcher = theme_state._themeSwitcher.querySelector(".content-switcher");
-};
-
-
-const createStars: EmptyVoid = () => {
-	const _contentSwitcherDark = theme_state._themeSwitcher.querySelector(".content-switcher .dark");
-	new Array(theme_state.numberOfStars)
-		.fill("")
-		.map((): IStar => {
-			let size: number = Math.floor(Math.random()*20 + 1);
-			size = size > 13 ? Math.floor(size / 3) : size; //to create more small stars than big
-			return {
-				x: Math.floor(Math.random() * theme_state.width),
-				y: Math.floor(Math.random() * theme_state.height),
-				size: size,
-				blinkDuration:  Math.floor(Math.random() * theme_state.starsBlinkingDuration.length) //different duration of blinking
-			};
-		})
-		.forEach((star: IStar) => {
-			const _star = document.createElement("img");
-			_star.classList.add(`theme_dark__star-${star.blinkDuration}`);
-			_star.style.position = "absolute";
-			_star.style.left = `${star.x}px`;
-			_star.style.top = `${star.y}px`;
-			_star.style.width = `${star.size}px`;
-			_star.style.aspectRatio = "1";
-			_star.src = String(theme_state.star);
-			_contentSwitcherDark.appendChild(_star);
+export const dayLightSwitcher = (props) => {
+	
+	const state__default = {
+		//...state__default,
+		width: 70,
+		height: 40,
+		circleSize: 14,
+		duration: 2000,
+		theme: "light",
+		numberOfStars: 30,
+		nodeForTheme: document.querySelector("body"),
+		saveState: "",
+		starsBlinkingDuration: [0.9, 1.2, 1.4, 1.6, 1.8, 2.1], //default durations
+		starsBlinkingAnimation: `
+			0% { opacity: .2 }
+			50% { opacity: .8 }
+			100% { opacity: .2 }`,
+		clouds: [ //default styles for clouds
+			{
+				width: 30, //px
+				gap: 15, //px
+				top: 0, //in percent of height
+				speed: 7, //sec for 1 cycle, less -> faster
+				opacity: 1, //transparent for line
+			},
+			{
+				width: 25,
+				gap: 20,
+				top: 25,
+				speed: 4,
+				opacity: 0.85,
+			},
+			{
+				width: 20,
+				gap: 20,
+				top: 40,
+				speed: 5,
+				opacity: 0.7,
+			},
+		]
+	};
+	
+	
+	//let state = {} as IThemeState;
+	
+	const state: any = {
+		//...state,
+		_themeSwitcherContainer: null,
+		_themeSwitcher: null,
+		_themeSwitcherInput: null,
+		width: state__default.width,
+		height: state__default.height,
+		circleSize: state__default.circleSize,
+		duration: state__default.duration,
+		theme: state__default.theme,
+		numberOfStars: state__default.numberOfStars,
+		starsBlinkingDuration: state__default.starsBlinkingDuration, //default durations
+		clouds: state__default.clouds,
+		starsBlinkingAnimation: state__default.starsBlinkingAnimation,
+		isChanging: false,
+		nodeForTheme: state__default.nodeForTheme,
+		saveState: state__default.saveState,
+	};
+	 
+	
+	const classSwitcher = (classRemove: string, classAdd: string, delay: number): Promise<void> => { //class +/- for _contentSwitcher using delay
+		return new Promise((res) => {
+			setTimeout((): void => {
+				classRemove ? state._contentSwitcher.classList.remove(classRemove) : void 0;
+				classAdd ? state._contentSwitcher.classList.add(classAdd) : void 0;
+				res();
+			}, delay);
 		});
-};
-
-
-const createClouds: EmptyVoid = () => {
-	const _contentSwitcherLight = theme_state._themeSwitcher.querySelector(".content-switcher .light");
-	const numberOfClouds: string[] = new Array(Math.ceil(theme_state.width / (theme_state.clouds[theme_state.clouds.length - 1].width + theme_state.clouds[theme_state.clouds.length - 1].gap) + 2)).fill(""); //number of clouds in a cloud-raw, depends on the cloud size and gap between clouds + some reserve
-	theme_state.clouds.forEach((cloud, index: number) => {
-		const _clouds = document.createElement("div");
-		_clouds.classList.add(`clouds-${index}`);
-		_contentSwitcherLight.appendChild(_clouds);
-
-		numberOfClouds.forEach((): void => {
-			const _cloud = document.createElement("img");
-			_cloud.classList.add("cloud");
-			_cloud.src = String(theme_state.cloud);
-			_clouds.appendChild(_cloud);
+	};
+	
+	  
+	const changeTheme = (newTheme) => { //main switcher
+		if (state.isChanging) { return; }
+		state.saveState && localStorage.setItem(state.saveState, state.theme);
+		state.isChanging = true;
+		if (newTheme === "light") {
+			//console.log('In light');
+			state.nodeForTheme.classList.remove("dark");
+			classSwitcher("", "theme_light_1", 0)
+				.then(() => classSwitcher("theme_light_1", "theme_light_2", state.duration / 4))
+				.then(() => {classSwitcher("theme_light_2", "theme_light", 30); state.isChanging = false;});
+		} else {
+			//console.log('In dark');
+			state.nodeForTheme.classList.add("dark");
+			classSwitcher("theme_light", "theme_light_back_1", 0)
+				.then(() => classSwitcher("theme_light_back_1", "theme_light_back_2", state.duration / 4))
+				.then(() => {classSwitcher("theme_light_back_2", "", 30); state.isChanging = false;});
+		}
+	};
+	
+	
+	const createThemeSwitcherStyles:EmptyVoid = () => {
+		const circlePosition: number = state.width / 2 - state.circleSize; //circles must contact each other
+	
+		const styleEl: HTMLStyleElement = document.createElement("style");
+		document.head.appendChild(styleEl);
+		const styleThemeSwitcher: CSSStyleSheet = styleEl.sheet;
+	
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher {
+				width: ${state.width}px;
+				height: ${state.height}px;
+				border-radius: ${state.height / 2}px;
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			}`);
+	
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher > div {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+			}`);
+	
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher > div.light {
+				background-color: rgb(100 181 245);
+				clip-path: circle(${state.circleSize}px at ${circlePosition}px 50%);
+				transition: ${state.duration/4}ms cubic-bezier(0,1,0,1);
+			}`);
+	
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher > div.dark {
+				transition: ${state.duration/4}ms cubic-bezier(0,1,0,1);
+				background-color: #002E6E;
+			}`);
+	
+	
+		//theme light_1
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher.theme_light_1 .light {
+				transition: ${state.duration/4}ms cubic-bezier(1,0,1,0);
+				clip-path: circle(${state.width*10}px at ${circlePosition - state.width * 10 + state.circleSize}px 50%);
+			}`);
+		   
+	
+		//theme light_2
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher.theme_light_2 .light {
+				transition: ${state.duration/4}ms cubic-bezier(1,0,1,0);
+				clip-path: circle(${state.width*10}px at ${circlePosition - state.width * 10 + state.circleSize}px 50%);
+			}`);
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher.theme_light_2 .dark {
+				transition: ${state.duration/4}ms cubic-bezier(1,0,1,0);
+				clip-path: circle(${state.width*10}px at ${circlePosition + state.width * 10 + state.circleSize}px 50%);
+			}`);
+	
+		
+		//theme light
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher.theme_light .light {
+				transition: ${state.duration/4}ms cubic-bezier(0,1,0,1);
+				z-index: 900;
+				clip-path: circle(${state.width*10}px at ${state.circleSize - state.width * 9}px 50%);
+			}`);
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher.theme_light .dark {
+				transition: ${state.duration/4}ms cubic-bezier(0,1,0,1);
+				z-index: 1000;
+				clip-path: circle(${state.circleSize}px at ${circlePosition + state.circleSize * 2}px 50%);
+			}`);
+	
+	
+		//theme light_back_1
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher.theme_light_back_1 .light {
+				transition: 0ms;
+				z-index: 900;
+				clip-path: circle(${state.width*10}px at ${state.circleSize - state.width * 9}px 50%);
+	
+			}`);
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher.theme_light_back_1 .dark {
+				transition: ${state.duration/4}ms cubic-bezier(1,0,1,0);
+				z-index: 1000;
+				clip-path: circle(${state.width * 10}px at ${circlePosition + state.circleSize + state.width * 10}px 50%);
+			}`);
+	
+	
+		//theme light_back_2
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher.theme_light_back_2 .light {
+				transition: 0ms;
+				z-index: 1000;
+				clip-path: circle(${state.width*10}px at ${circlePosition - state.width * 10 + state.circleSize}px 50%);
+			}`);
+			
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher.theme_light_back_2 .dark {
+				transition: 0ms;
+				z-index: 900;
+				clip-path: circle(${state.width * 10}px at ${circlePosition + state.circleSize + state.width * 10}px 50%);
+			}`);
+	
+	
+		// themes_dark__star blinks
+		state.starsBlinkingDuration.forEach((duration, index) => {
+			styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher .dark .theme_dark__star-${index} {
+				animation: star-blink ${duration}s linear infinite;
+			}`);
 		});
-	});
-};
-
-
-export const createThemeSwitcher = (props: IThemeSwitcherProps): void => {
-	theme_state.themeSwitcher = props.themeSwitcher;
-	theme_state._themeSwitcher = document.querySelector(props.themeSwitcher);
-	theme_state.star = props.star;
-	theme_state.cloud = props.cloud;
-	theme_state.nodeForTheme = props.nodeForTheme ? props.nodeForTheme : theme_state__default.nodeForTheme;
-	theme_state.width = props.width ? props.width : theme_state__default.width;
-	theme_state.height = props.height ? props.height : theme_state__default.height;
-	theme_state.circleSize = props.circleSize ? props.circleSize : theme_state__default.circleSize;
-	theme_state.duration = props.duration ? props.duration : theme_state__default.duration;
-	theme_state.theme = props.theme ? props.theme : theme_state__default.theme;
-	theme_state.numberOfStars = props.numberOfStars ? props.numberOfStars : theme_state__default.numberOfStars;
-	theme_state.starsBlinkingDuration = props.starsBlinkingDuration ? props.starsBlinkingDuration : theme_state__default.starsBlinkingDuration;
-	theme_state.clouds = props.clouds ? props.clouds : theme_state__default.clouds;
-	theme_state.starsBlinkingAnimation = props.starsBlinkingAnimation ? props.starsBlinkingAnimation : theme_state__default.starsBlinkingAnimation;
-	theme_state.saveState = props.saveState ? props.saveState : theme_state__default.saveState;
-	new Promise<void>((res) => {
-		createThemeSwitcherHtml("light");
-		createThemeSwitcherStyles();
-		createStars();
-		createClouds();
-		res();
-	})
-		.then(() => {
-			if (theme_state.theme == "dark") {
-				changeTheme();
-			}
-			theme_state._themeSwitcher.addEventListener("click", () => {
-				theme_state.theme = theme_state.theme === "light" ? "dark" : "light";
-				changeTheme();
+	
+	
+		//star blinking animation
+		styleThemeSwitcher.insertRule(`
+			@keyframes star-blink {
+				${state.starsBlinkingAnimation}
+			}`);
+	
+			
+		// Clouds base
+		styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher .light > div {
+				display: inline-block;
+				height: auto;
+				position: absolute;
+				left: 0;
+			}`);
+	
+		// all lines of clouds (line, cloud, animation)
+		state.clouds.forEach((cloud, index) => {
+			styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher .light .clouds-${index} {
+				width: ${(cloud.width * 6 + cloud.gap * 5)}px;
+				top: ${cloud.top}%;
+				animation: theme-clouds-${index}  linear infinite;
+				animation-duration: ${cloud.speed}s;
+			}`);
+			styleThemeSwitcher.insertRule(`
+			.theme-switcher > .content-switcher .light .clouds-${index} .cloud {
+				width: ${cloud.width}px;
+				margin-right: ${cloud.gap}px;
+				opacity: ${cloud.opacity};
+			}`); 
+			styleThemeSwitcher.insertRule(`
+			@keyframes theme-clouds-${index} {
+				0% { transform: translateX(0); }
+				100% { transform: translateX(${-(cloud.width + cloud.gap)}px); }
+			}`);
+		});    
+	};
+	
+	
+	
+	const createThemeSwitcherHtml = (currentTheme) => {
+	
+		const _label = document.createElement("LABEL");
+		
+		state._themeSwitcherInput = document.createElement("INPUT");
+		state._themeSwitcherInput.setAttribute("type", "checkbox");
+		state._themeSwitcherInput.setAttribute("aria-label", "Change the site theme");
+	
+		state._themeSwitcher = document.createElement("DIV");
+		state._themeSwitcher.classList.add("theme-switcher");
+	
+		_label.appendChild(state._themeSwitcherInput);
+		_label.appendChild(state._themeSwitcher);
+		state._themeSwitcherContainer.appendChild(_label);
+		
+		const _contentSwitcher = document.createElement("div");
+		_contentSwitcher.classList.add("content-switcher");
+		_contentSwitcher.classList.add(currentTheme !== "dark" ? "theme_light" : "");
+		state._themeSwitcher.appendChild(_contentSwitcher);
+		const _dark = document.createElement("div");
+		const _light = document.createElement("div");
+		_dark.classList.add("dark");
+		_light.classList.add("light");
+		_contentSwitcher.appendChild(_dark);
+		_contentSwitcher.appendChild(_light);
+		state._contentSwitcher = _contentSwitcher;
+	};
+	
+	
+	const createStars: EmptyVoid = () => {
+		const _contentSwitcherDark = state._themeSwitcher.querySelector(".content-switcher .dark");
+		new Array(state.numberOfStars)
+			.fill("")
+			.map((): IStar => {
+				let size: number = Math.floor(Math.random()*20 + 1);
+				size = size > 13 ? Math.floor(size / 3) : size; //to create more small stars than big
+				return {
+					x: Math.floor(Math.random() * state.width),
+					y: Math.floor(Math.random() * state.height),
+					size: size,
+					blinkDuration:  Math.floor(Math.random() * state.starsBlinkingDuration.length) //different duration of blinking
+				};
+			})
+			.forEach((star: IStar) => {
+				const _star = document.createElement("img");
+				_star.classList.add(`theme_dark__star-${star.blinkDuration}`);
+				_star.style.position = "absolute";
+				_star.style.left = `${star.x}px`;
+				_star.style.top = `${star.y}px`;
+				_star.style.width = `${star.size}px`;
+				_star.style.aspectRatio = "1";
+				_star.src = String(state.star);
+				_contentSwitcherDark.appendChild(_star);
+			});
+	};
+	
+	
+	const createClouds: EmptyVoid = () => {
+		const _contentSwitcherLight = state._themeSwitcher.querySelector(".content-switcher .light");
+		const numberOfClouds: string[] = new Array(Math.ceil(state.width / (state.clouds[state.clouds.length - 1].width + state.clouds[state.clouds.length - 1].gap) + 2)).fill(""); //number of clouds in a cloud-raw, depends on the cloud size and gap between clouds + some reserve
+		state.clouds.forEach((cloud, index: number) => {
+			const _clouds = document.createElement("div");
+			_clouds.classList.add(`clouds-${index}`);
+			_contentSwitcherLight.appendChild(_clouds);
+	
+			numberOfClouds.forEach((): void => {
+				const _cloud = document.createElement("img");
+				_cloud.classList.add("cloud");
+				_cloud.src = String(state.cloud);
+				_clouds.appendChild(_cloud);
 			});
 		});
+	};
+
+
+	const setNewTheme = () => {
+		state.theme = state.theme === "light" ? "dark" : "light";
+		changeTheme(state.theme);
+	};
+	
+	
+	const createThemeSwitcher = () => {
+		state._themeSwitcherContainer = document.querySelector(props.themeSwitcherContainer);
+		state.star = props.star;
+		state.cloud = props.cloud;
+		state.nodeForTheme = props.nodeForTheme ? props.nodeForTheme : state__default.nodeForTheme;
+		state.width = props.width ? props.width : state__default.width;
+		state.height = props.height ? props.height : state__default.height;
+		state.circleSize = props.circleSize ? props.circleSize : state__default.circleSize;
+		state.duration = props.duration ? props.duration : state__default.duration;
+		state.theme = props.theme ? props.theme : state__default.theme;
+		state.numberOfStars = props.numberOfStars ? props.numberOfStars : state__default.numberOfStars;
+		state.starsBlinkingDuration = props.starsBlinkingDuration ? props.starsBlinkingDuration : state__default.starsBlinkingDuration;
+		state.clouds = props.clouds ? props.clouds : state__default.clouds;
+		state.starsBlinkingAnimation = props.starsBlinkingAnimation ? props.starsBlinkingAnimation : state__default.starsBlinkingAnimation;
+		state.saveState = props.saveState ? props.saveState : state__default.saveState;
+		new Promise<void>((res) => {
+			createThemeSwitcherHtml("light");
+			createThemeSwitcherStyles();
+			createStars();
+			createClouds();
+			res();
+		})
+			.then(() => {
+				if (state.theme == "dark") {
+					changeTheme("dark");
+				}
+				state._themeSwitcherInput.addEventListener("change", setNewTheme);
+			});
+	};
+
+	const destroyThemeSwitcher = () => {
+		state._themeSwitcherInput.removeEventListener("change", setNewTheme);
+		while (state._themeSwitcherContainer.firstChild) {
+			state._themeSwitcherContainer.removeChild(state._themeSwitcherContainer.firstChild);
+		  }
+	};
+
+	return {
+		create: createThemeSwitcher,
+		destroy: destroyThemeSwitcher,
+		changeTo: (theme) => {
+			state.theme =theme;
+			changeTheme(theme);
+		},
+		change: setNewTheme
+	};
+	
 };
