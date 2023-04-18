@@ -2,11 +2,16 @@ import * as actions from "../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "./modal.scss";
-import { Action, IMapdispatchToProps, IMapStateToProps, IPropsJSX } from "src/models";
+import { Action, IMapdispatchToProps, ISetStore, IState } from "src/models";
+import { ReactNode } from "react";
 
+interface IModal {
+	active: boolean
+	setStore: ISetStore
+	children: ReactNode
+}
 
-
-const Modal = (props) => {
+const Modal: React.FC<IModal> = (props: IModal): JSX.Element => {
 	return (
 		<>
 			<div 
@@ -20,13 +25,11 @@ const Modal = (props) => {
 };
 
 
-const mapStateToProps = (state)  => {
+const mapStateToProps = (state: IState)  => {
 	return {
 		active: state.modalMsg.active
 	};
 };
-
-
 
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({

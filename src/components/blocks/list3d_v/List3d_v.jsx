@@ -12,9 +12,9 @@ let listLength = 0;
 let stepsToMove = 0;
 
 const List3d_v = (props) => {
-	stepsToMove = props.store.portfolios.selected - selected;
-	selected = props.store.portfolios.selected;
-	listLength = props.store.portfolios.list.length;
+	stepsToMove = props.selected - selected;
+	selected = props.selected;
+	listLength = props.list.length;
 	if (stepsToMove != 0) {
 		if (Math.abs(stepsToMove) > listLength / 2) {
 			stepsToMove = stepsToMove - Math.sign(stepsToMove)*listLength;
@@ -43,7 +43,7 @@ const List3d_v = (props) => {
 	return (
 		<div className="list3d_v__container">
 			<div className="list3d_v" style={{transform: `rotateX(${(360 / listLength) * rotateStep}deg)`}}>
-				{[...props.store.portfolios.list].map((portfolio, index) => {
+				{[...props.list].map((portfolio, index) => {
 					let portfolioStyle = {};
 					let step = 360 / listLength;
 					let deltaPos = Math.min(Math.abs(selected - index), listLength - Math.abs(index - selected));
@@ -64,52 +64,16 @@ const List3d_v = (props) => {
 };
 
 
-const mapStateToProps = (store) => ({store: store});
+const mapStateToProps = (state) => {
+	return {
+		selected: state.portfolios.selected,
+		list: state.portfolios.list
+	};
+
+};
 
 const mapDispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(List3d_v);
-/*
-        <div className="list__container">
-            <div className="list3d" style={{transform: `rotateX(-1deg) rotateY(${(-360 / listLength) * rotateStep}deg)`}}>
-                {props.store.portfolios.list.map((portfolio, index) => {
-                    let portfolioStyle = {};
-                    let step = 360 / listLength;
-                    let deltaPos = Math.min(Math.abs(selected - index), listLength - Math.abs(index - selected));
-                    let opacity = 1 - deltaPos/(listLength / 3);
-                    opacity = opacity < 0 ? 0 : opacity;
-
-                    portfolioStyle.transform = `translate(-50%, -50%) rotateY(${index * step}deg) translateZ(${listLength * 20}px)`;
-                    portfolioStyle.opacity = opacity;
-
-                    return (
-                        <div key={index} style={portfolioStyle} className={selected == index ? 'selected' : ''}>{portfolio.name}</div>
-                    )
-                })}
-            </div>
-        </div>
-
-
-
-                <div className="list__container">
-            <div className="list3d" style={{transform: `rotateZ(${(-360 / listLength) * rotateStep}deg)`}}>
-                {props.store.portfolios.list.map((portfolio, index) => {
-                    let portfolioStyle = {};
-                    let step = 360 / listLength;
-                    let deltaPos = Math.min(Math.abs(selected - index), listLength - Math.abs(index - selected));
-                    let opacity = 1 - deltaPos/(listLength / 3);
-                    opacity = opacity < 0 ? 0 : opacity;
-
-                    portfolioStyle.transform = `translate(-50%, -50%) rotateZ(${index * step}deg) translateX(${listLength * 4}px)`;
-                    portfolioStyle.opacity = opacity;
-
-                    return (
-                        <div key={index} style={portfolioStyle} className={selected == index ? 'selected' : ''}>{portfolio.name}</div>
-                    )
-                })}
-            </div>
-        </div>
-
-*/

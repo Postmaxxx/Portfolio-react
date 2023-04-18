@@ -1,7 +1,7 @@
 import "./message.scss";
 import { IMessage } from "src/models";
 
-const Message: IMessage = ({header, text, buttonText, buttonClickAction }) => {
+const Message: IMessage = ({header, text, buttonText, buttonClickAction}) => {
 	return (
 		<div className='message__container' onClick={(e: React.FormEvent<HTMLDivElement>) => e.stopPropagation()}>
 			<h1 >{header}</h1>

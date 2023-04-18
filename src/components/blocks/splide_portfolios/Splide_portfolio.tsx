@@ -1,10 +1,10 @@
-import { useRef, useEffect, useState, useMemo } from "react";
+import React, { useRef, useEffect, useState, useMemo } from "react";
 import * as actions from "../../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Splide from "@splidejs/splide";
 import "./splide_portfolio.scss";
-import { IMapdispatchToProps, IMapStateToProps, IPropsJSX, ISliderOptions } from "src/models";
+import { IMapdispatchToProps, ISetStore, ISliderOptions, IState, ProjectItemListItem } from "src/models";
 import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
 import { findBestSuitedImg } from "src/assets/js/findBestSuitedImg";
 
@@ -13,11 +13,18 @@ interface IContainerSize {
 	height: number
 }
 
-const SplidePortfolio = (props) => {
+interface ISplidePortfolio {
+	list: Array<ProjectItemListItem>
+	selected: number
+	selectedImage: number
+	setStore: ISetStore
+}
+
+const SplidePortfolio: React.FC<ISplidePortfolio> = (props: ISplidePortfolio): JSX.Element => {
 	const portfolioSplide = useRef<Splide>(null);
 	const containerSize = useRef<IContainerSize>(null);
 	const _splideMain = useRef<HTMLDivElement>(null);
-	const [firstRender, setFirstRender] = useState(true);
+	const [firstRender, setFirstRender] = useState<boolean>(true);
 
 	const optionsMain: ISliderOptions = {
 		lazyLoad: false,
@@ -29,14 +36,10 @@ const SplidePortfolio = (props) => {
 		arrows: true,
 		drag: true,
 		speed: 500,
-		//snap: false,
 		wheel: true,
 		wheelSleep: 300,
-		//wheelMinThreshold: 50,
-		//autoplay: true,
 		interval: 15000,
 		pauseOnHover: true,
-		//rewind: true,
 		breakpoints: {
 			768: {
 				wheel: false,
@@ -45,12 +48,8 @@ const SplidePortfolio = (props) => {
 	};
 
     
-	const changeDescription = (selectedImage) => {
-		const portfolioNumber = props.selected;
+	const changeDescription = (selectedImage: number) => {
 		props.setStore.setSelectedPortfolioImage(selectedImage);
-		/*props.setStore.setModalImage(props.list[portfolioNumber].images[selectedImage]?.images.slice(-1)[0].image);
-		props.setStore.setModalLink(props.list[portfolioNumber].images[selectedImage]?.link);
-		props.setStore.setModalDescr(props.list[portfolioNumber].images[selectedImage]?.descr);*/
 	};
 	
 	const showSplideModal = () => {
@@ -58,7 +57,7 @@ const SplidePortfolio = (props) => {
 	};
 
 
-	const goToImage = (imageOrder) => {
+	const goToImage = (imageOrder: number) => {
 		portfolioSplide.current.go(imageOrder);
 	};
 
@@ -75,7 +74,7 @@ const SplidePortfolio = (props) => {
 		portfolioSplide.current.mount();		
 		portfolioSplide.current.on("active", () => {changeDescription(portfolioSplide.current.index);});
 			
-		const _slides = _splideMain.current.querySelectorAll(".splide__slide-container");
+		const _slides: NodeList = _splideMain.current.querySelectorAll(".splide__slide-container");
 		_slides.forEach(cont => cont.addEventListener("click", showSplideModal));
 		changeDescription(portfolioSplide.current.index);
 		return () => {
@@ -121,15 +120,13 @@ const SplidePortfolio = (props) => {
 };
 
 
-const mapStateToProps = (state)  => {
+const mapStateToProps = (state: IState)  => {
 	return {
 		list: state.portfolios.list,
 		selected: state.portfolios.selected,
 		selectedImage: state.portfolios.selectedImage,
 	};
 };
-
-
 
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({

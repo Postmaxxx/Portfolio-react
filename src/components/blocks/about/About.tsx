@@ -1,51 +1,52 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import * as actions from "../../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { setImage } from "../../../assets/js/setImage";
-import store from "../../../assets/redux/store";
 import "./about.scss";
-//import "../../preloader/preloader.scss";
-import { IMapdispatchToProps, IMapStateToProps, IProps, MeInfo } from "src/models";
+import { ImageMe, IMapdispatchToProps, ISetStore, IState, MeInfo } from "src/models";
 import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
 import { findBestSuitedImg } from "src/assets/js/findBestSuitedImg";
 import ModalImage from "src/components/modals/ModalImage";
+import { TTheme } from "src/components/theme_switcher/theme-switcher";
 
 const ModalImagePort = (p) => createPortal(<ModalImage imageProps={p}/>, document.querySelector("#portal"));
 
-const About = (props) => {
+interface IAbout {
+	theme: TTheme
+	me: Array<MeInfo>
+	imagesMe: {
+		side: string
+        day: {
+            descr: string
+            images: Array<ImageMe>
+        }
+        night: {
+            descr: string
+            images: Array<ImageMe>
+        }
+	}
+	resumeDoc: string
+	setStore: ISetStore
+}
 
-	const _imgContRef = useRef(null);
-	const [firstRender, setFirstRender]= useState(true);
+const About:React.FC<IAbout> = (props: IAbout) => {
 
-	/*const showModal = (image: string, descr: string): void => {
-		props.setStore.setModalImage(image);
-		props.setStore.setModalDescr(descr);
-		props.setStore.setModal(true);
-	};*/
-    
+	const _imgContRef: MutableRefObject<HTMLDivElement> = useRef(null);
+	const [firstRender, setFirstRender]= useState<boolean>(true);
+
 	const openGallery = () => {
 		props.setStore.setModalImage(true);
 	};
 	
-	/*
-	useEffect((): void => {
-		console.log("theme changed");
-	}, [props.theme]);
-*/
-	
+
 	
 	useEffect(() => {
-		//console.log("created", _imgContRef);
 		setFirstRender(false);
 		_imgContRef.current.addEventListener("click", openGallery);
 	}, []);
 
 	
-	//console.log("rerender", _imgContRef.current);
-	
-
 	const renderDescrMemo = useMemo(() => {
 		return <div className="descr">
 			<h3>I am <em>Postnikov Max</em></h3>
@@ -81,7 +82,7 @@ const About = (props) => {
 };
 
 
-const mapStateToProps = (state)  => {
+const mapStateToProps = (state: IState)  => {
 	return {
 		theme: state.theme,
 		me: state.me,

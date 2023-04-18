@@ -1,25 +1,29 @@
 import * as actions from "../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { KeyboardEvent, KeyboardEventHandler, MouseEventHandler, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import "./modalImage.scss";
-import { EmptyVoid, IMapdispatchToProps, IMapStateToProps, IPropsJSX, IRemoveEventListener } from "src/models";
+import { IImagesMe, IMapdispatchToProps, IMyImage, ISetStore, TTheme } from "src/models";
 import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
-import { findBestSuitedImg } from "src/assets/js/findBestSuitedImg";
 
+interface IModalImage {
+	imagesMe: IImagesMe
+	show: boolean
+	theme: TTheme
+	setStore: ISetStore
+	imageProps: IMyImage
+}
 
+const ModalImage: React.FC<IModalImage> = (props: IModalImage): JSX.Element => {
 
-const ModalImage = (props) => {
-
-	const _imgContRef = useRef(null);
+	const _imgContRef = useRef<HTMLDivElement>(null);
 
 	const closeModal = () => {
 		document.querySelector("body").classList.remove("noscroll");
 		props.setStore.setModalImage(false);
 	};
 
-	function modalKeyListener (e) {
-		console.log("@@@");
+	function modalKeyListener(e: KeyboardEvent) {
 		e.key === "Escape" && closeModal();
 	}
 
@@ -40,11 +44,11 @@ const ModalImage = (props) => {
 				<div className="modal">
 					<div ref={_imgContRef}>
 						{props.show &&
-								<ImgWithPreloader link={findBestSuitedImg({
-									images: props.theme === "light" ? props.imagesMe.day.images : props.imagesMe.night.images, 
-									width: _imgContRef.current.offsetWidth, 
-									height: _imgContRef.current.offsetHeight}
-								).image} alt={props.theme === "light" ? props.imagesMe.day.descr : props.imagesMe.night.descr } />
+								<ImgWithPreloader 
+									link={props.theme === "light" ? 
+										props.imagesMe.day.images[props.imagesMe.day.images.length - 1].image
+										: props.imagesMe.night.images[props.imagesMe.day.images.length - 1].image
+									} alt={props.theme === "light" ? props.imagesMe.day.descr : props.imagesMe.night.descr } />
 						}
 					</div>
 				</div>

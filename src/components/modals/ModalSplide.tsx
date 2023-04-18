@@ -1,26 +1,52 @@
 import * as actions from "../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { KeyboardEvent, KeyboardEventHandler, MouseEventHandler, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, } from "react";
 import "@splidejs/react-splide/css";
 import "./modalSplide.scss";
-import { EmptyVoid, IMapdispatchToProps, IMapStateToProps, IPropsJSX, IRemoveEventListener } from "src/models";
+import { IMapdispatchToProps, ISetStore, ProjectItemListItem } from "src/models";
 import Splide from "@splidejs/splide";
 import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
-import { findBestSuitedImg } from "src/assets/js/findBestSuitedImg";
 
 
-interface IOptionsThumbs {
-	[propName: string]: any;
+interface IOptions {
+	lazyLoad	: boolean
+	perPage		: number
+	gap        	: number
+	rewind     	: boolean
+	pagination 	: boolean
+	isNavigation: boolean
+	focus		: number | "center"
+	breakpoints	: {
+		[key: number]: {
+			perPage?: number;
+			wheel?: boolean
+		};
+	},
+	type      : string
+	speed	  : number
+	wheel	  : boolean
+	wheelSleep: number
 }
 
-const ModalSplide = (props) => {
+
+
+
+interface IModalSplide {
+	selected: number
+	selectedImage: number
+	show: boolean
+	list: Array<ProjectItemListItem>
+	setStore: ISetStore
+}
+
+const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element => {
 	const _splideMain = useRef<HTMLDivElement>();
 	const _splideThumbs = useRef<HTMLDivElement>();
 	const mainRef = useRef<Splide>();
 	const thumbsRef = useRef<Splide>();
 		
-	const optionsThumbs:IOptionsThumbs = {
+	const optionsThumbs: Partial<IOptions> = {
 		lazyLoad	: false,
 		perPage		: 12,
 		gap        	: 10,
@@ -48,7 +74,7 @@ const ModalSplide = (props) => {
 	};
 
 
-	const optionsMain = {
+	const optionsMain: Partial<IOptions> = {
 		lazyLoad: true,
 		type      : "fade",
 		rewind    : false,

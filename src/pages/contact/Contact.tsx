@@ -1,4 +1,3 @@
-//import { HTMLInputTypeAttribute } from 'react';
 import * as actions from "../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -9,14 +8,21 @@ import ContactBlock from "../../components/blocks/contact/Contact_block";
 import Modal from "../../components/modals/Modal";
 import Message from "../../components/message/Message";
 import "./contact.scss";
-import { Action, IMapdispatchToProps, IMapStateToProps, IPropsJSX } from "src/models";
-import { memo, useMemo, useRef } from "react";
+import { Action, IContact, IContacts, IMapdispatchToProps, IModalMSG, ISetStore } from "src/models";
+import {  useMemo, useRef } from "react";
+
+interface IContactProps {
+	contacts: IContacts
+	contact: IContact
+	modalMsg: IModalMSG
+	setStore: ISetStore
+}
 
 
-const Contact  = (props) => {
-	const inputEmail = useRef<HTMLElement>();
-	const inputSubject = useRef<HTMLElement>();
-	const inputMessage = useRef<HTMLElement>();
+const Contact: React.FC<IContactProps> = (props: IContactProps): JSX.Element => {
+	const inputEmail = useRef<HTMLInputElement>();
+	const inputSubject = useRef<HTMLInputElement>();
+	const inputMessage = useRef<HTMLTextAreaElement>();
 
 	const checkInputs = (inputs: NodeListOf<HTMLInputElement>): boolean => {
 		const errorMessages: Array<string>= [];
@@ -56,7 +62,6 @@ const Contact  = (props) => {
 			const text = `Date: ${currentDate.getDate() + "." + (currentDate.getMonth()+1) + "." + currentDate.getFullYear()}%0ATime: ${currentDate.getHours() + "." + currentDate.getMinutes() + "." + currentDate.getSeconds()}%0AName: ${name}%0AEmail: ${email}%0ATopic: ${subject}%0A%0AMessage: ${message}` ;
 			const urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${text}`;
     
-			
 			
 			axios.get(urlString)
 				.then(function(response: AxiosResponse): void {

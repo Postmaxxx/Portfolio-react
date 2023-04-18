@@ -6,25 +6,35 @@
     height: 90px;
     width: 240px;
     overflow: hidden;
+    transition: opacity 0.25s cubic-bezier(.63,0,.94,.73)!important;
+    opacity: 1;
+    
+    &.muted {
+        transition: opacity 0.25s cubic-bezier(0,1,.52,1)  !important;
+        opacity: 0.2;
+    }
+
 
     & .list3d {
         height: 100%;
         aspect-ratio: 1;
         border-radius: 50%;
         position: relative;
-        transition: .5s !important;
+        transition: $transition_list3d !important;
         transform-style: preserve-3d;
         translate: calc(-50% - 50px); // should be list3d__container.width
         top: 0%;
+
 
     
         & div {
             display: inline-block;
             width: 100%;
-            transition: translate 1s, opacity .5s !important;
+            transition: translate 1s, opacity $transition_list3d !important;
             position: absolute;
             top: 50%;
             left: 50%;
+            padding-left: 10px;
 
             & a {
                 width: 100px;

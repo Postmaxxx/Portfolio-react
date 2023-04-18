@@ -1,13 +1,10 @@
-import React, { KeyboardEventHandler, LegacyRef, useState } from "react";
+import React, { KeyboardEventHandler, LegacyRef, MutableRefObject, useState } from "react";
 import "./input.scss";
 
 type element = HTMLTextAreaElement | HTMLInputElement
 
-
-type element2 = any
-
 type keyTypes = KeyboardEventHandler<element> 
-type refTypes = LegacyRef<element2> //!!!
+type refTypes = MutableRefObject<HTMLElement> 
 
 interface IInputProps {
     type?: string
@@ -21,19 +18,19 @@ interface IInputProps {
     minLength: number
     maxLength: number
     onKeyUp?: keyTypes
-    refLink?: refTypes
 	typeEl? : string
+    refLink?: refTypes
 }
 
 
 
-const Input = (props: IInputProps) => {
+const Input:React.FC<IInputProps> = (props: IInputProps): JSX.Element => {
 
-	const [value, setValue] = useState(props.value);
+	const [value, setValue] = useState<string>(props.value);
 
-	const changeValue = (e) => {
+	const changeValue = (e:React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLInputElement>) => {
 		setValue(e.currentTarget.value);
-		const parent:HTMLElement =  e.currentTarget.parentNode as HTMLElement;
+		const parent: HTMLElement =  e.currentTarget.parentNode as HTMLElement;
 		parent.classList.remove("incorrect");
 	};
 
@@ -51,7 +48,7 @@ const Input = (props: IInputProps) => {
 					data-min_length={props.minLength}
 					data-max_length={props.maxLength}
 					data-type={props.checkType}
-					ref={props.refLink}
+					ref={props.refLink as LegacyRef<HTMLTextAreaElement>}
 					onKeyUp={props.onKeyUp}
 				/>
 				:
@@ -67,7 +64,7 @@ const Input = (props: IInputProps) => {
 					data-max_length={props.maxLength}
 					data-type={props.checkType}
 					onKeyUp={props.onKeyUp}
-					ref={props.refLink}
+					ref={props.refLink as LegacyRef<HTMLInputElement>}
 				/>
 			}
 

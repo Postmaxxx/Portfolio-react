@@ -157,7 +157,7 @@ import formation_12_big from "../img/portfolio/formation/12_big.jpg";
 import formation_12_small from "../img/portfolio/formation/12_small.jpg";
 import formation_12_preview from "../img/portfolio/formation/12_preview.jpg";
 
-
+/*
 import components_gallery from "../img/portfolio/components/gallery.jpg";
 import components_gallery_big from "../img/portfolio/components/gallery_big.jpg";
 import components_gallery_small from "../img/portfolio/components/gallery_small.jpg";
@@ -173,7 +173,8 @@ import components_hoverboard_small from "../img/portfolio/components/hoverboard_
 import components_shooter from "../img/portfolio/components/shooter.jpg";
 import components_shooter_big from "../img/portfolio/components/shooter_big.jpg";
 import components_shooter_small from "../img/portfolio/components/shooter_small.jpg";
- 
+ */
+
 const portfolioPath = "https://postmaxxx.github.io/Portfolio-examples/";
 const server_formation = "https://demo.wiseup.dev";
 
@@ -205,22 +206,12 @@ initialState = {
 			value: "Max Postnikov"
 		},
 		{
-			descr: "Nationality",
-			value: "Russian"
-		},
-
-		{
 			descr: "Languages",
-			value: "English, Russian"
+			value: "English"
 		},
-
 		{
 			descr: "Adress",
 			value: "Vancouver, BC"
-		},
-		{
-			descr: "Freelance",
-			value: "Available"
 		},
 		{
 			descr: "Fulltime",
@@ -242,11 +233,11 @@ initialState = {
 		},
 		{
 			name: "React",
-			percent: 80
+			percent: 85
 		},
 		{
 			name: "Gulp",
-			percent: 95
+			percent: 90
 		},
 		{
 			name: "Webpack",
@@ -254,7 +245,7 @@ initialState = {
 		},
 		{
 			name: "GIT",
-			percent: 85
+			percent: 80
 		},
 		{
 			name: "Docker",
@@ -265,7 +256,7 @@ initialState = {
 			percent: 90
 		},
 		{
-			name: "Bootstrap5",
+			name: "Bootstrap",
 			percent: 75
 		},
 		{
@@ -290,7 +281,7 @@ initialState = {
 		},
 		{
 			name: "JEST",
-			percent: 85
+			percent: 75
 		},
 	],
 	workExperience: [
@@ -1352,8 +1343,8 @@ initialState = {
 			},
 			{
 				name: "P & V",
-				descr: "Passports and Visas. ",
-				link: "https://www.google.com",
+				descr: "Passports and Visas. Created components, filters and forms. \n Stack: Gulp, Twig, JS, Scss, Bootstrap",
+				link: "https://dev.passportsandvisas.com",
 				images: [
 					{
 						//mock
@@ -1379,7 +1370,7 @@ initialState = {
 					},
 				]
 			},
-			{
+			/*{
 				name: "Components",
 				descr: "Some compenents created as a challenge with a 1-hour deadline.\n Stack: HTML, CSS, JS",
 				link: "",
@@ -1522,7 +1513,7 @@ initialState = {
             },*/
 			{
 				name: "Bike AntiSteal",
-				descr: "GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla",
+				descr: "Site created for non-commercial company as a tool to help citizens to file a thieft report and get addition information about stolen bikes.\nStack: React, Redux, Webpack",
 				link: "https://www.google.com",
 				images: [
 					{
@@ -1610,8 +1601,8 @@ initialState = {
 	contacts: {
 		phone: [
 			{
-				link: "tel:+905073423990",
-				text: "+90 507 342 39 90",
+				link: "tel:+1 604 3532877",
+				text: "+1 604 3532877",
 				newWindow: false
 			},
 		],
@@ -1629,8 +1620,8 @@ initialState = {
 		],
 		address: [
 			{
-				link: "https://goo.gl/maps/BoFoy6a1CLfooT768",
-				text: "Mahmutlar, Alanya/Antalya, Turkey",
+				link: "https://www.google.com/maps/place/Richmond,+BC/@49.1785194,-123.2184005,12z/data=!3m1!4b1!4m6!3m5!1s0x54867599f4ef4d3d:0x6a5024adba02fab5!8m2!3d49.1665898!4d-123.133569!16zL20vMDE3OXEw",
+				text: "Richmond, Vancouver, BC, Canada",
 				newWindow: true
 			},
 		],

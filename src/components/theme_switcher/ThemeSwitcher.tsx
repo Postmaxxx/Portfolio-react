@@ -2,14 +2,13 @@ import { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../assets/redux/actions";
 import { bindActionCreators } from "redux";
-//import { dayLightSwitcher } from "./theme-switcher";
 import cloud from "../../assets/img/svg/theme_day__cloud.svg";
 import star from "../../assets/img/svg/theme_nigth__star.svg";
 import "./themeSwitcher.scss";
-import { EmptyVoid, IMapdispatchToProps, IMapStateToProps, IPropsJSX } from "src/models";
+import { EmptyVoid, IMapdispatchToProps, ISetStore, TTheme } from "src/models";
 
 
-type Cloud = {
+type ICloud = {
     width: number
     gap: number
     top: number
@@ -24,13 +23,42 @@ interface IStar {
     blinkDuration:  number
 }
 
-const ThemeSwitcher = (props) => {
+interface IThemeSwitcher {
+	setStore: ISetStore
+}
 
-	const _themeSwitcherCont = useRef(null);
+
+interface IState {
+	_themeSwitcherContainer: HTMLDivElement
+	_themeSwitcher: HTMLElement,
+	_themeSwitcherInput: HTMLElement,
+	width: number
+	height: number
+	circleSize: number
+	duration: number
+	theme: TTheme
+	numberOfStars: number
+	starsBlinkingDuration: number[]
+	clouds: ICloud[]
+	starsBlinkingAnimation: string
+	isChanging: boolean
+	nodeForTheme: HTMLElement
+	saveState: string
+	_contentSwitcher: HTMLDivElement
+	star: React.FC<React.SVGProps<SVGSVGElement>>
+    cloud: React.FC<React.SVGProps<SVGSVGElement>>
+    themeSwitcher?: string
+    themeSwitcherContainer: HTMLDivElement
+}
+
+
+
+const ThemeSwitcher: React.FC<IThemeSwitcher> = (props: IThemeSwitcher): JSX.Element => {
+
+	const _themeSwitcherCont = useRef<HTMLDivElement>(null);
 
 	const dayLightSwitcher = (switcherProps) => {
-		const state__default = {
-			//...state__default,
+		const state__default: Partial<IState>  = {
 			width: 70,
 			height: 40,
 			circleSize: 14,
@@ -70,10 +98,7 @@ const ThemeSwitcher = (props) => {
 		};
 		
 		
-		//let state = {} as IThemeState;
-		
-		const state: any = {
-			//...state,
+		const state: Partial<IState> = {
 			_themeSwitcherContainer: _themeSwitcherCont.current,
 			_themeSwitcher: null,
 			_themeSwitcherInput: null,
@@ -338,20 +363,22 @@ const ThemeSwitcher = (props) => {
 		
 		
 		const createClouds: EmptyVoid = () => {
-			const _contentSwitcherLight = state._themeSwitcher.querySelector(".content-switcher .light");
-			const numberOfClouds: string[] = new Array(Math.ceil(state.width / (state.clouds[state.clouds.length - 1].width + state.clouds[state.clouds.length - 1].gap) + 2)).fill(""); //number of clouds in a cloud-raw, depends on the cloud size and gap between clouds + some reserve
-			state.clouds.forEach((cloud, index: number) => {
-				const _clouds = document.createElement("div");
-				_clouds.classList.add(`clouds-${index}`);
-				_contentSwitcherLight.appendChild(_clouds);
-		
-				numberOfClouds.forEach((): void => {
-					const _cloud = document.createElement("img");
-					_cloud.classList.add("cloud");
-					_cloud.src = String(state.cloud);
-					_clouds.appendChild(_cloud);
+			if (state._themeSwitcher) {
+				const _contentSwitcherLight = state._themeSwitcher.querySelector(".content-switcher .light");
+				const numberOfClouds: string[] = new Array(Math.ceil(state.width / (state.clouds[state.clouds.length - 1].width + state.clouds[state.clouds.length - 1].gap) + 2)).fill(""); //number of clouds in a cloud-raw, depends on the cloud size and gap between clouds + some reserve
+				state.clouds.forEach((cloud, index: number) => {
+					const _clouds = document.createElement("div");
+					_clouds.classList.add(`clouds-${index}`);
+					_contentSwitcherLight.appendChild(_clouds);
+			
+					numberOfClouds.forEach((): void => {
+						const _cloud = document.createElement("img");
+						_cloud.classList.add("cloud");
+						_cloud.src = String(state.cloud);
+						_clouds.appendChild(_cloud);
+					});
 				});
-			});
+			}
 		};
 	
 	
@@ -413,8 +440,7 @@ const ThemeSwitcher = (props) => {
 
 	useEffect((): void => {
 		props.setStore.setTheme(localStorage.getItem("theme") || "light");
-		//const themeSwitcherContainer = ".theme-switcher__container";
-		const themeProps = { //IThemeSwitcherProps
+		const themeProps: Partial<IState> = { 
 			themeSwitcherContainer: _themeSwitcherCont.current, 
 			star: star,
 			cloud: cloud, 
@@ -422,7 +448,7 @@ const ThemeSwitcher = (props) => {
 			height: _themeSwitcherCont.current.offsetHeight, 
 			circleSize: Math.round(_themeSwitcherCont.current.offsetHeight / 3), 
 			duration: 2000, 
-			theme: localStorage.getItem("theme") || "light", 
+			theme: (localStorage.getItem("theme") as TTheme) || "light", 
 			numberOfStars: 30,
 			nodeForTheme: document.querySelector("body"), //node for adding class 'dark' / 'light'
 			saveState: "theme",

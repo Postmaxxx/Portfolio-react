@@ -4,10 +4,17 @@ import { Link, NavLink } from "react-router-dom";
 import * as actions from "../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { IRemoveEventListener, PageItem, IMapStateToProps, IMapdispatchToProps, IPropsJSX } from "src/models";
+import { IRemoveEventListener, PageItem,  IMapdispatchToProps, ISetStore } from "src/models";
 
 
-const SidePanel = (props) => {
+interface ISidePanel {
+	nav_ham: string
+	imageMe: string
+	pages: Array<PageItem>
+	setStore: ISetStore
+}
+
+const SidePanel: React.FC<ISidePanel> = (props: ISidePanel): JSX.Element => {
 
 	const changeNav: MouseEventHandler = () => {
 		props.nav_ham === "" ? props.setStore.setNavOpen() : props.setStore.setNavClose();
@@ -56,7 +63,7 @@ const SidePanel = (props) => {
 			</figure>
 			<nav>
 				<ul className="site-navigation">
-					{props.pages.map((page: PageItem, index: number) => {
+					{props.pages.map((page: PageItem) => {
 						return(
 							<li key={page.link}>
 								<NavLink 

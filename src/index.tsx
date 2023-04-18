@@ -5,7 +5,7 @@ import store from "./assets/redux/store";
 import { Provider } from "react-redux";
 import Preloader from "./components/preloader/Preloader";
 import CatchError from "./components/catch_errors/catch_errrors";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration.js";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const LazyApp = lazy(() => import("./app"));
 

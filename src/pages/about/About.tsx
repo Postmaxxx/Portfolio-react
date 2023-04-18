@@ -1,11 +1,7 @@
-import * as actions from "../../assets/redux/actions";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
 import About from "../../components/blocks/about/About";
 import Services from "../../components/blocks/services/Services";
 import SpliderReviews from "../../components/blocks/splide_reviews/Splide_reviews";
 import "./about.scss";
-import { IMapdispatchToProps, IMapStateToProps } from "src/models";
 import { useEffect } from "react";
 
 
@@ -49,9 +45,4 @@ function Aboutpage(): JSX.Element {
 }
 
 
-const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
-	setStore: bindActionCreators(actions, dispatch),
-});
-
-
-export default connect(null, mapDispatchToProps)(Aboutpage);
+export default Aboutpage;

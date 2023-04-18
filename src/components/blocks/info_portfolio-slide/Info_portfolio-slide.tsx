@@ -1,11 +1,15 @@
-import * as actions from "../../../assets/redux/actions";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { IState } from "src/models";
 import "./info_portfolio-slide.scss";
-import { IMapdispatchToProps, IMapStateToProps, IPropsJSX } from "src/models";
-import { useMemo } from "react";
 
-const InfoPortfolioSlide = (props) => {
+
+interface InfoPortfolioSlide {
+	link: string
+	descr: string
+}
+
+
+const InfoPortfolioSlide: React.FC<InfoPortfolioSlide> = (props: InfoPortfolioSlide): JSX.Element => {
 
 	const linkToPage = <a target='_blank' href={props.link} rel="noreferrer">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -25,15 +29,12 @@ const InfoPortfolioSlide = (props) => {
 };
 
 
-const mapStateToProps = (state)  => {
+const mapStateToProps = (state: IState)  => {
 	return {
 		link: state.portfolios.list[state.portfolios.selected].images[state.portfolios.selectedImage].link,
 		descr: state.portfolios.list[state.portfolios.selected].images[state.portfolios.selectedImage].descr,
 	};
 };
 
-const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
-	setStore: bindActionCreators(actions, dispatch),
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(InfoPortfolioSlide);
+export default connect(mapStateToProps)(InfoPortfolioSlide);

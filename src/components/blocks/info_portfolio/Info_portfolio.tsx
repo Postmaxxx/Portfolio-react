@@ -1,12 +1,14 @@
-import * as actions from "../../../assets/redux/actions";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "./info_portfolio.scss";
-import { IMapdispatchToProps, IMapStateToProps, IPropsJSX } from "src/models"; 
+import { IState, ProjectItemListItem } from "src/models"; 
 
 
+interface IInfoPortfolio {
+	list: Array<ProjectItemListItem>
+	selected: number
+}
 
-const InfoPortfolio = (props) => {
+const InfoPortfolio: React.FC<IInfoPortfolio> = (props: IInfoPortfolio): JSX.Element => {
 	return(
 		<div className="info_portfolio__container">
 			<p>{props.list[props.selected].descr}</p>
@@ -14,7 +16,7 @@ const InfoPortfolio = (props) => {
 	);
 };
 
-const mapStateToProps = (state)  => {
+const mapStateToProps = (state: IState)  => {
 	return {
 		list: state.portfolios.list,
 		selected: state.portfolios.selected
@@ -22,9 +24,4 @@ const mapStateToProps = (state)  => {
 };
 
 
-const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
-	setStore: bindActionCreators(actions, dispatch),
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(InfoPortfolio);
+export default connect(mapStateToProps)(InfoPortfolio);

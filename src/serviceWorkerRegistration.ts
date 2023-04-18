@@ -1,10 +1,10 @@
-export function register(config) {
+export function register(config?) {
 	if ("serviceWorker" in navigator) {
-		const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
+		const publicUrl: URL = new URL(process.env.PUBLIC_URL, window.location.href);
 		if (publicUrl.origin !== window.location.origin) { return; }
 
 		window.addEventListener("load", () => {
-			let swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+			let swUrl: string = `${process.env.PUBLIC_URL}/service-worker.js`;
 			if (process.env.NODE_ENV === "development") {
 				swUrl = "localhost/static/js/service-worker.js";
 			}
@@ -16,9 +16,9 @@ export function register(config) {
 async function registerValidSW(swUrl, config) {
 	//console.log(swUrl);
 	try {
-		const regSW = await navigator.serviceWorker.register(swUrl, {
+		const regSW: ServiceWorkerRegistration = await navigator.serviceWorker.register(swUrl, {
 			scope: "./",
-			//updateViaCache: 'none'
+			//updateViaCache: 'none' 
 		});
 		regSW.update();
 		//console.log("ServiceWorker registered successfully", regSW);

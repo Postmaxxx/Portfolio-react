@@ -1,20 +1,23 @@
-//import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Splide from "@splidejs/splide";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actions from "../../../assets/redux/actions";
 import "@splidejs/react-splide/css";
 import "./splide_reviews.scss";
-import { IMapdispatchToProps, IMapStateToProps, IProps, ISliderOptions, ReviewItem } from "src/models";
-import { useEffect } from "react";
+import { IMapdispatchToProps, ISliderOptions, IState, ReviewItem } from "src/models";
+import { useEffect, useRef } from "react";
 
+interface ISliderReviews {
+	reviews: Array<ReviewItem>
+}
 
-
-const SliderReviews: React.FC = (props: IProps): JSX.Element => {
+const SliderReviews: React.FC<ISliderReviews> = (props: ISliderReviews): JSX.Element => {
     
+	const _reviewsSplideCont = useRef<HTMLDivElement>(null);
+	const reviewsSplide = useRef<Splide>(null);
+
 	const options: ISliderOptions = {
 		updateOnMove: true,
-		//type : "loop",
 		perPage: 2,
 		gap   : "2rem",
 		breakpoints: {
@@ -34,20 +37,23 @@ const SliderReviews: React.FC = (props: IProps): JSX.Element => {
 		autoplay: true,
 		interval: 10000,
 		pauseOnHover: true,
-		//rewind: true,
 	};
 
 	useEffect(() => {
-		new Splide("#reviewsMainSplide", options).mount();
+		reviewsSplide.current = new Splide(_reviewsSplideCont.current, options);
+		reviewsSplide.current.mount();
+		return () => {
+			reviewsSplide.current.destroy();
+		};
 	}, []);
 
-
+	
 	return (
 		<div className="reviews__container">
-			<div id="reviewsMainSplide" className="splide">
+			<div ref={_reviewsSplideCont} className="splide">
 				<div className="splide__track">
 					<ul className="splide__list">
-						{props.store.reviews.map((review: ReviewItem, index: number) => {
+						{props.reviews.map((review: ReviewItem) => {
 							return (
 								<li className="splide__slide" key={review.name}>
 									<div className="splide__slide-container">
@@ -72,7 +78,11 @@ const SliderReviews: React.FC = (props: IProps): JSX.Element => {
 };
 
 
-const mapStateToProps: IMapStateToProps = (store)  => ({store: store});
+const mapStateToProps = (state: IState)  => {
+	return {
+		reviews: state.reviews
+	};	
+};
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
@@ -80,20 +90,3 @@ const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(SliderReviews);
 
-/*
-			<Splide options={options}>
-				{props.store.reviews.map((review: ReviewItem, index: number) => {
-					return (
-						<SplideSlide key={review.name}>
-							<div className="splide__slide-container">
-								<div className="review__slide">
-									<p>{review.text}</p>
-								</div>
-								<span>{review.name}</span>
-								<span>{review.add}</span>
-							</div>
-						</SplideSlide>
-					);
-				})}
-			</Splide>
-*/			

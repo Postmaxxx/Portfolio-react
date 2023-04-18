@@ -5,8 +5,8 @@ import Skill from "../../components/blocks/skill/Skill";
 import History from "../../components/blocks/history/History";
 import resumeDoc from "../../assets/docs/resume.pdf";
 import "./resume.scss";
-import { MySkill, WorkEducationItem, IProps, IMapStateToProps, IMapdispatchToProps } from "src/models";
-import { useEffect, useMemo } from "react";
+import { MySkill, WorkEducationItem, IMapdispatchToProps, IState } from "src/models";
+import { useEffect } from "react";
 
 
 
@@ -17,10 +17,10 @@ interface IResumeProps {
 }
 
 
-const Resume: React.FC<IResumeProps>  = (props: IResumeProps) => {
+const Resume: React.FC<IResumeProps>  = (props: IResumeProps): JSX.Element => {
 
-	const observerRule = (entries, thisObserver) => {
-		entries.forEach(entry  => {
+	const observerRule = (entries: IntersectionObserverEntry[], thisObserver: IntersectionObserver) => {
+		entries.forEach(entry => {
 			if (entry.isIntersecting) {
 				entry.target.classList.add("show");
 				thisObserver.unobserve(entry.target);
@@ -28,18 +28,18 @@ const Resume: React.FC<IResumeProps>  = (props: IResumeProps) => {
 		});
 	};
 	
-	const observerOptions = {
+	const observerOptions: {threshold: number} = {
 		threshold: 0.4,
 	};
 	
 	
 	
 	useEffect(() => {
-		const observer = new IntersectionObserver(observerRule, observerOptions);
-		const listToObserve = document.querySelectorAll(".history .history__block .history__description");
-		listToObserve.forEach(el => observer.observe(el));
+		const observer: IntersectionObserver = new IntersectionObserver(observerRule, observerOptions);
+		const listToObserve: NodeList = document.querySelectorAll(".history .history__block .history__description");
+		Array.from(listToObserve).forEach((el: Element) => observer.observe(el));
 		return () => {
-			listToObserve.forEach(el => observer.unobserve(el));
+			listToObserve.forEach((el: Element) => observer.unobserve(el));
 		};
 	}, []);
 
@@ -101,7 +101,7 @@ const Resume: React.FC<IResumeProps>  = (props: IResumeProps) => {
 };
 
 
-const mapStateToProps = (state)  => {
+const mapStateToProps = (state: IState)  => {
 	return {
 		skills: state.skills,
 		workExperience: state.workExperience,
@@ -109,10 +109,6 @@ const mapStateToProps = (state)  => {
 	};
 };
 
-const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
-	setStore: bindActionCreators(actions, dispatch),
-});
 
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Resume);
+export default connect(mapStateToProps)(Resume);

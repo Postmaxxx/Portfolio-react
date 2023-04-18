@@ -1,14 +1,9 @@
-import { MouseEventHandler } from "react";
+import { FC, MouseEventHandler, SVGProps } from "react";
 import { AnyAction, ActionCreatorsMapObject } from "redux";
-import { TTheme } from "./components/theme_switcher/theme-switcher";
 
 export type IPropsJSX = (props: IProps) => JSX.Element
 export type INoPropsJSX = () => JSX.Element
-/*
-export interface IPropsJSX2 {
-    (props: IProps): JSX.Element
-} 
-*/
+
 export type EmptyVoid = () => void
 
 export interface Action<T> {
@@ -16,23 +11,10 @@ export interface Action<T> {
     payload?: T; 
 }
 
-//type Tinterf = <T>(payload: T) => Action<T>
-/*
-const t = <T>(payload? : T): Action<T> => {
-    return {
-        type: '',
-        payload
-    }
-}
-*/
-
-//export type Predicate = <T extends string>(p?: T) => Action<T>;
-
-
+export type TTheme = "dark" | "light";
 
 export interface ISetStore {
     [key: string]: <T>(payload?: T) => Action<T> //Change any to T
-    //[key: string]: Predicate
 }
 
 
@@ -82,15 +64,11 @@ export const actionList: IActionList = {
 	SET_CONTACT_SUBJECT: "SET_CONTACT_SUBJECT",
 	SET_CONTACT_MESSAGE: "SET_CONTACT_MESSAGE",
 	SET_MODAL_IMAGE: "SET_MODAL_IMAGE",
-	/*SET_MODAL_IMAGE: "SET_MODAL_IMAGE",
-	SET_MODAL_DESCR: "SET_MODAL_DESCR",
-	SET_MODAL_LINK: "SET_MODAL_LINK",*/
 	SET_MODALMSG: "SET_MODALMSG",
 	SET_MODALMSG_HEADER: "SET_MODALMSG_HEADER",
 	SET_MODALMSG_TEXT: "SET_MODALMSG_TEXT",
 	SET_MODALMSG_BTNTEXT: "SET_MODALMSG_BTNTEXT",
 	SET_SELECTED_PORTFOLIO: "SET_SELECTED_PORTFOLIO",
-	//SET_IMG_LOADED: "SET_IMG_LOADED",
 	SET_SELECTED_PORTFOLIO_IMAGE: "SET_SELECTED_PORTFOLIO_IMAGE",
 	SET_MODAL_SPLIDE: "SET_MODAL_SPLIDE"
 };
@@ -162,59 +140,70 @@ export type ContactItem = {
     newWindow: boolean
 }
 
+
+export interface IContact {
+    name: string
+    email: string
+    subject: string
+    message: string
+}
+
+export interface IContacts {
+    phone: Array<ContactItem>
+    email: Array<ContactItem>
+    address: Array<ContactItem>
+}
+
+export interface IModalMSG {
+    active: boolean
+    header: string
+    text: string
+    btnText: string
+}
+
+export interface IModalImage {
+    show: boolean
+}
+
+export interface IModalSplide {
+    show: boolean
+}
+
+export interface IPortfolios {
+    selected: number
+    selectedImage: number
+    list: Array<ProjectItemListItem>
+}
+
+export interface IMyImage {
+    descr: string
+    images: Array<ImageMe> 
+}
+
+export interface IImagesMe {
+    side: string
+    day: IMyImage
+    night: IMyImage
+}
+
 export interface IState extends IProps {
     theme: TTheme
     nav_ham: string
-    modalSplide: {
-        show: boolean
-    }
-    modalImage: {
-        show: boolean
-    }
-    /*modalImage: string 
-    modalDescr: string
-    modalLink: string*/
-    modalMsg: {
-        active: boolean
-        header: string
-        text: string
-        btnText: string
-    }
+    modalSplide: IModalSplide
+    modalImage: IModalImage
+    modalMsg: IModalMSG
     skillFillSpeed: number
     resumeDoc: string
     me: Array<MeInfo>
     skills: Array<MySkill>
     workExperience: Array<WorkEducationItem>
     education: Array<WorkEducationItem>
-    imagesMe: {
-        side: string
-        day: {
-            descr: string
-            images: Array<ImageMe>
-        }
-        night: {
-            descr: string
-            images: Array<ImageMe>
-        }
-    }
-    portfolios: {
-        selected: number
-        selectedImage: number
-        list: Array<ProjectItemListItem>
-    }
-    contact: {
-        name: string
-        email: string
-        subject: string
-        message: string
-    }
+    imagesMe: IImagesMe
+    portfolios: IPortfolios
+    contact: IContact
     pages: Array<PageItem>
     reviews: Array<ReviewItem>
-    contacts: {
-        phone: Array<ContactItem>
-        email: Array<ContactItem>
-        address: Array<ContactItem>
-    }
+    contacts: IContacts
     getState: () => IState
     dispatch: any
     subscribe: any
@@ -279,20 +268,7 @@ export interface IRemoveEventListener {
     (): ReturnType<typeof document.removeEventListener>
 }
 
-/*
 
-export interface IThemeSwitcherProps {
-    themeSwitcher: string
-    star: FC<SVGProps<SVGSVGElement>>
-    cloud: FC<SVGProps<SVGSVGElement>>
-    width: number
-    height: number
-    circleSize: number
-    duration: number
-    theme: string,
-    numberOfStars: number
-    nodeForTheme: HTMLElement
-    saveState: string
-}
-*/
+
+
 
