@@ -14,7 +14,7 @@ interface ISidePanel {
 	setStore: ISetStore
 }
 
-const SidePanel: React.FC<ISidePanel> = (props: ISidePanel): JSX.Element => {
+const SidePanel: React.FC<ISidePanel> = (props): JSX.Element => {
 
 	const changeNav: MouseEventHandler = () => {
 		props.nav_ham === "" ? props.setStore.setNavOpen() : props.setStore.setNavClose();

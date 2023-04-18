@@ -1,11 +1,9 @@
-import * as actions from "../../assets/redux/actions";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Skill from "../../components/blocks/skill/Skill";
 import History from "../../components/blocks/history/History";
 import resumeDoc from "../../assets/docs/resume.pdf";
 import "./resume.scss";
-import { MySkill, WorkEducationItem, IMapdispatchToProps, IState } from "src/models";
+import { MySkill, WorkEducationItem, IState } from "src/models";
 import { useEffect } from "react";
 
 
@@ -17,7 +15,7 @@ interface IResumeProps {
 }
 
 
-const Resume: React.FC<IResumeProps>  = (props: IResumeProps): JSX.Element => {
+const Resume: React.FC<IResumeProps>  = (props): JSX.Element => {
 
 	const observerRule = (entries: IntersectionObserverEntry[], thisObserver: IntersectionObserver) => {
 		entries.forEach(entry => {

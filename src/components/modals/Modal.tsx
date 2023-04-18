@@ -11,7 +11,7 @@ interface IModal {
 	children: ReactNode
 }
 
-const Modal: React.FC<IModal> = (props: IModal): JSX.Element => {
+const Modal: React.FC<IModal> = (props): JSX.Element => {
 	return (
 		<>
 			<div 

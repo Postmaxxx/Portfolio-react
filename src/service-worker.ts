@@ -127,7 +127,7 @@ self.addEventListener("activate", async () => {
 		await self.registration.navigationPreload.enable();
 	}*/
 	const siteCahceKeys: string[] = await caches.keys();
-	const cacheKeys: any[] = Object.values(cachesCurrent);
+	const cacheKeys: string[] = Object.values(cachesCurrent);
 
 	await siteCahceKeys
 		.filter(cache => {

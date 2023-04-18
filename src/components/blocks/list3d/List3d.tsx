@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import React, { MutableRefObject, useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import "./list3d.scss";
 import { ProjectItemListItem } from "src/models";
 import { IState } from "src/models";
@@ -11,7 +11,7 @@ interface IContactBlock {
 }
 
 
-const List3d: React.FC<IContactBlock> = (props: IContactBlock): JSX.Element => {
+const List3d: React.FC<IContactBlock> = (props): JSX.Element => {
 	const _listCont = useRef<HTMLDivElement>(null);
 	const selected = useRef<number>(props.selected);
 	const stepsToMove = useRef<number>(0);

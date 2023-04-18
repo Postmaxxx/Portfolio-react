@@ -53,7 +53,7 @@ interface IState {
 
 
 
-const ThemeSwitcher: React.FC<IThemeSwitcher> = (props: IThemeSwitcher): JSX.Element => {
+const ThemeSwitcher: React.FC<IThemeSwitcher> = (props): JSX.Element => {
 
 	const _themeSwitcherCont = useRef<HTMLDivElement>(null);
 

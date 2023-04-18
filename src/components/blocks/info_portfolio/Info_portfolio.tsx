@@ -8,7 +8,7 @@ interface IInfoPortfolio {
 	selected: number
 }
 
-const InfoPortfolio: React.FC<IInfoPortfolio> = (props: IInfoPortfolio): JSX.Element => {
+const InfoPortfolio: React.FC<IInfoPortfolio> = (props): JSX.Element => {
 	return(
 		<div className="info_portfolio__container">
 			<p>{props.list[props.selected].descr}</p>

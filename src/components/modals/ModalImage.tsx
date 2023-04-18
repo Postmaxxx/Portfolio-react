@@ -14,7 +14,7 @@ interface IModalImage {
 	imageProps: IMyImage
 }
 
-const ModalImage: React.FC<IModalImage> = (props: IModalImage): JSX.Element => {
+const ModalImage: React.FC<IModalImage> = (props): JSX.Element => {
 
 	const _imgContRef = useRef<HTMLDivElement>(null);
 

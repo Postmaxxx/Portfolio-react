@@ -19,7 +19,7 @@ interface IContactProps {
 }
 
 
-const Contact: React.FC<IContactProps> = (props: IContactProps): JSX.Element => {
+const Contact: React.FC<IContactProps> = (props): JSX.Element => {
 	const inputEmail = useRef<HTMLInputElement>();
 	const inputSubject = useRef<HTMLInputElement>();
 	const inputMessage = useRef<HTMLTextAreaElement>();

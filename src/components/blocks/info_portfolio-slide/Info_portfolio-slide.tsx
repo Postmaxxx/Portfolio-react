@@ -9,7 +9,7 @@ interface InfoPortfolioSlide {
 }
 
 
-const InfoPortfolioSlide: React.FC<InfoPortfolioSlide> = (props: InfoPortfolioSlide): JSX.Element => {
+const InfoPortfolioSlide: React.FC<InfoPortfolioSlide> = (props): JSX.Element => {
 
 	const linkToPage = <a target='_blank' href={props.link} rel="noreferrer">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

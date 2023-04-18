@@ -20,7 +20,7 @@ interface ISplidePortfolio {
 	setStore: ISetStore
 }
 
-const SplidePortfolio: React.FC<ISplidePortfolio> = (props: ISplidePortfolio): JSX.Element => {
+const SplidePortfolio: React.FC<ISplidePortfolio> = (props): JSX.Element => {
 	const portfolioSplide = useRef<Splide>(null);
 	const containerSize = useRef<IContainerSize>(null);
 	const _splideMain = useRef<HTMLDivElement>(null);

@@ -30,7 +30,7 @@ interface IAbout {
 	setStore: ISetStore
 }
 
-const About:React.FC<IAbout> = (props: IAbout) => {
+const About:React.FC<IAbout> = (props): JSX.Element => {
 
 	const _imgContRef: MutableRefObject<HTMLDivElement> = useRef(null);
 	const [firstRender, setFirstRender]= useState<boolean>(true);

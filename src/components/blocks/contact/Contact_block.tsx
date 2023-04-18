@@ -7,7 +7,7 @@ interface IContactBlock {
     links: ContactItem[]
 }
 
-const ContactBlock: React.FC<IContactBlock> = (props: IContactBlock): JSX.Element => {
+const ContactBlock: React.FC<IContactBlock> = (props): JSX.Element => {
 	return (
 		<div className="contact-block">
 			<div className="img-container">

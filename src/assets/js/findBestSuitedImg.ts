@@ -1,7 +1,7 @@
 type PImage = {
-	[key:string] : any
 	width: number
 	height: number
+	image: string
 }
 
 

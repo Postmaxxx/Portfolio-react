@@ -18,7 +18,7 @@ interface IList3d_v {
 	setStore: ISetStore
 }
 
-const List3d_v: React.FC<IList3d_v> = (props: IList3d_v): JSX.Element => {
+const List3d_v: React.FC<IList3d_v> = (props): JSX.Element => {
 	stepsToMove = props.selected - selected;
 	selected = props.selected;
 	listLength = props.list.length;

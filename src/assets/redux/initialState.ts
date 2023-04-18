@@ -196,7 +196,7 @@ import west_3_small from "../img/portfolio/west/3_small.jpg";
 import west_4 from "../img/portfolio/west/4.jpg";
 import west_4_big from "../img/portfolio/west/4_big.jpg";
 import west_4_small from "../img/portfolio/west/4_small.jpg";
-
+/*
 import components_gallery from "../img/portfolio/components/gallery.jpg";
 import components_gallery_big from "../img/portfolio/components/gallery_big.jpg";
 import components_gallery_small from "../img/portfolio/components/gallery_small.jpg";
@@ -212,7 +212,7 @@ import components_hoverboard_small from "../img/portfolio/components/hoverboard_
 import components_shooter from "../img/portfolio/components/shooter.jpg";
 import components_shooter_big from "../img/portfolio/components/shooter_big.jpg";
 import components_shooter_small from "../img/portfolio/components/shooter_small.jpg";
- 
+ */
 
 const portfolioPath = "https://postmaxxx.github.io/Portfolio-examples/";
 const server_formation = "https://demo.wiseup.dev";

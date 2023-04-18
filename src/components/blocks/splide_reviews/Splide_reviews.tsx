@@ -11,7 +11,7 @@ interface ISliderReviews {
 	reviews: Array<ReviewItem>
 }
 
-const SliderReviews: React.FC<ISliderReviews> = (props: ISliderReviews): JSX.Element => {
+const SliderReviews: React.FC<ISliderReviews> = (props): JSX.Element => {
     
 	const _reviewsSplideCont = useRef<HTMLDivElement>(null);
 	const reviewsSplide = useRef<Splide>(null);

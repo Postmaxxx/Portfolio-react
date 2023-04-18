@@ -1,5 +1,5 @@
-import { FC, MouseEventHandler, SVGProps } from "react";
-import { AnyAction, ActionCreatorsMapObject } from "redux";
+import { Dispatch, MouseEventHandler, Reducer } from "react";
+import { AnyAction, ActionCreatorsMapObject, Unsubscribe, Observable } from "redux";
 
 export type IPropsJSX = (props: IProps) => JSX.Element
 export type INoPropsJSX = () => JSX.Element
@@ -53,7 +53,6 @@ export interface IMapdispatchToProps {
     (dispatch: IDispatch): {setStore: ActionCreatorsMapObject}
 }
 
-//export type TTheme = 'dark' | 'light'
 
 export const actionList: IActionList = {
 	SET_THEME: "SET_THEME",
@@ -206,9 +205,9 @@ export interface IState extends IProps {
     contacts: IContacts
     getState: () => IState
     dispatch: any
-    subscribe: any
-    replaceReducer: any
-    [Symbol.observable] : any
+    subscribe: (listener: () => void) => Unsubscribe
+    replaceReducer: (nextReducer: Reducer<IState, AnyAction>) => void
+    [Symbol.observable] : () => Observable<IState>
 }
 
 

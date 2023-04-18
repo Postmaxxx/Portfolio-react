@@ -15,7 +15,7 @@ interface IList {
 }
 
 
-const List: React.FC<IList> = (props: IList): JSX.Element => {
+const List: React.FC<IList> = (props): JSX.Element => {
 
 	const selectPortfolio: ISelectPortfolio = (index) => {
 		props.setStore.setSelectedPortfolio(index);

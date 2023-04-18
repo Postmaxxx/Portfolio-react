@@ -24,7 +24,7 @@ interface IInputProps {
 
 
 
-const Input:React.FC<IInputProps> = (props: IInputProps): JSX.Element => {
+const Input:React.FC<IInputProps> = (props): JSX.Element => {
 
 	const [value, setValue] = useState<string>(props.value);
 
