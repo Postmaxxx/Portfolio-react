@@ -3,15 +3,22 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import "./list3d_v.scss";
+import { IMapdispatchToProps, ISetStore, IState, ProjectItemListItem } from "src/models";
 
-let selected = 0;
-let rotateStep = 0;
-let scrollDelay = 50;
+let selected: number = 0;
+let rotateStep: number = 0;
+const scrollDelay: number = 50;
 let timeoutScroll = undefined;
-let listLength = 0;
-let stepsToMove = 0;
+let listLength: number;
+let stepsToMove: number = 0;
 
-const List3d_v = (props) => {
+interface IList3d_v {
+	selected: number
+	list: Array<ProjectItemListItem>
+	setStore: ISetStore
+}
+
+const List3d_v: React.FC<IList3d_v> = (props: IList3d_v): JSX.Element => {
 	stepsToMove = props.selected - selected;
 	selected = props.selected;
 	listLength = props.list.length;
@@ -22,7 +29,7 @@ const List3d_v = (props) => {
 		rotateStep = rotateStep + stepsToMove;  
 	}
 
-	const listScroll = (e) => {
+	const listScroll = (e: WheelEvent) => {
 		e.preventDefault();
 		if (!timeoutScroll) {
 			timeoutScroll = setTimeout(() => {
@@ -36,7 +43,7 @@ const List3d_v = (props) => {
 	};
 
 	useEffect(() => {
-		document.querySelector(".list3d_v__container"). addEventListener("wheel", (e) => listScroll(e));
+		document.querySelector(".list3d_v__container").addEventListener("wheel", listScroll);
 	},[]);
 
 
@@ -44,10 +51,13 @@ const List3d_v = (props) => {
 		<div className="list3d_v__container">
 			<div className="list3d_v" style={{transform: `rotateX(${(360 / listLength) * rotateStep}deg)`}}>
 				{[...props.list].map((portfolio, index) => {
-					let portfolioStyle = {};
-					let step = 360 / listLength;
-					let deltaPos = Math.min(Math.abs(selected - index), listLength - Math.abs(index - selected));
-					let opacity = 1 - deltaPos/(listLength / 4);
+					const portfolioStyle: {transform: string, opacity: number} = {
+						transform: "",
+						opacity: 0
+					};
+					const step: number = 360 / listLength;
+					const deltaPos: number = Math.min(Math.abs(selected - index), listLength - Math.abs(index - selected));
+					let opacity: number = 1 - deltaPos/(listLength / 4);
 					opacity = opacity < 0 ? 0 : opacity;
 					portfolioStyle.transform = `translate(-50%, -50%) rotateX(${-index * step}deg) translateZ(${listLength * 6}px)`;
 					portfolioStyle.opacity = opacity;
@@ -64,7 +74,7 @@ const List3d_v = (props) => {
 };
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: IState) => {
 	return {
 		selected: state.portfolios.selected,
 		list: state.portfolios.list
@@ -72,7 +82,7 @@ const mapStateToProps = (state) => {
 
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps:IMapdispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
 });
 

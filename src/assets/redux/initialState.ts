@@ -1,7 +1,7 @@
 import { IState } from "src/models";
 
 import sidePhoto from "../img/me_logo.jpg";
-import resumeDoc from "../docs/resume.pdf";
+import resumeDoc from "../docs/Maksim Postnikov Resume.pdf";
 
 import photoNight from "../img/me_night.jpg";
 import photoNight750 from "../img/me_night_750.jpg";
@@ -157,7 +157,46 @@ import formation_12_big from "../img/portfolio/formation/12_big.jpg";
 import formation_12_small from "../img/portfolio/formation/12_small.jpg";
 import formation_12_preview from "../img/portfolio/formation/12_preview.jpg";
 
-/*
+
+
+import pv_1 from "../img/portfolio/pv/1.jpg";
+import pv_1_big from "../img/portfolio/pv/1_big.jpg";
+import pv_1_small from "../img/portfolio/pv/1_small.jpg";
+import pv_2 from "../img/portfolio/pv/2.jpg";
+import pv_2_big from "../img/portfolio/pv/2_big.jpg";
+import pv_2_small from "../img/portfolio/pv/2_small.jpg";
+import pv_3 from "../img/portfolio/pv/3.jpg";
+import pv_3_big from "../img/portfolio/pv/3_big.jpg";
+import pv_3_small from "../img/portfolio/pv/3_small.jpg";
+import pv_4 from "../img/portfolio/pv/4.jpg";
+import pv_4_big from "../img/portfolio/pv/4_big.jpg";
+import pv_4_small from "../img/portfolio/pv/4_small.jpg";
+import pv_5 from "../img/portfolio/pv/5.jpg";
+import pv_5_big from "../img/portfolio/pv/5_big.jpg";
+import pv_5_small from "../img/portfolio/pv/5_small.jpg";
+import pv_6 from "../img/portfolio/pv/6.jpg";
+import pv_6_big from "../img/portfolio/pv/6_big.jpg";
+import pv_6_small from "../img/portfolio/pv/6_small.jpg";
+import pv_7 from "../img/portfolio/pv/7.jpg";
+import pv_7_big from "../img/portfolio/pv/7_big.jpg";
+import pv_7_small from "../img/portfolio/pv/7_small.jpg";
+
+
+
+
+import west_1 from "../img/portfolio/west/1.jpg";
+import west_1_big from "../img/portfolio/west/1_big.jpg";
+import west_1_small from "../img/portfolio/west/1_small.jpg";
+import west_2 from "../img/portfolio/west/2.jpg";
+import west_2_big from "../img/portfolio/west/2_big.jpg";
+import west_2_small from "../img/portfolio/west/2_small.jpg";
+import west_3 from "../img/portfolio/west/3.jpg";
+import west_3_big from "../img/portfolio/west/3_big.jpg";
+import west_3_small from "../img/portfolio/west/3_small.jpg";
+import west_4 from "../img/portfolio/west/4.jpg";
+import west_4_big from "../img/portfolio/west/4_big.jpg";
+import west_4_small from "../img/portfolio/west/4_small.jpg";
+
 import components_gallery from "../img/portfolio/components/gallery.jpg";
 import components_gallery_big from "../img/portfolio/components/gallery_big.jpg";
 import components_gallery_small from "../img/portfolio/components/gallery_small.jpg";
@@ -173,7 +212,7 @@ import components_hoverboard_small from "../img/portfolio/components/hoverboard_
 import components_shooter from "../img/portfolio/components/shooter.jpg";
 import components_shooter_big from "../img/portfolio/components/shooter_big.jpg";
 import components_shooter_small from "../img/portfolio/components/shooter_small.jpg";
- */
+ 
 
 const portfolioPath = "https://postmaxxx.github.io/Portfolio-examples/";
 const server_formation = "https://demo.wiseup.dev";
@@ -405,7 +444,7 @@ initialState = {
 		list: [
 			{
 				name: "Plenco",
-				descr: "Created frontend templates for Plenco company based on Bootstrap 5 using provided design in AdobeXD. More than 81 pages, accordions, dropdown lists, animation, adaptive design, galleries, carousels, preloaders and so on.\n Stack: Gulp, Twig, Bootstrap 5, Tailwind, JS, Scss",
+				descr: "Created frontend templates for Plenco company based on Bootstrap 5 using provided design in AdobeXD. More than 81 pages, accordions, dropdown lists, animation, adaptive design, galleries, carousels, preloaders and so on.\n Stack: Gulp, Twig, Bootstrap 5, HTML, Tailwind, JS, Scss",
 				link: "https://demo.wiseup.dev/plenco/home.html",
 				images: [
 					{
@@ -776,7 +815,7 @@ initialState = {
 			},
 			{
 				name: "P2S Inc",
-				descr: "New design templates for P2S Incorporated. Plethora of specific components, animations,  \n Stack: Gulp, Twig, JS, Scss, JSON animation(Lottie), SplideJS",
+				descr: "New design templates for P2S Incorporated. Plethora of specific components, animations,  \n Stack: Gulp, Twig, HTML, JS, Scss, JSON animation(Lottie), SplideJS",
 				link: "https://www.p2sinc.com",
 				images: [
 					{
@@ -887,7 +926,7 @@ initialState = {
 			},
 			{
 				name: "Techlicious",
-				descr: "Created partials for Techlicious.com as navigation, news-blocks and comparing tables from scratch as well as implementing new design for comments, news-blocks and other.\n Stack: CraftCMS, Scss, JS, Tailwind, GULP, Twig.",
+				descr: "Created partials for Techlicious.com as navigation, news-blocks and comparing tables from scratch as well as implementing new design for comments, news-blocks and other.\n Stack: CraftCMS, HTML, Scss, JS, Tailwind, GULP, Twig.",
 				link: "https://www.techlicious.com",
 				images: [
 					{
@@ -1024,7 +1063,7 @@ initialState = {
 			},
 			{
 				name: "Formation",
-				descr: "New site template for Plenco company. Created using Figma drafts. \n Stack: Gulp, Twig, JS, Scss",
+				descr: "New site template for Plenco company. Created using Figma drafts. \n Stack: Gulp, Twig, HTML, JS, Scss",
 				link: "https://www.formation.ai",
 				images: [
 					{
@@ -1343,36 +1382,253 @@ initialState = {
 			},
 			{
 				name: "P & V",
-				descr: "Passports and Visas. Created components, filters and forms. \n Stack: Gulp, Twig, JS, Scss, Bootstrap",
+				descr: "Passports and Visas. Created frontend part like components, filters and forms. \n Stack: Gulp, Twig, HTML, JS, Scss, Bootstrap",
 				link: "https://dev.passportsandvisas.com",
 				images: [
 					{
-						//mock
-						descr: "Accordions",
-						link: portfolioPath + "plenco/pn-rr-app.html",
+						descr: "Main page",
+						link: "https://www.passportsandvisas.com/",
 						images: [
 							{
 								width: 550,
 								height: 400,
-								image: plenco_5_small,
+								image: pv_1_small,
 							},
 							{
 								width: 1075,
 								height: 440,
-								image: plenco_5_big,
+								image: pv_1_big,
 							},
 							{
 								width: 10000,
 								height: 10000,
-								image: plenco_5,
+								image: pv_1,
+							},
+						],
+					},
+					{
+						descr: "Second passport page",
+						link: "https://www.passportsandvisas.com/passport/second-passport",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: pv_2_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: pv_2_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: pv_2,
+							},
+						],
+					},
+					{
+						descr: "Second passport page",
+						link: "https://www.passportsandvisas.com/passport/second-passport",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: pv_3_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: pv_3_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: pv_3,
+							},
+						],
+					},
+					{
+						descr: "About page",
+						link: "https://www.passportsandvisas.com/about",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: pv_4_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: pv_4_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: pv_4,
+							},
+						],
+					},
+					{
+						descr: "Checkout page",
+						link: "https://www.passportsandvisas.com/checkout",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: pv_5_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: pv_5_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: pv_5,
+							},
+						],
+					},
+					{
+						descr: "Visas page",
+						link: "https://www.passportsandvisas.com/visas",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: pv_6_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: pv_6_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: pv_6,
+							},
+						],
+					},
+					{
+						descr: "Country visa page",
+						link: "https://www.passportsandvisas.com/visas/india",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: pv_7_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: pv_7_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: pv_7,
 							},
 						],
 					},
 				]
 			},
+			{
+				name: "Westy",
+				descr: "Westy Productions. Created frontend part like pages, gallery and lightbox. \n Stack: Gulp, Twig, HTML, JS, Scss",
+				link: "https://west.eecms.dev/",
+				images: [
+					{
+						descr: "Gallery page",
+						link: "https://west.eecms.dev/stills/",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: west_1_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: west_1_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: west_1,
+							},
+						],
+					},
+					{
+						descr: "Clients page",
+						link: "https://west.eecms.dev/clients/",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: west_2_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: west_2_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: west_2,
+							},
+						],
+					},
+					{
+						descr: "New style gallery page",
+						link: "https://west.eecms.dev/projects/main2/0",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: west_3_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: west_3_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: west_3,
+							},
+						],
+					},
+					{
+						descr: "Lightbox page",
+						link: "https://west.eecms.dev/projects/main2/4",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: west_4_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: west_4_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: west_4,
+							},
+						],
+					},
+					
+				]
+			},
 			/*{
 				name: "Components",
-				descr: "Some compenents created as a challenge with a 1-hour deadline.\n Stack: HTML, CSS, JS",
+				descr: "Some compenents created as a challenge with a 30-min deadline.\n Stack: HTML, CSS, JS",
 				link: "",
 				images: [
 					{
@@ -1481,7 +1737,7 @@ initialState = {
 						],
 					},
 				]
-			},
+			},*/
 			/*{
                 name: 'Landing pages',
                 descr: 'GHI Bla-bla-bla-bla-bla -bla-bla-bla-bla-bla -bla-bla-bla-b la-bla-bla-bla -bla-b la-bla-bla-bla- bla-bla-bla',
@@ -1510,7 +1766,7 @@ initialState = {
                         ],
                     },
                 ]
-            },*/
+            },*//*
 			{
 				name: "Bike AntiSteal",
 				descr: "Site created for non-commercial company as a tool to help citizens to file a thieft report and get addition information about stolen bikes.\nStack: React, Redux, Webpack",
@@ -1539,7 +1795,7 @@ initialState = {
 						],
 					},
 				]
-			},
+			},*/
 		],
 	},
 	contact: {
