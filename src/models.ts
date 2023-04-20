@@ -54,7 +54,7 @@ export interface IMapdispatchToProps {
 }
 
 
-export const actionList: IActionList = {
+export const actionList = {
 	SET_THEME: "SET_THEME",
 	SET_NAV_OPEN: "SET_NAV_OPEN",
 	SET_NAV_CLOSE: "SET_NAV_CLOSE",
@@ -69,10 +69,13 @@ export const actionList: IActionList = {
 	SET_MODALMSG_BTNTEXT: "SET_MODALMSG_BTNTEXT",
 	SET_SELECTED_PORTFOLIO: "SET_SELECTED_PORTFOLIO",
 	SET_SELECTED_PORTFOLIO_IMAGE: "SET_SELECTED_PORTFOLIO_IMAGE",
-	SET_MODAL_SPLIDE: "SET_MODAL_SPLIDE"
+	SET_MODAL_SPLIDE: "SET_MODAL_SPLIDE",
 };
 
+export type TActionListKeys = keyof typeof actionList;
 
+export type TActions = typeof actionList[keyof typeof actionList];
+export type TActions2 =keyof typeof actionList;
 
 export type MeInfo = {
     descr: string
