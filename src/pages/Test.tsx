@@ -2,6 +2,19 @@ import * as actions from "../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
+
+
+/*
+class MyClass {
+	private secr:number = 5;
+	#secr2:number = 3;
+}
+
+const my = new MyClass;
+
+console.log((my as any).secr);
+console.log((my as any).#secr2);
+*/
 /*
 type AdminAction = "CREATE" | "ACTIVATE" | "NEW";
 
@@ -93,6 +106,7 @@ const mapStateToProps = (state)  => {
 const mapDispatchToProps = (dispatch) => ({
 	setStore: bindActionCreators(actions, dispatch),
 });
+
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test);

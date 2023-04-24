@@ -1,4 +1,4 @@
 {
     "editor.hover.enabled": true,
-    "editor.quickSuggestionsDelay": 3000
+    "editor.quickSuggestionsDelay": 10
 }

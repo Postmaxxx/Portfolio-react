@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import Skill from "../../components/blocks/skill/Skill";
 import History from "../../components/blocks/history/History";
-import resumeDoc from "../../assets/docs/resume.pdf";
 import "./resume.scss";
 import { MySkill, WorkEducationItem, IState } from "src/models";
 import { useEffect } from "react";
@@ -12,6 +11,7 @@ interface IResumeProps {
 	skills: Array<MySkill>
 	workExperience: Array<WorkEducationItem>,
 	education: Array<WorkEducationItem>,
+	resume: string
 }
 
 
@@ -92,7 +92,7 @@ const Resume: React.FC<IResumeProps>  = (props): JSX.Element => {
 						</div>
 					</div>
 				</section>
-				<a className="link_button" href={resumeDoc} target="_blank" rel="noreferrer">Download cv</a>
+				<a className="link_button" href={props.resume} target="_blank" rel="noreferrer">Download cv</a>
 			</div>
 		</div>
 	);
@@ -104,6 +104,7 @@ const mapStateToProps = (state: IState)  => {
 		skills: state.skills,
 		workExperience: state.workExperience,
 		education: state.education,
+		resume: state.resumeDoc
 	};
 };
 

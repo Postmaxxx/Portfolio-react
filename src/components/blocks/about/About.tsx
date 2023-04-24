@@ -26,7 +26,7 @@ interface IAbout {
             images: Array<ImageMe>
         }
 	}
-	resumeDoc: string
+	resume: string
 	setStore: ISetStore
 }
 
@@ -59,7 +59,7 @@ const About:React.FC<IAbout> = (props): JSX.Element => {
 					);
 				})}
 			</ul>
-			<a className="link_button" href={props.resumeDoc} target="_blank" rel="noreferrer">Download cv</a>
+			<a className="link_button" href={props.resume} target="_blank" rel="noreferrer">Download cv</a>
 		</div>;
 	},[props.me]);
 
@@ -87,7 +87,7 @@ const mapStateToProps = (state: IState)  => {
 		theme: state.theme,
 		me: state.me,
 		imagesMe: state.imagesMe,
-		resumeDoc: state.resumeDoc
+		resume: state.resumeDoc
 	};
 };
 

@@ -1,4 +1,4 @@
-import { Dispatch, MouseEventHandler, Reducer } from "react";
+import { MouseEventHandler, Reducer } from "react";
 import { AnyAction, ActionCreatorsMapObject, Unsubscribe, Observable } from "redux";
 
 export type IPropsJSX = (props: IProps) => JSX.Element

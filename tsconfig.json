@@ -3,7 +3,8 @@
       "typeRoots": ["./src/@types", "./node_modules/@types"],
       "moduleResolution": "node",
       "baseUrl": ".",
+      "target": "ES2016",
       "jsx": "react-jsx",
-      "allowSyntheticDefaultImports" : true
-    }
+      "allowSyntheticDefaultImports" : true,
+    },
 }
