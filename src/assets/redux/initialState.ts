@@ -1,7 +1,7 @@
 import { IState } from "src/models";
 
 import sidePhoto from "../img/me_logo.jpg";
-import resumeDoc from "../docs/Maksim Postnikov Resume.pdf";
+//import resumeDoc from "../docs/Maksim Postnikov Resume.pdf";
 
 import photoNight from "../img/me_night.jpg";
 import photoNight750 from "../img/me_night_750.jpg";
@@ -238,7 +238,7 @@ initialState = {
 		btnText: "",
 	},
 	skillFillSpeed: 3,  //ms
-	resumeDoc: resumeDoc,
+	resumeDoc: "./resume/Maksim Postnikov Resume.pdf",//resumeDoc,
 	me: [
 		{
 			descr: "Full Name",
