@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.22582ad8.css",
-    "main.js": "./static/js/main.ecad47bc.js",
+    "main.js": "./static/js/main.b3ecb659.js",
     "static/css/955.52314f42.chunk.css": "./static/css/955.52314f42.chunk.css",
     "static/js/955.a9f78011.chunk.js": "./static/js/955.a9f78011.chunk.js",
     "static/css/497.e1a79dda.chunk.css": "./static/css/497.e1a79dda.chunk.css",
@@ -29,7 +29,6 @@
     "static/media/me_day.jpg": "./static/media/me_day.8578e481845413e040d6.jpg",
     "static/media/me_night.jpg": "./static/media/me_night.f1d70d2e216939497441.jpg",
     "static/media/4.jpg": "./static/media/4.480edeb41fef5d03c7ee.jpg",
-    "static/media/Maksim Postnikov Resume.pdf": "./static/media/Maksim Postnikov Resume.57160876e992b8c8140c.pdf",
     "static/media/1.jpg": "./static/media/1.410508f6acd294229d11.jpg",
     "static/media/5.jpg": "./static/media/5.5726dbd4aef72a11d8e2.jpg",
     "static/media/3.jpg": "./static/media/3.66ad78dd348fae27f344.jpg",
@@ -100,7 +99,7 @@
     "static/media/theme_day__cloud.svg": "./static/media/theme_day__cloud.80c89d8495d611d774dba896d4b50489.svg",
     "static/media/theme_nigth__star.svg": "./static/media/theme_nigth__star.fe104e84f6e48f1218e1f0dcfabeaf3a.svg",
     "main.22582ad8.css.map": "./static/css/main.22582ad8.css.map",
-    "main.ecad47bc.js.map": "./static/js/main.ecad47bc.js.map",
+    "main.b3ecb659.js.map": "./static/js/main.b3ecb659.js.map",
     "955.52314f42.chunk.css.map": "./static/css/955.52314f42.chunk.css.map",
     "955.a9f78011.chunk.js.map": "./static/js/955.a9f78011.chunk.js.map",
     "497.e1a79dda.chunk.css.map": "./static/css/497.e1a79dda.chunk.css.map",
@@ -128,6 +127,6 @@
   },
   "entrypoints": [
     "static/css/main.22582ad8.css",
-    "static/js/main.ecad47bc.js"
+    "static/js/main.b3ecb659.js"
   ]
 }
