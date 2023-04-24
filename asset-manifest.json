@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "./static/css/main.22582ad8.css",
-    "main.js": "./static/js/main.cf0712ea.js",
+    "main.js": "./static/js/main.ecad47bc.js",
     "static/css/955.52314f42.chunk.css": "./static/css/955.52314f42.chunk.css",
-    "static/js/955.323a80b2.chunk.js": "./static/js/955.323a80b2.chunk.js",
+    "static/js/955.a9f78011.chunk.js": "./static/js/955.a9f78011.chunk.js",
     "static/css/497.e1a79dda.chunk.css": "./static/css/497.e1a79dda.chunk.css",
     "static/js/497.e358f717.chunk.js": "./static/js/497.e358f717.chunk.js",
     "static/css/936.776bf31c.chunk.css": "./static/css/936.776bf31c.chunk.css",
@@ -13,9 +13,9 @@
     "static/css/114.4f6630d6.chunk.css": "./static/css/114.4f6630d6.chunk.css",
     "static/js/114.5affbf47.chunk.js": "./static/js/114.5affbf47.chunk.js",
     "static/css/446.3e1b32e2.chunk.css": "./static/css/446.3e1b32e2.chunk.css",
-    "static/js/446.6e3edae6.chunk.js": "./static/js/446.6e3edae6.chunk.js",
-    "static/css/199.1b1d5268.chunk.css": "./static/css/199.1b1d5268.chunk.css",
-    "static/js/199.7bef4716.chunk.js": "./static/js/199.7bef4716.chunk.js",
+    "static/js/446.61ab44e1.chunk.js": "./static/js/446.61ab44e1.chunk.js",
+    "static/css/608.b1e23401.chunk.css": "./static/css/608.b1e23401.chunk.css",
+    "static/js/608.fc3f670b.chunk.js": "./static/js/608.fc3f670b.chunk.js",
     "static/css/653.7954fc7e.chunk.css": "./static/css/653.7954fc7e.chunk.css",
     "static/js/653.40a437bc.chunk.js": "./static/js/653.40a437bc.chunk.js",
     "static/css/336.ac356e63.chunk.css": "./static/css/336.ac356e63.chunk.css",
@@ -31,7 +31,6 @@
     "static/media/4.jpg": "./static/media/4.480edeb41fef5d03c7ee.jpg",
     "static/media/Maksim Postnikov Resume.pdf": "./static/media/Maksim Postnikov Resume.57160876e992b8c8140c.pdf",
     "static/media/1.jpg": "./static/media/1.410508f6acd294229d11.jpg",
-    "static/media/resume.pdf": "./static/media/resume.a99cc36a8c231d24e12c.pdf",
     "static/media/5.jpg": "./static/media/5.5726dbd4aef72a11d8e2.jpg",
     "static/media/3.jpg": "./static/media/3.66ad78dd348fae27f344.jpg",
     "static/media/desktop_xd.jpg": "./static/media/desktop_xd.19b2ca8cd486fd99c6cc.jpg",
@@ -101,9 +100,9 @@
     "static/media/theme_day__cloud.svg": "./static/media/theme_day__cloud.80c89d8495d611d774dba896d4b50489.svg",
     "static/media/theme_nigth__star.svg": "./static/media/theme_nigth__star.fe104e84f6e48f1218e1f0dcfabeaf3a.svg",
     "main.22582ad8.css.map": "./static/css/main.22582ad8.css.map",
-    "main.cf0712ea.js.map": "./static/js/main.cf0712ea.js.map",
+    "main.ecad47bc.js.map": "./static/js/main.ecad47bc.js.map",
     "955.52314f42.chunk.css.map": "./static/css/955.52314f42.chunk.css.map",
-    "955.323a80b2.chunk.js.map": "./static/js/955.323a80b2.chunk.js.map",
+    "955.a9f78011.chunk.js.map": "./static/js/955.a9f78011.chunk.js.map",
     "497.e1a79dda.chunk.css.map": "./static/css/497.e1a79dda.chunk.css.map",
     "497.e358f717.chunk.js.map": "./static/js/497.e358f717.chunk.js.map",
     "936.776bf31c.chunk.css.map": "./static/css/936.776bf31c.chunk.css.map",
@@ -113,9 +112,9 @@
     "114.4f6630d6.chunk.css.map": "./static/css/114.4f6630d6.chunk.css.map",
     "114.5affbf47.chunk.js.map": "./static/js/114.5affbf47.chunk.js.map",
     "446.3e1b32e2.chunk.css.map": "./static/css/446.3e1b32e2.chunk.css.map",
-    "446.6e3edae6.chunk.js.map": "./static/js/446.6e3edae6.chunk.js.map",
-    "199.1b1d5268.chunk.css.map": "./static/css/199.1b1d5268.chunk.css.map",
-    "199.7bef4716.chunk.js.map": "./static/js/199.7bef4716.chunk.js.map",
+    "446.61ab44e1.chunk.js.map": "./static/js/446.61ab44e1.chunk.js.map",
+    "608.b1e23401.chunk.css.map": "./static/css/608.b1e23401.chunk.css.map",
+    "608.fc3f670b.chunk.js.map": "./static/js/608.fc3f670b.chunk.js.map",
     "653.7954fc7e.chunk.css.map": "./static/css/653.7954fc7e.chunk.css.map",
     "653.40a437bc.chunk.js.map": "./static/js/653.40a437bc.chunk.js.map",
     "336.ac356e63.chunk.css.map": "./static/css/336.ac356e63.chunk.css.map",
@@ -129,6 +128,6 @@
   },
   "entrypoints": [
     "static/css/main.22582ad8.css",
-    "static/js/main.cf0712ea.js"
+    "static/js/main.ecad47bc.js"
   ]
 }
