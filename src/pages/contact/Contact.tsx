@@ -8,8 +8,8 @@ import ContactBlock from "../../components/blocks/contact/Contact_block";
 import Modal from "../../components/modals/Modal";
 import Message from "../../components/message/Message";
 import "./contact.scss";
-import { Action, IContact, IContacts, IMapdispatchToProps, IModalMSG, ISetStore } from "src/models";
-import {  useMemo, useRef } from "react";
+import { Action, IContact, IContacts, IMapdispatchToProps, IModalMSG, ISetStore, IState } from "../../../src/models";
+import {  MutableRefObject, useMemo, useRef } from "react";
 
 interface IContactProps {
 	contacts: IContacts
@@ -20,9 +20,9 @@ interface IContactProps {
 
 
 const Contact: React.FC<IContactProps> = (props): JSX.Element => {
-	const inputEmail = useRef<HTMLInputElement>();
-	const inputSubject = useRef<HTMLInputElement>();
-	const inputMessage = useRef<HTMLTextAreaElement>();
+	const inputEmail = useRef<HTMLElement | null>(null);
+	const inputSubject = useRef<HTMLInputElement | null>(null);
+	const inputMessage = useRef<HTMLTextAreaElement | null>(null);
 
 	const checkInputs = (inputs: NodeListOf<HTMLInputElement>): boolean => {
 		const errorMessages: Array<string>= [];
@@ -53,8 +53,8 @@ const Contact: React.FC<IContactProps> = (props): JSX.Element => {
 		e.preventDefault();
 		if (checkInputs(document.querySelectorAll("[data-input='contact']"))) {
 			const currentDate: Date = new Date();
-			const apiToken: string = process.env.REACT_APP_TG_TOK;
-			const chatId: string = process.env.REACT_APP_CHT_ID;
+			const apiToken: string = process.env.REACT_APP_TG_TOK || "";
+			const chatId: string = process.env.REACT_APP_CHT_ID || "";
 			const name = (document.querySelector("#contact_name") as HTMLInputElement).value;
 			const email = (document.querySelector("#contact_email") as HTMLInputElement).value;
 			const subject = (document.querySelector("#contact_subject") as HTMLInputElement).value;
@@ -78,7 +78,7 @@ const Contact: React.FC<IContactProps> = (props): JSX.Element => {
 					if (error.response) {
 						props.setStore.setModalMsgText("Service unavailable. Please, try again later. \nError: " + [error.response.status, error.response.data].join(","));
 					} else if (error.request) {
-						props.setStore.setModalMsgText("Service unavailable. Please, try again later. \nError: " + [error.response.request]);
+						props.setStore.setModalMsgText("Service unavailable. Please, try again later. \nError: " + [error.request]);
 					} else {
 						props.setStore.setModalMsgText("Service unavailable. Please, try again later. \nError: "+ error.message);
 					}
@@ -91,9 +91,9 @@ const Contact: React.FC<IContactProps> = (props): JSX.Element => {
 
 	const changeFocus = (e: React.KeyboardEvent): void => {
 		if (e.key === "Enter") {
-			if (e.currentTarget.id === "contact_name") {inputEmail.current.focus();}
-			if (e.currentTarget.id === "contact_email") {inputSubject.current.focus();}
-			if (e.currentTarget.id === "contact_subject") {inputMessage.current.focus();}
+			if (e.currentTarget.id === "contact_name") {inputEmail.current?.focus();}
+			if (e.currentTarget.id === "contact_email") {inputSubject.current?.focus();}
+			if (e.currentTarget.id === "contact_subject") {inputMessage.current?.focus();}
 		}
 	};
 	
@@ -214,7 +214,7 @@ const Contact: React.FC<IContactProps> = (props): JSX.Element => {
 
 
 
-const mapStateToProps = (state)  => {
+const mapStateToProps = (state: IState)  => {
 	return {
 		contacts: state.contacts,
 		contact: state.contact,

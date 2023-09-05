@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import { useEffect, useMemo, useRef, } from "react";
 import "@splidejs/react-splide/css";
 import "./modalSplide.scss";
-import { IMapdispatchToProps, ISetStore, ProjectItemListItem } from "src/models";
+import { IMapdispatchToProps, ISetStore, IState, ProjectItemListItem } from "../../../src/models";
 import Splide from "@splidejs/splide";
-import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
+import ImgWithPreloader from "../../../src/assets/js/ImgWithPreloader";
 
 
 interface IOptions {
@@ -40,11 +40,16 @@ interface IModalSplide {
 	setStore: ISetStore
 }
 
+
+
 const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element => {
-	const _splideMain = useRef<HTMLDivElement>();
-	const _splideThumbs = useRef<HTMLDivElement>();
-	const mainRef = useRef<Splide>();
-	const thumbsRef = useRef<Splide>();
+	const _splideMain = useRef<HTMLDivElement | null>(null);
+	const _splideThumbs = useRef<HTMLDivElement | null>(null);
+	const mainRef = useRef<Splide | null>(null);
+	const thumbsRef = useRef<Splide | null>(null);
+
+	console.log('re');
+	
 		
 	const optionsThumbs: Partial<IOptions> = {
 		lazyLoad	: false,
@@ -90,16 +95,16 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 	};
 
 	const closeSplideModal = () => {
-		props.setStore.setSelectedPortfolioImage(thumbsRef.current.index);
-		document.querySelector("body").classList.remove("noscroll");
+		props.setStore.setSelectedPortfolioImage(thumbsRef.current?.index);
+		document.querySelector("body")?.classList.remove("noscroll");
 		props.setStore.setModalSplide(false);
 	};
 
-	const showSlide = (slideToGo) => {
-		thumbsRef.current.go(slideToGo);
+	const showSlide = (slideToGo: string | number) => {
+		thumbsRef.current?.go(slideToGo);
 	};
 
-	function modalKeyListener (e) {
+	const modalKeyListener = (e: KeyboardEvent) => {
 		e.key === "Escape" && closeSplideModal();
 		e.keyCode === 37 && showSlide("<");
 		e.keyCode === 39 && showSlide(">");
@@ -108,6 +113,7 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 
 
 	useEffect(() => {
+		if (!_splideThumbs.current || !_splideMain.current) return
 		thumbsRef.current = new Splide(_splideThumbs.current, optionsThumbs);
 		mainRef.current = new Splide(_splideMain.current, optionsMain);
 		mainRef.current.sync(thumbsRef.current);
@@ -115,8 +121,8 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 		thumbsRef.current.mount();
 		
 		return () => {
-			thumbsRef.current.destroy();
-			mainRef.current.destroy();
+			thumbsRef.current?.destroy();
+			mainRef.current?.destroy();
 		};
 		
 	}, [props.selected]);
@@ -125,7 +131,7 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 	useEffect(() => {
 		showSlide(props.selectedImage);
 		props.show && document.addEventListener("keyup", modalKeyListener);
-		props.show && document.querySelector("body").classList.add("noscroll");
+		props.show && document.querySelector("body")?.classList.add("noscroll");
 		return (() => {
 			document.removeEventListener("keyup", modalKeyListener);
 		});
@@ -144,11 +150,7 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 										{props.list[props.selected].images.map((slide) => {
 											return (
 												<li className="splide__slide" key={slide.images[0].image}>
-													{props.show ?
-														<ImgWithPreloader link={slide.images[slide.images.length - 1].image} alt={slide.descr} />
-														:
-														<></>
-													}
+													{props.show && <ImgWithPreloader link={slide.images[slide.images.length - 1].image} alt={slide.descr} />}
 												</li>
 											);
 										})
@@ -163,11 +165,7 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 										{props.list[props.selected].images.map((slide) => {
 											return (
 												<li className="splide__slide" key={slide.images[0].image}>
-													{props.show ?
-														<ImgWithPreloader link={slide.images[0].image} alt={slide.descr} />
-														:
-														<></>
-													}
+													{props.show && <ImgWithPreloader link={slide.images[0].image} alt={slide.descr} />}
 												</li>
 											);
 			
@@ -197,14 +195,12 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 
 
 
-const mapStateToProps = (state)  => {
-	return {
-		selected: state.portfolios.selected,
-		selectedImage: state.portfolios.selectedImage,
-		show: state.modalSplide.show,
-		list: state.portfolios.list
-	};
-};
+const mapStateToProps = (state: IState): Omit<IModalSplide, "setStore"> => ({
+	selected: state.portfolios.selected,
+	selectedImage: state.portfolios.selectedImage,
+	show: state.modalSplide.show,
+	list: state.portfolios.list
+})
 
 
 const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({

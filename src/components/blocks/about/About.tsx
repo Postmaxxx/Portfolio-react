@@ -4,13 +4,13 @@ import * as actions from "../../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "./about.scss";
-import { ImageMe, IMapdispatchToProps, ISetStore, IState, MeInfo } from "src/models";
-import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
-import { findBestSuitedImg } from "src/assets/js/findBestSuitedImg";
-import ModalImage from "src/components/modals/ModalImage";
-import { TTheme } from "src/components/theme_switcher/theme-switcher";
+import { ImageMe, IMapdispatchToProps, IMyImage, ISetStore, IState, MeInfo } from "../../../../src/models";
+import ImgWithPreloader from "../../../../src/assets/js/ImgWithPreloader";
+import { findBestSuitedImg } from "../../../../src/assets/js/findBestSuitedImg";
+import ModalImage from "../../../../src/components/modals/ModalImage";
+import { TTheme } from "../../../../src/models";
 
-const ModalImagePort = (p) => createPortal(<ModalImage imageProps={p}/>, document.querySelector("#portal"));
+const ModalImagePort = (p: IMyImage) => createPortal(<ModalImage imageProps={p}/>, (document.querySelector("#portal") as HTMLElement));
 
 interface IAbout {
 	theme: TTheme
@@ -32,20 +32,21 @@ interface IAbout {
 
 const About:React.FC<IAbout> = (props): JSX.Element => {
 
-	const _imgContRef: MutableRefObject<HTMLDivElement> = useRef(null);
+	const _imgContRef = useRef<HTMLDivElement | null>(null);
 	const [firstRender, setFirstRender]= useState<boolean>(true);
 
 	const openGallery = () => {
 		props.setStore.setModalImage(true);
 	};
 	
-
+	console.log(props.theme);
+	
 	
 	useEffect(() => {
 		setFirstRender(false);
-		_imgContRef.current.addEventListener("click", openGallery);
+		_imgContRef.current?.addEventListener("click", openGallery);
 	}, []);
-
+	
 	
 	const renderDescrMemo = useMemo(() => {
 		return <div className="descr">
@@ -65,7 +66,7 @@ const About:React.FC<IAbout> = (props): JSX.Element => {
 
 	return(
 		<div className="about__container">
-			<ModalImagePort images={props.theme === "light" ? props.imagesMe.day.images : props.imagesMe.night.images}/>
+			<ModalImagePort images={props.theme === "light" ? props.imagesMe.day.images : props.imagesMe.night.images} descr=""/>
 			<div className="img-container" ref={_imgContRef}>
 				{_imgContRef.current && <ImgWithPreloader 
 					link={findBestSuitedImg({

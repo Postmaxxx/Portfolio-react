@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import * as actions from "../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { IRemoveEventListener, PageItem,  IMapdispatchToProps, ISetStore } from "src/models";
+import { IRemoveEventListener, PageItem,  IMapdispatchToProps, ISetStore, IState } from "../../../src/models";
 
 
 interface ISidePanel {
@@ -20,7 +20,7 @@ const SidePanel: React.FC<ISidePanel> = (props): JSX.Element => {
 		props.nav_ham === "" ? props.setStore.setNavOpen() : props.setStore.setNavClose();
 	};
 
-	const clicked: EventListener = (e: MouseEvent): void => {
+	const clicked = (e: MouseEvent): void => {
 		if (props.nav_ham === "nav_opened" && (e.clientX > 250)) {
 			props.setStore.setNavClose();
 			document.removeEventListener("click", clicked);
@@ -38,17 +38,17 @@ const SidePanel: React.FC<ISidePanel> = (props): JSX.Element => {
 
     
 	useEffect((): void => { //update
-		const _container: HTMLDivElement = document.querySelector(".page-container");
-		const _sidePanel: HTMLDivElement = document.querySelector(".side-panel");
-		const _hamburgerIcon: HTMLDivElement = document.querySelector(".hamburger");
+		const _container: HTMLDivElement | null = document.querySelector(".page-container");
+		const _sidePanel: HTMLDivElement | null = document.querySelector(".side-panel");
+		const _hamburgerIcon: HTMLDivElement | null = document.querySelector(".hamburger");
 		if (props.nav_ham === "nav_opened") {
 			_container?.classList?.add("nav_opened");
-			_sidePanel.classList.add("nav_opened");
-			_hamburgerIcon.classList.add("nav_opened");
+			_sidePanel?.classList.add("nav_opened");
+			_hamburgerIcon?.classList.add("nav_opened");
 		} else {
 			_container?.classList?.remove("nav_opened");
-			_sidePanel.classList.remove("nav_opened");
-			_hamburgerIcon.classList.remove("nav_opened");
+			_sidePanel?.classList.remove("nav_opened");
+			_hamburgerIcon?.classList.remove("nav_opened");
 		}
 	}, [props.nav_ham]);
 
@@ -94,7 +94,7 @@ const SidePanel: React.FC<ISidePanel> = (props): JSX.Element => {
 
 
 
-const mapStateToProps = (state)  => {
+const mapStateToProps = (state: IState)  => {
 	return {
 		nav_ham: state.nav_ham,
 		imageMe: state.imagesMe.side,

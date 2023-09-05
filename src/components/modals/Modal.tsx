@@ -2,7 +2,7 @@ import * as actions from "../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "./modal.scss";
-import { Action, IMapdispatchToProps, ISetStore, IState } from "src/models";
+import { Action, IMapdispatchToProps, ISetStore, IState } from "../../../src/models";
 import { ReactNode } from "react";
 
 interface IModal {

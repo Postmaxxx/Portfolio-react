@@ -1,4 +1,4 @@
-import { IState, TActionListKeys, TTheme } from "src/models";
+import { IState, TActionListKeys, TTheme } from "../../../src/models";
 import { actionList } from "../../models";
 import initialState from "./initialState";
 

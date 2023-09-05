@@ -1,4 +1,4 @@
-import { IState } from "src/models";
+import { IState } from "../../../src/models";
 
 import sidePhoto from "../img/me_logo.jpg";
 //import resumeDoc from "../docs/Maksim Postnikov Resume.pdf";
@@ -12,190 +12,236 @@ import photoDay750 from "../img/me_day_750.jpg";
 import photoDay500 from "../img/me_day_500.jpg";
 import photoDay350 from "../img/me_day_350.jpg";
 
-import plenco_1 from "../img/portfolio/plenco/1.jpg";
-import plenco_1_big from "../img/portfolio/plenco/1_big.jpg";
-import plenco_1_small from "../img/portfolio/plenco/1_small.jpg";
-import plenco_1_preview from "../img/portfolio/plenco/1_preview.jpg";
-import plenco_2 from "../img/portfolio/plenco/2.jpg";
-import plenco_2_big from "../img/portfolio/plenco/2_big.jpg";
-import plenco_2_small from "../img/portfolio/plenco/2_small.jpg";
-import plenco_2_preview from "../img/portfolio/plenco/2_preview.jpg";
-import plenco_3 from "../img/portfolio/plenco/3.jpg";
-import plenco_3_big from "../img/portfolio/plenco/3_big.jpg";
-import plenco_3_small from "../img/portfolio/plenco/3_small.jpg";
-import plenco_3_preview from "../img/portfolio/plenco/3_preview.jpg";
-import plenco_4 from "../img/portfolio/plenco/4.jpg";
-import plenco_4_big from "../img/portfolio/plenco/4_big.jpg";
-import plenco_4_small from "../img/portfolio/plenco/4_small.jpg";
-import plenco_4_preview from "../img/portfolio/plenco/4_preview.jpg";
-import plenco_5 from "../img/portfolio/plenco/5.jpg";
-import plenco_5_big from "../img/portfolio/plenco/5_big.jpg";
-import plenco_5_small from "../img/portfolio/plenco/5_small.jpg";
-import plenco_5_preview from "../img/portfolio/plenco/5_preview.jpg";
-import plenco_6 from "../img/portfolio/plenco/6.jpg";
-import plenco_6_big from "../img/portfolio/plenco/6_big.jpg";
-import plenco_6_small from "../img/portfolio/plenco/6_small.jpg";
-import plenco_6_preview from "../img/portfolio/plenco/6_preview.jpg";
-import plenco_7 from "../img/portfolio/plenco/7.jpg";
-import plenco_7_big from "../img/portfolio/plenco/7_big.jpg";
-import plenco_7_small from "../img/portfolio/plenco/7_small.jpg";
-import plenco_7_preview from "../img/portfolio/plenco/7_preview.jpg";
-import plenco_8 from "../img/portfolio/plenco/8.jpg";
-import plenco_8_big from "../img/portfolio/plenco/8_big.jpg";
-import plenco_8_small from "../img/portfolio/plenco/8_small.jpg";
-import plenco_8_preview from "../img/portfolio/plenco/8_preview.jpg";
-import plenco_9 from "../img/portfolio/plenco/9.jpg";
-import plenco_9_big from "../img/portfolio/plenco/9_big.jpg";
-import plenco_9_small from "../img/portfolio/plenco/9_small.jpg";
-import plenco_9_preview from "../img/portfolio/plenco/9_preview.jpg";
-import plenco_10 from "../img/portfolio/plenco/10.jpg";
-import plenco_10_big from "../img/portfolio/plenco/10_big.jpg";
-import plenco_10_small from "../img/portfolio/plenco/10_small.jpg";
-import plenco_10_preview from "../img/portfolio/plenco/10_preview.jpg";
-import plenco_11 from "../img/portfolio/plenco/11.jpg";
-import plenco_11_big from "../img/portfolio/plenco/11_big.jpg";
-import plenco_11_small from "../img/portfolio/plenco/11_small.jpg";
-import plenco_11_preview from "../img/portfolio/plenco/11_preview.jpg";
-import plenco_12 from "../img/portfolio/plenco/12.jpg";
-import plenco_12_big from "../img/portfolio/plenco/12_big.jpg";
-import plenco_12_small from "../img/portfolio/plenco/12_small.jpg";
-import plenco_12_preview from "../img/portfolio/plenco/12_preview.jpg";
-import plenco_desktop_xd from "../img/portfolio/plenco/desktop_xd.jpg";
-import plenco_desktop_xd_big from "../img/portfolio/plenco/desktop_xd_big.jpg";
-import plenco_desktop_xd_small from "../img/portfolio/plenco/desktop_xd_small.jpg";
-import plenco_desktop_xd_preview from "../img/portfolio/plenco/desktop_xd_preview.jpg";
-import plenco_mobile_xd from "../img/portfolio/plenco/mobile_xd.jpg";
-import plenco_mobile_xd_big from "../img/portfolio/plenco/mobile_xd_big.jpg";
-import plenco_mobile_xd_small from "../img/portfolio/plenco/mobile_xd_small.jpg";
-import plenco_mobile_xd_preview from "../img/portfolio/plenco/mobile_xd_preview.jpg";
+import plenco_1 from "../img/portfolio/plenco/plenco_1.jpg";
+import plenco_1_big from "../img/portfolio/plenco/plenco_1_big.jpg";
+import plenco_1_small from "../img/portfolio/plenco/plenco_1_small.jpg";
+import plenco_1_preview from "../img/portfolio/plenco/plenco_1_preview.jpg";
+import plenco_2 from "../img/portfolio/plenco/plenco_2.jpg";
+import plenco_2_big from "../img/portfolio/plenco/plenco_2_big.jpg";
+import plenco_2_small from "../img/portfolio/plenco/plenco_2_small.jpg";
+import plenco_2_preview from "../img/portfolio/plenco/plenco_2_preview.jpg";
+import plenco_3 from "../img/portfolio/plenco/plenco_3.jpg";
+import plenco_3_big from "../img/portfolio/plenco/plenco_3_big.jpg";
+import plenco_3_small from "../img/portfolio/plenco/plenco_3_small.jpg";
+import plenco_3_preview from "../img/portfolio/plenco/plenco_3_preview.jpg";
+import plenco_4 from "../img/portfolio/plenco/plenco_4.jpg";
+import plenco_4_big from "../img/portfolio/plenco/plenco_4_big.jpg";
+import plenco_4_small from "../img/portfolio/plenco/plenco_4_small.jpg";
+import plenco_4_preview from "../img/portfolio/plenco/plenco_4_preview.jpg";
+import plenco_5 from "../img/portfolio/plenco/plenco_5.jpg";
+import plenco_5_big from "../img/portfolio/plenco/plenco_5_big.jpg";
+import plenco_5_small from "../img/portfolio/plenco/plenco_5_small.jpg";
+import plenco_5_preview from "../img/portfolio/plenco/plenco_5_preview.jpg";
+import plenco_6 from "../img/portfolio/plenco/plenco_6.jpg";
+import plenco_6_big from "../img/portfolio/plenco/plenco_6_big.jpg";
+import plenco_6_small from "../img/portfolio/plenco/plenco_6_small.jpg";
+import plenco_6_preview from "../img/portfolio/plenco/plenco_6_preview.jpg";
+import plenco_7 from "../img/portfolio/plenco/plenco_7.jpg";
+import plenco_7_big from "../img/portfolio/plenco/plenco_7_big.jpg";
+import plenco_7_small from "../img/portfolio/plenco/plenco_7_small.jpg";
+import plenco_7_preview from "../img/portfolio/plenco/plenco_7_preview.jpg";
+import plenco_8 from "../img/portfolio/plenco/plenco_8.jpg";
+import plenco_8_big from "../img/portfolio/plenco/plenco_8_big.jpg";
+import plenco_8_small from "../img/portfolio/plenco/plenco_8_small.jpg";
+import plenco_8_preview from "../img/portfolio/plenco/plenco_8_preview.jpg";
+import plenco_9 from "../img/portfolio/plenco/plenco_9.jpg";
+import plenco_9_big from "../img/portfolio/plenco/plenco_9_big.jpg";
+import plenco_9_small from "../img/portfolio/plenco/plenco_9_small.jpg";
+import plenco_9_preview from "../img/portfolio/plenco/plenco_9_preview.jpg";
+import plenco_10 from "../img/portfolio/plenco/plenco_10.jpg";
+import plenco_10_big from "../img/portfolio/plenco/plenco_10_big.jpg";
+import plenco_10_small from "../img/portfolio/plenco/plenco_10_small.jpg";
+import plenco_10_preview from "../img/portfolio/plenco/plenco_10_preview.jpg";
+import plenco_11 from "../img/portfolio/plenco/plenco_11.jpg";
+import plenco_11_big from "../img/portfolio/plenco/plenco_11_big.jpg";
+import plenco_11_small from "../img/portfolio/plenco/plenco_11_small.jpg";
+import plenco_11_preview from "../img/portfolio/plenco/plenco_11_preview.jpg";
+import plenco_12 from "../img/portfolio/plenco/plenco_12.jpg";
+import plenco_12_big from "../img/portfolio/plenco/plenco_12_big.jpg";
+import plenco_12_small from "../img/portfolio/plenco/plenco_12_small.jpg";
+import plenco_12_preview from "../img/portfolio/plenco/plenco_12_preview.jpg";
+import plenco_desktop_xd from "../img/portfolio/plenco/plenco_desktop_xd.jpg";
+import plenco_desktop_xd_big from "../img/portfolio/plenco/plenco_desktop_xd_big.jpg";
+import plenco_desktop_xd_small from "../img/portfolio/plenco/plenco_desktop_xd_small.jpg";
+import plenco_desktop_xd_preview from "../img/portfolio/plenco/plenco_desktop_xd_preview.jpg";
+import plenco_mobile_xd from "../img/portfolio/plenco/plenco_mobile_xd.jpg";
+import plenco_mobile_xd_big from "../img/portfolio/plenco/plenco_mobile_xd_big.jpg";
+import plenco_mobile_xd_small from "../img/portfolio/plenco/plenco_mobile_xd_small.jpg";
+import plenco_mobile_xd_preview from "../img/portfolio/plenco/plenco_mobile_xd_preview.jpg";
 
-import p2s_1 from "../img/portfolio/p2s/1.jpg";
-import p2s_1_big from "../img/portfolio/p2s/1_big.jpg";
-import p2s_1_small from "../img/portfolio/p2s/1_small.jpg";
-import p2s_1_preview from "../img/portfolio/p2s/1_preview.jpg";
-import p2s_2 from "../img/portfolio/p2s/2.jpg";
-import p2s_2_big from "../img/portfolio/p2s/2_big.jpg";
-import p2s_2_small from "../img/portfolio/p2s/2_small.jpg";
-import p2s_2_preview from "../img/portfolio/p2s/2_preview.jpg";
-import p2s_3 from "../img/portfolio/p2s/3.jpg";
-import p2s_3_big from "../img/portfolio/p2s/3_big.jpg";
-import p2s_3_small from "../img/portfolio/p2s/3_small.jpg";
-import p2s_3_preview from "../img/portfolio/p2s/3_preview.jpg";
-import p2s_4 from "../img/portfolio/p2s/4.jpg";
-import p2s_4_big from "../img/portfolio/p2s/4_big.jpg";
-import p2s_4_small from "../img/portfolio/p2s/4_small.jpg";
-import p2s_4_preview from "../img/portfolio/p2s/4_preview.jpg";
-
-
-import techlicious_1 from "../img/portfolio/techlicious/1.jpg";
-import techlicious_1_big from "../img/portfolio/techlicious/1_big.jpg";
-import techlicious_1_small from "../img/portfolio/techlicious/1_small.jpg";
-import techlicious_1_preview from "../img/portfolio/techlicious/1_preview.jpg";
-import techlicious_2 from "../img/portfolio/techlicious/2.jpg";
-import techlicious_2_big from "../img/portfolio/techlicious/2_big.jpg";
-import techlicious_2_small from "../img/portfolio/techlicious/2_small.jpg";
-import techlicious_2_preview from "../img/portfolio/techlicious/2_preview.jpg";
-import techlicious_3 from "../img/portfolio/techlicious/3.jpg";
-import techlicious_3_big from "../img/portfolio/techlicious/3_big.jpg";
-import techlicious_3_small from "../img/portfolio/techlicious/3_small.jpg";
-import techlicious_3_preview from "../img/portfolio/techlicious/3_preview.jpg";
-import techlicious_4 from "../img/portfolio/techlicious/4.jpg";
-import techlicious_4_big from "../img/portfolio/techlicious/4_big.jpg";
-import techlicious_4_small from "../img/portfolio/techlicious/4_small.jpg";
-import techlicious_4_preview from "../img/portfolio/techlicious/4_preview.jpg";
-import techlicious_5 from "../img/portfolio/techlicious/5.jpg";
-import techlicious_5_big from "../img/portfolio/techlicious/5_big.jpg";
-import techlicious_5_small from "../img/portfolio/techlicious/5_small.jpg";
-import techlicious_5_preview from "../img/portfolio/techlicious/5_preview.jpg";
-
-import formation_1 from "../img/portfolio/formation/1.jpg";
-import formation_1_big from "../img/portfolio/formation/1_big.jpg";
-import formation_1_small from "../img/portfolio/formation/1_small.jpg";
-import formation_1_preview from "../img/portfolio/formation/1_preview.jpg";
-import formation_2 from "../img/portfolio/formation/2.jpg";
-import formation_2_big from "../img/portfolio/formation/2_big.jpg";
-import formation_2_small from "../img/portfolio/formation/2_small.jpg";
-import formation_2_preview from "../img/portfolio/formation/2_preview.jpg";
-import formation_3 from "../img/portfolio/formation/3.jpg";
-import formation_3_big from "../img/portfolio/formation/3_big.jpg";
-import formation_3_small from "../img/portfolio/formation/3_small.jpg";
-import formation_3_preview from "../img/portfolio/formation/3_preview.jpg";
-import formation_4 from "../img/portfolio/formation/4.jpg";
-import formation_4_big from "../img/portfolio/formation/4_big.jpg";
-import formation_4_small from "../img/portfolio/formation/4_small.jpg";
-import formation_4_preview from "../img/portfolio/formation/4_preview.jpg";
-import formation_5 from "../img/portfolio/formation/5.jpg";
-import formation_5_big from "../img/portfolio/formation/5_big.jpg";
-import formation_5_small from "../img/portfolio/formation/5_small.jpg";
-import formation_5_preview from "../img/portfolio/formation/5_preview.jpg";
-import formation_6 from "../img/portfolio/formation/6.jpg";
-import formation_6_big from "../img/portfolio/formation/6_big.jpg";
-import formation_6_small from "../img/portfolio/formation/6_small.jpg";
-import formation_6_preview from "../img/portfolio/formation/6_preview.jpg";
-import formation_7 from "../img/portfolio/formation/7.jpg";
-import formation_7_big from "../img/portfolio/formation/7_big.jpg";
-import formation_7_small from "../img/portfolio/formation/7_small.jpg";
-import formation_7_preview from "../img/portfolio/formation/7_preview.jpg";
-import formation_8 from "../img/portfolio/formation/8.jpg";
-import formation_8_big from "../img/portfolio/formation/8_big.jpg";
-import formation_8_small from "../img/portfolio/formation/8_small.jpg";
-import formation_8_preview from "../img/portfolio/formation/8_preview.jpg";
-import formation_9 from "../img/portfolio/formation/9.jpg";
-import formation_9_big from "../img/portfolio/formation/9_big.jpg";
-import formation_9_small from "../img/portfolio/formation/9_small.jpg";
-import formation_9_preview from "../img/portfolio/formation/9_preview.jpg";
-import formation_10 from "../img/portfolio/formation/10.jpg";
-import formation_10_big from "../img/portfolio/formation/10_big.jpg";
-import formation_10_small from "../img/portfolio/formation/10_small.jpg";
-import formation_10_preview from "../img/portfolio/formation/10_preview.jpg";
-import formation_11 from "../img/portfolio/formation/11.jpg";
-import formation_11_big from "../img/portfolio/formation/11_big.jpg";
-import formation_11_small from "../img/portfolio/formation/11_small.jpg";
-import formation_11_preview from "../img/portfolio/formation/11_preview.jpg";
-import formation_12 from "../img/portfolio/formation/12.jpg";
-import formation_12_big from "../img/portfolio/formation/12_big.jpg";
-import formation_12_small from "../img/portfolio/formation/12_small.jpg";
-import formation_12_preview from "../img/portfolio/formation/12_preview.jpg";
+import p2s_1 from "../img/portfolio/p2s/p2s_1.jpg";
+import p2s_1_big from "../img/portfolio/p2s/p2s_1_big.jpg";
+import p2s_1_small from "../img/portfolio/p2s/p2s_1_small.jpg";
+import p2s_1_preview from "../img/portfolio/p2s/p2s_1_preview.jpg";
+import p2s_2 from "../img/portfolio/p2s/p2s_2.jpg";
+import p2s_2_big from "../img/portfolio/p2s/p2s_2_big.jpg";
+import p2s_2_small from "../img/portfolio/p2s/p2s_2_small.jpg";
+import p2s_2_preview from "../img/portfolio/p2s/p2s_2_preview.jpg";
+import p2s_3 from "../img/portfolio/p2s/p2s_3.jpg";
+import p2s_3_big from "../img/portfolio/p2s/p2s_3_big.jpg";
+import p2s_3_small from "../img/portfolio/p2s/p2s_3_small.jpg";
+import p2s_3_preview from "../img/portfolio/p2s/p2s_3_preview.jpg";
+import p2s_4 from "../img/portfolio/p2s/p2s_4.jpg";
+import p2s_4_big from "../img/portfolio/p2s/p2s_4_big.jpg";
+import p2s_4_small from "../img/portfolio/p2s/p2s_4_small.jpg";
+import p2s_4_preview from "../img/portfolio/p2s/p2s_4_preview.jpg";
 
 
+import techlicious_1 from "../img/portfolio/techlicious/techlicious_1.jpg";
+import techlicious_1_big from "../img/portfolio/techlicious/techlicious_1_big.jpg";
+import techlicious_1_small from "../img/portfolio/techlicious/techlicious_1_small.jpg";
+import techlicious_1_preview from "../img/portfolio/techlicious/techlicious_1_preview.jpg";
+import techlicious_2 from "../img/portfolio/techlicious/techlicious_2.jpg";
+import techlicious_2_big from "../img/portfolio/techlicious/techlicious_2_big.jpg";
+import techlicious_2_small from "../img/portfolio/techlicious/techlicious_2_small.jpg";
+import techlicious_2_preview from "../img/portfolio/techlicious/techlicious_2_preview.jpg";
+import techlicious_3 from "../img/portfolio/techlicious/techlicious_3.jpg";
+import techlicious_3_big from "../img/portfolio/techlicious/techlicious_3_big.jpg";
+import techlicious_3_small from "../img/portfolio/techlicious/techlicious_3_small.jpg";
+import techlicious_3_preview from "../img/portfolio/techlicious/techlicious_3_preview.jpg";
+import techlicious_4 from "../img/portfolio/techlicious/techlicious_4.jpg";
+import techlicious_4_big from "../img/portfolio/techlicious/techlicious_4_big.jpg";
+import techlicious_4_small from "../img/portfolio/techlicious/techlicious_4_small.jpg";
+import techlicious_4_preview from "../img/portfolio/techlicious/techlicious_4_preview.jpg";
+import techlicious_5 from "../img/portfolio/techlicious/techlicious_5.jpg";
+import techlicious_5_big from "../img/portfolio/techlicious/techlicious_5_big.jpg";
+import techlicious_5_small from "../img/portfolio/techlicious/techlicious_5_small.jpg";
+import techlicious_5_preview from "../img/portfolio/techlicious/techlicious_5_preview.jpg";
 
-import pv_1 from "../img/portfolio/pv/1.jpg";
-import pv_1_big from "../img/portfolio/pv/1_big.jpg";
-import pv_1_small from "../img/portfolio/pv/1_small.jpg";
-import pv_2 from "../img/portfolio/pv/2.jpg";
-import pv_2_big from "../img/portfolio/pv/2_big.jpg";
-import pv_2_small from "../img/portfolio/pv/2_small.jpg";
-import pv_3 from "../img/portfolio/pv/3.jpg";
-import pv_3_big from "../img/portfolio/pv/3_big.jpg";
-import pv_3_small from "../img/portfolio/pv/3_small.jpg";
-import pv_4 from "../img/portfolio/pv/4.jpg";
-import pv_4_big from "../img/portfolio/pv/4_big.jpg";
-import pv_4_small from "../img/portfolio/pv/4_small.jpg";
-import pv_5 from "../img/portfolio/pv/5.jpg";
-import pv_5_big from "../img/portfolio/pv/5_big.jpg";
-import pv_5_small from "../img/portfolio/pv/5_small.jpg";
-import pv_6 from "../img/portfolio/pv/6.jpg";
-import pv_6_big from "../img/portfolio/pv/6_big.jpg";
-import pv_6_small from "../img/portfolio/pv/6_small.jpg";
-import pv_7 from "../img/portfolio/pv/7.jpg";
-import pv_7_big from "../img/portfolio/pv/7_big.jpg";
-import pv_7_small from "../img/portfolio/pv/7_small.jpg";
+import formation_1 from "../img/portfolio/formation/formation_1.jpg";
+import formation_1_big from "../img/portfolio/formation/formation_1_big.jpg";
+import formation_1_small from "../img/portfolio/formation/formation_1_small.jpg";
+import formation_1_preview from "../img/portfolio/formation/formation_1_preview.jpg";
+import formation_2 from "../img/portfolio/formation/formation_2.jpg";
+import formation_2_big from "../img/portfolio/formation/formation_2_big.jpg";
+import formation_2_small from "../img/portfolio/formation/formation_2_small.jpg";
+import formation_2_preview from "../img/portfolio/formation/formation_2_preview.jpg";
+import formation_3 from "../img/portfolio/formation/formation_3.jpg";
+import formation_3_big from "../img/portfolio/formation/formation_3_big.jpg";
+import formation_3_small from "../img/portfolio/formation/formation_3_small.jpg";
+import formation_3_preview from "../img/portfolio/formation/formation_3_preview.jpg";
+import formation_4 from "../img/portfolio/formation/formation_4.jpg";
+import formation_4_big from "../img/portfolio/formation/formation_4_big.jpg";
+import formation_4_small from "../img/portfolio/formation/formation_4_small.jpg";
+import formation_4_preview from "../img/portfolio/formation/formation_4_preview.jpg";
+import formation_5 from "../img/portfolio/formation/formation_5.jpg";
+import formation_5_big from "../img/portfolio/formation/formation_5_big.jpg";
+import formation_5_small from "../img/portfolio/formation/formation_5_small.jpg";
+import formation_5_preview from "../img/portfolio/formation/formation_5_preview.jpg";
+import formation_6 from "../img/portfolio/formation/formation_6.jpg";
+import formation_6_big from "../img/portfolio/formation/formation_6_big.jpg";
+import formation_6_small from "../img/portfolio/formation/formation_6_small.jpg";
+import formation_6_preview from "../img/portfolio/formation/formation_6_preview.jpg";
+import formation_7 from "../img/portfolio/formation/formation_7.jpg";
+import formation_7_big from "../img/portfolio/formation/formation_7_big.jpg";
+import formation_7_small from "../img/portfolio/formation/formation_7_small.jpg";
+import formation_7_preview from "../img/portfolio/formation/formation_7_preview.jpg";
+import formation_8 from "../img/portfolio/formation/formation_8.jpg";
+import formation_8_big from "../img/portfolio/formation/formation_8_big.jpg";
+import formation_8_small from "../img/portfolio/formation/formation_8_small.jpg";
+import formation_8_preview from "../img/portfolio/formation/formation_8_preview.jpg";
+import formation_9 from "../img/portfolio/formation/formation_9.jpg";
+import formation_9_big from "../img/portfolio/formation/formation_9_big.jpg";
+import formation_9_small from "../img/portfolio/formation/formation_9_small.jpg";
+import formation_9_preview from "../img/portfolio/formation/formation_9_preview.jpg";
+import formation_10 from "../img/portfolio/formation/formation_10.jpg";
+import formation_10_big from "../img/portfolio/formation/formation_10_big.jpg";
+import formation_10_small from "../img/portfolio/formation/formation_10_small.jpg";
+import formation_10_preview from "../img/portfolio/formation/formation_10_preview.jpg";
+import formation_11 from "../img/portfolio/formation/formation_11.jpg";
+import formation_11_big from "../img/portfolio/formation/formation_11_big.jpg";
+import formation_11_small from "../img/portfolio/formation/formation_11_small.jpg";
+import formation_11_preview from "../img/portfolio/formation/formation_11_preview.jpg";
+import formation_12 from "../img/portfolio/formation/formation_12.jpg";
+import formation_12_big from "../img/portfolio/formation/formation_12_big.jpg";
+import formation_12_small from "../img/portfolio/formation/formation_12_small.jpg";
+import formation_12_preview from "../img/portfolio/formation/formation_12_preview.jpg";
 
 
 
+import pv_1 from "../img/portfolio/pv/pv_1.jpg";
+import pv_1_big from "../img/portfolio/pv/pv_1_big.jpg";
+import pv_1_small from "../img/portfolio/pv/pv_1_small.jpg";
+import pv_2 from "../img/portfolio/pv/pv_2.jpg";
+import pv_2_big from "../img/portfolio/pv/pv_2_big.jpg";
+import pv_2_small from "../img/portfolio/pv/pv_2_small.jpg";
+import pv_3 from "../img/portfolio/pv/pv_3.jpg";
+import pv_3_big from "../img/portfolio/pv/pv_3_big.jpg";
+import pv_3_small from "../img/portfolio/pv/pv_3_small.jpg";
+import pv_4 from "../img/portfolio/pv/pv_4.jpg";
+import pv_4_big from "../img/portfolio/pv/pv_4_big.jpg";
+import pv_4_small from "../img/portfolio/pv/pv_4_small.jpg";
+import pv_5 from "../img/portfolio/pv/pv_5.jpg";
+import pv_5_big from "../img/portfolio/pv/pv_5_big.jpg";
+import pv_5_small from "../img/portfolio/pv/pv_5_small.jpg";
+import pv_6 from "../img/portfolio/pv/pv_6.jpg";
+import pv_6_big from "../img/portfolio/pv/pv_6_big.jpg";
+import pv_6_small from "../img/portfolio/pv/pv_6_small.jpg";
+import pv_7 from "../img/portfolio/pv/pv_7.jpg";
+import pv_7_big from "../img/portfolio/pv/pv_7_big.jpg";
+import pv_7_small from "../img/portfolio/pv/pv_7_small.jpg";
 
-import west_1 from "../img/portfolio/west/1.jpg";
-import west_1_big from "../img/portfolio/west/1_big.jpg";
-import west_1_small from "../img/portfolio/west/1_small.jpg";
-import west_2 from "../img/portfolio/west/2.jpg";
-import west_2_big from "../img/portfolio/west/2_big.jpg";
-import west_2_small from "../img/portfolio/west/2_small.jpg";
-import west_3 from "../img/portfolio/west/3.jpg";
-import west_3_big from "../img/portfolio/west/3_big.jpg";
-import west_3_small from "../img/portfolio/west/3_small.jpg";
-import west_4 from "../img/portfolio/west/4.jpg";
-import west_4_big from "../img/portfolio/west/4_big.jpg";
-import west_4_small from "../img/portfolio/west/4_small.jpg";
+
+
+
+import west_1 from "../img/portfolio/west/west_1.jpg";
+import west_1_big from "../img/portfolio/west/west_1_big.jpg";
+import west_1_small from "../img/portfolio/west/west_1_small.jpg";
+import west_2 from "../img/portfolio/west/west_2.jpg";
+import west_2_big from "../img/portfolio/west/west_2_big.jpg";
+import west_2_small from "../img/portfolio/west/west_2_small.jpg";
+import west_3 from "../img/portfolio/west/west_3.jpg";
+import west_3_big from "../img/portfolio/west/west_3_big.jpg";
+import west_3_small from "../img/portfolio/west/west_3_small.jpg";
+import west_4 from "../img/portfolio/west/west_4.jpg";
+import west_4_big from "../img/portfolio/west/west_4_big.jpg";
+import west_4_small from "../img/portfolio/west/west_4_small.jpg";
+
+import strezhen_1 from "../img/portfolio/strezhen/strezhen_1.jpg";
+import strezhen_1_big from "../img/portfolio/strezhen/strezhen_1_big.jpg";
+import strezhen_1_small from "../img/portfolio/strezhen/strezhen_1_small.jpg";
+import strezhen_2 from "../img/portfolio/strezhen/strezhen_2.jpg";
+import strezhen_2_big from "../img/portfolio/strezhen/strezhen_2_big.jpg";
+import strezhen_2_small from "../img/portfolio/strezhen/strezhen_2_small.jpg";
+import strezhen_3 from "../img/portfolio/strezhen/strezhen_3.jpg";
+import strezhen_3_big from "../img/portfolio/strezhen/strezhen_3_big.jpg";
+import strezhen_3_small from "../img/portfolio/strezhen/strezhen_3_small.jpg";
+import strezhen_4 from "../img/portfolio/strezhen/strezhen_4.jpg";
+import strezhen_4_big from "../img/portfolio/strezhen/strezhen_4_big.jpg";
+import strezhen_4_small from "../img/portfolio/strezhen/strezhen_4_small.jpg";
+import strezhen_5 from "../img/portfolio/strezhen/strezhen_5.jpg";
+import strezhen_5_big from "../img/portfolio/strezhen/strezhen_5_big.jpg";
+import strezhen_5_small from "../img/portfolio/strezhen/strezhen_5_small.jpg";
+import strezhen_6 from "../img/portfolio/strezhen/strezhen_6.jpg";
+import strezhen_6_big from "../img/portfolio/strezhen/strezhen_6_big.jpg";
+import strezhen_6_small from "../img/portfolio/strezhen/strezhen_6_small.jpg";
+import strezhen_7 from "../img/portfolio/strezhen/strezhen_7.jpg";
+import strezhen_7_big from "../img/portfolio/strezhen/strezhen_7_big.jpg";
+import strezhen_7_small from "../img/portfolio/strezhen/strezhen_7_small.jpg";
+import strezhen_8 from "../img/portfolio/strezhen/strezhen_8.jpg";
+import strezhen_8_big from "../img/portfolio/strezhen/strezhen_8_big.jpg";
+import strezhen_8_small from "../img/portfolio/strezhen/strezhen_8_small.jpg";
+import strezhen_9 from "../img/portfolio/strezhen/strezhen_9.jpg";
+import strezhen_9_big from "../img/portfolio/strezhen/strezhen_9_big.jpg";
+import strezhen_9_small from "../img/portfolio/strezhen/strezhen_9_small.jpg";
+import strezhen_10 from "../img/portfolio/strezhen/strezhen_10.jpg";
+import strezhen_10_big from "../img/portfolio/strezhen/strezhen_10_big.jpg";
+import strezhen_10_small from "../img/portfolio/strezhen/strezhen_10_small.jpg";
+import strezhen_11 from "../img/portfolio/strezhen/strezhen_11.jpg";
+import strezhen_11_big from "../img/portfolio/strezhen/strezhen_11_big.jpg";
+import strezhen_11_small from "../img/portfolio/strezhen/strezhen_11_small.jpg";
+import strezhen_12 from "../img/portfolio/strezhen/strezhen_12.jpg";
+import strezhen_12_big from "../img/portfolio/strezhen/strezhen_12_big.jpg";
+import strezhen_12_small from "../img/portfolio/strezhen/strezhen_12_small.jpg";
+import strezhen_13 from "../img/portfolio/strezhen/strezhen_13.jpg";
+import strezhen_13_big from "../img/portfolio/strezhen/strezhen_13_big.jpg";
+import strezhen_13_small from "../img/portfolio/strezhen/strezhen_13_small.jpg";
+import strezhen_14 from "../img/portfolio/strezhen/strezhen_14.jpg";
+import strezhen_14_big from "../img/portfolio/strezhen/strezhen_14_big.jpg";
+import strezhen_14_small from "../img/portfolio/strezhen/strezhen_14_small.jpg";
+import strezhen_15 from "../img/portfolio/strezhen/strezhen_15.jpg";
+import strezhen_15_big from "../img/portfolio/strezhen/strezhen_15_big.jpg";
+import strezhen_15_small from "../img/portfolio/strezhen/strezhen_15_small.jpg";
 /*
 import components_gallery from "../img/portfolio/components/gallery.jpg";
 import components_gallery_big from "../img/portfolio/components/gallery_big.jpg";
@@ -276,7 +322,7 @@ initialState = {
 		},
 		{
 			name: "Gulp",
-			percent: 90
+			percent: 85
 		},
 		{
 			name: "Webpack",
@@ -308,19 +354,39 @@ initialState = {
 		},
 		{
 			name: "CraftCMS",
-			percent: 80
+			percent: 75
 		},
 		{
 			name: "TypeScript",
-			percent: 85
+			percent: 90
 		},
 		{
 			name: "PWA",
-			percent: 75
+			percent: 80
 		},
 		{
 			name: "JEST",
 			percent: 75
+		},
+		{
+			name: "NodeJS",
+			percent: 85
+		},
+		{
+			name: "Express",
+			percent: 80
+		},
+		{
+			name: "MongoDB",
+			percent: 70
+		},
+		{
+			name: "AWS Services",
+			percent: 70
+		},
+		{
+			name: "REST API",
+			percent: 85
 		},
 	],
 	workExperience: [
@@ -344,13 +410,6 @@ initialState = {
 			subHeader: "ServiceCom",
 			text: "Planning strategy of IT development, configuration of security settings and access permissions for individuals and groups, development and implement the complex virus malware protection strategy; communication with third party System Engineer Groups for creation of optimal solutions for business support.",
 			link: "http://servicecom38.ru/",
-		},
-		{
-			date: "2011 - 2015",
-			header: "System Engineer",
-			subHeader: "Ecostroy LTD",
-			text: "Creatively designed and supported leading edge IT solutions comprising multiple application servers, network equipments, storage architecture, network monitoring and backup/disaster recovery strategies. Additional responsibilities included development of IT strategies, assist upper management in planning/upgrading latest technology trends and maintain positive business relationship with technology vendors and customers.",
-			link: "https://uroven-sk.ru/",
 		},
 	],
 	education: [
@@ -1626,6 +1685,328 @@ initialState = {
 					
 				]
 			},
+			{
+				name: "Strezhen",
+				descr: "The company Strezhen offers its customers a service of printing any custom 3D model, as well as the option to choose ready-made models from their catalog. Created both frontend and backend parts, icludes architecture design, APIs, storage and backup strategies. Plethora of best-practice solutions to improve user experience: adaptive images, SPA, PWA, precaching, language and theme controls, order management, product catalog and feedback form. \n Stack: React, MongoDB, NodeJS, Express, AWS services, HTML, TS, SASS, Webpack",
+				link: "https://postmaxxx.github.io/3DIrk",
+				images: [
+					{
+						descr: "Main page",
+						link: "https://plastprinting.net/",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_1_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_1_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_1,
+							},
+						],
+					},
+					{
+						descr: "Filamens description page",
+						link: "https://plastprinting.net/#/fibers",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_2_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_2_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_2,
+							},
+						],
+					},
+					{
+						descr: "Filaments compare page",
+						link: "https://plastprinting.net/#/fibers/compare",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_3_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_3_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_3,
+							},
+						],
+					},
+					{
+						descr: "Filament detail page",
+						link: "https://plastprinting.net/#/fibers/64efceb438335bbe59c803c5",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_4_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_4_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_4,
+							},
+						],
+					},
+					{
+						descr: "List of colors",
+						link: "https://plastprinting.net/#/fibers/64efceb438335bbe59c803c5",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_5_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_5_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_5,
+							},
+						],
+					},
+					{
+						descr: "Catalog page",
+						link: "https://plastprinting.net/#/catalog",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_6_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_6_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_6,
+							},
+						],
+					},
+					{
+						descr: "Product page",
+						link: "https://plastprinting.net/#/catalog/64f134182a42b1ce8a71b93b",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_7_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_7_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_7,
+							},
+						],
+					},
+					{
+						descr: "Order page",
+						link: "https://plastprinting.net/#/order",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_8_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_8_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_8,
+							},
+						],
+					},
+					{
+						descr: "Custom order page",
+						link: "https://plastprinting.net/#/custom_order",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_9_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_9_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_9,
+							},
+						],
+					},
+					{
+						descr: "News list page",
+						link: "https://plastprinting.net/#/",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_10_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_10_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_10,
+							},
+						],
+					},
+					{
+						descr: "Fiber edit page",
+						link: "https://plastprinting.net/#/",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_11_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_11_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_11,
+							},
+						],
+					},
+					{
+						descr: "Login form",
+						link: "https://plastprinting.net/#/",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_12_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_12_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_12,
+							},
+						],
+					},
+					{
+						descr: "Catalog page light theme",
+						link: "https://plastprinting.net/#/catalog",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_13_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_13_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_13,
+							},
+						],
+					},
+					{
+						descr: "News page",
+						link: "https://plastprinting.net/#/news/64f251cbfb8180de8554cc26",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_14_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_14_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_14,
+							},
+						],
+					},
+					{
+						descr: "Contact page",
+						link: "https://plastprinting.net/#/contact_us",
+						images: [
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_15_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_15_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_15,
+							},
+						],
+					},
+				]
+			},
 			/*{
 				name: "Components",
 				descr: "Some compenents created as a challenge with a 30-min deadline.\n Stack: HTML, CSS, JS",
@@ -1835,7 +2216,7 @@ initialState = {
 		},
 		{
 			text: "One of the most responsible person we had worked in web developement. Meticulous attention to every single detail is the reason for acceptance of the project from the first time.",
-			name: "Mitra Boase, IT department",
+			name: "Lisa Boase, IT department",
 			add: "Plenco"
 		},
 		{
@@ -1845,12 +2226,12 @@ initialState = {
 		},
 		{
 			text: "He can make a website your way with custom features in no time. I had a really positive impression of cooperation.",
-			name: "Josh Kirschner, Web design",
+			name: "Josh Cooper, Web design",
 			add: "Techlicious"
 		}, 
 		{
 			text: "Maksim can assist in developing applications, features, and internal functions for your website as a knowledgeable, hardworking front-end developer.",
-			name: "Henry Cooper, IT",
+			name: "Harry Kirschner, IT",
 			add: "P2S Inc."
 		}, 
 	],
@@ -1877,7 +2258,7 @@ initialState = {
 		address: [
 			{
 				link: "https://www.google.com/maps/place/Richmond,+BC/@49.1785194,-123.2184005,12z/data=!3m1!4b1!4m6!3m5!1s0x54867599f4ef4d3d:0x6a5024adba02fab5!8m2!3d49.1665898!4d-123.133569!16zL20vMDE3OXEw",
-				text: "Richmond, Vancouver, BC, Canada",
+				text: "Coquitlam, Vancouver, BC, Canada",
 				newWindow: true
 			},
 		],

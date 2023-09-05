@@ -1,4 +1,4 @@
-import { WorkEducationItem } from "src/models";
+import { WorkEducationItem } from "../../../../src/models";
 import "./history.scss";
 
 interface IHistory {

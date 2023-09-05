@@ -3,8 +3,8 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { useEffect, useMemo, useRef } from "react";
 import "./modalImage.scss";
-import { IImagesMe, IMapdispatchToProps, IMyImage, ISetStore, TTheme } from "src/models";
-import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
+import { IImagesMe, IMapdispatchToProps, IMyImage, ISetStore, IState, TTheme } from "../../../src/models";
+import ImgWithPreloader from "../../../src/assets/js/ImgWithPreloader";
 
 interface IModalImage {
 	imagesMe: IImagesMe
@@ -16,10 +16,10 @@ interface IModalImage {
 
 const ModalImage: React.FC<IModalImage> = (props): JSX.Element => {
 
-	const _imgContRef = useRef<HTMLDivElement>(null);
+	const _imgContRef = useRef<HTMLDivElement | null>(null);
 
 	const closeModal = () => {
-		document.querySelector("body").classList.remove("noscroll");
+		document.querySelector("body")?.classList.remove("noscroll");
 		props.setStore.setModalImage(false);
 	};
 
@@ -31,7 +31,7 @@ const ModalImage: React.FC<IModalImage> = (props): JSX.Element => {
 	useEffect(() => {
 		if (!props.show) return;
 		document.addEventListener("keyup", modalKeyListener);
-		document.querySelector("body").classList.add("noscroll");
+		document.querySelector("body")?.classList.add("noscroll");
 		return (() => {
 			document.removeEventListener("keyup", modalKeyListener);
 		});
@@ -68,7 +68,7 @@ const ModalImage: React.FC<IModalImage> = (props): JSX.Element => {
 
 
 
-const mapStateToProps = (state)  => {
+const mapStateToProps = (state: IState) => {
 	return {
 		imagesMe: state.imagesMe,
 		show: state.modalImage.show,

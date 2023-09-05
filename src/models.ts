@@ -245,7 +245,7 @@ export interface ISliderOptions {
 
 type InputCheck = {
     text: string
-    type: string
+    type?: string | undefined
     minLength: number
     maxLength: number
 }

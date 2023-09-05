@@ -1,7 +1,7 @@
 import * as actions from "../../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { IMapdispatchToProps, ISetStore, IState, ProjectItemListItem } from "src/models";
+import { IMapdispatchToProps, ISetStore, IState, ProjectItemListItem } from "../../../../src/models";
 import "./list.scss";
 
 interface ISelectPortfolio {

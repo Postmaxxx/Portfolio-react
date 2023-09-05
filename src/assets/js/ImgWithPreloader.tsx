@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import Preloader from "src/components/preloader/Preloader";
+import { useRef, useState } from "react";
+import Preloader from "../../../src/components/preloader/Preloader";
 
-const ImgWithPreloader = ({link, alt}) => {
+const ImgWithPreloader = ({link, alt}: {link: string, alt: string}) => {
 
 	const [loaded, setLoaded] = useState(false);
-	const img = useRef<HTMLImageElement>();
+	const img = useRef<HTMLImageElement | null>(null);
 
 
 	return (

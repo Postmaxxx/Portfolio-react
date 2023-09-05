@@ -1,6 +1,6 @@
-import { TTheme } from "src/components/theme_switcher/theme-switcher";
-import { Action } from "src/models";
-import { actionList } from "src/models";
+import { TTheme } from "../../../src/models";
+import { Action } from "../../../src/models";
+import { actionList } from "../../../src/models";
 
 
 export const setTheme = <T extends TTheme>(theme: T): Action<T> => ({
@@ -49,22 +49,6 @@ export const setModalSplide = <T extends boolean>(status: T): Action<T> => ({
 	payload: status
 });
 
-/*
-export const setModalImage = <T extends string>(url: T): Action<T> => ({
-	type: actionList.SET_MODAL_IMAGE,
-	payload: url
-});
-
-export const setModalDescr = <T extends string>(text: T): Action<T> => ({
-	type: actionList.SET_MODAL_DESCR,
-	payload: text
-});
-
-export const setModalLink = <T extends string>(link: T): Action<T> => ({
-	type: actionList.SET_MODAL_LINK,
-	payload: link
-});
-*/
 export const setModalMsgVisible = <T extends boolean>(visible: T): Action<T> => ({
 	type: actionList.SET_MODALMSG,
 	payload: visible

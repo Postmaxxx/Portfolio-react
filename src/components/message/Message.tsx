@@ -1,5 +1,5 @@
 import "./message.scss";
-import { IMessage } from "src/models";
+import { IMessage } from "../../../src/models";
 
 const Message: IMessage = ({header, text, buttonText, buttonClickAction}) => {
 	return (

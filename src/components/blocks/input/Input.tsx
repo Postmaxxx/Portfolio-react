@@ -4,7 +4,7 @@ import "./input.scss";
 type element = HTMLTextAreaElement | HTMLInputElement
 
 type keyTypes = KeyboardEventHandler<element> 
-type refTypes = MutableRefObject<HTMLElement> 
+type refTypes = MutableRefObject<HTMLElement | null>
 
 interface IInputProps {
     type?: string

@@ -1,4 +1,4 @@
-import { ContactItem } from "src/models";
+import { ContactItem } from "../../../../src/models";
 import "./contact_block.scss";
 
 interface IContactBlock {
@@ -15,7 +15,7 @@ const ContactBlock: React.FC<IContactBlock> = (props): JSX.Element => {
 			</div>
 			<div className="contact-info">
 				<span>{props.header}</span>
-				{props.links?.map((link: ContactItem) => <a className="decorated" href={link.link} key={link.link} target={link.newWindow ? "_blank" : null} rel="noreferrer">{link.text}</a>)}
+				{props.links?.map((link: ContactItem) => <a className="decorated" href={link.link} key={link.link} target={link.newWindow ? "_blank" : void 0} rel="noreferrer">{link.text}</a>)}
 			</div>
 		</div>
 	);

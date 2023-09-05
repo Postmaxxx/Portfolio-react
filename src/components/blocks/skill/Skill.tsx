@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { MySkill } from "src/models";
+import { MySkill } from "../../../../src/models";
 import "./skill.scss";
 
 type TUseState = [number, Dispatch<SetStateAction<number>>]

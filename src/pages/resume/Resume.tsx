@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import Skill from "../../components/blocks/skill/Skill";
 import History from "../../components/blocks/history/History";
 import "./resume.scss";
-import { MySkill, WorkEducationItem, IState } from "src/models";
+import { MySkill, WorkEducationItem, IState } from "../../../src/models";
 import { useEffect } from "react";
 
 
@@ -35,9 +35,9 @@ const Resume: React.FC<IResumeProps>  = (props): JSX.Element => {
 	useEffect(() => {
 		const observer: IntersectionObserver = new IntersectionObserver(observerRule, observerOptions);
 		const listToObserve: NodeList = document.querySelectorAll(".history .history__block .history__description");
-		Array.from(listToObserve).forEach((el: Element) => observer.observe(el));
+		Array.from(listToObserve).forEach((el) => observer.observe(el as Element));
 		return () => {
-			listToObserve.forEach((el: Element) => observer.unobserve(el));
+			listToObserve.forEach((el) => observer.unobserve(el as Element));
 		};
 	}, []);
 

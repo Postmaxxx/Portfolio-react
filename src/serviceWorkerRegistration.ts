@@ -1,33 +1,27 @@
-export function register(config?) {
+export function register(config: {scope: string}) {
 	if ("serviceWorker" in navigator) {
-		const publicUrl: URL = new URL(process.env.PUBLIC_URL, window.location.href);
-		if (publicUrl.origin !== window.location.origin) { return; }
-
+		const publicUrl: URL = new URL(process.env.SITENAME || "", window.location.href);
+		if (publicUrl.origin !== window.location.origin) return
 		window.addEventListener("load", () => {
-			let swUrl: string = `${process.env.PUBLIC_URL}/service-worker.js`;
-			if (process.env.NODE_ENV === "development") {
-				swUrl = "localhost/static/js/service-worker.js";
-			}
+			let swUrl: string = `sw.js`;
 			registerValidSW(swUrl, config);
 		});
 	}
 }
 
-async function registerValidSW(swUrl, config) {
-	//console.log(swUrl);
+async function registerValidSW(swUrl: string, config: {scope: string}) {
 	try {
 		const regSW: ServiceWorkerRegistration = await navigator.serviceWorker.register(swUrl, {
-			scope: "./",
+			scope: config.scope, //change if url changed
 			//updateViaCache: 'none' 
-		});
-		regSW.update();
-		//console.log("ServiceWorker registered successfully", regSW);
-		navigator.serviceWorker.oncontrollerchange = (ev) => {
-			//console.log("New ServiceWorker activated");
-			location.reload();
+		}); 
+		regSW.update(); //update if changed
+		console.log("ServiceWorker registered successfully", regSW);
+		navigator.serviceWorker.oncontrollerchange = (ev) => { //New ServiceWorker activated
+			window.location.reload();
 		};
 	} catch (error) {
-		console.log("ServiceWorker register fail");
+		console.log("ServiceWorker register fail:", error);
 	}
 }
 
@@ -39,7 +33,7 @@ export function unregister() {
 				registration.unregister();
 			})
 			.catch((error) => {
-				console.error(error.message);
+				console.error('Unable to unregister service-worker: ', error.message);
 			});
 	}
 }

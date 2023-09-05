@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import React, { useEffect, useMemo, useRef } from "react";
 import "./list3d.scss";
-import { ProjectItemListItem } from "src/models";
-import { IState } from "src/models";
+import { ProjectItemListItem } from "../../../../src/models";
+import { IState } from "../../../../src/models";
 
 
 interface IContactBlock {
@@ -20,9 +20,9 @@ const List3d: React.FC<IContactBlock> = (props): JSX.Element => {
 
 	useEffect((): void => {
 		selected.current = props.selected;
-		_listCont.current.classList.add("muted");
+		_listCont.current?.classList.add("muted");
 		setTimeout(() => {
-			_listCont.current.classList.remove("muted");
+			_listCont.current?.classList.remove("muted");
 		}, 300);
 	}, [props.selected]);
 

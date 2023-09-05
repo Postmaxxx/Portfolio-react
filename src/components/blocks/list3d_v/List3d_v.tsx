@@ -3,12 +3,12 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import "./list3d_v.scss";
-import { IMapdispatchToProps, ISetStore, IState, ProjectItemListItem } from "src/models";
+import { IMapdispatchToProps, ISetStore, IState, ProjectItemListItem } from "../../../../src/models";
 
 let selected: number = 0;
 let rotateStep: number = 0;
 const scrollDelay: number = 50;
-let timeoutScroll = undefined;
+let timeoutScroll: undefined | ReturnType<typeof setTimeout>;
 let listLength: number;
 let stepsToMove: number = 0;
 
@@ -43,7 +43,7 @@ const List3d_v: React.FC<IList3d_v> = (props): JSX.Element => {
 	};
 
 	useEffect(() => {
-		document.querySelector(".list3d_v__container").addEventListener("wheel", listScroll);
+		document.querySelector(".list3d_v__container")?.addEventListener("wheel", listScroll as EventListener);
 	},[]);
 
 

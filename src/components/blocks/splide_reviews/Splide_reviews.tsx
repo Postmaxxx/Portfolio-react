@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as actions from "../../../assets/redux/actions";
 import "@splidejs/react-splide/css";
 import "./splide_reviews.scss";
-import { IMapdispatchToProps, ISliderOptions, IState, ReviewItem } from "src/models";
+import { IMapdispatchToProps, ISliderOptions, IState, ReviewItem } from "../../../../src/models";
 import { useEffect, useRef } from "react";
 
 interface ISliderReviews {
@@ -14,7 +14,7 @@ interface ISliderReviews {
 const SliderReviews: React.FC<ISliderReviews> = (props): JSX.Element => {
     
 	const _reviewsSplideCont = useRef<HTMLDivElement>(null);
-	const reviewsSplide = useRef<Splide>(null);
+	const reviewsSplide = useRef<Splide | null>(null);
 
 	const options: ISliderOptions = {
 		updateOnMove: true,
@@ -40,10 +40,11 @@ const SliderReviews: React.FC<ISliderReviews> = (props): JSX.Element => {
 	};
 
 	useEffect(() => {
+		if (!_reviewsSplideCont.current) return
 		reviewsSplide.current = new Splide(_reviewsSplideCont.current, options);
 		reviewsSplide.current.mount();
 		return () => {
-			reviewsSplide.current.destroy();
+			reviewsSplide.current?.destroy();
 		};
 	}, []);
 

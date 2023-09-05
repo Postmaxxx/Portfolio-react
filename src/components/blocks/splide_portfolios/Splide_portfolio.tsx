@@ -4,9 +4,9 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Splide from "@splidejs/splide";
 import "./splide_portfolio.scss";
-import { IMapdispatchToProps, ISetStore, ISliderOptions, IState, ProjectItemListItem } from "src/models";
-import ImgWithPreloader from "src/assets/js/ImgWithPreloader";
-import { findBestSuitedImg } from "src/assets/js/findBestSuitedImg";
+import { IMapdispatchToProps, ISetStore, ISliderOptions, IState, ProjectItemListItem } from "../../../../src/models";
+import ImgWithPreloader from "../../../../src/assets/js/ImgWithPreloader";
+import { findBestSuitedImg } from "../../../../src/assets/js/findBestSuitedImg";
 
 interface IContainerSize {
 	width: number
@@ -21,9 +21,9 @@ interface ISplidePortfolio {
 }
 
 const SplidePortfolio: React.FC<ISplidePortfolio> = (props): JSX.Element => {
-	const portfolioSplide = useRef<Splide>(null);
-	const containerSize = useRef<IContainerSize>(null);
-	const _splideMain = useRef<HTMLDivElement>(null);
+	const portfolioSplide = useRef<Splide | null>(null);
+	const containerSize = useRef<IContainerSize | null>(null);
+	const _splideMain = useRef<HTMLDivElement | null>(null);
 	const [firstRender, setFirstRender] = useState<boolean>(true);
 
 	const optionsMain: ISliderOptions = {
@@ -58,7 +58,7 @@ const SplidePortfolio: React.FC<ISplidePortfolio> = (props): JSX.Element => {
 
 
 	const goToImage = (imageOrder: number) => {
-		portfolioSplide.current.go(imageOrder);
+		portfolioSplide.current?.go(imageOrder);
 	};
 
 	const additionalRender = () => {
@@ -66,21 +66,21 @@ const SplidePortfolio: React.FC<ISplidePortfolio> = (props): JSX.Element => {
 	};
 
 	useEffect(() => {
+		if (!_splideMain.current) return
 		containerSize.current = {
 			width:  _splideMain.current.offsetWidth,
 			height:  _splideMain.current.offsetHeight,
 		};
 		portfolioSplide.current = new Splide(_splideMain.current, optionsMain);
 		portfolioSplide.current.mount();		
-		portfolioSplide.current.on("active", () => {changeDescription(portfolioSplide.current.index);});
+		portfolioSplide.current.on("active", () => {changeDescription(portfolioSplide.current?.index || 0);});
 			
 		const _slides: NodeList = _splideMain.current.querySelectorAll(".splide__slide-container");
 		_slides.forEach(cont => cont.addEventListener("click", showSplideModal));
 		changeDescription(portfolioSplide.current.index);
 		return () => {
-			
 			_slides.forEach(cont => cont.removeEventListener("click", showSplideModal));
-			portfolioSplide.current.destroy();
+			portfolioSplide.current?.destroy();
 		};
 	}, [props.selected]);
 
@@ -104,7 +104,7 @@ const SplidePortfolio: React.FC<ISplidePortfolio> = (props): JSX.Element => {
 							return (
 								<li className="splide__slide" key={props.selected * 1000 + index}>
 									<div className="splide__slide-container">
-										{portfolioSplide.current && <ImgWithPreloader link={findBestSuitedImg({images: slide.images, width: containerSize.current.width, height: containerSize.current.height}).image} alt={slide.descr}/>}
+										{portfolioSplide.current && <ImgWithPreloader link={findBestSuitedImg({images: slide.images, width: containerSize.current?.width || 0, height: containerSize.current?.height || 0}).image} alt={slide.descr}/>}
 									</div>
 								</li>
 							);

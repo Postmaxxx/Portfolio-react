@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import "./info_portfolio.scss";
-import { IState, ProjectItemListItem } from "src/models"; 
+import { IState, ProjectItemListItem } from "../../../../src/models"; 
 
 
 interface IInfoPortfolio {

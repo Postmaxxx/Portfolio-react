@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { IState } from "src/models";
+import { IState } from "../../../../src/models";
 import "./info_portfolio-slide.scss";
 
 

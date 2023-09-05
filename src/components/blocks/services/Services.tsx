@@ -1,4 +1,4 @@
-import { INoPropsJSX } from "src/models";
+import { INoPropsJSX } from "../../../../src/models";
 import "./services.scss";
 
 

@@ -1,6 +1,6 @@
 import preloader from "./preloader_template";
 import "./preloader.scss";
-import { INoPropsJSX } from "src/models";
+import { INoPropsJSX } from "../../../src/models";
 
 
 const Preloader: INoPropsJSX = () => { 
