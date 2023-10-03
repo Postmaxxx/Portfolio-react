@@ -2259,7 +2259,7 @@ const allData: IAllData = {
 		],
 		address: [
 			{
-				link: "https://www.google.com/maps/place/Richmond,+BC/@49.1785194,-123.2184005,12z/data=!3m1!4b1!4m6!3m5!1s0x54867599f4ef4d3d:0x6a5024adba02fab5!8m2!3d49.1665898!4d-123.133569!16zL20vMDE3OXEw",
+				link: "https://maps.app.goo.gl/sh3zduSVqnJuZtPu8",
 				text: "Coquitlam, Vancouver, BC, Canada",
 				newWindow: true
 			},

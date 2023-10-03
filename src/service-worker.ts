@@ -6,11 +6,11 @@ import { StaleWhileRevalidate, CacheFirst } from "workbox-strategies";
 declare const self: any;
 const ignored = self.__WB_MANIFEST;
 
-const versionStyles: number = 1.03;
-const versionScripts: number  = 1.03;
-const versionImages: number  = 1.03;
-const versionFonts: number  = 1.03;
-const versionHtmls: number  = 1.03;
+const versionStyles: number = 1.05;
+const versionScripts: number  = 1.05;
+const versionImages: number  = 1.05;
+const versionFonts: number  = 1.05;
+const versionHtmls: number  = 1.05;
 //const versionOffline = 1.03;
 
 interface ICaches {
