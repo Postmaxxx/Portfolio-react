@@ -37,7 +37,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "webpack --mode production",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "create": "npm run build && serve -s build",
     "serverdev": "webpack serve --mode development",
     "serverprod": "webpack serve --mode production"
@@ -55,9 +55,9 @@
       "not op_mini all"
     ],
     "development": [
-      "last 10 chrome version",
-      "last 10 firefox version",
-      "last 10 safari version"
+      "last 20 chrome version",
+      "last 20 firefox version",
+      "last 20 safari version"
     ]
   },
   "devDependencies": {

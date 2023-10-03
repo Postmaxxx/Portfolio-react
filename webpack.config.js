@@ -45,12 +45,6 @@ module.exports = (env, argv) => {
 			new Dotenv({
 				path: dotenvPath,
 			}),
-			/*new InjectManifest({ //injecting precache to sw
-				swSrc: './src/sw.ts', //source file
-				swDest: 'sw.js', //destanation file, root: build folder (dist)
-				include: [/\.(html|js|css|woff2|woff)$/], //type of resources to be precached
-				maximumFileSizeToCacheInBytes: 8 * 1024 * 1024, //max size of resource to be precached
-			}),*/
 			new InjectManifest({ //injecting precache to sw
 				swSrc: './src/sw.ts', //source file
 				swDest: 'sw.js', //destanation file, root: build folder (dist)

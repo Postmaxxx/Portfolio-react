@@ -1,7 +1,6 @@
 import { IState } from "../../../src/models";
 
 import sidePhoto from "../img/me_logo.jpg";
-//import resumeDoc from "../docs/Maksim Postnikov Resume.pdf";
 
 import photoNight from "../img/me_night.jpg";
 import photoNight750 from "../img/me_night_750.jpg";
@@ -269,7 +268,7 @@ let initialState = {} as IState;
 
 initialState = {
 	...initialState,
-	theme: "light",
+	theme: "dark",
 	nav_ham: "",
 	modalSplide: {
 		show: false,
@@ -310,7 +309,7 @@ initialState = {
 		},
 		{
 			name: "CSS3",
-			percent: 90
+			percent: 95
 		},
 		{
 			name: "JavaScript",
@@ -318,7 +317,7 @@ initialState = {
 		},
 		{
 			name: "React",
-			percent: 85
+			percent: 90
 		},
 		{
 			name: "Gulp",
@@ -326,11 +325,11 @@ initialState = {
 		},
 		{
 			name: "Webpack",
-			percent: 80
+			percent: 85
 		},
 		{
 			name: "GIT",
-			percent: 80
+			percent: 85
 		},
 		{
 			name: "Docker",
@@ -338,7 +337,7 @@ initialState = {
 		},
 		{
 			name: "Tailwind",
-			percent: 90
+			percent: 85
 		},
 		{
 			name: "Bootstrap",
@@ -362,11 +361,11 @@ initialState = {
 		},
 		{
 			name: "PWA",
-			percent: 80
+			percent: 85
 		},
 		{
 			name: "JEST",
-			percent: 75
+			percent: 80
 		},
 		{
 			name: "NodeJS",
@@ -381,12 +380,16 @@ initialState = {
 			percent: 70
 		},
 		{
+			name: "REST API",
+			percent: 85
+		},
+		{
 			name: "AWS Services",
 			percent: 70
 		},
 		{
-			name: "REST API",
-			percent: 85
+			name: "PHP",
+			percent: 40
 		},
 	],
 	workExperience: [
