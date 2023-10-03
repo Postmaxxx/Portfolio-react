@@ -321,6 +321,83 @@ em {
     }
 
 
+    svg {
+        &.logo-design.logo-design {
+            width: 100px;
+            height: 80px;
+    
+            .design-1 {
+                fill:map.get($light, "text_soft");
+            }
+            .design-1,.design-2,.design-3,.design-4,.design-5 {
+                fill-rule:evenodd;
+            }
+            .design-2 {
+                fill:#ccc;
+            }
+            .design-3 { 
+                fill:#83b3d7;
+            }
+            .design-4 { 
+                fill:#3a91be;
+            } 
+            .design-5 { 
+                fill:#e99688;
+            }
+    
+            @include respond-to(xs) {
+                width: 80px;
+                height: 60px;
+            }
+        }
+    
+        &.logo-frontend {
+            .frontend-1 {
+                fill: #e99688;
+            }
+            .frontend-2 {
+                fill:map.get($light, "text_soft");
+            }
+            .frontend-3 { 
+                fill:#3a91be;
+            }
+        }
+    
+        &.logo-components {
+            .components-1 {
+                fill: map.get($light, "text_soft");
+            }
+            .components-2 {
+                fill:#3a91be;
+            }
+            .components-3 { 
+                fill:#3a91be;
+            }
+            .components-4 { 
+                fill:#e99688;
+            }
+            .components-5 { 
+                fill:#3a91be;
+            }
+        }
+
+
+        &.logo-solution {
+
+            .logo-solution__border {
+                fill: map.get($light, "text_soft");
+            }
+
+            .logo-solution__content {
+                fill: #3a91be;
+            }
+        }
+
+    }
+
+
+
+
 }
 
 
@@ -405,11 +482,97 @@ body.dark {
         & span {
             transition: color $transition_theme;
         }
-    
+
+    }
 
 
-    
+    svg {
+        &.logo-design.logo-design {
+            .design-1 {
+                fill:map.get($dark, "text_soft");
+            }
+            .design-2 {
+                fill:#ccc;
+            }
+            .design-3 { 
+                fill:#83b3d7;
+            }
+            .design-4 { 
+                fill:#3a91be;
+            } 
+            .design-5 { 
+                fill:#e99688;
+            }
+        }
 
+        &.logo-frontend {
+            .frontend-1 {
+                fill: #e99688;
+            }
+            .frontend-2 {
+                fill:map.get($dark, "text_soft");
+            }
+            .frontend-3 { 
+                fill:#3a91be;
+            }
+        }
+
+        &.logo-components {
+            .components-1 {
+                fill: map.get($dark, "text_soft");
+            }
+            .components-2 {
+                fill:#3a91be;
+            }
+            .components-3 { 
+                fill:#3a91be;
+            }
+            .components-4 { 
+                fill:#e99688;
+            }
+            .components-5 { 
+                fill:#3a91be;
+            }
+        }
+
+
+        &.logo-solution {
+            .logo-solution__border {
+                fill: map.get($dark, "text_soft");
+            }
+
+            .logo-solution__content {
+                fill: #3a91be;
+            }
+        }
+
+        &.logo-danger {
+            .logo-danger__border {
+                fill: map.get($dark, "text_soft");
+            }
+            .logo-danger__sign {
+                fill: #e99688;
+            }
+        }
+
+    }
+
+
+    .logo-issue {
+        position: relative;
+        svg.logo-frontend {
+            .frontend-3 {
+                display: none;
+            }
+        }
+        svg.logo-danger {
+            height: auto;
+            position: absolute;
+            width: 30%;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+        }
     }
     
 }

@@ -48,9 +48,6 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 	const mainRef = useRef<Splide | null>(null);
 	const thumbsRef = useRef<Splide | null>(null);
 
-	console.log('re');
-	
-		
 	const optionsThumbs: Partial<IOptions> = {
 		lazyLoad	: false,
 		perPage		: 12,

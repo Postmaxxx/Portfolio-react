@@ -1,12 +1,18 @@
 import { WorkEducationItem } from "../../../../src/models";
+import ResumeTiles from "../resume_tiles/ResumeTiles";
 import "./history.scss";
+
 
 interface IHistory {
     key?: number
     historyBlock: WorkEducationItem
+	tilesContent?: {
+		was: string[]
+		now: string[]
+	}
 }
 
-const History: React.FC<IHistory> = ({historyBlock}: IHistory): JSX.Element => {
+const History: React.FC<IHistory> = ({historyBlock, tilesContent}: IHistory): JSX.Element => {
 	return (
 		<div className="history__block">
 			<div>
@@ -20,6 +26,7 @@ const History: React.FC<IHistory> = ({historyBlock}: IHistory): JSX.Element => {
 					<span>{historyBlock.subHeader}</span>
 				}
 				<p>{historyBlock.text}</p>
+				{tilesContent && <ResumeTiles content={tilesContent} />}
 			</div>
 		</div>
 	);

@@ -2,7 +2,7 @@
 @use "/src/assets/css/variables" as *;
 //@import '../../../assets/css/base.scss';
 
-.services__container {
+.tiles__container {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
@@ -13,7 +13,7 @@
         flex-direction: column;
     }
 
-    & > .service {
+    & > .tile {
         width: 31%;
         background-color: map.get($light, "bg_side-panel");
         border: 1px solid map.get($light, "border");
@@ -77,67 +77,6 @@
         & > svg {
             width: 80px;
 
-            &.logo-design {
-                width: 100px;
-                height: 80px;
-
-                .design-1 {
-                    fill:map.get($light, "text_soft");
-                }
-                .design-1,.design-2,.design-3,.design-4,.design-5 {
-                    fill-rule:evenodd;
-                }
-                .design-2 {
-                    fill:#ccc;
-                }
-                .design-3 { 
-                    fill:#83b3d7;
-                }
-                .design-4 { 
-                    fill:#3a91be;
-                } 
-                .design-5 { 
-                    fill:#e99688;
-                }
-
-                @include respond-to(xs) {
-                    width: 80px;
-                    height: 60px;
-                }
-            }
-
-            &.logo-frontend {
-
-                .frontend-1 {
-                    fill: #e99688;
-                }
-                .frontend-2 {
-                    fill:map.get($light, "text_soft");
-                }
-                .frontend-3 { 
-                    fill:#3a91be;
-                }
-            }
-
-            &.logo-components {
-
-                .components-1 {
-                    fill: map.get($light, "text_soft");
-                }
-                .components-2 {
-                    fill:#3a91be;
-                }
-                .components-3 { 
-                    fill:#3a91be;
-                }
-                .components-4 { 
-                    fill:#e99688;
-                }
-                .components-5 { 
-                    fill:#3a91be;
-                }
-            }
-
             @include respond-to(xs) {
                 width: 60px;
             }
@@ -172,20 +111,6 @@
                 transition: border $transition_base, background-color $transition_theme, transform $transition_scroll $delay_transition * 0, opacity $transition_scroll $delay_transition * 0;
             }
 
-            @include respond-to(sm) {
-
-            }
-/*
-            @include respond-to(md) {
-                &.positioned {
-                    &:last-child {
-                        //transition: border $transition_base, background-color $transition_theme, transform $transition_scroll 2s, opacity $transition_scroll 2s !important;
-                        transform: translateX(50%);
-                    }
-                }
-            }
-
-            */
 
 
         }
@@ -195,79 +120,3 @@
 
 
 
-
-body.dark {
-    .page_about {
-        & .services {
-            & .services__container {
-                & > .service {
-                    background-color: map.get($dark, "bg_side-panel");
-                    border: 1px solid map.get($dark, "border");
-                    border-top: 5px solid map.get($dark, "border");
-                    //transition: border $transition_base, background-color $transition_theme, transform 3s ease-in-out, opacity $transition_base;
-
-                    &:hover {
-                        border-top: 5px solid map.get($dark, "nav_selected");
-                        transition: border $transition_base;
-                    }
-
-                    & > svg {
-                        &.logo-design {
-    
-                            .design-1 {
-                                fill:map.get($dark, "text_soft");
-                            }
-                            .design-2 {
-                                fill:#ccc;
-                            }
-                            .design-3 { 
-                                fill:#83b3d7;
-                            }
-                            .design-4 { 
-                                fill:#3a91be;
-                            } 
-                            .design-5 { 
-                                fill:#e99688;
-                            }
-                        }
-    
-                        &.logo-frontend {
-                            .frontend-1 {
-                                fill: #e99688;
-                            }
-                            .frontend-2 {
-                                fill:map.get($dark, "text_soft");
-                            }
-                            .frontend-3 { 
-                                fill:#3a91be;
-                            }
-                        }
-    
-                        &.logo-components {
-    
-                            .components-1 {
-                                fill: map.get($dark, "text_soft");
-                            }
-                            .components-2 {
-                                fill:#3a91be;
-                            }
-                            .components-3 { 
-                                fill:#3a91be;
-                            }
-                            .components-4 { 
-                                fill:#e99688;
-                            }
-                            .components-5 { 
-                                fill:#3a91be;
-                            }
-                        }
-                    }
-    
-                    & .line {
-                        background-color: map.get($dark, "separator");;
-                    }
-                }
-            }
-        }
-    }
-}

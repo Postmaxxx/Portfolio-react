@@ -15,6 +15,27 @@ interface IResumeProps {
 }
 
 
+
+
+
+
+
+const tilesContent = [
+	{
+		was: ['Point 11', 'Point 12', 'Point 13'],
+		now: ['Point 121', 'Point 2', 'Point 33']
+	},
+	{
+		was: ['Point 21', 'Point 22', 'Point 23'],
+		now: ['Point 121', 'Point 2', 'Point 33']
+	},
+	{
+		was: ['Point 31', 'Point 32', 'Point 33'],
+		now: ['Point 121']
+	}
+]
+
+
 const Resume: React.FC<IResumeProps>  = (props): JSX.Element => {
 
 	const observerRule = (entries: IntersectionObserverEntry[], thisObserver: IntersectionObserver) => {
@@ -71,7 +92,7 @@ const Resume: React.FC<IResumeProps>  = (props): JSX.Element => {
 						<div className="history__content">
 							{props.workExperience.map((historyBlock: WorkEducationItem, index: number) => {
 								return(
-									<History key={index} historyBlock={historyBlock}/>
+									<History key={index} historyBlock={historyBlock} tilesContent={tilesContent[index]}/>
 								);
 							})}
 						</div>

@@ -2,26 +2,9 @@ import About from "../../components/blocks/about/About";
 import Services from "../../components/blocks/services/Services";
 import SpliderReviews from "../../components/blocks/splide_reviews/Splide_reviews";
 import "./about.scss";
-import { useEffect } from "react";
-
-
-const observer = new IntersectionObserver((entries) => {
-	entries.forEach(entry => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add("show");
-		}
-	});
-}, {
-	threshold: .6
-});
 
 
 function Aboutpage(): JSX.Element {
-
-	useEffect(() => {
-		document.querySelectorAll(".services__container .service").forEach(el => observer.observe(el));
-	}, []);
-
 	return (
 		<div className="page-container">
 			<div className="page_about">

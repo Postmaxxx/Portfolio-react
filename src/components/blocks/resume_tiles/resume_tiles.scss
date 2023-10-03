@@ -1,0 +1,91 @@
+@use "sass:map";
+@use "/src/assets/css/variables" as *;
+
+
+
+.resume-tiles {
+    width: 100%;
+    margin-top: 10px;
+    display: flex; 
+    align-items: stretch;
+    justify-content: flex-start;
+    position: relative;
+
+    & .tile {
+        scale: .8;
+        width: 40%;
+        padding: 10px;
+        height: 100%;
+        opacity: 0;
+        transition: border $transition_base, background-color $transition_theme, opacity $transition_scroll !important;
+        border-radius: 5px;
+
+
+        & > .tile__hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row-reverse;
+
+            h4 {
+                margin-top: 0;
+            }
+
+            svg {
+                height: 50px;
+
+                & path {
+                    width: 100%;
+                    height: 100%;
+                }
+
+
+            }
+
+        }
+        
+        & > .tile__line {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        & .tile__list {
+            list-style: none;
+            margin-top: 10px;
+
+            & > li::before {
+                content: "•"; 
+                color: map.get($light, "pink_light");
+                margin-right: 5px;
+            }
+
+        }
+
+
+        &:nth-child(2) {
+            transition: border $transition_base, background-color $transition_theme, opacity $transition_scroll $delay_transition*2, right $transition_base $delay_transition*1, transform $transition_base !important;
+            position: absolute;
+            right: 100%;
+            bottom: 0;
+            transform: translateX(100%);
+            
+            & .tile__list > li::before {
+                color: #83b3d7;
+            }
+        }
+
+
+
+
+
+        &.show {
+            scale: 1;
+            opacity: 1;
+
+            &:nth-child(2) {
+                right: 0;
+                transform: translateX(0);
+            }
+        }
+    }
+}
