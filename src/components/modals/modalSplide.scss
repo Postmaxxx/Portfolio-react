@@ -16,6 +16,7 @@
     display: flex;
     visibility: hidden;
     transition: $transition_base;
+    backdrop-filter: blur(3px);
     
 
     @include respond-to(sm){
@@ -86,11 +87,10 @@
                         & .splide__arrow {
                             background-color: transparent;
                             transition: $transition_base;
-                            //height: 100%;
                             border-radius: 0;
                             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                            bottom: 5px;
-                            top: auto;
+                            //bottom: 5px;
+                            //top: auto;
             
                             &:disabled {
                                 width: 0;
@@ -109,15 +109,21 @@
                                 }
                             }
             
-                            &--prev:hover {
-                                & svg {
-                                    translate: -10px;
+                            &--prev {
+                                transform: translateX(-50px);
+                                &:hover {
+                                    & svg {
+                                        translate: -10px;
+                                    }
                                 }
                             }
             
-                            &--next:hover {
-                                & svg {
-                                    translate: 10px;
+                            &--next {
+                                transform: translateX(50px);
+                                &:hover {
+                                    & svg {
+                                        translate: 10px;
+                                    }
                                 }
                             }
                         }
@@ -128,6 +134,7 @@
                         height: 100%;
 
                         & .splide__slide {
+                            //border: 2px solid map.get($light, "border_light");
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -177,25 +184,31 @@
                             & > svg {
                                 width: 50px;
                                 height: auto;
-                                fill: map.get($dark, "arrow_splide");
+                                fill: map.get($light, "arrow_splide");
                                 transition: $transition_base;
                             }
             
                             &:hover {
                                 & svg {
-                                    fill: map.get($dark, "nav_selected");
+                                    fill: map.get($light, "nav_selected");
                                 }
                             }
             
-                            &--prev:hover {
-                                & svg {
-                                    translate: -10px;
+                            &--prev {
+                                transform: translateX(-60px);
+                                &:hover {
+                                    & svg {
+                                        translate: -10px;
+                                    }
                                 }
                             }
             
-                            &--next:hover {
-                                & svg {
-                                    translate: 10px;
+                            &--next {
+                                transform: translateX(60px);
+                                &:hover {
+                                    & svg {
+                                        translate: 10px;
+                                    }
                                 }
                             }
                         }
@@ -203,7 +216,7 @@
                    
                     & .splide__slide {
                         //opacity: 0.4;
-                        filter: brightness(0.4);
+                        filter: brightness(0.6);
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -245,7 +258,7 @@
         right: 20px;
         width: 45px;
         border-radius: 50%;
-        border: 1px solid map.get($dark, "text_soft");
+        border: 1px solid map.get($light, "text_soft");
         display: flex;
         align-items: center;
         justify-content: center;
@@ -256,7 +269,7 @@
         }
 
         & > svg {
-            fill: map.get($dark, "text_soft");
+            fill: map.get($light, "text_soft");
             transition: fill $transition_base;
             width: 80%;
         }
@@ -284,5 +297,21 @@
             opacity: 1;
             transition: $transition_base;
         }
+    }
+}
+
+
+body.dark {
+    & .modal__close {
+        border: 1px solid map.get($dark, "text_soft");
+
+        & > svg {
+            fill: map.get($dark, "text_soft");
+        }
+    }
+
+    & .modal-splide__background.show {
+        background-color: map.get($dark, "modal_bg");
+
     }
 }

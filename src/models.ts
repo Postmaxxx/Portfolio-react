@@ -87,7 +87,18 @@ export type MySkill = {
     percent: number
 }
 
-export type WorkEducationItem = {
+export interface IWorkItem {
+    date: string
+    header: string
+    subHeader: string
+    text: string
+    link: string
+    challenges: string[]
+    solutions: string[]
+}
+
+
+export interface IEducationItem {
     date: string
     header: string
     subHeader: string
@@ -172,8 +183,6 @@ export interface IModalSplide {
 }
 
 export interface IPortfolios {
-    selected: number
-    selectedImage: number
     list: Array<ProjectItemListItem>
 }
 
@@ -194,23 +203,30 @@ export interface IState extends IProps {
     modalSplide: IModalSplide
     modalImage: IModalImage
     modalMsg: IModalMSG
-    skillFillSpeed: number
-    resumeDoc: string
-    me: Array<MeInfo>
-    skills: Array<MySkill>
-    workExperience: Array<WorkEducationItem>
-    education: Array<WorkEducationItem>
-    imagesMe: IImagesMe
-    portfolios: IPortfolios
     contact: IContact
-    pages: Array<PageItem>
-    reviews: Array<ReviewItem>
-    contacts: IContacts
     getState: () => IState
     dispatch: any
+    selectedPortfolio: number
+    selectedPortfolioImage: number
     subscribe: (listener: () => void) => Unsubscribe
     replaceReducer: (nextReducer: Reducer<IState, AnyAction>) => void
     [Symbol.observable] : () => Observable<IState>
+}
+
+
+export interface IAllData {
+    skillFillSpeed: number
+    resumeDoc: string
+    servicesTiles: IServiceTile[]
+    me: Array<MeInfo>
+    skills: Array<MySkill>
+    workExperience: Array<IWorkItem>
+    education: Array<IEducationItem>
+    imagesMe: IImagesMe
+    portfolios: IPortfolios
+    pages: Array<PageItem>
+    reviews: Array<ReviewItem>
+    contacts: IContacts
 }
 
 
@@ -268,6 +284,19 @@ export interface IMessage {
 
 export interface IRemoveEventListener {
     (): ReturnType<typeof document.removeEventListener>
+}
+
+
+export interface IResumeTile {
+    challenges: string[]
+    solutions: string[]
+}
+
+
+export interface IServiceTile {
+    logo: JSX.Element,
+	header: string
+	text: string
 }
 
 

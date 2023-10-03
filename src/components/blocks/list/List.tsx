@@ -3,13 +3,13 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { IMapdispatchToProps, ISetStore, IState, ProjectItemListItem } from "../../../../src/models";
 import "./list.scss";
+import allData from "../../../assets/js/data";
 
 interface ISelectPortfolio {
     (index: number): void
 }
 
 interface IList {
-    list: Array<ProjectItemListItem>
 	selected: number
 	setStore: ISetStore
 }
@@ -25,7 +25,7 @@ const List: React.FC<IList> = (props): JSX.Element => {
 		<div className="list__container">
 			<div className="list">
 				<ul>
-					{props.list.map((portfolio: ProjectItemListItem, index: number): JSX.Element => {
+					{allData.portfolios.list.map((portfolio: ProjectItemListItem, index: number): JSX.Element => {
 						return (
 							<li 
 								key={index} 
@@ -45,8 +45,7 @@ const List: React.FC<IList> = (props): JSX.Element => {
 
 const mapStateToProps = (state: IState) => {
 	return {
-		list: state.portfolios.list,
-		selected: state.portfolios.selected
+		selected: state.selectedPortfolio
 	};
 };
 

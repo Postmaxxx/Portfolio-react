@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { IState } from "../../../../src/models";
 import "./info_portfolio-slide.scss";
+import allData from "../../../assets/js/data";
 
 
 interface InfoPortfolioSlide {
@@ -31,8 +32,8 @@ const InfoPortfolioSlide: React.FC<InfoPortfolioSlide> = (props): JSX.Element =>
 
 const mapStateToProps = (state: IState)  => {
 	return {
-		link: state.portfolios.list[state.portfolios.selected].images[state.portfolios.selectedImage].link,
-		descr: state.portfolios.list[state.portfolios.selected].images[state.portfolios.selectedImage].descr,
+		link: allData.portfolios.list[state.selectedPortfolio].images[state.selectedPortfolioImage].link,
+		descr: allData.portfolios.list[state.selectedPortfolio].images[state.selectedPortfolioImage].descr,
 	};
 };
 

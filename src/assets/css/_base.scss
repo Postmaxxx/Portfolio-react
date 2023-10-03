@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "./variables" as *;
 @use "./fonts" as *;
+@use "./icons" as *;
 
 
 * {
@@ -89,6 +90,7 @@ em {
     border: none;
     font-size: 16px;
     letter-spacing: .1rem;
+    //border-radius: $brad_sm;
 
     &:before {
         content: "";
@@ -320,84 +322,6 @@ em {
         transition: color $transition_theme;
     }
 
-
-    svg {
-        &.logo-design.logo-design {
-            width: 100px;
-            height: 80px;
-    
-            .design-1 {
-                fill:map.get($light, "text_soft");
-            }
-            .design-1,.design-2,.design-3,.design-4,.design-5 {
-                fill-rule:evenodd;
-            }
-            .design-2 {
-                fill:#ccc;
-            }
-            .design-3 { 
-                fill:#83b3d7;
-            }
-            .design-4 { 
-                fill:#3a91be;
-            } 
-            .design-5 { 
-                fill:#e99688;
-            }
-    
-            @include respond-to(xs) {
-                width: 80px;
-                height: 60px;
-            }
-        }
-    
-        &.logo-frontend {
-            .frontend-1 {
-                fill: #e99688;
-            }
-            .frontend-2 {
-                fill:map.get($light, "text_soft");
-            }
-            .frontend-3 { 
-                fill:#3a91be;
-            }
-        }
-    
-        &.logo-components {
-            .components-1 {
-                fill: map.get($light, "text_soft");
-            }
-            .components-2 {
-                fill:#3a91be;
-            }
-            .components-3 { 
-                fill:#3a91be;
-            }
-            .components-4 { 
-                fill:#e99688;
-            }
-            .components-5 { 
-                fill:#3a91be;
-            }
-        }
-
-
-        &.logo-solution {
-
-            .logo-solution__border {
-                fill: map.get($light, "text_soft");
-            }
-
-            .logo-solution__content {
-                fill: #3a91be;
-            }
-        }
-
-    }
-
-
-
-
 }
 
 
@@ -406,10 +330,7 @@ em {
 
 
 body.dark {
-
-    $c_text_hard: red;
     transition: $transition_theme;
-
     &::-webkit-scrollbar-track {
         background-color: map.get($dark, "scroll-track");
     }
@@ -429,6 +350,7 @@ body.dark {
     .portfolio__content img {
         filter: brightness(0.8) contrast(1.2);
     }
+
 
     .link_button {
         background-color: map.get($dark, "nav_selected");
@@ -487,51 +409,21 @@ body.dark {
 
 
     svg {
-        &.logo-design.logo-design {
-            .design-1 {
+        &.icon_design.icon_design {
+            .icon_design__layer-1 {
                 fill:map.get($dark, "text_soft");
-            }
-            .design-2 {
-                fill:#ccc;
-            }
-            .design-3 { 
-                fill:#83b3d7;
-            }
-            .design-4 { 
-                fill:#3a91be;
-            } 
-            .design-5 { 
-                fill:#e99688;
             }
         }
 
         &.logo-frontend {
-            .frontend-1 {
-                fill: #e99688;
-            }
             .frontend-2 {
                 fill:map.get($dark, "text_soft");
-            }
-            .frontend-3 { 
-                fill:#3a91be;
             }
         }
 
         &.logo-components {
             .components-1 {
                 fill: map.get($dark, "text_soft");
-            }
-            .components-2 {
-                fill:#3a91be;
-            }
-            .components-3 { 
-                fill:#3a91be;
-            }
-            .components-4 { 
-                fill:#e99688;
-            }
-            .components-5 { 
-                fill:#3a91be;
             }
         }
 
@@ -557,22 +449,5 @@ body.dark {
 
     }
 
-
-    .logo-issue {
-        position: relative;
-        svg.logo-frontend {
-            .frontend-3 {
-                display: none;
-            }
-        }
-        svg.logo-danger {
-            height: auto;
-            position: absolute;
-            width: 30%;
-            left: 50%;
-            top: 30%;
-            transform: translate(-50%, -50%);
-        }
-    }
     
 }

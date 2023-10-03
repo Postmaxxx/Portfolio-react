@@ -1,20 +1,18 @@
 import { useEffect, useRef } from "react";
-import { logoDanger, logoDesign, logoIssue, logoService, logoSolution } from "../../../assets/js/svgs";
+import { arrow_right, logoIssue, logoSolution } from "../../../assets/js/svgs";
 import Tile from "../tile/Tile";
 import "./resume_tiles.scss";
+import { IResumeTile } from "../../../models";
 
-interface IResumeTiles {
-    content: {
-        was: string[]
-        now: string[]
-    }
+interface IContent {
+    content: IResumeTile
 }
 
 
 
 
 
-const ResumeTiles: React.FC<IResumeTiles> = ({content}: IResumeTiles): JSX.Element => {
+const ResumeTiles: React.FC<IContent> = ({content}: IContent): JSX.Element => {
     
     const _tile = useRef<HTMLDivElement>(null)
 
@@ -30,13 +28,16 @@ const ResumeTiles: React.FC<IResumeTiles> = ({content}: IResumeTiles): JSX.Eleme
 	});
 
 	useEffect(() => {
-		_tile.current?.querySelectorAll(".tile").forEach(el => observer.observe(el));
+		_tile.current?.querySelectorAll("[data-observe='tile']").forEach(el => observer.observe(el));
 	}, []);
 
 	return (
 		<div className="resume-tiles" ref={_tile}>
-			<Tile logo={logoIssue} header="was" list={content.was} />
-			<Tile logo={logoSolution} header="now" list={content.now} />
+			<Tile logo={logoIssue} header="Challenges" list={content.challenges} />
+            <div className="tile__arrow" data-observe="tile">
+                {arrow_right}
+            </div>
+			<Tile logo={logoSolution} header="Solutions" list={content.solutions} />
 		</div>
 	);
 };

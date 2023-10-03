@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { useEffect } from "react";
 import "./list3d_v.scss";
 import { IMapdispatchToProps, ISetStore, IState, ProjectItemListItem } from "../../../../src/models";
+import allData from "../../../assets/js/data";
 
 let selected: number = 0;
 let rotateStep: number = 0;
@@ -14,14 +15,13 @@ let stepsToMove: number = 0;
 
 interface IList3d_v {
 	selected: number
-	list: Array<ProjectItemListItem>
 	setStore: ISetStore
 }
 
 const List3d_v: React.FC<IList3d_v> = (props): JSX.Element => {
 	stepsToMove = props.selected - selected;
 	selected = props.selected;
-	listLength = props.list.length;
+	listLength = allData.portfolios.list.length;
 	if (stepsToMove != 0) {
 		if (Math.abs(stepsToMove) > listLength / 2) {
 			stepsToMove = stepsToMove - Math.sign(stepsToMove)*listLength;
@@ -50,7 +50,7 @@ const List3d_v: React.FC<IList3d_v> = (props): JSX.Element => {
 	return (
 		<div className="list3d_v__container">
 			<div className="list3d_v" style={{transform: `rotateX(${(360 / listLength) * rotateStep}deg)`}}>
-				{[...props.list].map((portfolio, index) => {
+				{[...allData.portfolios.list].map((portfolio, index) => {
 					const portfolioStyle: {transform: string, opacity: number} = {
 						transform: "",
 						opacity: 0
@@ -76,8 +76,7 @@ const List3d_v: React.FC<IList3d_v> = (props): JSX.Element => {
 
 const mapStateToProps = (state: IState) => {
 	return {
-		selected: state.portfolios.selected,
-		list: state.portfolios.list
+		selected: state.selectedPortfolio,
 	};
 
 };

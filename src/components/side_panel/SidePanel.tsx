@@ -5,12 +5,11 @@ import * as actions from "../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { IRemoveEventListener, PageItem,  IMapdispatchToProps, ISetStore, IState } from "../../../src/models";
+import allData from "../../assets/js/data";
 
 
 interface ISidePanel {
 	nav_ham: string
-	imageMe: string
-	pages: Array<PageItem>
 	setStore: ISetStore
 }
 
@@ -58,12 +57,12 @@ const SidePanel: React.FC<ISidePanel> = (props): JSX.Element => {
 		return <div className="side-panel">
 			<figure>
 				<Link to="/home"> 
-					<img src={props.imageMe} alt="It's me" />
+					<img src={allData.imagesMe.side} alt="It's me" />
 				</Link>
 			</figure>
 			<nav>
 				<ul className="site-navigation">
-					{props.pages.map((page: PageItem) => {
+					{allData.pages.map((page: PageItem) => {
 						return(
 							<li key={page.link}>
 								<NavLink 
@@ -87,7 +86,7 @@ const SidePanel: React.FC<ISidePanel> = (props): JSX.Element => {
 				<div></div>
 			</div>
 		</div>;
-	}, [props.pages]);
+	}, []);
 	
 	return renderMemo;
 };
@@ -97,8 +96,6 @@ const SidePanel: React.FC<ISidePanel> = (props): JSX.Element => {
 const mapStateToProps = (state: IState)  => {
 	return {
 		nav_ham: state.nav_ham,
-		imageMe: state.imagesMe.side,
-		pages: state.pages,
 	};
 };
 

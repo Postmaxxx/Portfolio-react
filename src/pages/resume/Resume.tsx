@@ -1,42 +1,12 @@
-import { connect } from "react-redux";
 import Skill from "../../components/blocks/skill/Skill";
 import History from "../../components/blocks/history/History";
 import "./resume.scss";
-import { MySkill, WorkEducationItem, IState } from "../../../src/models";
+import { IEducationItem, IWorkItem, MySkill } from "../../../src/models";
 import { useEffect } from "react";
+import allData from "../../assets/js/data";
 
 
-
-interface IResumeProps {
-	skills: Array<MySkill>
-	workExperience: Array<WorkEducationItem>,
-	education: Array<WorkEducationItem>,
-	resume: string
-}
-
-
-
-
-
-
-
-const tilesContent = [
-	{
-		was: ['Point 11', 'Point 12', 'Point 13'],
-		now: ['Point 121', 'Point 2', 'Point 33']
-	},
-	{
-		was: ['Point 21', 'Point 22', 'Point 23'],
-		now: ['Point 121', 'Point 2', 'Point 33']
-	},
-	{
-		was: ['Point 31', 'Point 32', 'Point 33'],
-		now: ['Point 121']
-	}
-]
-
-
-const Resume: React.FC<IResumeProps>  = (props): JSX.Element => {
+const Resume: React.FC  = (): JSX.Element => {
 
 	const observerRule = (entries: IntersectionObserverEntry[], thisObserver: IntersectionObserver) => {
 		entries.forEach(entry => {
@@ -69,7 +39,7 @@ const Resume: React.FC<IResumeProps>  = (props): JSX.Element => {
 				<section className='skills'> 
 					<h2>My skills<em>My skills</em></h2>
 					<div className="skills__container"> 
-						{props.skills.map((skill: MySkill) => {
+						{allData.skills.map((skill: MySkill) => {
 							return(
 								<Skill key={skill.name} name={skill.name} percent={skill.percent}/>
 							);
@@ -90,9 +60,9 @@ const Resume: React.FC<IResumeProps>  = (props): JSX.Element => {
 							<h3>Work experience</h3>
 						</div>
 						<div className="history__content">
-							{props.workExperience.map((historyBlock: WorkEducationItem, index: number) => {
+							{allData.workExperience.map((historyBlock: IWorkItem, index: number) => {
 								return(
-									<History key={index} historyBlock={historyBlock} tilesContent={tilesContent[index]}/>
+									<History key={index} historyBlock={historyBlock} tilesContent={{challenges: historyBlock.challenges, solutions: historyBlock.solutions}}/>
 								);
 							})}
 						</div>
@@ -105,7 +75,7 @@ const Resume: React.FC<IResumeProps>  = (props): JSX.Element => {
 							<h3>Education</h3>
 						</div>
 						<div className="history__content">
-							{props.education.map((historyBlock: WorkEducationItem, index: number) => {
+							{allData.education.map((historyBlock: IEducationItem, index: number) => {
 								return(
 									<History key={index} historyBlock={historyBlock}/>
 								);
@@ -113,22 +83,13 @@ const Resume: React.FC<IResumeProps>  = (props): JSX.Element => {
 						</div>
 					</div>
 				</section>
-				<a className="link_button" href={props.resume} target="_blank" rel="noreferrer">Download cv</a>
+				<a className="link_button" href={allData.resumeDoc} target="_blank" rel="noreferrer">Download cv</a>
 			</div>
 		</div>
 	);
 };
 
 
-const mapStateToProps = (state: IState)  => {
-	return {
-		skills: state.skills,
-		workExperience: state.workExperience,
-		education: state.education,
-		resume: state.resumeDoc
-	};
-};
 
 
-
-export default connect(mapStateToProps)(Resume);
+export default Resume;

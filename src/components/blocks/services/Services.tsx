@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { logoComponents, logoDesign, logoService } from "../../../assets/js/svgs";
+import { logoComponents, iconDesign, logoService } from "../../../assets/js/svgs";
 import { INoPropsJSX } from "../../../../src/models";
 import Tile from "../tile/Tile";
 import "./services.scss";
@@ -8,7 +8,7 @@ import "./services.scss";
 
 const tiles = [
 	{
-		logo: logoDesign,
+		logo: iconDesign,
 		header:"Web Design",
 		text:"Implementing your design or creating new with close attention to every detail. Everything is significant to make a masterpiece."
 	},

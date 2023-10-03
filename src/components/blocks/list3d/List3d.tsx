@@ -3,10 +3,10 @@ import React, { useEffect, useMemo, useRef } from "react";
 import "./list3d.scss";
 import { ProjectItemListItem } from "../../../../src/models";
 import { IState } from "../../../../src/models";
+import allData from "../../../assets/js/data";
 
 
 interface IContactBlock {
-    list: Array<ProjectItemListItem> 
     selected: number
 }
 
@@ -15,7 +15,7 @@ const List3d: React.FC<IContactBlock> = (props): JSX.Element => {
 	const _listCont = useRef<HTMLDivElement>(null);
 	const selected = useRef<number>(props.selected);
 	const stepsToMove = useRef<number>(0);
-	const listLength: number = props.list.length;
+	const listLength: number = allData.portfolios.list.length;
 	let deltaMove: number = props.selected - selected.current;
 
 	useEffect((): void => {
@@ -38,7 +38,7 @@ const List3d: React.FC<IContactBlock> = (props): JSX.Element => {
    
 
 	const listItems = useMemo(() => {
-		return props.list.map((portfolio: ProjectItemListItem, index: number): JSX.Element => {
+		return allData.portfolios.list.map((portfolio: ProjectItemListItem, index: number): JSX.Element => {
 		   const portfolioStyle = {} as React.CSSProperties;
 		   const step: number = 360 / listLength;
 		   portfolioStyle.transform = `translate(-50%, -50%) rotateZ(${index * step}deg) translateX(${listLength * 15}px)`;
@@ -63,8 +63,7 @@ const List3d: React.FC<IContactBlock> = (props): JSX.Element => {
 
 const mapStateToProps = (state: IState)  => {
 	return {
-		list: state.portfolios.list,
-		selected: state.portfolios.selected,
+		selected: state.selectedPortfolio,
 	};
 };
 

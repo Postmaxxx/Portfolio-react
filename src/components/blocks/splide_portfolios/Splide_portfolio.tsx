@@ -7,6 +7,7 @@ import "./splide_portfolio.scss";
 import { IMapdispatchToProps, ISetStore, ISliderOptions, IState, ProjectItemListItem } from "../../../../src/models";
 import ImgWithPreloader from "../../../../src/assets/js/ImgWithPreloader";
 import { findBestSuitedImg } from "../../../../src/assets/js/findBestSuitedImg";
+import allData from "../../../assets/js/data";
 
 interface IContainerSize {
 	width: number
@@ -14,7 +15,6 @@ interface IContainerSize {
 }
 
 interface ISplidePortfolio {
-	list: Array<ProjectItemListItem>
 	selected: number
 	selectedImage: number
 	setStore: ISetStore
@@ -100,7 +100,7 @@ const SplidePortfolio: React.FC<ISplidePortfolio> = (props): JSX.Element => {
 			<div id="portfolioMainSplide" className="splide" ref={_splideMain} aria-label="The carousel with thumbnails. Click the image to expand.">
 				<div className="splide__track">
 					<ul className="splide__list">
-						{props.list[props.selected].images.map((slide, index: number) => {
+						{allData.portfolios.list[props.selected].images.map((slide, index: number) => {
 							return (
 								<li className="splide__slide" key={props.selected * 1000 + index}>
 									<div className="splide__slide-container">
@@ -122,9 +122,8 @@ const SplidePortfolio: React.FC<ISplidePortfolio> = (props): JSX.Element => {
 
 const mapStateToProps = (state: IState)  => {
 	return {
-		list: state.portfolios.list,
-		selected: state.portfolios.selected,
-		selectedImage: state.portfolios.selectedImage,
+		selected: state.selectedPortfolio,
+		selectedImage: state.selectedPortfolioImage,
 	};
 };
 

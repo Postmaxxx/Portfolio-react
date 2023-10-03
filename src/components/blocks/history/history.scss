@@ -4,11 +4,19 @@
 
 .history__block {
     display: flex;
-    margin-top: 40px;
+    margin-top: 70px;
+
+    &:first-child {
+        margin-top: 40px;
+    }
 
     @include respond-to(sm) {
         flex-direction: column;
         padding-left: 20px;
+    }
+
+    @include respond-to(xs) {
+        margin-top: 40px;
     }
 
     & > div:first-of-type {

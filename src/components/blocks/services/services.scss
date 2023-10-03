@@ -15,15 +15,11 @@
 
     & > .tile {
         width: 31%;
-        background-color: map.get($light, "bg_side-panel");
-        border: 1px solid map.get($light, "border");
-        border-top: 5px solid map.get($light, "border");
-        padding: 20px;
         margin-bottom: 30px;
-        
         transition: border $transition_base, background-color $transition_theme, transform $transition_base ease-in-out, opacity $transition_base;
         opacity: 0;
         transform: scale(0.8);
+
 
         &:nth-child(1) {
             transform: translate(110%, 0);
@@ -72,30 +68,6 @@
         &:hover {
             border-top: 5px solid map.get($light, "nav_selected");
             transition: border $transition_base;
-        }
-
-        & > svg {
-            width: 80px;
-
-            @include respond-to(xs) {
-                width: 60px;
-            }
-            
-        }
-
-        & > h4 {
-            margin-top: 20px;
-        }
-
-        & .line {
-            width: 60px;
-            height: 2px;
-            margin-top: 20px;
-            background-color: map.get($light, "separator");;
-        }
-
-        & > p {
-            margin-top: 20px;
         }
 
 

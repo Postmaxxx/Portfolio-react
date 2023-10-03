@@ -3,11 +3,11 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { useEffect, useMemo, useRef } from "react";
 import "./modalImage.scss";
-import { IImagesMe, IMapdispatchToProps, IMyImage, ISetStore, IState, TTheme } from "../../../src/models";
+import { IMapdispatchToProps, IMyImage, ISetStore, IState, TTheme } from "../../../src/models";
 import ImgWithPreloader from "../../../src/assets/js/ImgWithPreloader";
+import allData from "../../assets/js/data";
 
 interface IModalImage {
-	imagesMe: IImagesMe
 	show: boolean
 	theme: TTheme
 	setStore: ISetStore
@@ -46,9 +46,9 @@ const ModalImage: React.FC<IModalImage> = (props): JSX.Element => {
 						{props.show &&
 								<ImgWithPreloader 
 									link={props.theme === "light" ? 
-										props.imagesMe.day.images[props.imagesMe.day.images.length - 1].image
-										: props.imagesMe.night.images[props.imagesMe.day.images.length - 1].image
-									} alt={props.theme === "light" ? props.imagesMe.day.descr : props.imagesMe.night.descr } />
+										allData.imagesMe.day.images[allData.imagesMe.day.images.length - 1].image
+										: allData.imagesMe.night.images[allData.imagesMe.day.images.length - 1].image
+									} alt={props.theme === "light" ? allData.imagesMe.day.descr : allData.imagesMe.night.descr } />
 						}
 					</div>
 				</div>
@@ -70,7 +70,6 @@ const ModalImage: React.FC<IModalImage> = (props): JSX.Element => {
 
 const mapStateToProps = (state: IState) => {
 	return {
-		imagesMe: state.imagesMe,
 		show: state.modalImage.show,
 		theme: state.theme
 	};

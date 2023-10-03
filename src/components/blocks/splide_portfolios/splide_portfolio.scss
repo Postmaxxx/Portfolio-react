@@ -4,7 +4,8 @@
 
 
 .splide_portfolio__container {
-    min-height: 440px;
+    height: 0px;
+    /*min-height: 440px;
 
     @include respond-to(lg) {
         min-height: 376px;
@@ -16,7 +17,8 @@
 
     @include respond-to(sm) {
         min-height: 400px;
-    }
+    }*/
+    flex-grow: 1;
 
     & * {
         transition: none;

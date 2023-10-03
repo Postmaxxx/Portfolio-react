@@ -15,24 +15,36 @@
         border-top: 5px solid map.get($light, "nav_selected");
     }
 
-    & svg {
-        width: 80px;
+    & .tile__hero {
 
-        @include respond-to(xs) {
-            width: 60px;
+        & > svg {
+            width: auto;
         }
-        
+
+        & svg {
+            height: 80px;
+            @include respond-to(xs) {
+                height: 60px;
+            }
+            
+            &.icon_design {
+                scale: .8;
+            }
+        }
+    
+        & h4 {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
-    & h4 {
-        margin-top: 20px;
-    }
 
     & > .tile__line {
         width: 60px;
         height: 2px;
         margin-top: 20px;
-        background-color: map.get($light, "separator");;
+        background-color: map.get($light, "separator");
     }
 
     & > p {

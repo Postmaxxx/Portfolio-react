@@ -8,11 +8,11 @@ import ContactBlock from "../../components/blocks/contact/Contact_block";
 import Modal from "../../components/modals/Modal";
 import Message from "../../components/message/Message";
 import "./contact.scss";
-import { Action, IContact, IContacts, IMapdispatchToProps, IModalMSG, ISetStore, IState } from "../../../src/models";
-import {  MutableRefObject, useMemo, useRef } from "react";
+import { Action, IContact, IMapdispatchToProps, IModalMSG, ISetStore, IState } from "../../../src/models";
+import {  useMemo, useRef } from "react";
+import allData from "../../assets/js/data";
 
 interface IContactProps {
-	contacts: IContacts
 	contact: IContact
 	modalMsg: IModalMSG
 	setStore: ISetStore
@@ -169,7 +169,7 @@ const Contact: React.FC<IContactProps> = (props): JSX.Element => {
 									</svg>
 								}
 								header='Phone'
-								links={props.contacts.phone}
+								links={allData.contacts.phone}
 							/>
 							<ContactBlock 
 								image={
@@ -178,7 +178,7 @@ const Contact: React.FC<IContactProps> = (props): JSX.Element => {
 									</svg>
 								}
 								header='Email'
-								links={props.contacts.email}
+								links={allData.contacts.email}
 							/>
 							<ContactBlock 
 								image={
@@ -187,7 +187,7 @@ const Contact: React.FC<IContactProps> = (props): JSX.Element => {
 									</svg>
 								}
 								header='Address'
-								links={props.contacts.address}
+								links={allData.contacts.address}
 							/>
 						</div>
 					</div>
@@ -216,7 +216,6 @@ const Contact: React.FC<IContactProps> = (props): JSX.Element => {
 
 const mapStateToProps = (state: IState)  => {
 	return {
-		contacts: state.contacts,
 		contact: state.contact,
 		modalMsg: state.modalMsg
 	};

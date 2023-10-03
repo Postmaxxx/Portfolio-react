@@ -9,24 +9,12 @@ import ImgWithPreloader from "../../../../src/assets/js/ImgWithPreloader";
 import { findBestSuitedImg } from "../../../../src/assets/js/findBestSuitedImg";
 import ModalImage from "../../../../src/components/modals/ModalImage";
 import { TTheme } from "../../../../src/models";
+import allData from "../../../assets/js/data";
 
 const ModalImagePort = (p: IMyImage) => createPortal(<ModalImage imageProps={p}/>, (document.querySelector("#portal") as HTMLElement));
 
 interface IAbout {
 	theme: TTheme
-	me: Array<MeInfo>
-	imagesMe: {
-		side: string
-        day: {
-            descr: string
-            images: Array<ImageMe>
-        }
-        night: {
-            descr: string
-            images: Array<ImageMe>
-        }
-	}
-	resume: string
 	setStore: ISetStore
 }
 
@@ -54,27 +42,27 @@ const About:React.FC<IAbout> = (props): JSX.Element => {
 			<p>Frontend Developer with over 4 year of experience in successfully creating and maintaining web sites and components supported by more than 10 years IT background.</p>
 			<p>I am experience working with clients ranging from homepage owners to well-organized business with up to 10.000 visitors per day.</p>
 			<ul>
-				{props.me.map((item: MeInfo, index: number) => {
+				{allData.me.map((item: MeInfo, index: number) => {
 					return (
 						<li key={index}><b>{item.descr}</b>{item.value}</li>
 					);
 				})}
 			</ul>
-			<a className="link_button" href={props.resume} target="_blank" rel="noreferrer">Download cv</a>
+			<a className="link_button" href={allData.resumeDoc} target="_blank" rel="noreferrer">Download cv</a>
 		</div>;
-	},[props.me]);
+	}, []);
 
 	return(
 		<div className="about__container">
-			<ModalImagePort images={props.theme === "light" ? props.imagesMe.day.images : props.imagesMe.night.images} descr=""/>
+			<ModalImagePort images={props.theme === "light" ? allData.imagesMe.day.images : allData.imagesMe.night.images} descr=""/>
 			<div className="img-container" ref={_imgContRef}>
 				{_imgContRef.current && <ImgWithPreloader 
 					link={findBestSuitedImg({
-						images: props.theme === "light" ? props.imagesMe.day.images : props.imagesMe.night.images, 
+						images: props.theme === "light" ? allData.imagesMe.day.images : allData.imagesMe.night.images, 
 						width: _imgContRef.current.offsetWidth, 
 						height: _imgContRef.current.offsetHeight}
 					).image} 
-					alt={props.theme === "light" ? props.imagesMe.day.descr : props.imagesMe.night.descr} 
+					alt={props.theme === "light" ? allData.imagesMe.day.descr : allData.imagesMe.night.descr} 
 				/>} 
 			</div>
 			{renderDescrMemo}
@@ -86,9 +74,6 @@ const About:React.FC<IAbout> = (props): JSX.Element => {
 const mapStateToProps = (state: IState)  => {
 	return {
 		theme: state.theme,
-		me: state.me,
-		imagesMe: state.imagesMe,
-		resume: state.resumeDoc
 	};
 };
 

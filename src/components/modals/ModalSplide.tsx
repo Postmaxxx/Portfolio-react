@@ -7,6 +7,7 @@ import "./modalSplide.scss";
 import { IMapdispatchToProps, ISetStore, IState, ProjectItemListItem } from "../../../src/models";
 import Splide from "@splidejs/splide";
 import ImgWithPreloader from "../../../src/assets/js/ImgWithPreloader";
+import allData from "../../assets/js/data";
 
 
 interface IOptions {
@@ -36,7 +37,6 @@ interface IModalSplide {
 	selected: number
 	selectedImage: number
 	show: boolean
-	list: Array<ProjectItemListItem>
 	setStore: ISetStore
 }
 
@@ -144,7 +144,7 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 							<div id="modalMain" className="splide" ref={_splideMain}>
 								<div className="splide__track">
 									<ul className="splide__list">
-										{props.list[props.selected].images.map((slide) => {
+										{allData.portfolios.list[props.selected].images.map((slide) => {
 											return (
 												<li className="splide__slide" key={slide.images[0].image}>
 													{props.show && <ImgWithPreloader link={slide.images[slide.images.length - 1].image} alt={slide.descr} />}
@@ -159,7 +159,7 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 							<div id="modalThumbs" className="splide" ref={_splideThumbs}>
 								<div className="splide__track">
 									<ul className="splide__list">
-										{props.list[props.selected].images.map((slide) => {
+										{allData.portfolios.list[props.selected].images.map((slide) => {
 											return (
 												<li className="splide__slide" key={slide.images[0].image}>
 													{props.show && <ImgWithPreloader link={slide.images[0].image} alt={slide.descr} />}
@@ -193,10 +193,9 @@ const ModalSplide: React.FC<IModalSplide> = (props:IModalSplide): JSX.Element =>
 
 
 const mapStateToProps = (state: IState): Omit<IModalSplide, "setStore"> => ({
-	selected: state.portfolios.selected,
-	selectedImage: state.portfolios.selectedImage,
-	show: state.modalSplide.show,
-	list: state.portfolios.list
+	selected: state.selectedPortfolio,
+	selectedImage: state.selectedPortfolioImage,
+	show: state.modalSplide.show
 })
 
 

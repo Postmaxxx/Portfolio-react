@@ -1,17 +1,13 @@
 import Splide from "@splidejs/splide";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import * as actions from "../../../assets/redux/actions";
 import "@splidejs/react-splide/css";
 import "./splide_reviews.scss";
-import { IMapdispatchToProps, ISliderOptions, IState, ReviewItem } from "../../../../src/models";
+import { ISliderOptions, ReviewItem } from "../../../../src/models";
 import { useEffect, useRef } from "react";
+import allData from "../../../assets/js/data";
 
-interface ISliderReviews {
-	reviews: Array<ReviewItem>
-}
 
-const SliderReviews: React.FC<ISliderReviews> = (props): JSX.Element => {
+
+const SliderReviews: React.FC = (): JSX.Element => {
     
 	const _reviewsSplideCont = useRef<HTMLDivElement>(null);
 	const reviewsSplide = useRef<Splide | null>(null);
@@ -54,7 +50,7 @@ const SliderReviews: React.FC<ISliderReviews> = (props): JSX.Element => {
 			<div ref={_reviewsSplideCont} className="splide">
 				<div className="splide__track">
 					<ul className="splide__list">
-						{props.reviews.map((review: ReviewItem) => {
+						{allData.reviews.map((review: ReviewItem) => {
 							return (
 								<li className="splide__slide" key={review.name}>
 									<div className="splide__slide-container">
@@ -79,15 +75,6 @@ const SliderReviews: React.FC<ISliderReviews> = (props): JSX.Element => {
 };
 
 
-const mapStateToProps = (state: IState)  => {
-	return {
-		reviews: state.reviews
-	};	
-};
 
-const mapDispatchToProps: IMapdispatchToProps = (dispatch) => ({
-	setStore: bindActionCreators(actions, dispatch),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SliderReviews);
+export default SliderReviews;
 

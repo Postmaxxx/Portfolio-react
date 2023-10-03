@@ -5,14 +5,20 @@
 .info_portfolio__container {
     & p {
         text-align: center;
-        font-size: 20px !important;
-        line-height: 130% !important;
+        font-size: 18px;
+        line-height: 130%;
         width: 100%;
         font-weight: 700;
         white-space: pre-wrap;
 
+
+        
+        @include respond-to(lg) {
+            font-size: 16px;
+        }
+
         @include respond-to(sm) {
-            font-size: 18px !important;
+            font-size: 14px;
         }
     }
 }

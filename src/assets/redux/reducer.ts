@@ -104,18 +104,12 @@ const reducer = function(state: IState = initialState, action: {type: TActionLis
 		case actionList.SET_SELECTED_PORTFOLIO as "SET_SELECTED_PORTFOLIO":
 			return {
 				...state,
-				portfolios: {
-					...state.portfolios,
-					selected: action.payload as number
-				} 
+				selectedPortfolio: action.payload as number
 			};
 		case actionList.SET_SELECTED_PORTFOLIO_IMAGE as "SET_SELECTED_PORTFOLIO_IMAGE":
 			return {
 				...state,
-				portfolios: {
-					...state.portfolios,
-					selectedImage: action.payload as number
-				} 
+				selectedPortfolioImage: action.payload as number
 			};
 		default: {
 			const missedSomeActions:never = action.type;
