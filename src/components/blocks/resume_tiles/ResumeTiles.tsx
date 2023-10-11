@@ -24,7 +24,7 @@ const ResumeTiles: React.FC<IContent> = ({content}: IContent): JSX.Element => {
 			}
 		});
 	}, {
-		threshold: .9
+		threshold: 1
 	});
 
 	useEffect(() => {

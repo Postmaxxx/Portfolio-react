@@ -5,7 +5,7 @@
 
 .resume-tiles {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
     display: flex; 
     align-items: stretch;
     justify-content: space-between;
@@ -49,7 +49,7 @@
         transition: border $transition_base, background-color $transition_theme, opacity $transition_scroll !important;
         border-radius: 5px;
 
-        @include respond-to(xs) {
+        @include respond-to(sm) {
             width: 45%;
         }
 
@@ -102,6 +102,7 @@
         }
 
         & .tile__list {
+            margin-left: 5px;
             list-style: none;
             margin-top: 10px;
             font-size: 16px;
@@ -116,7 +117,7 @@
             & > li::before {
                 content: "•"; 
                 color: map.get($light, "pink_light");
-                margin-right: 5px;
+                margin-right: 8px;
             }
 
         }

@@ -267,7 +267,7 @@ const server_formation = "https://demo.wiseup.dev";
 
 const allData: IAllData = {
 	skillFillSpeed: 3,  //ms
-	resumeDoc: "./resume/Maksim Postnikov Resume.pdf",
+	resumeDoc: "./resume/Maksim_Postnikov_Resume.pdf",
 	servicesTiles: [
 		{
 			logo: iconDesign,
@@ -288,7 +288,7 @@ const allData: IAllData = {
 	me: [
 		{
 			descr: "Full Name",
-			value: "Max Postnikov"
+			value: "Maksim Postnikov"
 		},
 		{
 			descr: "Languages",
@@ -366,7 +366,7 @@ const allData: IAllData = {
 		},
 		{
 			name: "JEST",
-			percent: 80
+			percent: 85
 		},
 		{
 			name: "NodeJS",
@@ -400,8 +400,8 @@ const allData: IAllData = {
 			subHeader: "WiseUpStudio",
 			text: "Developed websites, PWA and specific interactive components, provided code review. Applied frameworks (React/Redux, Bootstrap, Tailwind) and bundlers (Gulp, Webpack) as well as used pure HTML, CSS and TS. Following best practices using BEM, Responsive Web Design and Mobile First application principles. Created MERN based backend and API for web apps.",
 			link: "https://www.wiseupstudio.com/",
-            challenges: ['Long loading time', 'Low mobile traffic', 'Errors in code', 'High annual cost', 'Low satisfaction level', 'Unstable apps', 'Many network requests', 'Low performance'],
-            solutions: ['New API', 'Responsive design', 'TypeScript', 'AWS services', 'Created PWA', 'Code review', 'New API', 'Fix bottlenecks']
+            challenges: ['Long loading time', 'Low mobile traffic', 'Errors in code', 'High annual cost', 'Low satisfaction level', 'Unstable apps', 'Many network requests', 'Low performance', 'Lacks accessibility'],
+            solutions: ['Optimized resources', 'Responsive design', 'TypeScript', 'AWS services', 'Created PWA', 'Code review', 'New REST API', 'Fix bottlenecks', 'Accessibility compliance']
 		},
 		{
 			date: "2019 - 2020",
@@ -409,8 +409,8 @@ const allData: IAllData = {
 			subHeader: "ServiceCom",
 			text: "Created websites using pixel-perfect or adaptive design in collaboration with designers and senior developers. Created mocks. Participated in code reviews and worked with senior developers.",
 			link: "http://servicecom38.ru/",
-            challenges: ['Boring layouts', 'Clumsy blueprints', 'Repeated code', 'Poor code style', 'Focus on desktop'],
-            solutions: ['Tailor-made features', 'Adaptive design', 'Code templates', 'BEM', 'Mobile-first principles']
+            challenges: ['Simplistic layouts', 'Strict templates', 'Same code repeating', 'Inaccurate code style', 'Focus on desktop'],
+            solutions: ['Tailor-made features', 'Adaptive design', 'Code templates', 'BEM', 'Mobile-first approach']
 		},
 		{
 			date: "2015 - 2019",
@@ -428,14 +428,14 @@ const allData: IAllData = {
 			header: "SCRUM",
 			subHeader: "Scrum Professional scrum master (PSM-II)",
 			text: "Verified ability use Scrum in developement",
-			link: "https://www.credly.com/badges/68577090-b388-4028-a30b-5954540a6d61/linked_in_profile",
+			link: "https://www.credly.com/badges/68577090-b388-4028-a30b-5954540a6d61",
 		},
 		{
 			date: "2022",
 			header: "AWS",
 			subHeader: "AWS Cloud Practitioner",
 			text: "Improving my knowledge by learning cloud technologies",
-			link: "https://aws.amazon.com/",
+			link: "https://www.credly.com/badges/d9038cbb-0660-4987-b184-9857cc309956",
 		},
 		{
 			date: "2019",

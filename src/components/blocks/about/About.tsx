@@ -38,8 +38,8 @@ const About:React.FC<IAbout> = (props): JSX.Element => {
 	
 	const renderDescrMemo = useMemo(() => {
 		return <div className="descr">
-			<h3>I am <em>Postnikov Max</em></h3>
-			<p>Frontend Developer with over 4 year of experience in successfully creating and maintaining web sites and components supported by more than 10 years IT background.</p>
+			<h3>I am <em>Postnikov Maksim</em></h3>
+			<p>Frontend Web Developer with over 4 year of experience in successfully creating and maintaining web sites and components supported by more than 10 years IT background.</p>
 			<p>I am experience working with clients ranging from homepage owners to well-organized business with up to 10.000 visitors per day.</p>
 			<ul>
 				{allData.me.map((item: MeInfo, index: number) => {

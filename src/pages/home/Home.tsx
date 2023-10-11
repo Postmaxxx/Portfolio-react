@@ -4,7 +4,7 @@ const Homepage: React.FC = (): JSX.Element => {
 	return (
 		<div className="page-container">
 			<div className="page_home">
-				<h1>Hi, I am <em>Max Postnikov</em></h1>
+				<h1>Hi, I am <em>Maksim Postnikov</em></h1>
 				<p>I am a frontend web developer. Adept at identifying opportunities to enhance front&#8209;end design and improve the user experience.</p>
 				<div className="socials">
 					<a href="https://github.com/Postmaxxx" target="_blank" rel="noreferrer" aria-label="Link to Github">
