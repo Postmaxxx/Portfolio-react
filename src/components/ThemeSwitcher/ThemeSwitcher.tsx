@@ -91,7 +91,8 @@ const ThemeSwitcher: React.FC<IProps> = ({theme, setStore}): JSX.Element => {
 
 
 	useEffect(() => {
-		themeRef.current = localStorage.getItem(params.saveState) as TTheme
+		themeRef.current = (localStorage.getItem(params.saveState) as TTheme) === 'dark' ? 'dark' : 'light'
+		console.log('initial', themeRef.current);
 		applyTheme()
 		if (!_themeSwitcherCont.current) return
 	},[])
@@ -112,7 +113,7 @@ const ThemeSwitcher: React.FC<IProps> = ({theme, setStore}): JSX.Element => {
 
 	
 	
-	const applyTheme = () => { //main switcher
+	const applyTheme = () => { //main switcher	
 		if (!state.current || state.current.isChanging) return
 		setStore.setTheme(themeRef.current)
 		document.body.classList.toggle("dark", themeRef.current === "dark")
@@ -131,7 +132,7 @@ const ThemeSwitcher: React.FC<IProps> = ({theme, setStore}): JSX.Element => {
 	};
 
 	
-	const onThemeClick = () => {
+	const onThemeClick = () => {	
 		themeRef.current = themeRef.current  === 'dark' ? 'light' : 'dark'
 		applyTheme()
 	};

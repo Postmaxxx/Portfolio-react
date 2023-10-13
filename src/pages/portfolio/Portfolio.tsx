@@ -14,7 +14,7 @@ const Portfolio: React.FC  = (): JSX.Element  => {
 			<div className="page_portfolio">
 				<section className='portfolio'> 
 					<div className="header_portfolio">
-						<h2>Portfolios<em>Portfolios</em></h2>
+						<h2>Portfolio<em>Portfolio</em></h2>
 						<div>
 							<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="256pt" height="256pt" viewBox="0 0 256 256" preserveAspectRatio="xMidYMid meet">
 								<g transform="translate(0,256) scale(0.1,-0.1)" fill="#000000" stroke="none">

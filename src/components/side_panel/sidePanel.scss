@@ -60,25 +60,28 @@
 
     & > nav {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        height: 100%;
+        flex-grow: 1;
+        flex-shrink: 1;
+        overflow: auto;
         width: 100%;
         
         & > ul {
+            margin-top: auto;
+            margin-bottom: auto;
+            flex-shrink: 1;
             list-style-type:none;
             font-size: 15px;
             line-height: 2.4rem;
             width: 100%;
-            margin-bottom: 100px;
+            display: flex;
+            flex-direction: column;
             letter-spacing: 0.15rem;
+            padding-bottom: 50%;
 
-            @include respond-to(sm) {
-                font-size: 18px;
-            }
-
-            @include respond-to(xs) {
-                font-size: 20px;
+            @media (max-height: 500px) {
+                padding-bottom: 0;
             }
 
             & > li {
