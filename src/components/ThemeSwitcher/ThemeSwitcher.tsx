@@ -92,7 +92,6 @@ const ThemeSwitcher: React.FC<IProps> = ({theme, setStore}): JSX.Element => {
 
 	useEffect(() => {
 		themeRef.current = (localStorage.getItem(params.saveState) as TTheme) === 'dark' ? 'dark' : 'light'
-		console.log('initial', themeRef.current);
 		applyTheme()
 		if (!_themeSwitcherCont.current) return
 	},[])

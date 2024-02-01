@@ -16,12 +16,12 @@ precacheAndRoute(self.__WB_MANIFEST);
 //setCacheNameDetails({prefix: 'we'});
 
 //do not need due to precache all js+svg+css+fonts
-const versionStyles: string = "1.06";
-const versionScripts: string  = "1.06";
-const versionHtmls: string  = "1.06";
-const versionFonts: string  = "1.06";
-const versionImages: string  = "1.06";
-const versionOffline: string = '1.06';
+const versionStyles: string = "1.09";
+const versionScripts: string  = "1.09";
+const versionHtmls: string  = "1.09";
+const versionFonts: string  = "1.09";
+const versionImages: string  = "1.09";
+const versionOffline: string = '1.09';
 
 interface ICaches {
 	styles: string

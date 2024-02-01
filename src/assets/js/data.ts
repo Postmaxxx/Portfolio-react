@@ -267,7 +267,7 @@ const server_formation = "https://demo.wiseup.dev";
 
 const allData: IAllData = {
 	skillFillSpeed: 3,  //ms
-	resumeDoc: "./resume/Maksim_Postnikov_Resume.pdf",
+	resumeDoc: "./resume/Max_Postnikov_CV.pdf",
 	servicesTiles: [
 		{
 			logo: iconDesign,
@@ -288,7 +288,7 @@ const allData: IAllData = {
 	me: [
 		{
 			descr: "Full Name",
-			value: "Maksim Postnikov"
+			value: "Max Postnikov"
 		},
 		{
 			descr: "Languages",
@@ -317,95 +317,130 @@ const allData: IAllData = {
 			percent: 95
 		},
 		{
-			name: "React",
+			name: "TypeScript",
+			percent: 95
+		},
+		{
+			name: "React.js",
+			percent: 95
+		},
+		{
+			name: "Redux",
+			percent: 95
+		},
+		{
+			name: "Next.js",
 			percent: 90
 		},
 		{
-			name: "Gulp",
-			percent: 85
+			name: "SASS",
+			percent: 95
+		},
+		{
+			name: "GIT",
+			percent: 90
 		},
 		{
 			name: "Webpack",
 			percent: 85
 		},
 		{
-			name: "GIT",
-			percent: 85
+			name: "CI/CD",
+			percent: 90
 		},
 		{
-			name: "Docker",
-			percent: 70
+			name: "PWA",
+			percent: 90
 		},
 		{
-			name: "Tailwind",
-			percent: 85
+			name: "REST API",
+			percent: 95
 		},
 		{
-			name: "Bootstrap",
-			percent: 75
+			name: "GraphQL",
+			percent: 90
+		},
+		{
+			name: "Agile/Scrum",
+			percent: 95
 		},
 		{
 			name: "BEM",
 			percent: 95
 		},
 		{
-			name: "Scrum",
-			percent: 95
+			name: "Tailwind",
+			percent: 85
+		},
+		{
+			name: "Node.js",
+			percent: 90
+		},
+		{
+			name: "Express",
+			percent: 90
+		},
+		{
+			name: "WCAG",
+			percent: 85
+		},
+		{
+			name: "Gulp",
+			percent: 85
+		},
+		{
+			name: "Bootstrap",
+			percent: 75
+		},
+
+		{
+			name: "Docker",
+			percent: 70
+		},
+		{
+			name: "JEST",
+			percent: 90
+		},
+		{
+			name: "Cypress",
+			percent: 85
+		},
+		{
+			name: "MongoDB",
+			percent: 75
+		},
+
+		{
+			name: "AWS Services",
+			percent: 80
+		},
+		{
+			name: "Apollo",
+			percent: 80
+		},
+		{
+			name: "SQL",
+			percent: 75
+		},
+		{
+			name: "Swagger",
+			percent: 70
 		},
 		{
 			name: "CraftCMS",
 			percent: 75
 		},
-		{
-			name: "TypeScript",
-			percent: 90
-		},
-		{
-			name: "PWA",
-			percent: 85
-		},
-		{
-			name: "JEST",
-			percent: 85
-		},
-		{
-			name: "NodeJS",
-			percent: 85
-		},
-		{
-			name: "Express",
-			percent: 80
-		},
-		{
-			name: "MongoDB",
-			percent: 70
-		},
-		{
-			name: "REST API",
-			percent: 85
-		},
-		{
-			name: "AWS Services",
-			percent: 70
-		},
-		/*{
-			name: "PHP",
-			percent: 40
-		},*/
-		{
-			name: "SQL",
-			percent: 80
-		},
 	],
 	workExperience: [
 		{
-			date: "2020 - Present",
+			date: "2020 - 2023",
 			header: "Web Developer",
 			subHeader: "WiseUpStudio",
-			text: "Developed websites, PWA, and specific interactive components. Provided code review. Applied frameworks and libraries (React/Redux, Bootstrap, Tailwind) and bundlers (Gulp, Webpack) and used pure HTML, CSS, and TS. Followed best practices using BEM, Responsive Web Design, and Mobile First application principles. Created MERN-based backend and REST API for web apps.",
+			//text: "Developed websites, PWA, and specific interactive components. Provided code review. Implemented CI/CD pipelines. Applied frameworks and libraries (React/Redux, Bootstrap, Tailwind) and bundlers (Gulp, Webpack) and used pure HTML, CSS, and TS. Followed best practices using BEM, Responsive Web Design, and Mobile First application principles. Created MERN-based backend and REST API for web apps. Provided WCAG compliance. ",
+			text: "Created system design, defined scale, architecture, operational concerns and trade-offs. Led developer team and collaborated with design teams and stakeholders. Created automated build, test, deploy, and release pipelines. Provided code review, taught teammates to implement best practices and approaches. Accomplished apps revision and implemented performance and security improvements. Integrated modern frameworks, libraries, bundlers, and tools.",
 			link: "https://www.wiseupstudio.com/",
             challenges: ['Long loading time', 'Low mobile traffic', 'Errors in code', 'High annual cost', 'Low satisfaction level', 'Unstable apps', 'Many network requests', 'Low performance', 'Lacks accessibility'],
-            solutions: ['Optimized resources', 'Responsive design', 'TypeScript', 'AWS services', 'Created PWA', 'Code review', 'New REST API', 'Fix bottlenecks', 'WCAG & ADA accessibility compliance']
+            solutions: ['Optimized resources', 'Responsive design', 'TypeScript', 'AWS services', 'Created PWA', 'Code review', 'New REST API / GraphQL', 'Fix bottlenecks, Next.js', 'WCAG & ADA accessibility compliance']
 		},
 		{
 			date: "2019 - 2020",
@@ -417,7 +452,7 @@ const allData: IAllData = {
             solutions: ['Tailor-made features', 'Adaptive design', 'Code templates', 'BEM', 'Mobile-first approach']
 		},
 		{
-			date: "2015 - 2019",
+			date: "2012 - 2019",
 			header: "Principal System Engineer",
 			subHeader: "ServiceCom",
 			text: "Created an IT development strategy, configured security settings and access permissions for individuals and groups. Implemented complex virus malware protection plan. Communicated with third-party System Engineer Groups to create optimal solutions for the business needs.",
@@ -2236,7 +2271,7 @@ const allData: IAllData = {
 			add: "Techlicious"
 		}, 
 		{
-			text: "Maksim can assist in developing applications, features, and internal functions for your website as a knowledgeable, hardworking front-end developer.",
+			text: "Max can assist in developing applications, features, and internal functions for your website as a knowledgeable, hardworking front-end developer.",
 			name: "Harry Kirschner, IT",
 			add: "P2S Inc."
 		}, 
@@ -2254,12 +2289,7 @@ const allData: IAllData = {
 				link: "mailto:max@postnikov.dev",
 				text: "max@postnikov.dev",
 				newWindow: false
-			},
-			{
-				link: "mailto:maksim.postnikov.it@gmail.com",
-				text: "maksim.postnikov.it@gmail.com",
-				newWindow: false
-			},
+			}
 		],
 		address: [
 			{
