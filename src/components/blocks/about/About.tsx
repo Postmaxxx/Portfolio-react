@@ -4,12 +4,13 @@ import * as actions from "../../../assets/redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "./about.scss";
-import { ImageMe, IMapdispatchToProps, IMyImage, ISetStore, IState, MeInfo } from "../../../../src/models";
+import { IMapdispatchToProps, IMyImage, ISetStore, IState, MeInfo } from "../../../../src/models";
 import ImgWithPreloader from "../../../../src/assets/js/ImgWithPreloader";
 import { findBestSuitedImg } from "../../../../src/assets/js/findBestSuitedImg";
 import ModalImage from "../../../../src/components/modals/ModalImage";
 import { TTheme } from "../../../../src/models";
 import allData from "../../../assets/js/data";
+
 
 const ModalImagePort = (p: IMyImage) => createPortal(<ModalImage imageProps={p}/>, (document.querySelector("#portal") as HTMLElement));
 
@@ -27,7 +28,7 @@ const About:React.FC<IAbout> = (props): JSX.Element => {
 		props.setStore.setModalImage(true);
 	};
 	
-	console.log(props.theme);
+	//console.log(props.theme);
 	
 	
 	useEffect(() => {
@@ -39,8 +40,7 @@ const About:React.FC<IAbout> = (props): JSX.Element => {
 	const renderDescrMemo = useMemo(() => {
 		return <div className="descr">
 			<h3>I am <em>Postnikov Max</em></h3>
-			<p>Frontend Web Developer with over 4 year of experience in successfully creating and maintaining web sites and components supported by more than 10 years IT background.</p>
-			<p>I am experience working with clients ranging from homepage owners to well-organized business with up to 10.000 visitors per day.</p>
+			{allData.aboutIntro.map((text, i) => <p key={i}>{text}</p>)}
 			<ul>
 				{allData.me.map((item: MeInfo, index: number) => {
 					return (

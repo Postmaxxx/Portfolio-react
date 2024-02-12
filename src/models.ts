@@ -218,6 +218,7 @@ export interface IAllData {
     skillFillSpeed: number
     resumeDoc: string
     servicesTiles: IServiceTile[]
+    aboutIntro: string[]
     me: Array<MeInfo>
     skills: Array<MySkill>
     workExperience: Array<IWorkItem>

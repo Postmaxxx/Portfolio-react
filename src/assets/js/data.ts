@@ -9,6 +9,29 @@ import photoDay750 from "../img/me_day_750.webp";
 import photoDay500 from "../img/me_day_500.webp";
 import photoDay350 from "../img/me_day_350.webp";
 
+
+import dm_1 from "../img/portfolio/datemarks/datemarks_1.webp";
+import dm_1_big from "../img/portfolio/datemarks/datemarks_1_big.webp";
+import dm_1_small from "../img/portfolio/datemarks/datemarks_1_small.webp";
+import dm_1_preview from "../img/portfolio/datemarks/datemarks_1_preview.webp";
+import dm_2 from "../img/portfolio/datemarks/datemarks_2.webp";
+import dm_2_big from "../img/portfolio/datemarks/datemarks_2_big.webp";
+import dm_2_small from "../img/portfolio/datemarks/datemarks_2_small.webp";
+import dm_2_preview from "../img/portfolio/datemarks/datemarks_2_preview.webp";
+import dm_3 from "../img/portfolio/datemarks/datemarks_3.webp";
+import dm_3_big from "../img/portfolio/datemarks/datemarks_3_big.webp";
+import dm_3_small from "../img/portfolio/datemarks/datemarks_3_small.webp";
+import dm_3_preview from "../img/portfolio/datemarks/datemarks_3_preview.webp";
+import dm_4 from "../img/portfolio/datemarks/datemarks_4.webp";
+import dm_4_big from "../img/portfolio/datemarks/datemarks_4_big.webp";
+import dm_4_small from "../img/portfolio/datemarks/datemarks_4_small.webp";
+import dm_4_preview from "../img/portfolio/datemarks/datemarks_4_preview.webp";
+import dm_5 from "../img/portfolio/datemarks/datemarks_5.webp";
+import dm_5_big from "../img/portfolio/datemarks/datemarks_5_big.webp";
+import dm_5_small from "../img/portfolio/datemarks/datemarks_5_small.webp";
+import dm_5_preview from "../img/portfolio/datemarks/datemarks_5_preview.webp";
+
+
 import plenco_1 from "../img/portfolio/plenco/plenco_1.webp";
 import plenco_1_big from "../img/portfolio/plenco/plenco_1_big.webp";
 import plenco_1_small from "../img/portfolio/plenco/plenco_1_small.webp";
@@ -159,24 +182,32 @@ import formation_12_preview from "../img/portfolio/formation/formation_12_previe
 import pv_1 from "../img/portfolio/pv/pv_1.webp";
 import pv_1_big from "../img/portfolio/pv/pv_1_big.webp";
 import pv_1_small from "../img/portfolio/pv/pv_1_small.webp";
+import pv_1_preview from "../img/portfolio/pv/pv_1_preview.webp";
 import pv_2 from "../img/portfolio/pv/pv_2.webp";
 import pv_2_big from "../img/portfolio/pv/pv_2_big.webp";
 import pv_2_small from "../img/portfolio/pv/pv_2_small.webp";
+import pv_2_preview from "../img/portfolio/pv/pv_2_preview.webp";
 import pv_3 from "../img/portfolio/pv/pv_3.webp";
 import pv_3_big from "../img/portfolio/pv/pv_3_big.webp";
 import pv_3_small from "../img/portfolio/pv/pv_3_small.webp";
+import pv_3_preview from "../img/portfolio/pv/pv_3_preview.webp";
 import pv_4 from "../img/portfolio/pv/pv_4.webp";
 import pv_4_big from "../img/portfolio/pv/pv_4_big.webp";
 import pv_4_small from "../img/portfolio/pv/pv_4_small.webp";
+import pv_4_preview from "../img/portfolio/pv/pv_4_preview.webp";
 import pv_5 from "../img/portfolio/pv/pv_5.webp";
 import pv_5_big from "../img/portfolio/pv/pv_5_big.webp";
 import pv_5_small from "../img/portfolio/pv/pv_5_small.webp";
+import pv_5_preview from "../img/portfolio/pv/pv_5_preview.webp";
 import pv_6 from "../img/portfolio/pv/pv_6.webp";
 import pv_6_big from "../img/portfolio/pv/pv_6_big.webp";
 import pv_6_small from "../img/portfolio/pv/pv_6_small.webp";
+import pv_6_preview from "../img/portfolio/pv/pv_6_preview.webp";
 import pv_7 from "../img/portfolio/pv/pv_7.webp";
 import pv_7_big from "../img/portfolio/pv/pv_7_big.webp";
 import pv_7_small from "../img/portfolio/pv/pv_7_small.webp";
+import pv_7_preview from "../img/portfolio/pv/pv_7_preview.webp";
+
 
 
 
@@ -184,61 +215,83 @@ import pv_7_small from "../img/portfolio/pv/pv_7_small.webp";
 import west_1 from "../img/portfolio/west/west_1.webp";
 import west_1_big from "../img/portfolio/west/west_1_big.webp";
 import west_1_small from "../img/portfolio/west/west_1_small.webp";
+import west_1_preview from "../img/portfolio/west/west_1_preview.webp";
 import west_2 from "../img/portfolio/west/west_2.webp";
 import west_2_big from "../img/portfolio/west/west_2_big.webp";
 import west_2_small from "../img/portfolio/west/west_2_small.webp";
+import west_2_preview from "../img/portfolio/west/west_2_preview.webp";
 import west_3 from "../img/portfolio/west/west_3.webp";
 import west_3_big from "../img/portfolio/west/west_3_big.webp";
 import west_3_small from "../img/portfolio/west/west_3_small.webp";
+import west_3_preview from "../img/portfolio/west/west_3_preview.webp";
 import west_4 from "../img/portfolio/west/west_4.webp";
 import west_4_big from "../img/portfolio/west/west_4_big.webp";
 import west_4_small from "../img/portfolio/west/west_4_small.webp";
+import west_4_preview from "../img/portfolio/west/west_4_preview.webp";
+
+
+
 
 import strezhen_1 from "../img/portfolio/strezhen/strezhen_1.webp";
 import strezhen_1_big from "../img/portfolio/strezhen/strezhen_1_big.webp";
 import strezhen_1_small from "../img/portfolio/strezhen/strezhen_1_small.webp";
+import strezhen_1_preview from "../img/portfolio/strezhen/strezhen_1_preview.webp";
 import strezhen_2 from "../img/portfolio/strezhen/strezhen_2.webp";
 import strezhen_2_big from "../img/portfolio/strezhen/strezhen_2_big.webp";
 import strezhen_2_small from "../img/portfolio/strezhen/strezhen_2_small.webp";
+import strezhen_2_preview from "../img/portfolio/strezhen/strezhen_2_preview.webp";
 import strezhen_3 from "../img/portfolio/strezhen/strezhen_3.webp";
 import strezhen_3_big from "../img/portfolio/strezhen/strezhen_3_big.webp";
 import strezhen_3_small from "../img/portfolio/strezhen/strezhen_3_small.webp";
+import strezhen_3_preview from "../img/portfolio/strezhen/strezhen_3_preview.webp";
 import strezhen_4 from "../img/portfolio/strezhen/strezhen_4.webp";
 import strezhen_4_big from "../img/portfolio/strezhen/strezhen_4_big.webp";
 import strezhen_4_small from "../img/portfolio/strezhen/strezhen_4_small.webp";
+import strezhen_4_preview from "../img/portfolio/strezhen/strezhen_4_preview.webp";
 import strezhen_5 from "../img/portfolio/strezhen/strezhen_5.webp";
 import strezhen_5_big from "../img/portfolio/strezhen/strezhen_5_big.webp";
 import strezhen_5_small from "../img/portfolio/strezhen/strezhen_5_small.webp";
+import strezhen_5_preview from "../img/portfolio/strezhen/strezhen_5_preview.webp";
 import strezhen_6 from "../img/portfolio/strezhen/strezhen_6.webp";
 import strezhen_6_big from "../img/portfolio/strezhen/strezhen_6_big.webp";
 import strezhen_6_small from "../img/portfolio/strezhen/strezhen_6_small.webp";
+import strezhen_6_preview from "../img/portfolio/strezhen/strezhen_6_preview.webp";
 import strezhen_7 from "../img/portfolio/strezhen/strezhen_7.webp";
 import strezhen_7_big from "../img/portfolio/strezhen/strezhen_7_big.webp";
 import strezhen_7_small from "../img/portfolio/strezhen/strezhen_7_small.webp";
+import strezhen_7_preview from "../img/portfolio/strezhen/strezhen_7_preview.webp";
 import strezhen_8 from "../img/portfolio/strezhen/strezhen_8.webp";
 import strezhen_8_big from "../img/portfolio/strezhen/strezhen_8_big.webp";
 import strezhen_8_small from "../img/portfolio/strezhen/strezhen_8_small.webp";
+import strezhen_8_preview from "../img/portfolio/strezhen/strezhen_8_preview.webp";
 import strezhen_9 from "../img/portfolio/strezhen/strezhen_9.webp";
 import strezhen_9_big from "../img/portfolio/strezhen/strezhen_9_big.webp";
 import strezhen_9_small from "../img/portfolio/strezhen/strezhen_9_small.webp";
+import strezhen_9_preview from "../img/portfolio/strezhen/strezhen_9_preview.webp";
 import strezhen_10 from "../img/portfolio/strezhen/strezhen_10.webp";
 import strezhen_10_big from "../img/portfolio/strezhen/strezhen_10_big.webp";
 import strezhen_10_small from "../img/portfolio/strezhen/strezhen_10_small.webp";
+import strezhen_10_preview from "../img/portfolio/strezhen/strezhen_10_preview.webp";
 import strezhen_11 from "../img/portfolio/strezhen/strezhen_11.webp";
 import strezhen_11_big from "../img/portfolio/strezhen/strezhen_11_big.webp";
 import strezhen_11_small from "../img/portfolio/strezhen/strezhen_11_small.webp";
+import strezhen_11_preview from "../img/portfolio/strezhen/strezhen_11_preview.webp";
 import strezhen_12 from "../img/portfolio/strezhen/strezhen_12.webp";
 import strezhen_12_big from "../img/portfolio/strezhen/strezhen_12_big.webp";
 import strezhen_12_small from "../img/portfolio/strezhen/strezhen_12_small.webp";
+import strezhen_12_preview from "../img/portfolio/strezhen/strezhen_12_preview.webp";
 import strezhen_13 from "../img/portfolio/strezhen/strezhen_13.webp";
 import strezhen_13_big from "../img/portfolio/strezhen/strezhen_13_big.webp";
 import strezhen_13_small from "../img/portfolio/strezhen/strezhen_13_small.webp";
+import strezhen_13_preview from "../img/portfolio/strezhen/strezhen_13_preview.webp";
 import strezhen_14 from "../img/portfolio/strezhen/strezhen_14.webp";
 import strezhen_14_big from "../img/portfolio/strezhen/strezhen_14_big.webp";
 import strezhen_14_small from "../img/portfolio/strezhen/strezhen_14_small.webp";
+import strezhen_14_preview from "../img/portfolio/strezhen/strezhen_14_preview.webp";
 import strezhen_15 from "../img/portfolio/strezhen/strezhen_15.webp";
 import strezhen_15_big from "../img/portfolio/strezhen/strezhen_15_big.webp";
 import strezhen_15_small from "../img/portfolio/strezhen/strezhen_15_small.webp";
+import strezhen_15_preview from "../img/portfolio/strezhen/strezhen_15_preview.webp";
 import { logoComponents, iconDesign, logoService } from "../js/svgs";
 import { IAllData } from "src/models";
 /*
@@ -260,7 +313,7 @@ import components_shooter_small from "../img/portfolio/components/shooter_small.
  */
 
 const portfolioPath = "https://postmaxxx.github.io/Portfolio-examples/";
-const server_formation = "https://demo.wiseup.dev";
+//const server_formation = "https://demo.wiseup.dev";
 
 
 
@@ -284,6 +337,15 @@ const allData: IAllData = {
 			header:"Components",
 			text:"Creating any kind of features to make your site unique and catchy. Animation, interactive and usability for outstanding experience."
 		},
+		{
+			logo: iconDesign, //!!!
+			header:"System Design",
+			text: "Offering custom system design expertise, develop tailor-made web solutions that prioritize performance, scalability, reliability, and user experience."
+		},
+	],
+	aboutIntro: [
+		"Web Developer with 5+ years of commercial experience in web development. Specializing in designing and building highly scalable, integration-ready, user-friendly applications using a wide range of technologies.",
+		"I am proficient in building highly scalable solutions from scratch and in working with legacy code."
 	],
 	me: [
 		{
@@ -333,6 +395,14 @@ const allData: IAllData = {
 			percent: 90
 		},
 		{
+			name: "CI/CD",
+			percent: 90
+		},
+		{
+			name: "ES6",
+			percent: 95
+		},
+		{
 			name: "SASS",
 			percent: 95
 		},
@@ -343,10 +413,6 @@ const allData: IAllData = {
 		{
 			name: "Webpack",
 			percent: 85
-		},
-		{
-			name: "CI/CD",
-			percent: 90
 		},
 		{
 			name: "PWA",
@@ -361,7 +427,7 @@ const allData: IAllData = {
 			percent: 90
 		},
 		{
-			name: "Agile/Scrum",
+			name: "Agile / Scrum",
 			percent: 95
 		},
 		{
@@ -430,12 +496,36 @@ const allData: IAllData = {
 			name: "CraftCMS",
 			percent: 75
 		},
+		{
+			name: "Responsive Web Design",
+			percent: 95
+		},
+		{
+			name: "Mobile First Principles",
+			percent: 95
+		},
+		{
+			name: "Performance/Reliability Optimization",
+			percent: 95
+		},
+		{
+			name: "Cross-browser Compatibility",
+			percent: 95
+		},		
+		{
+			name: "Algorithms",
+			percent: 95
+		},
+		{
+			name: "Problem solving",
+			percent: 95
+		},
 	],
 	workExperience: [
 		{
 			date: "2020 - 2023",
 			header: "Web Developer",
-			subHeader: "WiseUpStudio",
+			subHeader: "WiseUpStudio (Web Agency)",
 			//text: "Developed websites, PWA, and specific interactive components. Provided code review. Implemented CI/CD pipelines. Applied frameworks and libraries (React/Redux, Bootstrap, Tailwind) and bundlers (Gulp, Webpack) and used pure HTML, CSS, and TS. Followed best practices using BEM, Responsive Web Design, and Mobile First application principles. Created MERN-based backend and REST API for web apps. Provided WCAG compliance. ",
 			text: "Created system design, defined scale, architecture, operational concerns and trade-offs. Led developer team and collaborated with design teams and stakeholders. Created automated build, test, deploy, and release pipelines. Provided code review, taught teammates to implement best practices and approaches. Accomplished apps revision and implemented performance and security improvements. Integrated modern frameworks, libraries, bundlers, and tools.",
 			link: "https://www.wiseupstudio.com/",
@@ -445,7 +535,7 @@ const allData: IAllData = {
 		{
 			date: "2019 - 2020",
 			header: "Junior Frontend Developer",
-			subHeader: "ServiceCom",
+			subHeader: "ServiceCom (B2B and B2C IT solutions)",
 			text: "Built websites using pixel-perfect and adaptive design in collaboration with designers and senior developers. Created mocks. Participated in code reviews and worked with senior developers.",
 			link: "http://servicecom38.ru/",
             challenges: ['Simplistic layouts', 'Strict templates', 'Same code repeating', 'Inaccurate code style', 'Focus on desktop'],
@@ -465,8 +555,8 @@ const allData: IAllData = {
 		{
 			date: "2023",
 			header: "SCRUM",
-			subHeader: "Scrum Professional scrum master (PSM-II)",
-			text: "Verified ability use Scrum in developement",
+			subHeader: "Scrum Professional Scrum Master (PSM-II)",
+			text: "Verified ability to use Scrum in developement",
 			link: "https://www.credly.com/badges/68577090-b388-4028-a30b-5954540a6d61",
 		},
 		{
@@ -477,7 +567,7 @@ const allData: IAllData = {
 			link: "https://www.credly.com/badges/d9038cbb-0660-4987-b184-9857cc309956",
 		},
 		{
-			date: "2019",
+			date: "2018",
 			header: "SkillFactory Education Platform",
 			subHeader: "Frontend Developer",
 			text: "Finished 9 month intense online courses with final team project. First place in the year teams competition.",
@@ -485,8 +575,8 @@ const allData: IAllData = {
 		},
 		{
 			date: "2000 - 2005",
-			header: "Baikal State University of Economics And Law",
-			subHeader: "IT in Economics",
+			header: "Baikal State University",
+			subHeader: "Major in IT",
 			text: "Master’s Degree, Major in Computer Information Systems. Represented university in ACM International Collegiate Programming Contest (twice)",
 			link: "http://bgu.ru/eng/",
 		},
@@ -549,9 +639,544 @@ const allData: IAllData = {
 	portfolios: { //530*325
 		list: [
 			{
+				name: "Strezhen",
+				descr: "Created CI/CD for improving development speed and reduce the amout of errors. Used AWS services for high scalability and availability, MongoDB for storing data. Created both frontend and backend parts, icludes architecture design, APIs, storage and backup strategies and integrated CMS. Plethora of best-practice solutions to improve user experience: adaptive size images, SPA, PWA, WCAG, precaching, tailor-made language and theme switch controls, order management, product catalog and feedback form. \n Stack: React, Redux, MongoDB, NodeJS, Express, AWS, PWA, HTML5, TS, SCSS, Webpack, Babel, JEST, Cypress",
+				link: "https://postmaxxx.github.io/3DIrk",
+				images: [
+					{
+						descr: "Main page",
+						link: "https://plastprinting.net/",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_1_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_1_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_1_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_1,
+							},
+						],
+					},
+					{
+						descr: "Filamens description page",
+						link: "https://plastprinting.net/#/fibers",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_2_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_2_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_2_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_2,
+							},
+						],
+					},
+					{
+						descr: "Filaments compare page",
+						link: "https://plastprinting.net/#/fibers/compare",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_3_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_3_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_3_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_3,
+							},
+						],
+					},
+					{
+						descr: "Filament detail page",
+						link: "https://plastprinting.net/#/fibers/64efceb438335bbe59c803c5",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_4_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_4_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_4_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_4,
+							},
+						],
+					},
+					{
+						descr: "List of colors",
+						link: "https://plastprinting.net/#/fibers/64efceb438335bbe59c803c5",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_5_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_5_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_5_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_5,
+							},
+						],
+					},
+					{
+						descr: "Catalog page",
+						link: "https://plastprinting.net/#/catalog",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_6_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_6_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_6_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_6,
+							},
+						],
+					},
+					{
+						descr: "Product page",
+						link: "https://plastprinting.net/#/catalog/64f134182a42b1ce8a71b93b",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_7_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_7_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_7_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_7,
+							},
+						],
+					},
+					{
+						descr: "Order page",
+						link: "https://plastprinting.net/#/order",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_8_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_8_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_8_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_8,
+							},
+						],
+					},
+					{
+						descr: "Custom order page",
+						link: "https://plastprinting.net/#/custom_order",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_9_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_9_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_9_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_9,
+							},
+						],
+					},
+					{
+						descr: "News list page",
+						link: "https://plastprinting.net/#/",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_10_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_10_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_10_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_10,
+							},
+						],
+					},
+					{
+						descr: "Fiber edit page",
+						link: "https://plastprinting.net/#/",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_11_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_11_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_11_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_11,
+							},
+						],
+					},
+					{
+						descr: "Login form",
+						link: "https://plastprinting.net/#/",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_12_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_12_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_12_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_12,
+							},
+						],
+					},
+					{
+						descr: "Catalog page light theme",
+						link: "https://plastprinting.net/#/catalog",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_13_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_13_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_13_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_13,
+							},
+						],
+					},
+					{
+						descr: "News page",
+						link: "https://plastprinting.net/#/news/64f251cbfb8180de8554cc26",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_14_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_14_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_14_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_14,
+							},
+						],
+					},
+					{
+						descr: "Contact page",
+						link: "https://plastprinting.net/#/contact_us",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: strezhen_15_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: strezhen_15_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: strezhen_15_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: strezhen_15,
+							},
+						],
+					},
+				]
+			},
+			{
+				name: "Datemarks",
+				descr: "Creating app for Datemarks startup with integrated CMS and notification system. Based on AWS services, CI/CD for improving development speed and reduce the amout of errors, Next.js for the best performance. \n Stack: React, Redux, MongoDB, NodeJS, Express, AWS, PWA, HTML5, TS, SCSS, Webpack, Babel, JEST, Cypress",
+				link: "https://datemarks.devback.net",
+				images: [
+					{
+						descr: "Main page",
+						link: "https://datemarks.devback.net/home",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: dm_1_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: dm_1_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: dm_1_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: dm_1,
+							},
+						],
+					},
+					{
+						descr: "Main page",
+						link: "https://datemarks.devback.net/home",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: dm_2_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: dm_2_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: dm_2_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: dm_2,
+							},
+						],
+					},
+					{
+						descr: "Main page",
+						link: "https://datemarks.devback.net/home",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: dm_3_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: dm_3_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: dm_3_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: dm_3,
+							},
+						],
+					},
+					{
+						descr: "Main page",
+						link: "https://datemarks.devback.net/home",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: dm_4_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: dm_4_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: dm_4_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: dm_4,
+							},
+						],
+					},
+					{
+						descr: "Main page",
+						link: "https://datemarks.devback.net/home",
+						images: [
+							{
+								width: 130,
+								height: 100,
+								image: dm_5_preview,
+							},
+							{
+								width: 550,
+								height: 400,
+								image: dm_5_small,
+							},
+							{
+								width: 1075,
+								height: 440,
+								image: dm_5_big,
+							},
+							{
+								width: 10000,
+								height: 10000,
+								image: dm_5,
+							},
+						],
+					},
+				]
+			},
+			{
 				name: "Plenco",
-				descr: "Created frontend templates for Plenco company based on Bootstrap 5 using provided design in AdobeXD. More than 81 pages, accordions, dropdown lists, animation, adaptive design, galleries, carousels, preloaders and so on.\n Stack: Gulp, Twig, Bootstrap 5, HTML, Tailwind, JS, Scss",
-				link: "https://demo.wiseup.dev/plenco/home.html",
+				descr: "Web app for Plenco company based on Bootstrap 5 using provided design in AdobeXD. More than 80 pages, accordions, dropdown lists, animation, adaptive design, galleries, carousels, preloaders and so on.\n Stack: HTML5, SCSS, Gulp, Twig, Bootstrap 5, Tailwind, JS, ES6, GIT",
+				//link: "https://demo.wiseup.dev/plenco/home.html",
+				link: "https://postmaxxx.github.io/Portfolio-examples/plenco/home",
 				images: [
 					{
 						descr: "Home page",
@@ -921,7 +1546,7 @@ const allData: IAllData = {
 			},
 			{
 				name: "P2S Inc",
-				descr: "New design templates for P2S Incorporated. Plethora of specific components, animations,  \n Stack: Gulp, Twig, HTML, JS, Scss, JSON animation(Lottie), SplideJS",
+				descr: "New design templates for P2S Incorporated. Plethora of specific components, animations, modules  \n Stack: Gulp, Twig, HTML, JS, SCSS, JSON animation(Lottie), SplideJS, TailWind",
 				link: "https://www.p2sinc.com",
 				images: [
 					{
@@ -1032,7 +1657,7 @@ const allData: IAllData = {
 			},
 			{
 				name: "Techlicious",
-				descr: "Created partials for Techlicious.com as navigation, news-blocks and comparing tables from scratch as well as implementing new design for comments, news-blocks and other.\n Stack: CraftCMS, HTML, Scss, JS, Tailwind, GULP, Twig.",
+				descr: "Migrated Techlicious.com from Express Engine to CraftCMS. Maintained website, created partials, resolved bottlenecks, and implemented WCAG standards. \n Stack: CraftCMS, HTML, SCSS, JS, Tailwind, GULP, Twig.",
 				link: "https://www.techlicious.com",
 				images: [
 					{
@@ -1169,12 +1794,12 @@ const allData: IAllData = {
 			},
 			{
 				name: "Formation",
-				descr: "New site template for Plenco company. Created using Figma drafts. \n Stack: Gulp, Twig, HTML, JS, Scss",
+				descr: "New web site template for Formation. \n Stack: Gulp, Twig, HTML, TS, SCSS",
 				link: "https://www.formation.ai",
 				images: [
 					{
 						descr: "Blog page.",
-						link: server_formation + "/formation.ai/frontend/blog.html",
+						link: portfolioPath + "/formation.ai/web/frontend/blog.html",
 						images: [
 							{
 								width: 130,
@@ -1200,7 +1825,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Navigation for mobile devices.",
-						link: server_formation + "/formation.ai/frontend/index.html",
+						link: portfolioPath + "/formation.ai/web/frontend/index.html",
 						images: [
 							{
 								width: 130,
@@ -1226,7 +1851,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Grocery page. Owl carousel for better design.",
-						link: server_formation + "/formation.ai/frontend/grocery.html",
+						link: portfolioPath + "/formation.ai/web/frontend/grocery.html",
 						images: [
 							{
 								width: 130,
@@ -1252,7 +1877,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Join page. Owl carousel for better design.",
-						link: server_formation + "/formation.ai/frontend/join.html",
+						link: portfolioPath + "/formation.ai/web/frontend/join.html",
 						images: [
 							{
 								width: 130,
@@ -1278,7 +1903,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Resource overview page. Animated navigation and multi-select filters.",
-						link: server_formation + "/formation.ai/frontend/resources_overview.html",
+						link: portfolioPath + "/formation.ai/web/frontend/resources_overview.html",
 						images: [
 							{
 								width: 130,
@@ -1304,7 +1929,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Resource contnet page with categories and search.",
-						link: server_formation + "/formation.ai/frontend/resources_content.html",
+						link: portfolioPath + "/formation.ai/web/frontend/resources_content.html",
 						images: [
 							{
 								width: 130,
@@ -1330,7 +1955,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Resource overview page for mobile devices. Animated navigation and multi-select filters.",
-						link: server_formation + "/formation.ai/frontend/resources_overview.html",
+						link: portfolioPath + "/formation.ai/web/frontend/resources_overview.html",
 						images: [
 							{
 								width: 130,
@@ -1356,7 +1981,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Resource theme page with categories and search.",
-						link: server_formation + "/formation.ai/frontend/resources_theme.html",
+						link: portfolioPath + "/formation.ai/web/frontend/resources_theme.html",
 						images: [
 							{
 								width: 130,
@@ -1382,7 +2007,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Solution page.",
-						link: server_formation + "/formation.ai/frontend/solution.html",
+						link: portfolioPath + "/formation.ai/web/frontend/solution.html",
 						images: [
 							{
 								width: 130,
@@ -1408,7 +2033,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Retail page for mobile devices.",
-						link: server_formation + "/formation.ai/frontend/retail.html",
+						link: portfolioPath + "/formation.ai/web/frontend/retail.html",
 						images: [
 							{
 								width: 130,
@@ -1434,7 +2059,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Navigation for desktop.",
-						link: server_formation + "/formation.ai/frontend/solutions.html",
+						link: portfolioPath + "/formation.ai/web/frontend/solutions.html",
 						images: [
 							{
 								width: 130,
@@ -1460,7 +2085,7 @@ const allData: IAllData = {
 					},
 					{
 						descr: "Creative design.",
-						link: server_formation + "/formation.ai/frontend/LP.html",
+						link: portfolioPath + "/formation.ai/web/frontend/LP.html",
 						images: [
 							{
 								width: 130,
@@ -1488,13 +2113,18 @@ const allData: IAllData = {
 			},
 			{
 				name: "P & V",
-				descr: "Passports and Visas. Created frontend part like components, filters and forms. \n Stack: Gulp, Twig, HTML, JS, Scss, Bootstrap",
+				descr: "Passports and Visas. Created frontend parts like components, filters and forms. \n Stack: Gulp, Twig, HTML, JS, SCSS, Bootstrap",
 				link: "https://dev.passportsandvisas.com",
 				images: [
 					{
 						descr: "Main page",
 						link: "https://www.passportsandvisas.com/",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: pv_1_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -1517,6 +2147,11 @@ const allData: IAllData = {
 						link: "https://www.passportsandvisas.com/passport/second-passport",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: pv_2_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: pv_2_small,
@@ -1537,6 +2172,11 @@ const allData: IAllData = {
 						descr: "Second passport page",
 						link: "https://www.passportsandvisas.com/passport/second-passport",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: pv_3_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -1559,6 +2199,11 @@ const allData: IAllData = {
 						link: "https://www.passportsandvisas.com/about",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: pv_4_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: pv_4_small,
@@ -1579,6 +2224,11 @@ const allData: IAllData = {
 						descr: "Checkout page",
 						link: "https://www.passportsandvisas.com/checkout",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: pv_5_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -1601,6 +2251,11 @@ const allData: IAllData = {
 						link: "https://www.passportsandvisas.com/visas",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: pv_6_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: pv_6_small,
@@ -1622,6 +2277,11 @@ const allData: IAllData = {
 						link: "https://www.passportsandvisas.com/visas/india",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: pv_7_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: pv_7_small,
@@ -1642,13 +2302,18 @@ const allData: IAllData = {
 			},
 			{
 				name: "Westy",
-				descr: "Westy Productions. Created frontend part like pages, gallery and lightbox. \n Stack: Gulp, Twig, HTML, JS, Scss",
+				descr: "Westy Productions. Created frontend part like pages, gallery and lightbox. \n Stack: Gulp, Twig, HTML, JS, SCSS",
 				link: "https://west.eecms.dev/",
 				images: [
 					{
 						descr: "Gallery page",
 						link: "https://west.eecms.dev/stills/",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: west_1_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -1671,6 +2336,11 @@ const allData: IAllData = {
 						link: "https://west.eecms.dev/clients/",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: west_2_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: west_2_small,
@@ -1691,6 +2361,11 @@ const allData: IAllData = {
 						descr: "New style gallery page",
 						link: "https://west.eecms.dev/projects/main2/0",
 						images: [
+							{
+								width: 130,
+								height: 100,
+								image: west_3_preview,
+							},
 							{
 								width: 550,
 								height: 400,
@@ -1713,6 +2388,11 @@ const allData: IAllData = {
 						link: "https://west.eecms.dev/projects/main2/4",
 						images: [
 							{
+								width: 130,
+								height: 100,
+								image: west_4_preview,
+							},
+							{
 								width: 550,
 								height: 400,
 								image: west_4_small,
@@ -1730,328 +2410,6 @@ const allData: IAllData = {
 						],
 					},
 					
-				]
-			},
-			{
-				name: "Strezhen",
-				descr: "Strezhen offers its customers a service of printing any custom 3D model or choose ready-made models from their catalog. I created both frontend and backend parts, icludes architecture design, APIs, storage and backup strategies. Plethora of best-practice solutions to improve user experience: adaptive images, SPA, PWA, precaching, language and theme controls, order management, product catalog and feedback form. \n Stack: React, MongoDB, NodeJS, Express, AWS services, HTML, TS, SCSS, Webpack, JEST",
-				link: "https://postmaxxx.github.io/3DIrk",
-				images: [
-					{
-						descr: "Main page",
-						link: "https://plastprinting.net/",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_1_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_1_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_1,
-							},
-						],
-					},
-					{
-						descr: "Filamens description page",
-						link: "https://plastprinting.net/#/fibers",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_2_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_2_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_2,
-							},
-						],
-					},
-					{
-						descr: "Filaments compare page",
-						link: "https://plastprinting.net/#/fibers/compare",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_3_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_3_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_3,
-							},
-						],
-					},
-					{
-						descr: "Filament detail page",
-						link: "https://plastprinting.net/#/fibers/64efceb438335bbe59c803c5",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_4_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_4_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_4,
-							},
-						],
-					},
-					{
-						descr: "List of colors",
-						link: "https://plastprinting.net/#/fibers/64efceb438335bbe59c803c5",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_5_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_5_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_5,
-							},
-						],
-					},
-					{
-						descr: "Catalog page",
-						link: "https://plastprinting.net/#/catalog",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_6_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_6_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_6,
-							},
-						],
-					},
-					{
-						descr: "Product page",
-						link: "https://plastprinting.net/#/catalog/64f134182a42b1ce8a71b93b",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_7_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_7_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_7,
-							},
-						],
-					},
-					{
-						descr: "Order page",
-						link: "https://plastprinting.net/#/order",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_8_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_8_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_8,
-							},
-						],
-					},
-					{
-						descr: "Custom order page",
-						link: "https://plastprinting.net/#/custom_order",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_9_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_9_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_9,
-							},
-						],
-					},
-					{
-						descr: "News list page",
-						link: "https://plastprinting.net/#/",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_10_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_10_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_10,
-							},
-						],
-					},
-					{
-						descr: "Fiber edit page",
-						link: "https://plastprinting.net/#/",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_11_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_11_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_11,
-							},
-						],
-					},
-					{
-						descr: "Login form",
-						link: "https://plastprinting.net/#/",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_12_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_12_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_12,
-							},
-						],
-					},
-					{
-						descr: "Catalog page light theme",
-						link: "https://plastprinting.net/#/catalog",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_13_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_13_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_13,
-							},
-						],
-					},
-					{
-						descr: "News page",
-						link: "https://plastprinting.net/#/news/64f251cbfb8180de8554cc26",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_14_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_14_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_14,
-							},
-						],
-					},
-					{
-						descr: "Contact page",
-						link: "https://plastprinting.net/#/contact_us",
-						images: [
-							{
-								width: 550,
-								height: 400,
-								image: strezhen_15_small,
-							},
-							{
-								width: 1075,
-								height: 440,
-								image: strezhen_15_big,
-							},
-							{
-								width: 10000,
-								height: 10000,
-								image: strezhen_15,
-							},
-						],
-					},
 				]
 			},
 			/*{
