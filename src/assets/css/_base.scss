@@ -408,46 +408,46 @@ body.dark {
     }
 
 
-    svg {
-        &.icon_design.icon_design {
-            .icon_design__layer-1 {
-                fill:map.get($dark, "text_soft");
-            }
-        }
+    // svg {
+    //     &.icon_design.icon_design {
+    //         .icon_design__layer-1 {
+    //             fill:map.get($dark, "text_soft");
+    //         }
+    //     }
 
-        &.logo-frontend {
-            .frontend-2 {
-                fill:map.get($dark, "text_soft");
-            }
-        }
+    //     &.logo-frontend {
+    //         .frontend-2 {
+    //             fill:map.get($dark, "text_soft");
+    //         }
+    //     }
 
-        &.logo-components {
-            .components-1 {
-                fill: map.get($dark, "text_soft");
-            }
-        }
+    //     &.logo-components {
+    //         .components-1 {
+    //             fill: map.get($dark, "text_soft");
+    //         }
+    //     }
 
 
-        &.logo-solution {
-            .logo-solution__border {
-                fill: map.get($dark, "text_soft");
-            }
+    //     &.logo-solution {
+    //         .logo-solution__border {
+    //             fill: map.get($dark, "text_soft");
+    //         }
 
-            .logo-solution__content {
-                fill: #3a91be;
-            }
-        }
+    //         .logo-solution__content {
+    //             fill: #3a91be;
+    //         }
+    //     }
 
-        &.logo-danger {
-            .logo-danger__border {
-                fill: map.get($dark, "text_soft");
-            }
-            .logo-danger__sign {
-                fill: #e99688;
-            }
-        }
+    //     &.logo-danger {
+    //         .logo-danger__border {
+    //             fill: map.get($dark, "text_soft");
+    //         }
+    //         .logo-danger__sign {
+    //             fill: #e99688;
+    //         }
+    //     }
 
-    }
+    // }
 
     
 }

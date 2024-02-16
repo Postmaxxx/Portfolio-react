@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import * as actions from "../../../assets/redux/actions";
 import { bindActionCreators } from "redux";
@@ -27,8 +27,6 @@ const About:React.FC<IAbout> = (props): JSX.Element => {
 	const openGallery = () => {
 		props.setStore.setModalImage(true);
 	};
-	
-	//console.log(props.theme);
 	
 	
 	useEffect(() => {

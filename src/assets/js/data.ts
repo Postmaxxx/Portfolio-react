@@ -292,8 +292,10 @@ import strezhen_15 from "../img/portfolio/strezhen/strezhen_15.webp";
 import strezhen_15_big from "../img/portfolio/strezhen/strezhen_15_big.webp";
 import strezhen_15_small from "../img/portfolio/strezhen/strezhen_15_small.webp";
 import strezhen_15_preview from "../img/portfolio/strezhen/strezhen_15_preview.webp";
-import { logoComponents, iconDesign, logoService } from "../js/svgs";
+import { logoComponents, iconDesign, logoService, logoSysDesign, logoBackend, logoTesting, logoSysDesign2 } from "../js/svgs";
 import { IAllData } from "src/models";
+
+
 /*
 import components_gallery from "../img/portfolio/components/gallery.webp";
 import components_gallery_big from "../img/portfolio/components/gallery_big.webp";
@@ -325,22 +327,37 @@ const allData: IAllData = {
 		{
 			logo: iconDesign,
 			header:"Web Design",
-			text:"Implementing your design or creating new with close attention to every detail. Everything is significant to make a masterpiece."
+			text:"Implementing your design or creating a new one with close attention to every detail. Everything is significant to make a masterpiece."
 		},
 		{
 			logo: logoService,
 			header:"Frontend",
-			text:"Translating your dreams into web forms. Using the most modern technologies for the best performance and sustainability."
+			text:"Translating your dreams into web forms. Using the most modern technologies for the best performance and user experience."
 		},
 		{
 			logo: logoComponents,
 			header:"Components",
-			text:"Creating any kind of features to make your site unique and catchy. Animation, interactive and usability for outstanding experience."
+			text:"Creating any kind of features to make your app unique and catchy. Animation, interactive elements, and usability for an exceptional journey."
+		},
+
+
+		{
+			logo: logoSysDesign, //!!!
+			header:"System Design",
+			// text: "Elaborating custom system design expertise, develop tailor-made web solutions that prioritize performance, scalability, reliability, and user experience."
+			// text: "Developing tailor-made solutions that prioritize performance, scalability, and reliability. Crafting architectures that seamlessly integrate with business objectives and technological needs."
+			text: "Developing tailor-made solutions that meet performance, scalability, and reliability requirements. Crafting architectures that seamlessly integrate with business objectives and technological needs."
 		},
 		{
-			logo: iconDesign, //!!!
-			header:"System Design",
-			text: "Offering custom system design expertise, develop tailor-made web solutions that prioritize performance, scalability, reliability, and user experience."
+			logo: logoBackend, //!!!
+			header:"Backend", //seamless performance and scalability
+			text: "Engineering robust backend systems integrated with cloud services for seamless performance and scalability. Ensuring your web applications are secure, maintainable, and flexible as your business grows."
+		},
+		{
+			logo: logoTesting, //!!!
+			header:"Testing",
+			text: "Checking every aspect of web application to guarantee usability, accessibility, and compatibility across various devices and browsers. From unit tests to end-to-end testing, ensuring a smooth user experience.",
+			// text: "Testing is crucial for mitigating these risks: different issues can occure while developing: security, performance, accessibility..."
 		},
 	],
 	aboutIntro: [

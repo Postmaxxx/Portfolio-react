@@ -25,11 +25,15 @@
             transform: translate(110%, 0);
         }
         &:nth-child(2) {
-            opacity: 0.8;
+            opacity: 0.7;
         }
         &:nth-child(3) {
             transform: translate(-110%, 0);
         }
+
+        // &:nth-child(4) {
+        //     transform: translate(0, -110%);
+        // }
 
         @include respond-to(md) {
             width: 48%;
@@ -76,19 +80,22 @@
             transform: scale(1);
             transform: translate(0);
 
-            &:nth-child(2n+1) {
+            &:nth-child(1), 
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
                 transition: border $transition_base, background-color $transition_theme, transform $transition_scroll $delay_transition, opacity $transition_scroll $delay_transition;
             }
             &:nth-child(2) {
                 transition: border $transition_base, background-color $transition_theme, transform $transition_scroll $delay_transition * 0, opacity $transition_scroll $delay_transition * 0;
             }
 
-
-
         }
 
     }
 }
+
 
 
 
