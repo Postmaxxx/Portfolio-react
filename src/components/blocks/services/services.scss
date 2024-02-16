@@ -31,10 +31,6 @@
             transform: translate(-110%, 0);
         }
 
-        // &:nth-child(4) {
-        //     transform: translate(0, -110%);
-        // }
-
         @include respond-to(md) {
             width: 48%;
 
@@ -87,6 +83,7 @@
             &:nth-child(6) {
                 transition: border $transition_base, background-color $transition_theme, transform $transition_scroll $delay_transition, opacity $transition_scroll $delay_transition;
             }
+
             &:nth-child(2) {
                 transition: border $transition_base, background-color $transition_theme, transform $transition_scroll $delay_transition * 0, opacity $transition_scroll $delay_transition * 0;
             }

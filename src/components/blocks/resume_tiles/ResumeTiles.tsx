@@ -9,13 +9,9 @@ interface IContent {
 }
 
 
-
-
-
 const ResumeTiles: React.FC<IContent> = ({content}: IContent): JSX.Element => {
     
     const _tile = useRef<HTMLDivElement>(null)
-
 
     const observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
@@ -24,12 +20,13 @@ const ResumeTiles: React.FC<IContent> = ({content}: IContent): JSX.Element => {
 			}
 		});
 	}, {
-		threshold: 1
+		threshold: .8
 	});
 
 	useEffect(() => {
 		_tile.current?.querySelectorAll("[data-observe='tile']").forEach(el => observer.observe(el));
 	}, []);
+
 
 	return (
 		<div className="resume-tiles" ref={_tile}>
